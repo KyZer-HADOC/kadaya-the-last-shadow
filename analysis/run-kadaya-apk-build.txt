@@ -1,0 +1,1 @@
+Trigger a cloud rebuild of the extracted APK using the validated Kadaya visual patch. Preserve maps and level scenes.
