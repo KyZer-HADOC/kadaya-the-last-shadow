@@ -1,1 +1,1 @@
-Trigger cloud-only Kadaya visual reskin validation. Preserve original scenes, maps, and level layouts.
+Build expanded Kadaya reskin: story prologue panel, in-game character/weapon/effect atlases, enemy/boss art, character-select and shop UI. Never modify playable map/level layouts.
