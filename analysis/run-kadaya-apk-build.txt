@@ -1,1 +1,1 @@
-Rerun signed Kadaya APK build after fixing Android SDK setup. Preserve scenes, maps, levels.
+Rerun build after mapping icon density folders normalized by Apktool; keep scenes, maps, levels unchanged.
