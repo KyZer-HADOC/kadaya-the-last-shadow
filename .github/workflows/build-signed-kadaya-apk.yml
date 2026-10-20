@@ -6,7 +6,7 @@ on:
       reskin_run_id:
         description: "Successful visual reskin workflow run ID"
         required: true
-        default: "39443768595"
+        default: "39451554485"
         type: string
   push:
     paths:
@@ -50,7 +50,7 @@ jobs:
           name: kadaya-reskin-visual-patch
           path: ${{ runner.temp }}/kadaya-visual-patch
           repository: ${{ github.repository }}
-          run-id: ${{ inputs.reskin_run_id || '39443768595' }}
+          run-id: ${{ inputs.reskin_run_id || '39451554485' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download and verify official Apktool 3.0.3
@@ -272,12 +272,12 @@ jobs:
           cat > kadaya-final-build/README.txt <<'EOF'
           KADAYA | THE AGE OF SHADOWS — visual test build
 
-          This is a signed APK test build with Kadaya-branded title/character/UI visuals, the recolored character/weapon/boss atlases, launcher icon, and a bilingual story prologue texture.
-          Selected serialized story/tutorial TextMesh dialogue instances have also been rewritten for Kadaya, Raizen, and Krayoo.
+          This is a signed Kadaya visual test build with a reskinned character/weapon/effect atlases, Kadaya title and launcher icon.
+          Existing ability/weapon UI labels and descriptions were rebranded (e.g. Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, Sword of Tatsuma to Kadaya's Shadow Blade) and story/tutorial dialogue was updated for Kadaya, Raizen and Krayoo.
           Existing playable map/level scenes, transforms, colliders and level layouts were not edited.
           This build uses a temporary test signing key generated during CI; it cannot update an installation signed with the original developer's key.
           If the original game is installed, back up progress before uninstalling it to try this test build.
-          Actual weapon and ability mechanics remain from the source game. Their mechanics were not rewritten because the recovered project contains compiled IL2CPP code, not original editable gameplay source.
+          The renamed UI still invokes the original game's abilities; their underlying code/mechanics have not been rewritten because the recovered package is IL2CPP and lacks original editable gameplay source.
           Do not redistribute this build unless you have permission to use and distribute all original game assets.
           EOF
           sha256sum kadaya-final-build/Kadaya-The-Age-of-Shadows.apk > kadaya-final-build/SHA256SUMS.txt
