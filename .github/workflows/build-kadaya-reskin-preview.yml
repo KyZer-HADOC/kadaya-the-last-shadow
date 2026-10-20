@@ -268,6 +268,42 @@ jobs:
               return img
 
 
+          def add_story_memory(image):
+              """Create the companion opening story card while preserving the original storyboard art below."""
+              img = recolor_full_atlas(image).convert("RGBA")
+              w, h = img.size
+              panel_h = min(int(h*0.30), h-30)
+              panel = (28, 28, min(1745, w-25), panel_h)
+              veil = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+              vd = ImageDraw.Draw(veil)
+              vd.rounded_rectangle(panel, radius=max(18, w//90), fill=(5, 5, 10, 142), outline=(148, 19, 39, 210), width=max(2, w//700))
+              veil = veil.filter(ImageFilter.GaussianBlur(max(1, w//1800)))
+              img = Image.alpha_composite(img, veil)
+              draw = ImageDraw.Draw(img)
+              serif = "/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf"
+              sans = "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf"
+              sinhalese = "/usr/share/fonts/truetype/noto/NotoSansSinhala-Regular.ttf"
+              try:
+                  title = ImageFont.truetype(serif, max(42, int(w*0.028)))
+                  section = ImageFont.truetype(sans, max(24, int(w*0.014)))
+                  body = ImageFont.truetype(sans, max(22, int(w*0.015)))
+                  subtitle = ImageFont.truetype(sinhalese, max(22, int(w*0.012))) if Path(sinhalese).exists() else ImageFont.truetype(sans, max(22, int(w*0.013)))
+              except OSError:
+                  title = section = body = subtitle = ImageFont.load_default()
+              x = int(w*0.07)
+              draw.text((x+3, int(h*0.035)+3), "KADAYA | THE AGE OF SHADOWS", font=title, fill=(110, 8, 23, 255), stroke_width=1, stroke_fill=(5, 4, 8, 255))
+              draw.text((x, int(h*0.032)), "KADAYA | THE AGE OF SHADOWS", font=title, fill=(245, 235, 229, 255), stroke_width=1, stroke_fill=(22, 6, 11, 245))
+              draw.line((x, int(h*0.082), int(w*0.73), int(h*0.082)), fill=(207, 34, 55, 245), width=max(3, w//520))
+              draw.text((x, int(h*0.094)), "BENEATH THE OLD TREE", font=section, fill=(222, 42, 61, 255), stroke_width=1, stroke_fill=(8, 5, 9, 255))
+              draw.text((x, int(h*0.128)), "Kadaya woke beneath the old tree as ash drifted through the wind.", font=body, fill=(238, 230, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 240))
+              draw.text((x, int(h*0.158)), "The village was gone. Krayoo was gone. Only a broken hilt remained.", font=body, fill=(238, 230, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 240))
+              draw.text((x, int(h*0.188)), "KADAYA: “Raizen... I'll bring Krayoo home.”", font=body, fill=(247, 203, 206, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              try:
+                  draw.text((x+26, int(h*0.222)), "ගම්මානය අළු වුණා. ක්‍රයෝව හොයාගන්න මම එනවා.", font=subtitle, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              except Exception:
+                  draw.text((x+26, int(h*0.222)), "Gammānaya aḷu una. Krayoo wa hoyaganna mama enawa.", font=body, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              return img
+
           def make_icon(original_character_art, size):
               src = original_character_art.convert("RGBA")
               arr = np.array(src, dtype=np.uint8)
@@ -393,7 +429,7 @@ jobs:
               "arashi main 03": reskin_character_art,
               "ui1": recolor_ui_blue_to_crimson,
               "play ui 01": recolor_ui_blue_to_crimson,
-              "story layout 01": recolor_full_atlas,
+              "story layout 01": add_story_memory,
               "story layout 02": add_story_narrative,
               "main menu layout": recolor_full_atlas,
               "layout character 01": recolor_full_atlas,
