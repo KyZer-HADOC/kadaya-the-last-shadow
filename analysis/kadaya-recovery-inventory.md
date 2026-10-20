@@ -1,0 +1,1538 @@
+# Kadaya recovered Unity project — cloud inventory
+
+This is a small text report generated in GitHub Actions. The 1.77 GB recovered project was processed in GitHub cloud; it was not committed to this repository.
+
+- Detected project root: /home/runner/work/_temp/kadaya-recovered-project/ExportedProject
+- Total files: 9,588
+- Approx. uncompressed size: 1.76 GiB
+
+## Top-level entries
+- Assets/ — 9,568 files
+- Packages/ — 1 files
+- ProjectSettings/ — 19 files
+
+## Unity version
+    m_EditorVersion: 6000.2.6f2
+
+## File types (count / total size)
+- .meta — 4,762 files, 2.2 MiB
+- .cs — 1,779 files, 4.6 MiB
+- .asset — 1,710 files, 17.4 MiB
+- .png — 330 files, 107.7 MiB
+- .ogg — 300 files, 25.5 MiB
+- .anim — 233 files, 28.2 MiB
+- .mat — 200 files, 0.2 MiB
+- .unity — 89 files, 1608.5 MiB
+- .controller — 52 files, 0.5 MiB
+- .asmdef — 42 files, 0.0 MiB
+- .prefab — 33 files, 3.8 MiB
+- .shader — 12 files, 0.0 MiB
+- .wav — 12 files, 0.9 MiB
+- .ttf — 12 files, 5.7 MiB
+- .lighting — 8 files, 0.0 MiB
+- .otf — 4 files, 0.1 MiB
+- .txt — 3 files, 0.0 MiB
+- .json — 2 files, 0.0 MiB
+- .ress — 2 files, 0.1 MiB
+- .audioclip — 2 files, 0.0 MiB
+- .physicsmaterial2d — 1 files, 0.0 MiB
+
+## Scenes (.unity): 89
+- Assets/Scenes/CotTruyen.unity — 83,760 bytes
+- Assets/Scenes/CotTruyen2Ending.unity — 64,684 bytes
+- Assets/Scenes/First.unity — 45,408 bytes
+- Assets/Scenes/LevelLeader.unity — 13,723 bytes
+- Assets/Scenes/Select.unity — 3,463,500 bytes
+- Assets/Scenes/b1.unity — 14,495,940 bytes
+- Assets/Scenes/b10.unity — 23,736,243 bytes
+- Assets/Scenes/b11.unity — 18,787,858 bytes
+- Assets/Scenes/b12.unity — 20,092,442 bytes
+- Assets/Scenes/b13.unity — 17,444,128 bytes
+- Assets/Scenes/b14.unity — 25,828,682 bytes
+- Assets/Scenes/b15.unity — 20,315,902 bytes
+- Assets/Scenes/b16.unity — 25,323,506 bytes
+- Assets/Scenes/b17.unity — 20,169,712 bytes
+- Assets/Scenes/b18.unity — 20,074,673 bytes
+- Assets/Scenes/b19.unity — 24,960,577 bytes
+- Assets/Scenes/b2.unity — 13,496,380 bytes
+- Assets/Scenes/b20.unity — 19,787,282 bytes
+- Assets/Scenes/b21.unity — 18,847,735 bytes
+- Assets/Scenes/b22.unity — 19,074,977 bytes
+- Assets/Scenes/b23.unity — 20,980,440 bytes
+- Assets/Scenes/b24.unity — 19,098,116 bytes
+- Assets/Scenes/b25.unity — 19,914,245 bytes
+- Assets/Scenes/b26.unity — 17,691,275 bytes
+- Assets/Scenes/b27.unity — 18,933,017 bytes
+- Assets/Scenes/b28.unity — 23,871,944 bytes
+- Assets/Scenes/b29.unity — 17,901,121 bytes
+- Assets/Scenes/b3.unity — 13,609,951 bytes
+- Assets/Scenes/b30.unity — 20,669,010 bytes
+- Assets/Scenes/b31.unity — 18,313,805 bytes
+- Assets/Scenes/b32.unity — 20,807,604 bytes
+- Assets/Scenes/b33.unity — 20,346,690 bytes
+- Assets/Scenes/b34.unity — 21,199,451 bytes
+- Assets/Scenes/b35.unity — 18,183,738 bytes
+- Assets/Scenes/b36.unity — 22,817,806 bytes
+- Assets/Scenes/b37.unity — 21,360,719 bytes
+- Assets/Scenes/b38.unity — 20,624,957 bytes
+- Assets/Scenes/b39.unity — 18,696,040 bytes
+- Assets/Scenes/b4.unity — 15,011,048 bytes
+- Assets/Scenes/b40.unity — 19,182,810 bytes
+- Assets/Scenes/b41.unity — 18,835,744 bytes
+- Assets/Scenes/b42.unity — 21,415,847 bytes
+- Assets/Scenes/b43.unity — 21,356,226 bytes
+- Assets/Scenes/b44.unity — 22,805,879 bytes
+- Assets/Scenes/b45.unity — 19,053,403 bytes
+- Assets/Scenes/b46.unity — 20,484,626 bytes
+- Assets/Scenes/b47.unity — 20,427,809 bytes
+- Assets/Scenes/b48.unity — 19,846,514 bytes
+- Assets/Scenes/b49.unity — 22,697,483 bytes
+- Assets/Scenes/b5.unity — 16,904,052 bytes
+- Assets/Scenes/b50.unity — 19,301,728 bytes
+- Assets/Scenes/b51.unity — 19,977,346 bytes
+- Assets/Scenes/b52.unity — 18,254,082 bytes
+- Assets/Scenes/b53.unity — 19,264,070 bytes
+- Assets/Scenes/b54.unity — 19,065,053 bytes
+- Assets/Scenes/b55.unity — 22,014,692 bytes
+- Assets/Scenes/b56.unity — 20,824,613 bytes
+- Assets/Scenes/b57.unity — 23,071,283 bytes
+- Assets/Scenes/b58.unity — 18,770,651 bytes
+- Assets/Scenes/b59.unity — 20,460,238 bytes
+- Assets/Scenes/b6.unity — 17,492,853 bytes
+- Assets/Scenes/b60.unity — 20,908,223 bytes
+- Assets/Scenes/b61.unity — 17,404,845 bytes
+- Assets/Scenes/b62.unity — 17,359,452 bytes
+- Assets/Scenes/b63.unity — 19,374,112 bytes
+- Assets/Scenes/b64.unity — 18,370,990 bytes
+- Assets/Scenes/b65.unity — 16,964,503 bytes
+- Assets/Scenes/b66.unity — 21,346,224 bytes
+- Assets/Scenes/b67.unity — 19,208,171 bytes
+- Assets/Scenes/b68.unity — 30,980,273 bytes
+- Assets/Scenes/b69.unity — 18,791,111 bytes
+- Assets/Scenes/b7.unity — 23,631,348 bytes
+- Assets/Scenes/b70.unity — 26,206,298 bytes
+- Assets/Scenes/b71.unity — 21,905,452 bytes
+- Assets/Scenes/b72.unity — 17,304,546 bytes
+- Assets/Scenes/b73.unity — 37,858,813 bytes
+- Assets/Scenes/b74.unity — 18,076,142 bytes
+- Assets/Scenes/b75.unity — 19,215,803 bytes
+- Assets/Scenes/b76.unity — 23,615,824 bytes
+- Assets/Scenes/b77.unity — 20,660,999 bytes
+- Assets/Scenes/b78.unity — 22,789,302 bytes
+- Assets/Scenes/b79.unity — 20,628,617 bytes
+- Assets/Scenes/b8.unity — 20,290,697 bytes
+- Assets/Scenes/b80.unity — 24,120,158 bytes
+- Assets/Scenes/b9.unity — 17,609,683 bytes
+- Assets/Scenes/boss1.unity — 13,097,737 bytes
+- Assets/Scenes/boss2.unity — 13,347,640 bytes
+- Assets/Scenes/boss3.unity — 13,106,074 bytes
+- Assets/Scenes/boss4.unity — 14,786,502 bytes
+
+## Prefabs (.prefab): 33
+- Assets/GameObject/BoomDo.prefab — 62,486 bytes
+- Assets/GameObject/Boss 2 Rain Collider.prefab — 17,000 bytes
+- Assets/GameObject/Boss 2 Ten Up.prefab — 4,873 bytes
+- Assets/GameObject/Boss 2 Ten.prefab — 4,823 bytes
+- Assets/GameObject/Boss 2 bom 1.prefab — 62,534 bytes
+- Assets/GameObject/Cham Hoi 1.prefab — 5,159 bytes
+- Assets/GameObject/Crow +Sound.prefab — 28,973 bytes
+- Assets/GameObject/CucDo.prefab — 330,043 bytes
+- Assets/GameObject/CucXanh.prefab — 333,325 bytes
+- Assets/GameObject/DM.prefab — 168,082 bytes
+- Assets/GameObject/Dan Bang.prefab — 457,037 bytes
+- Assets/GameObject/Dan Doc.prefab — 627,481 bytes
+- Assets/GameObject/Dan Lua.prefab — 627,618 bytes
+- Assets/GameObject/HealthBarExample.prefab — 7,437 bytes
+- Assets/GameObject/LevelLeader.prefab — 1,313 bytes
+- Assets/GameObject/Linh Ban Ten Mui Ten No.prefab — 58,628 bytes
+- Assets/GameObject/Linh Ban Ten Mui Ten.prefab — 4,852 bytes
+- Assets/GameObject/Linh Om Bom Qua Bom.prefab — 4,582 bytes
+- Assets/GameObject/Luu Dan Phai.prefab — 5,858 bytes
+- Assets/GameObject/Luu Dan Trai.prefab — 5,860 bytes
+- Assets/GameObject/M1.prefab — 3,526 bytes
+- Assets/GameObject/Mat Cheo.prefab — 6,035 bytes
+- Assets/GameObject/NinjaPlatformROOT.prefab — 1,319 bytes
+- Assets/GameObject/Ragdoll 1.prefab — 218,549 bytes
+- Assets/GameObject/Ragdoll 2.prefab — 218,528 bytes
+- Assets/GameObject/Ragdoll Exp.prefab — 440,400 bytes
+- Assets/GameObject/Scroll Roi.prefab — 167,617 bytes
+- Assets/GameObject/TuiTienBe.prefab — 5,317 bytes
+- Assets/GameObject/TuiTienTo.prefab — 5,318 bytes
+- Assets/GameObject/_Ground.prefab — 1,227 bytes
+- Assets/Resources/bieucam/Cham Hoi.prefab — 5,157 bytes
+- Assets/Resources/mask/M1.prefab — 3,526 bytes
+- Assets/Resources/particle/BVParticle.prefab — 108,422 bytes
+
+## C# source files (.cs): 1779
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenAnimation.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenModuleAudio.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenModulePhysics.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenModulePhysics2D.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenModuleSprite.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenModuleUI.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenModuleUnityVersion.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenModuleUtils.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenProShortcuts.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/Damager.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/EnemyHealth.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/EventsDebug.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/HealthBar.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/HealthBarEventHandler.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/HealthbarRoot.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/ImageEffectBase.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/ImageEffects.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/MoveSample.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/Movement.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/Reload.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/RotateSample.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/SampleInfo.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/XWeaponTrailDemo.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/XftWeapon/Spline.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/XftWeapon/SplineControlPoint.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/XftWeapon/VertexPool.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/XftWeapon/XWeaponTrail.cs
+- Assets/Plugins/Assembly-CSharp-firstpass/iTween.cs
+- Assets/Scripts/Assembly-CSharp/ActiveSelf.cs
+- Assets/Scripts/Assembly-CSharp/AdCreator.cs
+- Assets/Scripts/Assembly-CSharp/AddMaterialOnHit.cs
+- Assets/Scripts/Assembly-CSharp/AnimateTiledTextureOnTrail.cs
+- Assets/Scripts/Assembly-CSharp/AnimatorBehaviour.cs
+- Assets/Scripts/Assembly-CSharp/ArtifactPanel.cs
+- Assets/Scripts/Assembly-CSharp/ArtifactPanelEquipBtn.cs
+- Assets/Scripts/Assembly-CSharp/ArtifactPanelItem.cs
+- Assets/Scripts/Assembly-CSharp/ArtifactPanelPurchaseBtn.cs
+- Assets/Scripts/Assembly-CSharp/Atf.cs
+- Assets/Scripts/Assembly-CSharp/AtfManager.cs
+- Assets/Scripts/Assembly-CSharp/AudioEnemy.cs
+- Assets/Scripts/Assembly-CSharp/AudioParticleAndRung.cs
+- Assets/Scripts/Assembly-CSharp/AudioPlayer.cs
+- Assets/Scripts/Assembly-CSharp/AudioPlus.cs
+- Assets/Scripts/Assembly-CSharp/AutoDestruc.cs
+- Assets/Scripts/Assembly-CSharp/AutoDestruct.cs
+- Assets/Scripts/Assembly-CSharp/AutoRotator.cs
+- Assets/Scripts/Assembly-CSharp/BanTen.cs
+- Assets/Scripts/Assembly-CSharp/BillBoard.cs
+- Assets/Scripts/Assembly-CSharp/Billboard.cs
+- Assets/Scripts/Assembly-CSharp/BlackScreen.cs
+- Assets/Scripts/Assembly-CSharp/Bonus.cs
+- Assets/Scripts/Assembly-CSharp/Boom.cs
+- Assets/Scripts/Assembly-CSharp/Boss1.cs
+- Assets/Scripts/Assembly-CSharp/Boss1Animation.cs
+- Assets/Scripts/Assembly-CSharp/Boss2.cs
+- Assets/Scripts/Assembly-CSharp/Boss2Animation.cs
+- Assets/Scripts/Assembly-CSharp/Boss2BomXanh.cs
+- Assets/Scripts/Assembly-CSharp/Boss2MuiTenUp.cs
+- Assets/Scripts/Assembly-CSharp/Boss3.cs
+- Assets/Scripts/Assembly-CSharp/Boss3Animation.cs
+- Assets/Scripts/Assembly-CSharp/Boss3Bom.cs
+- Assets/Scripts/Assembly-CSharp/Boss4.cs
+- Assets/Scripts/Assembly-CSharp/BossDragon.cs
+- Assets/Scripts/Assembly-CSharp/BreakJoint.cs
+- Assets/Scripts/Assembly-CSharp/CaiLo.cs
+- Assets/Scripts/Assembly-CSharp/CaiRung.cs
+- Assets/Scripts/Assembly-CSharp/CameraFollowTarget.cs
+- Assets/Scripts/Assembly-CSharp/CameraParralax.cs
+- Assets/Scripts/Assembly-CSharp/CameraTarget.cs
+- Assets/Scripts/Assembly-CSharp/CameraTouchControl.cs
+- Assets/Scripts/Assembly-CSharp/CayDuoiDat.cs
+- Assets/Scripts/Assembly-CSharp/CayDuoiDatAnim.cs
+- Assets/Scripts/Assembly-CSharp/CayTrenTuong.cs
+- Assets/Scripts/Assembly-CSharp/CayTrenTuongAnim.cs
+- Assets/Scripts/Assembly-CSharp/ChatStory.cs
+- Assets/Scripts/Assembly-CSharp/CheckPointBoss.cs
+- Assets/Scripts/Assembly-CSharp/Checkpoint.cs
+- Assets/Scripts/Assembly-CSharp/ChoiseBtn.cs
+- Assets/Scripts/Assembly-CSharp/ClothGridCollisionBehaviour.cs
+- Assets/Scripts/Assembly-CSharp/CollisionActiveBehaviour.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/BasePC2D.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/BaseTrigger.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/BasicBlit.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/BoundariesAnimator.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/CameraTarget.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ConstantShakePreset.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/DollyZoomExample.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/EditorPrefsX.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/IPositionDeltaChanger.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/IPositionOverrider.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/IPostMover.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/IPreMover.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ISizeDeltaChanger.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ISizeOverrider.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/KDTree.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/MinMaxSliderAttribute.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/MoveInColliderBoundaries.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Platformer/PlayerInput.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Platformer/PlayerInputBot.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Platformer/ToggleCinematics.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Platformer/ToggleTransitionsFX.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/PrefsData.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2D.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DCameraWindow.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DCinematics.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DContentFitter.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DForwardFocus.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DGeometryBoundaries.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DLetterbox.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DLimitDistance.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DLimitSpeed.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DNumericBoundaries.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DPanAndZoom.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DParallax.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DParallaxObject.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DPixelPerfect.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DPixelPerfectSprite.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DPointerInfluence.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DRails.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DRepeater.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DRooms.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DShake.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DSpeedBasedZoom.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DTransitionsFX.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DTriggerBoundaries.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DTriggerInfluence.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DTriggerRails.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DTriggerZoom.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ProCamera2DZoomToFitTargets.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ShakeExample.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/ShakePreset.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/Bullet.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/Door.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/DoorKey.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyAttack.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyFSM.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyPatrol.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemySight.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyWander.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/GameOver.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/Goal.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/ObjectMove.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/ObjectRotate.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerFire.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerHealth.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerInput.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/Pool.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PoolMember.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/RotateTowardsMouse.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/SwitchCameraProjection.cs
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Utils.cs
+- Assets/Scripts/Assembly-CSharp/CombineChildren.cs
+- Assets/Scripts/Assembly-CSharp/ConPortal.cs
+- Assets/Scripts/Assembly-CSharp/CongBoss.cs
+- Assets/Scripts/Assembly-CSharp/CongChao.cs
+- Assets/Scripts/Assembly-CSharp/CotPhunDoc.cs
+- Assets/Scripts/Assembly-CSharp/CotPhunDocDelayFix2.cs
+- Assets/Scripts/Assembly-CSharp/CotPhunDocSole.cs
+- Assets/Scripts/Assembly-CSharp/CotPhunDocSoleDelayFix.cs
+- Assets/Scripts/Assembly-CSharp/CotPhunLua.cs
+- Assets/Scripts/Assembly-CSharp/CotTruyen.cs
+- Assets/Scripts/Assembly-CSharp/CotTruyen2Ending.cs
+- Assets/Scripts/Assembly-CSharp/CotTruyenEnd.cs
+- Assets/Scripts/Assembly-CSharp/CotTruyenLeader.cs
+- Assets/Scripts/Assembly-CSharp/CuaDaDeCua.cs
+- Assets/Scripts/Assembly-CSharp/CuaDaDeDaDe.cs
+- Assets/Scripts/Assembly-CSharp/CuaDap.cs
+- Assets/Scripts/Assembly-CSharp/CuaDapCanGat.cs
+- Assets/Scripts/Assembly-CSharp/CuaDapCanGatNhieuTarget.cs
+- Assets/Scripts/Assembly-CSharp/CuaDapDiChuyen.cs
+- Assets/Scripts/Assembly-CSharp/CuaKeyNew.cs
+- Assets/Scripts/Assembly-CSharp/CuaKeyRung.cs
+- Assets/Scripts/Assembly-CSharp/CucMau.cs
+- Assets/Scripts/Assembly-CSharp/DaCanDuong.cs
+- Assets/Scripts/Assembly-CSharp/DaTut.cs
+- Assets/Scripts/Assembly-CSharp/DapActionDotween.cs
+- Assets/Scripts/Assembly-CSharp/DatTut.cs
+- Assets/Scripts/Assembly-CSharp/DauBiNgo.cs
+- Assets/Scripts/Assembly-CSharp/DayNoi.cs
+- Assets/Scripts/Assembly-CSharp/DeadTime.cs
+- Assets/Scripts/Assembly-CSharp/Destroy.cs
+- Assets/Scripts/Assembly-CSharp/DestroySelf.cs
+- Assets/Scripts/Assembly-CSharp/DinhBay.cs
+- Assets/Scripts/Assembly-CSharp/DisguiseManager.cs
+- Assets/Scripts/Assembly-CSharp/Door.cs
+- Assets/Scripts/Assembly-CSharp/DoorAuto.cs
+- Assets/Scripts/Assembly-CSharp/DoorAutoAnimation.cs
+- Assets/Scripts/Assembly-CSharp/Drag.cs
+- Assets/Scripts/Assembly-CSharp/DungeonCharacterAnimator.cs
+- Assets/Scripts/Assembly-CSharp/DynamicBone.cs
+- Assets/Scripts/Assembly-CSharp/DynamicBoneCollider.cs
+- Assets/Scripts/Assembly-CSharp/DynamicBoneColliderBase.cs
+- Assets/Scripts/Assembly-CSharp/DynamicBoneDemo1.cs
+- Assets/Scripts/Assembly-CSharp/DynamicBonePlaneCollider.cs
+- Assets/Scripts/Assembly-CSharp/EffectController.cs
+- Assets/Scripts/Assembly-CSharp/EffectSettings.cs
+- Assets/Scripts/Assembly-CSharp/EndGame.cs
+- Assets/Scripts/Assembly-CSharp/EnemyOnGround.cs
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyA.cs
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyBoss.cs
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyingA.cs
+- Assets/Scripts/Assembly-CSharp/EnterBtn.cs
+- Assets/Scripts/Assembly-CSharp/F3DAudioController.cs
+- Assets/Scripts/Assembly-CSharp/F3DBeam.cs
+- Assets/Scripts/Assembly-CSharp/F3DBurnoutExample.cs
+- Assets/Scripts/Assembly-CSharp/F3DDespawn.cs
+- Assets/Scripts/Assembly-CSharp/F3DDummyEvent.cs
+- Assets/Scripts/Assembly-CSharp/F3DFXController.cs
+- Assets/Scripts/Assembly-CSharp/F3DFlameThrower.cs
+- Assets/Scripts/Assembly-CSharp/F3DLightning.cs
+- Assets/Scripts/Assembly-CSharp/F3DNebula.cs
+- Assets/Scripts/Assembly-CSharp/F3DParticleScale.cs
+- Assets/Scripts/Assembly-CSharp/F3DPool.cs
+- Assets/Scripts/Assembly-CSharp/F3DProjectile.cs
+- Assets/Scripts/Assembly-CSharp/F3DPulsewave.cs
+- Assets/Scripts/Assembly-CSharp/F3DRandomize.cs
+- Assets/Scripts/Assembly-CSharp/F3DShotgun.cs
+- Assets/Scripts/Assembly-CSharp/F3DTime.cs
+- Assets/Scripts/Assembly-CSharp/F3DTrailExample.cs
+- Assets/Scripts/Assembly-CSharp/F3DTurnTable.cs
+- Assets/Scripts/Assembly-CSharp/F3DTurret.cs
+- Assets/Scripts/Assembly-CSharp/F3DWarpJump.cs
+- Assets/Scripts/Assembly-CSharp/F3DWarpJumpTunnel.cs
+- Assets/Scripts/Assembly-CSharp/F3DWarpTunnel.cs
+- Assets/Scripts/Assembly-CSharp/FadeInOutLight.cs
+- Assets/Scripts/Assembly-CSharp/FadeInOutParticles.cs
+- Assets/Scripts/Assembly-CSharp/FadeInOutScale.cs
+- Assets/Scripts/Assembly-CSharp/FadeInOutShaderColor.cs
+- Assets/Scripts/Assembly-CSharp/FadeInOutShaderFloat.cs
+- Assets/Scripts/Assembly-CSharp/FadeLight.cs
+- Assets/Scripts/Assembly-CSharp/Faded.cs
+- Assets/Scripts/Assembly-CSharp/FiTieu.cs
+- Assets/Scripts/Assembly-CSharp/FiTieuGolden.cs
+- Assets/Scripts/Assembly-CSharp/FiTieuPool.cs
+- Assets/Scripts/Assembly-CSharp/Finish.cs
+- Assets/Scripts/Assembly-CSharp/FinishAnim.cs
+- Assets/Scripts/Assembly-CSharp/FireballButtonShuriken.cs
+- Assets/Scripts/Assembly-CSharp/FirstScene.cs
+- Assets/Scripts/Assembly-CSharp/FixShaderQueue.cs
+- Assets/Scripts/Assembly-CSharp/FlockChild.cs
+- Assets/Scripts/Assembly-CSharp/FlockChildSound.cs
+- Assets/Scripts/Assembly-CSharp/FlockController.cs
+- Assets/Scripts/Assembly-CSharp/FlockScare.cs
+- Assets/Scripts/Assembly-CSharp/FlockWaypointTrigger.cs
+- Assets/Scripts/Assembly-CSharp/FlyDemo.cs
+- Assets/Scripts/Assembly-CSharp/FogOfWarAlphaPositioner.cs
+- Assets/Scripts/Assembly-CSharp/GDPRController.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/API.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Events.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/InitializePlaymakerAds.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/AdUnitID.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/Advertiser.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/ConsentPopup.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/Constants.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/DefaultImplementation.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/GleyLogger.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/IAdProvider.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/LevelPlayImplementation.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/LogWindow.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/MobileAdsData.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/MobileAdsManager.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/MobileAdsTest.cs
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/PlatformSettings.cs
+- Assets/Scripts/Assembly-CSharp/Guid.cs
+- Assets/Scripts/Assembly-CSharp/GuideTrigger.cs
+- Assets/Scripts/Assembly-CSharp/HPFly.cs
+- Assets/Scripts/Assembly-CSharp/HPFlyDrogon.cs
+- Assets/Scripts/Assembly-CSharp/HUDText.cs
+- Assets/Scripts/Assembly-CSharp/HUDTextChild.cs
+- Assets/Scripts/Assembly-CSharp/HamLon.cs
+- Assets/Scripts/Assembly-CSharp/HamMo.cs
+- Assets/Scripts/Assembly-CSharp/HatCayDo.cs
+- Assets/Scripts/Assembly-CSharp/HideObj.cs
+- Assets/Scripts/Assembly-CSharp/HireSprite.cs
+- Assets/Scripts/Assembly-CSharp/HuongDan.cs
+- Assets/Scripts/Assembly-CSharp/HurtSound.cs
+- Assets/Scripts/Assembly-CSharp/IAPManager.cs
+- Assets/Scripts/Assembly-CSharp/IPadRatio.cs
+- Assets/Scripts/Assembly-CSharp/InAppProject.cs
+- Assets/Scripts/Assembly-CSharp/InappCanvas.cs
+- Assets/Scripts/Assembly-CSharp/InstanceMaterial.cs
+- Assets/Scripts/Assembly-CSharp/InvokeInterval.cs
+- Assets/Scripts/Assembly-CSharp/ItemBtn.cs
+- Assets/Scripts/Assembly-CSharp/ItemScript.cs
+- Assets/Scripts/Assembly-CSharp/Key.cs
+- Assets/Scripts/Assembly-CSharp/KhienPhuThuy.cs
+- Assets/Scripts/Assembly-CSharp/KillZone.cs
+- Assets/Scripts/Assembly-CSharp/LMConfig.cs
+- Assets/Scripts/Assembly-CSharp/LandingButtons.cs
+- Assets/Scripts/Assembly-CSharp/LandingSpot.cs
+- Assets/Scripts/Assembly-CSharp/LandingSpotController.cs
+- Assets/Scripts/Assembly-CSharp/LaunchDelayDestroy.cs
+- Assets/Scripts/Assembly-CSharp/Launcher.cs
+- Assets/Scripts/Assembly-CSharp/Launcher2D.cs
+- Assets/Scripts/Assembly-CSharp/LauncherFPS.cs
+- Assets/Scripts/Assembly-CSharp/LazyLoad.cs
+- Assets/Scripts/Assembly-CSharp/LevelBtn.cs
+- Assets/Scripts/Assembly-CSharp/LevelButton.cs
+- Assets/Scripts/Assembly-CSharp/LevelChoiseCanvas.cs
+- Assets/Scripts/Assembly-CSharp/LevelLeader.cs
+
+## Filenames relevant to character, UI, story, maps or abilities: 464
+- Assets/AnimationClip/BlackScene.anim — 5,261 bytes
+- Assets/AnimationClip/BlackSceneFadeIn.anim — 5,638 bytes
+- Assets/AnimationClip/HudText.anim — 10,548 bytes
+- Assets/AnimationClip/HudText2.anim — 9,401 bytes
+- Assets/AnimationClip/Story.anim — 68,744 bytes
+- Assets/AnimationClip/attack 0- Bo.anim — 303,411 bytes
+- Assets/AnimationClip/attack 1- Xien.anim — 170,516 bytes
+- Assets/AnimationClip/attack ban xa.anim — 245,642 bytes
+- Assets/AnimationClip/attack gan2.anim — 159,685 bytes
+- Assets/AnimationClip/attack.anim — 109,341 bytes
+- Assets/AnimationClip/attack2 - 50%.anim — 69,394 bytes
+- Assets/AnimationClip/attack3 - 155%.anim — 151,390 bytes
+- Assets/AnimationClip/attack6.anim — 217,587 bytes
+- Assets/AnimationClip/attack_0.anim — 495,943 bytes
+- Assets/AnimationClip/attack_1.anim — 91,405 bytes
+- Assets/AnimationClip/attack_2.anim — 118,413 bytes
+- Assets/AnimationClip/attack_3.anim — 608,746 bytes
+- Assets/AnimationClip/nhay lui gan pro - 200%.anim — 97,275 bytes
+- Assets/AnimationClip/nhay lui xa pro - 350%.anim — 121,500 bytes
+- Assets/AnimationClip/pro_attack02 fix.anim — 127,700 bytes
+- Assets/AnimatorController/Black Scene lv1.controller — 5,698 bytes
+- Assets/AnimatorController/Boss 1 Origin.controller — 12,819 bytes
+- Assets/AnimatorController/Boss 2 origin.controller — 17,734 bytes
+- Assets/AnimatorController/Boss 3 origin.controller — 19,226 bytes
+- Assets/AudioClip/1 Qui.ogg — 620,093 bytes
+- Assets/AudioClip/Boss1Theme.ogg — 474,899 bytes
+- Assets/AudioClip/Don_t Be A Hero...ogg — 24,111 bytes
+- Assets/AudioClip/MCS3_043_Strong attack11.ogg — 17,597 bytes
+- Assets/AudioClip/MCS3_044_Strong attack22.ogg — 19,386 bytes
+- Assets/AudioClip/MCS3_045_Strong attack33.ogg — 22,443 bytes
+- Assets/AudioClip/MCS3_046_Strong attack44.ogg — 21,672 bytes
+- Assets/AudioClip/MCS3_047_Strong attack55.ogg — 19,156 bytes
+- Assets/AudioClip/MaleB_Attack01.ogg — 23,456 bytes
+- Assets/AudioClip/MaleB_Attack01_0.ogg — 23,456 bytes
+- Assets/AudioClip/MaleB_Attack02.ogg — 22,900 bytes
+- Assets/AudioClip/MaleB_Attack02_0.ogg — 22,900 bytes
+- Assets/AudioClip/MaleB_Attack03.ogg — 27,858 bytes
+- Assets/AudioClip/MaleB_Attack03_0.ogg — 27,858 bytes
+- Assets/AudioClip/MaleB_Attack04.ogg — 31,403 bytes
+- Assets/AudioClip/MaleB_Attack04_0.ogg — 31,403 bytes
+- Assets/AudioClip/MaleB_Attack05.ogg — 25,598 bytes
+- Assets/AudioClip/MaleB_Attack05_0.ogg — 25,598 bytes
+- Assets/AudioClip/MaleB_Attack06.ogg — 43,326 bytes
+- Assets/AudioClip/MaleC_Attack01.ogg — 32,615 bytes
+- Assets/AudioClip/MaleC_Attack02.ogg — 45,723 bytes
+- Assets/AudioClip/MaleC_Attack03.ogg — 31,215 bytes
+- Assets/AudioClip/MaleC_Attack04.ogg — 33,016 bytes
+- Assets/AudioClip/MaleC_Attack05.ogg — 38,443 bytes
+- Assets/AudioClip/MaleC_Attack06.ogg — 28,627 bytes
+- Assets/AudioClip/SWORD_Hit_Sword_RR2_mono.ogg — 7,799 bytes
+- Assets/AudioClip/VFX-attack (katana) 2.ogg — 10,018 bytes
+- Assets/AudioClip/WHOOSH_Quick_mono.wav — 24,652 bytes
+- Assets/AudioClip/boss music 1.ogg — 1,243,408 bytes
+- Assets/AudioClip/enemy.ogg — 20,469 bytes
+- Assets/AudioClip/voice_male_b_attack_set4_01.ogg — 11,340 bytes
+- Assets/AudioClip/voice_male_b_attack_set4_02.ogg — 14,530 bytes
+- Assets/AudioClip/voice_male_b_attack_set4_03.ogg — 12,699 bytes
+- Assets/AudioClip/voice_male_b_attack_set4_05.ogg — 13,752 bytes
+- Assets/AudioClip/voice_male_b_attack_set4_06.ogg — 11,338 bytes
+- Assets/GameObject/Boss 2 Rain Collider.prefab — 17,000 bytes
+- Assets/GameObject/Boss 2 Ten Up.prefab — 4,873 bytes
+- Assets/GameObject/Boss 2 Ten.prefab — 4,823 bytes
+- Assets/GameObject/Boss 2 bom 1.prefab — 62,534 bytes
+- Assets/GameObject/LevelLeader.prefab — 1,313 bytes
+- Assets/GameObject/Linh Ban Ten Mui Ten No.prefab — 58,628 bytes
+- Assets/GameObject/Linh Ban Ten Mui Ten.prefab — 4,852 bytes
+- Assets/GameObject/TuiTienBe.prefab — 5,317 bytes
+- Assets/GameObject/TuiTienTo.prefab — 5,318 bytes
+- Assets/Material/2DxFX_Standard_Liquid.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_0.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_1.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_10.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_11.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_12.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_13.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_14.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_15.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_16.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_17.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_18.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_19.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_2.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_20.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_21.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_22.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_23.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_24.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_25.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_26.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_27.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_28.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_29.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_3.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_30.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_31.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_32.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_33.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_34.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_35.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_36.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_37.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_38.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_39.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_4.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_40.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_41.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_42.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_43.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_44.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_45.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_46.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_47.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_48.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_49.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_5.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_50.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_51.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_52.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_53.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_54.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_55.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_56.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_57.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_58.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_6.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_7.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_8.mat — 1,125 bytes
+- Assets/Material/2DxFX_Standard_Liquid_9.mat — 1,125 bytes
+- Assets/Material/TextMeshPro_Sprite.mat — 1,217 bytes
+- Assets/Material/uLiquid - Colored Blood MAT.mat — 965 bytes
+- Assets/Material/uLiquid - Particle 1 MAT.mat — 962 bytes
+- Assets/Material/uLiquid - Particle 4 MAT.mat — 962 bytes
+- Assets/Material/uLiquid - Particle 6 MAT.mat — 962 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/DG/Tweening/DOTweenModuleUI.cs — 2,718 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/EnemyHealth.cs — 2,643 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/XWeaponTrailDemo.cs — 2,648 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/XftWeapon/XWeaponTrail.cs — 2,713 bytes
+- Assets/Resources/LineBreaking Following Characters.txt — 269 bytes
+- Assets/Resources/LineBreaking Leading Characters.txt — 95 bytes
+- Assets/Resources/_2dxfx_liquid.shader — 1,631 bytes
+- Assets/Scenes/LevelLeader.unity — 13,723 bytes
+- Assets/Scenes/boss1.unity — 13,097,737 bytes
+- Assets/Scenes/boss2.unity — 13,347,640 bytes
+- Assets/Scenes/boss3.unity — 13,106,074 bytes
+- Assets/Scenes/boss4.unity — 14,786,502 bytes
+- Assets/Scripts/Assembly-CSharp/AnimateTiledTextureOnTrail.cs — 2,658 bytes
+- Assets/Scripts/Assembly-CSharp/ArtifactPanelEquipBtn.cs — 2,653 bytes
+- Assets/Scripts/Assembly-CSharp/AudioEnemy.cs — 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/AudioPlayer.cs — 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/Boss1.cs — 2,637 bytes
+- Assets/Scripts/Assembly-CSharp/Boss1Animation.cs — 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/Boss2.cs — 2,637 bytes
+- Assets/Scripts/Assembly-CSharp/Boss2Animation.cs — 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/Boss2BomXanh.cs — 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/Boss2MuiTenUp.cs — 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/Boss3.cs — 2,637 bytes
+- Assets/Scripts/Assembly-CSharp/Boss3Animation.cs — 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/Boss3Bom.cs — 2,640 bytes
+- Assets/Scripts/Assembly-CSharp/Boss4.cs — 2,637 bytes
+- Assets/Scripts/Assembly-CSharp/BossDragon.cs — 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/ChatStory.cs — 2,641 bytes
+- Assets/Scripts/Assembly-CSharp/CheckPointBoss.cs — 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Platformer/PlayerInput.cs — 2,746 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Platformer/PlayerInputBot.cs — 2,749 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyAttack.cs — 2,750 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyFSM.cs — 2,747 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyPatrol.cs — 2,750 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemySight.cs — 2,749 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyWander.cs — 2,750 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerFire.cs — 2,749 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerHealth.cs — 2,751 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerInput.cs — 2,750 bytes
+- Assets/Scripts/Assembly-CSharp/CongBoss.cs — 2,640 bytes
+- Assets/Scripts/Assembly-CSharp/DisguiseManager.cs — 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/DungeonCharacterAnimator.cs — 2,656 bytes
+- Assets/Scripts/Assembly-CSharp/EnemyOnGround.cs — 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyA.cs — 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyBoss.cs — 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyingA.cs — 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/FirstScene.cs — 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/LevelPlayImplementation.cs — 2,738 bytes
+- Assets/Scripts/Assembly-CSharp/Guid.cs — 2,636 bytes
+- Assets/Scripts/Assembly-CSharp/GuideTrigger.cs — 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/HUDText.cs — 2,639 bytes
+- Assets/Scripts/Assembly-CSharp/HUDTextChild.cs — 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/LevelBtn.cs — 2,640 bytes
+- Assets/Scripts/Assembly-CSharp/LevelButton.cs — 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/LevelChoiseCanvas.cs — 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/LevelLeader.cs — 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/LevelSelectButton.cs — 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/LogoSpecularityAnimator.cs — 2,655 bytes
+- Assets/Scripts/Assembly-CSharp/MainSlideLevels.cs — 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/MapManager.cs — 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/MyGuiV2.cs — 2,639 bytes
+- Assets/Scripts/Assembly-CSharp/OrochiBoss.cs — 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/PlayerDash.cs — 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/Quit.cs — 2,636 bytes
+- Assets/Scripts/Assembly-CSharp/SkillButton.cs — 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/SkillTree.cs — 2,641 bytes
+- Assets/Scripts/Assembly-CSharp/SpamDanMuiTen.cs — 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/SpamDanMuiTenNo.cs — 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/StarUI.cs — 2,638 bytes
+- Assets/Scripts/Assembly-CSharp/StoryCanvas.cs — 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/TriggerAvtiveBoss.cs — 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/TriggerGuild.cs — 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/UIMaterialModifier.cs — 2,650 bytes
+- Assets/Scripts/Assembly-CSharp/UVTextureAnimator.cs — 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_AL_Liquid.cs — 2,648 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_AL_Liquify.cs — 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_Liquid.cs — 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_Liquify.cs — 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/guiMenu.cs — 2,639 bytes
+- Assets/Scripts/Assembly-CSharp/jumpboss.cs — 2,640 bytes
+- Assets/Scripts/Unity.LevelPlay/IUnityLevelPlayBanner.cs — 2,653 bytes
+- Assets/Scripts/Unity.LevelPlay/IUnityLevelPlayInterstitial.cs — 2,659 bytes
+- Assets/Scripts/Unity.LevelPlay/IUnityLevelPlayRewardedVideo.cs — 2,660 bytes
+- Assets/Scripts/Unity.LevelPlay/IUnityLevelPlayRewardedVideoManual.cs — 2,666 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceBannerLevelPlayAndroid.cs — 2,664 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceInterstitialLevelPlayAndroid.cs — 2,670 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceRewardedVideoLevelPlayAndroid.cs — 2,671 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceRewardedVideoLevelPlayManualAndroid.cs — 2,677 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity.LevelPlay.asmdef — 78 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/AndroidLevelPlayAdSize.cs — 2,738 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/EditorLevelPlayAdSize.cs — 2,737 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/EditorLevelPlaySdk.cs — 2,734 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IPlatformLevelPlayAdSize.cs — 2,740 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IUnityLevelPlayImpressionDataListener.cs — 2,753 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IUnityLevelPlayInitListener.cs — 2,743 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/LevelPlayImpressionData.cs — 2,739 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/LevelPlayLogger.cs — 2,731 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/LevelPlaySegment.cs — 2,732 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/UnityLevelPlayImpressionDataListener.cs — 2,752 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/UnityLevelPlayInitListener.cs — 2,742 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/UnsupportedLevelPlayAdSize.cs — 2,742 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/AndroidLevelPlaySdk.cs — 2,732 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/ILevelPlayBannerAd.cs — 2,731 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/ILevelPlayInterstitialAd.cs — 2,737 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/ILevelPlayRewardedAd.cs — 2,733 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlay.cs — 2,722 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayAdDisplayInfoError.cs — 2,740 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayAdError.cs — 2,729 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayAdInfo.cs — 2,728 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayAdSize.cs — 2,728 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayBannerAd.cs — 2,730 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayBannerPosition.cs — 2,736 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayConfiguration.cs — 2,735 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayInitError.cs — 2,731 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayInterstitialAd.cs — 2,736 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayReward.cs — 2,728 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayRewardedAd.cs — 2,732 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint2.cs — 2,714 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint2x2.cs — 2,716 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint2x3.cs — 2,716 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint2x4.cs — 2,716 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint3.cs — 2,714 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint3x2.cs — 2,716 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint3x3.cs — 2,716 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint3x4.cs — 2,716 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint4.cs — 2,714 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint4x2.cs — 2,716 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint4x3.cs — 2,716 bytes
+- Assets/Scripts/Unity.Mathematics/Unity/Mathematics/uint4x4.cs — 2,716 bytes
+- Assets/Scripts/Unity.Multiplayer.Center.Common/Unity.Multiplayer.Center.Common.asmdef — 94 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/AppleReceiptExtensions.cs — 2,736 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/DialogRequest.cs — 2,727 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/Interfaces/IGooglePurchaseBuilder.cs — 2,747 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/UIFakeStore.cs — 2,725 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/UIFakeStoreDropdown.cs — 2,733 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/UIFakeStoreWindow.cs — 2,731 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/Utils/GooglePurchaseBuilder.cs — 2,741 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/ConfigurationBuilder.cs — 2,734 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IConfirmOrderUseCase.cs — 2,734 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/ListExtension.cs — 2,727 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Models/AndroidJavaObjectExtensions.cs — 2,748 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/Interfaces/IContinuePromotionalPurchasesUseCase.cs — 2,770 bytes
+- Assets/Scripts/Unity.Services.Analytics/Unity/Services/Analytics/AcquisitionSourceEvent.cs — 2,738 bytes
+- Assets/Scripts/Unity.Services.Core.Configuration/Unity/Services/Core/Configuration/IConfigurationLoader.cs — 2,745 bytes
+- Assets/Scripts/Unity.Services.Core.Internal/Unity/Services/Authentication/Internal/IPlayerId.cs — 2,739 bytes
+- Assets/Scripts/Unity.Services.Core.Internal/Unity/Services/Core/Networking/Internal/HttpRequestExtensions.cs — 2,752 bytes
+- Assets/Scripts/Unity.Services.Core/Unity/Services/Core/UnityServicesBuilder.cs — 2,731 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/CharacterElement.cs — 2,713 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/ITextPreprocessor.cs — 2,714 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/SpriteAssetUtilities/TexturePacker_JsonArray.cs — 2,741 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_Character.cs — 2,710 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_CharacterInfo.cs — 2,714 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_SpriteCharacter.cs — 2,716 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_SubMeshUI.cs — 2,710 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_Text.cs — 2,705 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextElement.cs — 2,712 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextElement_Legacy.cs — 2,719 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextInfo.cs — 2,709 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextParsingUtilities.cs — 2,721 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextUtilities.cs — 2,714 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TextContainer.cs — 2,710 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TextMeshPro.cs — 2,708 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TextMeshProUGUI.cs — 2,712 bytes
+- Assets/Scripts/Unity.TextMeshPro/Unity.TextMeshPro.asmdef — 80 bytes
+- Assets/Scripts/Unity.Timeline/UnityEngine/Timeline/TrackAssetExtensions.cs — 2,732 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine.UI.asmdef — 77 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/UIBehaviour.cs — 2,727 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/UI/GraphicRebuildTracker.cs — 2,727 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/UI/LayoutRebuilder.cs — 2,721 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Text.cs — 2,710 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/UIElements/UIToolkitInteroperabilityBridge.cs — 2,745 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/GUISkin.cs — 2,710 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/TextCore/Text/TextColorGradient.cs — 2,734 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/TextCore/Text/TextSettings.cs — 2,729 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/TextCore/Text/TextStyleSheet.cs — 2,731 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/UIElements/PanelTextSettings.cs — 2,731 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/UIElements/UIDocument.cs — 2,724 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/UIElements/UIRenderer.cs — 2,724 bytes
+- Assets/Shader/TextMeshPro_Mobile_Distance Field.shader — 2,821 bytes
+- Assets/Shader/TextMeshPro_Sprite.shader — 1,590 bytes
+- Assets/Sprite/Attack.asset — 11,907 bytes
+- Assets/Sprite/CrateTexture.asset — 3,406 bytes
+- Assets/Sprite/Disguise btn xam.asset — 3,829 bytes
+- Assets/Sprite/Disguise btn.asset — 3,731 bytes
+- Assets/Sprite/Equip Btn.asset — 3,416 bytes
+- Assets/Sprite/Equip btn.asset — 3,445 bytes
+- Assets/Sprite/Equipped.asset — 3,937 bytes
+- Assets/Sprite/Item Equip ko sang.asset — 3,883 bytes
+- Assets/Sprite/Item equip Sang.asset — 4,986 bytes
+- Assets/Sprite/Unequip Btn.asset — 3,415 bytes
+- Assets/Sprite/banchan_trai_skill01.asset — 4,868 bytes
+- Assets/Sprite/bui cay.asset — 37,640 bytes
+- Assets/Sprite/bui co dep 1.asset — 8,636 bytes
+- Assets/Sprite/bui co dep 2.asset — 9,278 bytes
+- Assets/Sprite/bui co dep 3.asset — 9,538 bytes
+- Assets/Sprite/bui co dep 4.asset — 11,308 bytes
+- Assets/Sprite/bui co dep 5.asset — 9,287 bytes
+- Assets/Sprite/bui nam dai.asset — 23,148 bytes
+- Assets/Sprite/bui nam ngan.asset — 16,306 bytes
+- Assets/Sprite/bui ven duong 1.asset — 23,916 bytes
+- Assets/Sprite/bui ven duong 11.asset — 18,136 bytes
+- Assets/Sprite/bui ven duong 13.asset — 16,634 bytes
+- Assets/Sprite/bui ven duong 14.asset — 7,964 bytes
+- Assets/Sprite/bui ven duong 2.1.asset — 13,530 bytes
+- Assets/Sprite/bui ven duong 2.asset — 24,660 bytes
+- Assets/Sprite/bui ven duong 3.asset — 6,819 bytes
+- Assets/Sprite/bui ven duong 4.asset — 10,679 bytes
+- Assets/Sprite/bui ven duong 5.asset — 15,605 bytes
+- Assets/Sprite/bui ven duong 7.asset — 15,776 bytes
+- Assets/Sprite/bui ven duong 8.asset — 10,894 bytes
+- Assets/Sprite/bui ven duong 9.asset — 13,216 bytes
+- Assets/Sprite/buicaysau.asset — 174,160 bytes
+- Assets/Sprite/buicaytruoc.asset — 167,766 bytes
+- Assets/Sprite/buico.asset — 5,220 bytes
+- Assets/Sprite/character.asset — 3,486 bytes
+- Assets/Sprite/cuilua.asset — 4,651 bytes
+- Assets/Sprite/dui-phai.asset — 4,060 bytes
+- Assets/Sprite/dui-phai_0.asset — 4,413 bytes
+- Assets/Sprite/dui-trai.asset — 4,078 bytes
+- Assets/Sprite/dui-trai_0.asset — 4,124 bytes
+- Assets/Sprite/dui_phai.asset — 4,366 bytes
+- Assets/Sprite/dui_phai01.asset — 4,168 bytes
+- Assets/Sprite/dui_phai01_0.asset — 3,898 bytes
+- Assets/Sprite/dui_phai01_1.asset — 4,267 bytes
+- Assets/Sprite/dui_phai02.asset — 4,408 bytes
+- Assets/Sprite/dui_phai02_0.asset — 3,870 bytes
+- Assets/Sprite/dui_phai02_1.asset — 4,420 bytes
+- Assets/Sprite/dui_phai02_2.asset — 4,008 bytes
+- Assets/Sprite/dui_phai02_3.asset — 4,356 bytes
+- Assets/Sprite/dui_phai02_4.asset — 4,542 bytes
+- Assets/Sprite/dui_phai02_5.asset — 3,931 bytes
+- Assets/Sprite/dui_phai02_6.asset — 4,033 bytes
+- Assets/Sprite/dui_phai02_7.asset — 4,120 bytes
+- Assets/Sprite/dui_phai02_8.asset — 4,005 bytes
+- Assets/Sprite/dui_phai02_9.asset — 4,027 bytes
+- Assets/Sprite/dui_trai.asset — 4,217 bytes
+- Assets/Sprite/dui_trai02.asset — 4,259 bytes
+- Assets/Sprite/dui_trai02_0.asset — 3,870 bytes
+- Assets/Sprite/dui_trai02_1.asset — 4,246 bytes
+- Assets/Sprite/dui_trai02_2.asset — 4,008 bytes
+- Assets/Sprite/dui_trai02_3.asset — 4,514 bytes
+- Assets/Sprite/dui_trai02_4.asset — 4,542 bytes
+- Assets/Sprite/dui_trai02_5.asset — 3,862 bytes
+- Assets/Sprite/dui_trai02_6.asset — 4,216 bytes
+- Assets/Sprite/dui_trai02_7.asset — 4,034 bytes
+- Assets/Sprite/dui_trai02_8.asset — 3,889 bytes
+- Assets/Sprite/dui_trai02_9.asset — 4,135 bytes
+- Assets/Sprite/duiphai.asset — 4,096 bytes
+- Assets/Sprite/duiphai_0.asset — 4,295 bytes
+- Assets/Sprite/duiphai_1.asset — 4,222 bytes
+- Assets/Sprite/duiphai_2.asset — 4,524 bytes
+- Assets/Sprite/duiphai_3.asset — 4,357 bytes
+- Assets/Sprite/duitrai.asset — 4,096 bytes
+- Assets/Sprite/duitrai_0.asset — 4,295 bytes
+- Assets/Sprite/duitrai_1.asset — 4,140 bytes
+- Assets/Sprite/duitrai_2.asset — 4,524 bytes
+- Assets/Sprite/duitrai_3.asset — 4,142 bytes
+- Assets/Sprite/icon dm.asset — 3,577 bytes
+- Assets/Sprite/icon gold.asset — 3,564 bytes
+- Assets/Sprite/lvl boss lock.asset — 4,991 bytes
+- Assets/Sprite/lvl boss sang.asset — 4,924 bytes
+- Assets/Sprite/mui ten.asset — 4,563 bytes
+- Assets/Sprite/nha be lien nhau map tuyet_0.asset — 21,227 bytes
+- Assets/Sprite/nha be lien nhau map tuyet_2.asset — 5,086 bytes
+- Assets/Sprite/nha be lien nhau map tuyet_3.asset — 7,777 bytes
+- Assets/Sprite/nha be lien nhau map tuyet_4.asset — 8,656 bytes
+- Assets/Sprite/nui 6.asset — 6,618 bytes
+- Assets/Sprite/nui 7.asset — 19,118 bytes
+- Assets/Sprite/nui thung tuyet.asset — 15,618 bytes
+- Assets/Sprite/nui1.asset — 7,083 bytes
+- Assets/Sprite/nui1_0.asset — 6,459 bytes
+- Assets/Sprite/nui2.asset — 6,758 bytes
+- Assets/Sprite/nui3.asset — 8,076 bytes
+- Assets/Sprite/nui4.asset — 7,882 bytes
+- Assets/Sprite/nui5.asset — 8,472 bytes
+- Assets/Sprite/quiver.asset — 4,162 bytes
+- Assets/Sprite/sha boss.asset — 4,383 bytes
+- Assets/Sprite/skill bar.asset — 10,282 bytes
+- Assets/Sprite/skill info_0.asset — 3,826 bytes
+- Assets/Sprite/skill info_1.asset — 3,566 bytes
+- Assets/Sprite/skill point.asset — 3,669 bytes
+- Assets/Sprite/skill point_0.asset — 3,768 bytes
+- Assets/Sprite/stage complete.asset — 12,935 bytes
+- Assets/Sprite/tuitien.asset — 4,216 bytes
+- Assets/Sprite/weapon 2.asset — 4,157 bytes
+- Assets/Sprite/weapon 2_0.asset — 5,086 bytes
+- Assets/Sprite/weapon nem ra 1.asset — 4,750 bytes
+- Assets/Sprite/weapon nem ra 2.asset — 4,750 bytes
+- Assets/Sprite/weapon nem ra 3.asset — 4,750 bytes
+- Assets/Sprite/weapon nem ra 4.asset — 4,750 bytes
+- Assets/Sprite/weapon nem ra 5.asset — 4,750 bytes
+- Assets/Sprite/weapon nem ra 6.asset — 4,750 bytes
+- Assets/Sprite/weapon nem ra 7.asset — 4,750 bytes
+- Assets/Sprite/weapon-1.asset — 4,000 bytes
+- Assets/Sprite/weapon-2.asset — 3,579 bytes
+- Assets/Sprite/weapon-3.asset — 6,497 bytes
+- Assets/Sprite/weapon.asset — 4,288 bytes
+- Assets/Sprite/weapon_0.asset — 4,741 bytes
+- Assets/Sprite/weapon_1.asset — 5,731 bytes
+- Assets/Sprite/weapon_2.asset — 4,696 bytes
+- Assets/Sprite/weapon_3.asset — 4,632 bytes
+- Assets/Sprite/weapon_4.asset — 4,543 bytes
+- Assets/Sprite/weapon_5.asset — 3,833 bytes
+- Assets/Sprite/weapon_6.asset — 4,836 bytes
+- Assets/Sprite/weapon_7.asset — 4,375 bytes
+- Assets/Sprite/weapon_8.asset — 5,160 bytes
+- Assets/Texture2D/Asset dh map thuong.png — 1,144,098 bytes
+- Assets/Texture2D/BOSS 1.png — 43,903 bytes
+- Assets/Texture2D/BOSS.png — 1,204,626 bytes
+- Assets/Texture2D/CrateTexture.png — 19,342 bytes
+- Assets/Texture2D/Main Menu Layout.png — 2,609,534 bytes
+- Assets/Texture2D/PLAY UI 01.png — 660,399 bytes
+- Assets/Texture2D/UI1.png — 498,145 bytes
+- Assets/Texture2D/boss 2.png — 40,868 bytes
+- Assets/Texture2D/boss 3.png — 119,250 bytes
+- Assets/Texture2D/layout character 01.png — 1,689,983 bytes
+- Assets/Texture2D/menu moi pro vai lon.png — 745,148 bytes
+- Assets/Texture2D/mui ten.png — 12,640 bytes
+- Assets/Texture2D/nha be lien nhau map tuyet.png — 234,983 bytes
+- Assets/Texture2D/nui map 3.1.png — 580,507 bytes
+- Assets/Texture2D/nui map 3.png — 695,042 bytes
+- Assets/Texture2D/play ui 05.png — 747,709 bytes
+- Assets/Texture2D/skill info.png — 12,086 bytes
+- Assets/Texture2D/story layout 01.png — 355,262 bytes
+- Assets/Texture2D/story layout 02.png — 3,164,501 bytes
+- Assets/Texture2D/tuitien.png — 10,835 bytes
+- Assets/Texture2D/uLiquid - Colored Blood TEX.png — 26,258 bytes
+- Assets/Texture2D/uLiquid - Particle 1 TEX.png — 14,459 bytes
+- Assets/Texture2D/uLiquid - Particle 6 TEX.png — 23,946 bytes
+- ProjectSettings/EditorBuildSettings.asset — 8,406 bytes
+- ProjectSettings/MultiplayerManager.asset — 157 bytes
+
+## GameObject names in scenes and prefabs (text assets only)
+- Assets/Scenes/CotTruyen.unity: b
+- Assets/Scenes/CotTruyen.unity: yah
+- Assets/Scenes/CotTruyen.unity: 05
+- Assets/Scenes/CotTruyen.unity: EventSystem
+- Assets/Scenes/CotTruyen.unity: Main Camera
+- Assets/Scenes/CotTruyen.unity: a
+- Assets/Scenes/CotTruyen.unity: b
+- Assets/Scenes/CotTruyen.unity: 8
+- Assets/Scenes/CotTruyen.unity: s2
+- Assets/Scenes/CotTruyen.unity: 01
+- Assets/Scenes/CotTruyen.unity: Image
+- Assets/Scenes/CotTruyen.unity: a
+- Assets/Scenes/CotTruyen.unity: a
+- Assets/Scenes/CotTruyen.unity: 02
+- Assets/Scenes/CotTruyen.unity: LoadingPanel
+- Assets/Scenes/CotTruyen.unity: 7
+- Assets/Scenes/CotTruyen.unity: 04
+- Assets/Scenes/CotTruyen.unity: Audio Phu
+- Assets/Scenes/CotTruyen.unity: b
+- Assets/Scenes/CotTruyen.unity: d
+- Assets/Scenes/CotTruyen.unity: a
+- Assets/Scenes/CotTruyen.unity: s6
+- Assets/Scenes/CotTruyen.unity: a
+- Assets/Scenes/CotTruyen.unity: Audio Source
+- Assets/Scenes/CotTruyen.unity: CotTruyen
+- Assets/Scenes/CotTruyen.unity: a
+- Assets/Scenes/CotTruyen.unity: Audio Tuyet
+- Assets/Scenes/CotTruyen.unity: a
+- Assets/Scenes/CotTruyen.unity: d
+- Assets/Scenes/CotTruyen.unity: c
+- Assets/Scenes/CotTruyen.unity: c
+- Assets/Scenes/CotTruyen.unity: Text
+- Assets/Scenes/CotTruyen.unity: s5
+- Assets/Scenes/CotTruyen.unity: 03
+- Assets/Scenes/CotTruyen.unity: s4
+- Assets/Scenes/CotTruyen.unity: a
+- Assets/Scenes/CotTruyen.unity: d
+- Assets/Scenes/CotTruyen.unity: b
+- Assets/Scenes/CotTruyen.unity: c
+- Assets/Scenes/CotTruyen.unity: Directional Light
+- Assets/Scenes/CotTruyen.unity: 06
+- Assets/Scenes/CotTruyen.unity: Canvas
+- Assets/Scenes/CotTruyen.unity: b
+- Assets/Scenes/CotTruyen.unity: Text
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: b
+- Assets/Scenes/CotTruyen2Ending.unity: yah
+- Assets/Scenes/CotTruyen2Ending.unity: EventSystem
+- Assets/Scenes/CotTruyen2Ending.unity: Main Camera
+- Assets/Scenes/CotTruyen2Ending.unity: a
+- Assets/Scenes/CotTruyen2Ending.unity: s2
+- Assets/Scenes/CotTruyen2Ending.unity: 01
+- Assets/Scenes/CotTruyen2Ending.unity: c
+- Assets/Scenes/CotTruyen2Ending.unity: Image
+- Assets/Scenes/CotTruyen2Ending.unity: a
+- Assets/Scenes/CotTruyen2Ending.unity: 02
+- Assets/Scenes/CotTruyen2Ending.unity: d
+- Assets/Scenes/CotTruyen2Ending.unity: BlackPanel
+- Assets/Scenes/CotTruyen2Ending.unity: 03
+- Assets/Scenes/CotTruyen2Ending.unity: b
+- Assets/Scenes/CotTruyen2Ending.unity: Audio Phu
+- Assets/Scenes/CotTruyen2Ending.unity: Image
+- Assets/Scenes/CotTruyen2Ending.unity: s6
+- Assets/Scenes/CotTruyen2Ending.unity: Button
+- Assets/Scenes/CotTruyen2Ending.unity: Audio Source
+- Assets/Scenes/CotTruyen2Ending.unity: CotTruyen
+- Assets/Scenes/CotTruyen2Ending.unity: Audio Tuyet
+- Assets/Scenes/CotTruyen2Ending.unity: d
+- Assets/Scenes/CotTruyen2Ending.unity: c
+- Assets/Scenes/CotTruyen2Ending.unity: Text
+- Assets/Scenes/CotTruyen2Ending.unity: s5
+- Assets/Scenes/CotTruyen2Ending.unity: s4
+- Assets/Scenes/CotTruyen2Ending.unity: Directional Light
+- Assets/Scenes/CotTruyen2Ending.unity: Text
+- Assets/Scenes/CotTruyen2Ending.unity: LoadingPanel
+- Assets/Scenes/CotTruyen2Ending.unity: Canvas
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/CotTruyen2Ending.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: Theme
+- Assets/Scenes/First.unity: Click
+- Assets/Scenes/First.unity: Button
+- Assets/Scenes/First.unity: Image
+- Assets/Scenes/First.unity: EventSystem
+- Assets/Scenes/First.unity: IAP Manager
+- Assets/Scenes/First.unity: Main Camera
+- Assets/Scenes/First.unity: ATF Manager
+- Assets/Scenes/First.unity: Canvas
+- Assets/Scenes/First.unity: Sounds
+- Assets/Scenes/First.unity: Ad Manager
+- Assets/Scenes/First.unity: Text
+- Assets/Scenes/First.unity: Text
+- Assets/Scenes/First.unity: Accept btn
+- Assets/Scenes/First.unity: GDPR Popup
+- Assets/Scenes/First.unity: Text
+- Assets/Scenes/First.unity: Policy Btn
+- Assets/Scenes/First.unity: Do not accept btn
+- Assets/Scenes/First.unity: Image
+- Assets/Scenes/First.unity: Content
+- Assets/Scenes/First.unity: Trang
+- Assets/Scenes/First.unity: Fill
+- Assets/Scenes/First.unity: GDPR
+- Assets/Scenes/First.unity: LevelLeader
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/First.unity: m_EditorClassIdentifier:
+- Assets/Scenes/LevelLeader.unity: EventSystem
+- Assets/Scenes/LevelLeader.unity: Text
+- Assets/Scenes/LevelLeader.unity: Main Camera
+- Assets/Scenes/LevelLeader.unity: LoadNow
+- Assets/Scenes/LevelLeader.unity: CanvasMain
+- Assets/Scenes/LevelLeader.unity: Loading Panel
+- Assets/Scenes/LevelLeader.unity: m_EditorClassIdentifier:
+- Assets/Scenes/LevelLeader.unity: m_EditorClassIdentifier:
+- Assets/Scenes/LevelLeader.unity: m_EditorClassIdentifier:
+- Assets/Scenes/LevelLeader.unity: m_EditorClassIdentifier:
+- Assets/Scenes/LevelLeader.unity: m_EditorClassIdentifier:
+- Assets/Scenes/LevelLeader.unity: m_EditorClassIdentifier:
+- Assets/Scenes/LevelLeader.unity: m_EditorClassIdentifier:
+- Assets/Scenes/Select.unity: Character
+- Assets/Scenes/Select.unity: Info text (3)
+- Assets/Scenes/Select.unity: Info text (2)
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: A2 Infomation
+- Assets/Scenes/Select.unity: Atf btn
+- Assets/Scenes/Select.unity: Shadow (3)
+- Assets/Scenes/Select.unity: Shadow (2)
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Scroll View
+- Assets/Scenes/Select.unity: Purchased
+- Assets/Scenes/Select.unity: Name (2)
+- Assets/Scenes/Select.unity: ClickNext
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Equiped
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Glow img
+- Assets/Scenes/Select.unity: Button (1)
+- Assets/Scenes/Select.unity: Viewport
+- Assets/Scenes/Select.unity: Skill Upped 6
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Shadow (1)
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Bg
+- Assets/Scenes/Select.unity: Info 4
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: sang (1)
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Button 6
+- Assets/Scenes/Select.unity: ATF Process
+- Assets/Scenes/Select.unity: Dm
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: ATF Img
+- Assets/Scenes/Select.unity: sang
+- Assets/Scenes/Select.unity: Name (3)
+- Assets/Scenes/Select.unity: Info 4
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: Setting board
+- Assets/Scenes/Select.unity: Button 8
+- Assets/Scenes/Select.unity: Button 10
+- Assets/Scenes/Select.unity: Button 2
+- Assets/Scenes/Select.unity: Button info
+- Assets/Scenes/Select.unity: Bonus
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Close
+- Assets/Scenes/Select.unity: Home Img
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Button 1
+- Assets/Scenes/Select.unity: Level Panel
+- Assets/Scenes/Select.unity: Panel Dash
+- Assets/Scenes/Select.unity: DarkBack
+- Assets/Scenes/Select.unity: Toast
+- Assets/Scenes/Select.unity: Glow img
+- Assets/Scenes/Select.unity: Board vien
+- Assets/Scenes/Select.unity: Info 4
+- Assets/Scenes/Select.unity: Rate Us
+- Assets/Scenes/Select.unity: Skill point img (1)
+- Assets/Scenes/Select.unity: Yes
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Name (3)
+- Assets/Scenes/Select.unity: Name (1)
+- Assets/Scenes/Select.unity: Name (3)
+- Assets/Scenes/Select.unity: Name
+- Assets/Scenes/Select.unity: Main Image (1)
+- Assets/Scenes/Select.unity: Vang
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: sang
+- Assets/Scenes/Select.unity: Main Image
+- Assets/Scenes/Select.unity: Skill point img (3)
+- Assets/Scenes/Select.unity: Star btn
+- Assets/Scenes/Select.unity: Skill point img (3)
+- Assets/Scenes/Select.unity: Skill point img (2)
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Gia Vang
+- Assets/Scenes/Select.unity: Button 7
+- Assets/Scenes/Select.unity: Close
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Text (1)
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Skill point img
+- Assets/Scenes/Select.unity: Lock
+- Assets/Scenes/Select.unity: Button 3
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Skill point img (2)
+- Assets/Scenes/Select.unity: Shadow
+- Assets/Scenes/Select.unity: sang
+- Assets/Scenes/Select.unity: Skill Upped 7
+- Assets/Scenes/Select.unity: Bang Info
+- Assets/Scenes/Select.unity: Item 11
+- Assets/Scenes/Select.unity: Info text (3)
+- Assets/Scenes/Select.unity: Glow img
+- Assets/Scenes/Select.unity: Button info
+- Assets/Scenes/Select.unity: Skill Tree
+- Assets/Scenes/Select.unity: Setting
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Skill Upped 10
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Shadow
+- Assets/Scenes/Select.unity: Info text (3)
+- Assets/Scenes/Select.unity: No
+- Assets/Scenes/Select.unity: Target
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Skill Tree Node
+- Assets/Scenes/Select.unity: Found NOT
+- Assets/Scenes/Select.unity: Bg
+- Assets/Scenes/Select.unity: Text (2)
+- Assets/Scenes/Select.unity: Home Btn
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: Info 9
+- Assets/Scenes/Select.unity: Ten
+- Assets/Scenes/Select.unity: Button (1)
+- Assets/Scenes/Select.unity: Image (1)
+- Assets/Scenes/Select.unity: Arashi (4)
+- Assets/Scenes/Select.unity: Glow equip img
+- Assets/Scenes/Select.unity: Gia Vang
+- Assets/Scenes/Select.unity: Rong Vang
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: Skill Upped 6
+- Assets/Scenes/Select.unity: Gold
+- Assets/Scenes/Select.unity: Viewport
+- Assets/Scenes/Select.unity: 10 do
+- Assets/Scenes/Select.unity: Gach Chan
+- Assets/Scenes/Select.unity: May
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Name (4)
+- Assets/Scenes/Select.unity: Info 10
+- Assets/Scenes/Select.unity: Gach Chan (3)
+- Assets/Scenes/Select.unity: Gach Chan (1)
+- Assets/Scenes/Select.unity: ATF Name
+- Assets/Scenes/Select.unity: Item 4
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Text (2)
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Btn Phai
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Glow equip img
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: Item 12
+- Assets/Scenes/Select.unity: Level Panel
+- Assets/Scenes/Select.unity: Name (2)
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Xanh
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Home Btn (1)
+- Assets/Scenes/Select.unity: Info text (2)
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Button 5
+- Assets/Scenes/Select.unity: Info txt
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Info text (4)
+- Assets/Scenes/Select.unity: Shadow
+- Assets/Scenes/Select.unity: Info 7
+- Assets/Scenes/Select.unity: Gach Chan (1)
+- Assets/Scenes/Select.unity: Skill Upped 7
+- Assets/Scenes/Select.unity: Den
+- Assets/Scenes/Select.unity: Button
+- Assets/Scenes/Select.unity: Gia Vang
+- Assets/Scenes/Select.unity: Purchased
+- Assets/Scenes/Select.unity: Rong shadow
+- Assets/Scenes/Select.unity: Glow equip img
+- Assets/Scenes/Select.unity: Shadow
+- Assets/Scenes/Select.unity: Info 1
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Gach Chan (1)
+- Assets/Scenes/Select.unity: 2 do
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Main
+- Assets/Scenes/Select.unity: Ten
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Skill point img (1)
+- Assets/Scenes/Select.unity: Down
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Vang
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Info text
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Music
+- Assets/Scenes/Select.unity: Button
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Button 1
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Map 1
+- Assets/Scenes/Select.unity: Ten
+- Assets/Scenes/Select.unity: Gach Chan (2)
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Text (2)
+- Assets/Scenes/Select.unity: Gach Chan (1)
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Vang
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Button (6)
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: A5
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Button (6)
+- Assets/Scenes/Select.unity: Gia kc
+- Assets/Scenes/Select.unity: Gach Chan (2)
+- Assets/Scenes/Select.unity: 5 do
+- Assets/Scenes/Select.unity: Shadow (3)
+- Assets/Scenes/Select.unity: Bg
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Purchased
+- Assets/Scenes/Select.unity: Back ground
+- Assets/Scenes/Select.unity: Toggle Panel
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Button (3)
+- Assets/Scenes/Select.unity: sang
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Info text (3)
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Gach Chan (5)
+- Assets/Scenes/Select.unity: Equip img
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Remove ads btn
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Info 9
+- Assets/Scenes/Select.unity: Gia Vang
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Button 8
+- Assets/Scenes/Select.unity: Shadow (4)
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Name (4)
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Skill Tree
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Skill Upped 9
+- Assets/Scenes/Select.unity: Skill point img (1)
+- Assets/Scenes/Select.unity: Button 1
+- Assets/Scenes/Select.unity: BG
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: Store
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Button (2)
+- Assets/Scenes/Select.unity: Gia Vang
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Name
+- Assets/Scenes/Select.unity: Den
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Gach Chan (3)
+- Assets/Scenes/Select.unity: Name
+- Assets/Scenes/Select.unity: Shadow
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: A6
+- Assets/Scenes/Select.unity: Gach Chan (2)
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: A4
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: Gia Vang
+- Assets/Scenes/Select.unity: Name
+- Assets/Scenes/Select.unity: Gia kc
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Rong shadow
+- Assets/Scenes/Select.unity: Equiped
+- Assets/Scenes/Select.unity: Rong Vang
+- Assets/Scenes/Select.unity: Equip img
+- Assets/Scenes/Select.unity: Button 9
+- Assets/Scenes/Select.unity: Item 5
+- Assets/Scenes/Select.unity: Panel Trai
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Big Select
+- Assets/Scenes/Select.unity: A7 Infomation
+- Assets/Scenes/Select.unity: Top
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Dm
+- Assets/Scenes/Select.unity: B5
+- Assets/Scenes/Select.unity: Shadow (3)
+- Assets/Scenes/Select.unity: ClickPlay
+- Assets/Scenes/Select.unity: Equiped
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: ClickBuy
+- Assets/Scenes/Select.unity: Skill Upped 7
+- Assets/Scenes/Select.unity: Purchased
+- Assets/Scenes/Select.unity: Image back
+- Assets/Scenes/Select.unity: Name
+- Assets/Scenes/Select.unity: Shadow
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Image nhay
+- Assets/Scenes/Select.unity: SkillPoint
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Name
+- Assets/Scenes/Select.unity: Setting board
+- Assets/Scenes/Select.unity: Button (7)
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Gach Chan (2)
+- Assets/Scenes/Select.unity: Glow equip img
+- Assets/Scenes/Select.unity: Skill point img (3)
+- Assets/Scenes/Select.unity: Skill Tree Node
+- Assets/Scenes/Select.unity: Glow equip img
+- Assets/Scenes/Select.unity: Skill point img (2)
+- Assets/Scenes/Select.unity: Shadow (2)
+- Assets/Scenes/Select.unity: Skill point img (4)
+- Assets/Scenes/Select.unity: Skill Tree Node
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Info 2
+- Assets/Scenes/Select.unity: Info 3
+- Assets/Scenes/Select.unity: Challence
+- Assets/Scenes/Select.unity: Button (3)
+- Assets/Scenes/Select.unity: Item 9
+- Assets/Scenes/Select.unity: Scroll View
+- Assets/Scenes/Select.unity: Button 8
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Item 8
+- Assets/Scenes/Select.unity: Sound Tracks
+- Assets/Scenes/Select.unity: Text (2)
+- Assets/Scenes/Select.unity: All Map
+- Assets/Scenes/Select.unity: ATF btn
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Resource Panel
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Ten
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Skill Upped 8
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Bang Info
+- Assets/Scenes/Select.unity: Skill Upped 8
+- Assets/Scenes/Select.unity: Ten
+- Assets/Scenes/Select.unity: Name (1)
+- Assets/Scenes/Select.unity: Ten
+- Assets/Scenes/Select.unity: Skill point img (4)
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Info text (1)
+- Assets/Scenes/Select.unity: EventSystem
+- Assets/Scenes/Select.unity: Text (2)
+- Assets/Scenes/Select.unity: Glow img
+- Assets/Scenes/Select.unity: Skill Upped 2
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Star Toggle
+- Assets/Scenes/Select.unity: Toggle Panel
+- Assets/Scenes/Select.unity: Name (2)
+- Assets/Scenes/Select.unity: Name (3)
+- Assets/Scenes/Select.unity: Info 8
+- Assets/Scenes/Select.unity: Button 9
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Image
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Panel Att
+- Assets/Scenes/Select.unity: Info text (3)
+- Assets/Scenes/Select.unity: Name (3)
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Skill Upped 10
+- Assets/Scenes/Select.unity: Vang
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: ClickBack
+- Assets/Scenes/Select.unity: Gia kc
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Shadow (1)
+- Assets/Scenes/Select.unity: Info
+- Assets/Scenes/Select.unity: Info text (3)
+- Assets/Scenes/Select.unity: Dm
+- Assets/Scenes/Select.unity: Gach Chan (3)
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Skill Upped 2
+- Assets/Scenes/Select.unity: ATF Process
+- Assets/Scenes/Select.unity: Info 6
+- Assets/Scenes/Select.unity: Skill point Txt
+- Assets/Scenes/Select.unity: Text
+- Assets/Scenes/Select.unity: Board vien
+- Assets/Scenes/Select.unity: Button 2
+- Assets/Scenes/Select.unity: SkillPoint
+- Assets/Scenes/Select.unity: Button 1
+- Assets/Scenes/Select.unity: Star btn
+- Assets/Scenes/Select.unity: Shadow (1)
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Button (4)
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Button 2
+- Assets/Scenes/Select.unity: Dark
+- Assets/Scenes/Select.unity: Gach Chan (4)
+- Assets/Scenes/Select.unity: Shadow (2)
+- Assets/Scenes/Select.unity: Small Img
+- Assets/Scenes/Select.unity: Info text (1)
+- Assets/Scenes/Select.unity: Bg
+- Assets/Scenes/Select.unity: Big Img
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Reset
+- Assets/Scenes/Select.unity: Content
+- Assets/Scenes/Select.unity: Shadow (2)
+- Assets/Scenes/Select.unity: Skill point img (3)
+- Assets/Scenes/Select.unity: Info text (1)
+- Assets/Scenes/Select.unity: Rong Vang
+- Assets/Scenes/Select.unity: Name (1)
+- Assets/Scenes/Select.unity: Small Img Xam
+- Assets/Scenes/Select.unity: Small Img
+
+## Notes
+- AssetRipper output is a recovered project, not the original authored Unity source. Native IL2CPP gameplay logic may not be recoverable as original C#.
+- This inventory intentionally omits file contents and large binary assets to keep the report small.
