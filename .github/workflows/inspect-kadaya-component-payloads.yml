@@ -1,0 +1,108 @@
+name: Inspect Kadaya runtime component payloads
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-component-payload-inspect.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Install UnityPy
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy
+      - name: Inspect UI and ability components
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter, defaultdict
+          import re, UnityPy
+          env=UnityPy.load(str(Path("assets/bin/Data")))
+          targets={"UnityEngine.UI.Text","PlayerDash","SkillButton","SkillTree","DisguiseManager","HideObj","CotTruyenLeader","LevelLeader","ShopPanel","StoryCanvas","HUDText","HUDTextChild","EndGame"}
+          counts=Counter()
+          samples=defaultdict(list)
+          errors=Counter()
+          def printable(data):
+              out=[]
+              for raw in re.findall(rb"[\x20-\x7e]{4,}",data):
+                  s=raw.decode("ascii",errors="ignore").strip()
+                  if s and s not in {"UnityEngine","GameObject","Transform"}: out.append(s[:150])
+              try:
+                  txt=data.decode("utf-16le",errors="ignore")
+                  out += [s.strip()[:150] for s in re.findall(r"[\w '\-.,:!?()]{4,}",txt) if s.strip()]
+              except Exception: pass
+              return list(dict.fromkeys(out))[:40]
+          for obj in env.objects:
+              if getattr(obj.type,"name","")!="MonoBehaviour": continue
+              try:
+                  basic=obj.read(check_read=False)
+                  ptr=getattr(basic,"m_Script",None)
+                  if not ptr: continue
+                  script=ptr.read()
+                  cls=str(getattr(script,"m_ClassName","") or "")
+                  ns=str(getattr(script,"m_Namespace","") or "")
+                  full=(ns+"." if ns else "")+cls
+                  counts[full]+=1
+                  if full not in targets or len(samples[full])>=5: continue
+                  tree=None
+                  try: tree=obj.read_typetree(check_read=False)
+                  except Exception as exc: errors["typetree "+type(exc).__name__]+=1
+                  raw=b""
+                  try: raw=obj.get_raw_data()
+                  except Exception:
+                      try: raw=basic.raw_data
+                      except Exception: pass
+                  samples[full].append({
+                    "file":getattr(getattr(obj,"assets_file",None),"name","unknown"),
+                    "path_id":int(getattr(obj,"path_id",0)),
+                    "typed_nodes":bool(getattr(getattr(obj,"serialized_type",None),"nodes",None)),
+                    "keys":list(tree.keys())[:60] if isinstance(tree,dict) else [],
+                    "bytes":len(raw),
+                    "strings":printable(raw) if raw else [],
+                  })
+              except Exception as exc: errors["read "+type(exc).__name__]+=1
+          lines=["# Kadaya runtime component payload inspection","",
+            "Read-only scan; no objects or scene layouts were edited.",
+            f"- Total objects: {len(env.objects):,}",
+            f"- MonoBehaviour script classes: {len(counts):,}","","## Relevant class counts"]
+          lines += [f"- {name}: {counts[name]}" for name in sorted(targets,key=lambda n:(-counts[n],n))]
+          lines += ["","## Sample payloads"]
+          for name, recs in sorted(samples.items()):
+              lines += ["",f"### {name}"]
+              for rec in recs:
+                  lines.append(f"- {rec['file']} path_id={rec['path_id']}; typetree={rec['typed_nodes']}; bytes={rec['bytes']}")
+                  lines.append("  keys: "+(", ".join(rec["keys"]) if rec["keys"] else "(no custom typetree fields)"))
+                  lines.append("  strings: "+" | ".join(rec["strings"][:20]) if rec["strings"] else "  strings: (none)")
+          lines += ["","## Parse errors"]+[f"- {k}: {v}" for k,v in errors.most_common()]
+          lines += ["","## Notes","- Exact UI Text/skill fields can only be safely changed when serialized field layout is known.",
+                    "- This game is IL2CPP-based; this report does not recover original C# method bodies.",
+                    "- Playable scene transforms, colliders, maps and level layouts must remain unchanged."]
+          out=Path("analysis/kadaya-component-payload-inspection.md")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text("\n".join(lines)+"\n",encoding="utf-8")
+          print("\n".join(lines[:150]))
+          print(f"Created {out}, {out.stat().st_size:,} bytes")
+          PY
+      - name: Commit report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-component-payload-inspection.md
+          if git diff --cached --quiet; then
+            echo "No report changes."
+          else
+            git commit -m "Inspect UI and ability serialized payloads"
+            git push
+          fi
