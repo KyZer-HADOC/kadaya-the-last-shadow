@@ -254,7 +254,7 @@ jobs:
               names = set(z.namelist())
               assert "AndroidManifest.xml" in names
               assert "assets/bin/Data/data.unity3d" in names
-              assert "res/mipmap-xxxhdpi-v4/app_icon.png" in names
+              assert ("res/mipmap-xxxhdpi-v4/app_icon.png" in names or "res/mipmap-xxxhdpi/app_icon.png" in names)
               assert "classes.dex" in names
               bad = z.testzip()
               if bad: raise SystemExit(f"Final APK ZIP integrity error at {bad}")
