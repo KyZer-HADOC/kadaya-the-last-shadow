@@ -1,0 +1,156 @@
+name: Inspect Kadaya UI text and ability fields
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-ui-text-scan.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout extracted game files
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install Unity asset parser
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy
+
+      - name: Inspect UI Text, MonoBehaviour typetrees and existing abilities
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter, defaultdict
+          import re, json, UnityPy
+
+          root = Path.cwd()
+          data_dir = root / "assets/bin/Data"
+          if not (data_dir / "data.unity3d").is_file():
+              raise SystemExit("The original Unity data bundle was not found.")
+
+          env = UnityPy.load(str(data_dir))
+          counts = Counter()
+          class_counts = Counter()
+          class_fields = defaultdict(Counter)
+          examples = defaultdict(list)
+          errors = Counter()
+          name_hints = re.compile(r"text|dialog|story|skill|abilit|weapon|sword|kunai|shuriken|dash|disguise|hide|player|character|select|shop|menu|tutorial|level|attack|game|leader|story|cottruyen", re.I)
+          value_hint = re.compile(r"arashi|dosu|yasha|kanashi|kido|raven|guardian|tower|strategy|stragety|dodge|disguise|artifact|power|sword|master|fight|distance|trust|son|friend|enemy|jump|game|guardian|storm|shelter|attack|skill|weapon|continue|tutorial|coin|gold|energy|health|upgrade|potion|kunai|shuriken|dash|shadow|stealth|hide|kill|death|story|play|start|shop", re.I)
+
+          for obj in env.objects:
+              kind = getattr(obj.type, "name", str(obj.type))
+              counts[kind] += 1
+              if kind != "MonoBehaviour":
+                  continue
+              try:
+                  mb = obj.read(check_read=False)
+                  script_ref = getattr(mb, "m_Script", None)
+                  if not script_ref:
+                      errors["missing script pointer"] += 1
+                      continue
+                  try:
+                      script = script_ref.read()
+                      cls = str(getattr(script, "m_ClassName", "") or "")
+                      ns = str(getattr(script, "m_Namespace", "") or "")
+                      assembly = str(getattr(script, "m_AssemblyName", "") or "")
+                  except Exception:
+                      cls, ns, assembly = "", "", ""
+                  fullname = (ns + "." if ns else "") + cls
+                  if not fullname:
+                      fullname = "(unknown MonoBehaviour)"
+                  class_counts[fullname] += 1
+                  tree = None
+                  try:
+                      tree = obj.read_typetree(check_read=False)
+                  except Exception as exc:
+                      errors["typetree:" + type(exc).__name__] += 1
+                  if isinstance(tree, dict):
+                      for k,v in tree.items():
+                          if isinstance(v, str) and v.strip():
+                              class_fields[fullname][k] += 1
+                              if name_hints.search(fullname) or name_hints.search(k) or value_hint.search(v):
+                                  record = {
+                                      "class": fullname, "assembly": assembly,
+                                      "file": getattr(getattr(obj, "assets_file", None), "name", "unknown"),
+                                      "path_id": int(getattr(obj, "path_id", 0)),
+                                      "field": k, "value": v[:280]
+                                  }
+                                  if len(examples[fullname]) < 60:
+                                      examples[fullname].append(record)
+              except Exception as exc:
+                  errors["read:" + type(exc).__name__] += 1
+
+          lines = [
+              "# Kadaya UI text / ability serialized-field scan",
+              "",
+              "Read-only scan of the original Unity serialized bundle. No game files or scene layouts were changed.",
+              "",
+              f"- Unity objects seen: {sum(counts.values()):,}",
+              f"- MonoBehaviour objects: {counts.get('MonoBehaviour', 0):,}",
+              f"- Distinct MonoBehaviour script classes: {len(class_counts):,}",
+              "",
+              "## Object type counts",
+          ]
+          lines += [f"- {k}: {v:,}" for k,v in counts.most_common(35)]
+          lines += ["", "## User-interface, story and gameplay-oriented script classes"]
+          classes = [(name,count) for name,count in class_counts.most_common()
+                     if name_hints.search(name) or any(name_hints.search(k) for k in class_fields[name])]
+          lines += [f"- {name}: {count} instance(s); fields seen: " + ", ".join(f"{k}({n})" for k,n in class_fields[name].most_common(18))
+                    for name,count in classes[:350]] or ["- No matching classes with readable typetrees."]
+          lines += ["", "## Serialized string fields matching story/ability text"]
+          all_records = []
+          for group in examples.values():
+              all_records.extend(group)
+          # Deduplicate objects/fields and cap the report size.
+          seen = set()
+          distinct = []
+          for item in all_records:
+              key = (item["class"],item["file"],item["path_id"],item["field"],item["value"])
+              if key in seen:
+                  continue
+              seen.add(key)
+              distinct.append(item)
+          for item in distinct[:1200]:
+              lines.append(
+                  f"- {item['class']} | {item['file']} path_id={item['path_id']} | "
+                  f"{item['field']} = {item['value']}"
+              )
+          if not distinct:
+              lines.append("- No matching custom MonoBehaviour text fields were readable.")
+          lines += ["", "## Read errors"]
+          lines += [f"- {k}: {v}" for k,v in errors.most_common()] or ["- No scan errors."]
+          lines += [
+              "",
+              "## Patch feasibility",
+              "- The scan distinguishes Unity UI Text/Dialogue classes from TextMesh strings so the next patch can edit only known user-facing fields.",
+              "- Since this is an IL2CPP build, the scan does not restore native gameplay method bodies. New ability mechanics are not claimed as implemented by text or texture edits.",
+              "- Playable scene/map/level layouts remain unchanged."
+          ]
+          out=Path("analysis/kadaya-ui-text-ability-fields.md")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text("\n".join(lines)+"\n", encoding="utf-8")
+          print(f"Wrote {out} ({out.stat().st_size:,} bytes)")
+          print("\n".join(lines[:120]))
+          PY
+
+      - name: Commit small scan report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-ui-text-ability-fields.md
+          if git diff --cached --quiet; then
+            echo "No UI text report changes."
+          else
+            git commit -m "Inspect Kadaya UI text and ability data fields"
+            git push
+          fi
