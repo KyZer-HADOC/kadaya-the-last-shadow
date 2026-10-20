@@ -1,1 +1,2 @@
-Build next Kadaya patch with verified Dash tuning (+20% speed, +10% duration), existing Jump force +10%, rebranded ability/weapon UI labels, bilingual story dialogue/card, and ash-black/crimson visual reskin. Do not touch maps, level layouts, scene transforms or colliders.
+Please execute the newest Kadaya reskin workflow: verified Shadow Dash +20% speed/+10% duration, verified existing Jump force +10%, current bilingual Krayoo/Raizen story dialogue/card, rebranded abilities UI, title and ash-black/crimson atlas. Preserve all maps/levels/transforms/colliders.
+Build trigger revision 2.
