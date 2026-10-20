@@ -1,1 +1,1 @@
-Hidden-statue patch source files are committed. Build the small Unity Assets-folder ZIP from the current recovered Unity project artifact.
+Hidden-statue patch source files are committed. Package only these small files; do not download the full recovered Unity project.
