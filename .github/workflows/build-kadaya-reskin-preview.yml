@@ -232,7 +232,7 @@ jobs:
               cx,cy=int(s*.83),int(s*.82)
               cd.ellipse((cx-badge_r,cy-badge_r,cx+badge_r,cy+badge_r), fill=(8,6,12,235), outline=(196,24,47,255), width=max(2,s//100))
               try:
-                  kfont = ImageFont.truetype(font_path, int(s*.1))
+                  kfont = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf", int(s*.1))
               except Exception:
                   kfont = ImageFont.load_default()
               box = cd.textbbox((0,0),"K",font=kfont,stroke_width=0)
