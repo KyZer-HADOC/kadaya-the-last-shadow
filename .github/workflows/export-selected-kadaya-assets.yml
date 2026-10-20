@@ -1,0 +1,130 @@
+name: Export selected Kadaya source images for cloud editing
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Successful Unity recovery run ID"
+        required: true
+        default: "39362669794"
+        type: string
+  push:
+    paths:
+      - "analysis/run-export-target-assets.txt"
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download recovered Unity project inside GitHub cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id || '39362669794' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Export only candidate images and Unity metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          import csv, shutil
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects = [p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                      if p.parent.name == "ProjectSettings" and (p.parent.parent / "Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Unity project root was not found in recovery artifact.")
+          project = projects[0]
+
+          wanted = [
+              "Assets/Texture2D/ARASHI MAIN 03.png",
+              "Assets/Texture2D/title 2048.png",
+              "Assets/Texture2D/Main Menu Layout.png",
+              "Assets/Texture2D/layout character 01.png",
+              "Assets/Texture2D/story layout 01.png",
+              "Assets/Texture2D/story layout 02.png",
+              "Assets/Texture2D/menu moi pro vai lon.png",
+              "Assets/Texture2D/shop layout.png",
+              "Assets/Texture2D/shoplayout 04.png",
+              "Assets/Texture2D/ARASHI MAIN 03.png",
+              "Assets/Texture2D/BOSS 1.png",
+              "Assets/Texture2D/BOSS.png",
+              "Assets/Texture2D/boss 2.png",
+              "Assets/Texture2D/boss 3.png",
+              "Assets/Texture2D/NPC.png",
+              "Assets/Texture2D/NPC2.png",
+              "Assets/Texture2D/samurai.png",
+              "Assets/Texture2D/samurai ghost 0.png",
+              "Assets/Texture2D/PLAY UI 01.png",
+              "Assets/Texture2D/UI1.png",
+              "Assets/Texture2D/test mu 01.png",
+              "Assets/Texture2D/thit vang ua 1.png",
+              "Assets/Texture2D/Asset dh map thuong.png",
+          ]
+          out = Path("selected-source-assets")
+          out.mkdir(parents=True, exist_ok=True)
+          manifest = []
+          seen = set()
+          for rel in wanted:
+              if rel in seen:
+                  continue
+              seen.add(rel)
+              source = project / rel
+              if not source.is_file():
+                  # Keep a missing-path row to guide follow-up instead of silently skipping it.
+                  manifest.append([rel, "MISSING", "", "", "", ""])
+                  continue
+              destination = out / rel
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copy2(source, destination)
+              meta_src = Path(str(source) + ".meta")
+              guid = ""
+              if meta_src.is_file():
+                  shutil.copy2(meta_src, Path(str(destination) + ".meta"))
+                  for line in meta_src.read_text(errors="ignore").splitlines():
+                      if line.startswith("guid:"):
+                          guid = line.split(":", 1)[1].strip()
+                          break
+              try:
+                  with Image.open(source) as img:
+                      width, height = img.size
+              except Exception:
+                  width, height = "", ""
+              manifest.append([rel, "OK", source.stat().st_size, width, height, guid])
+
+          with (out / "asset-index.csv").open("w", newline="", encoding="utf-8") as f:
+              w = csv.writer(f)
+              w.writerow(["original_path", "status", "size_bytes", "width", "height", "guid"])
+              w.writerows(manifest)
+          (out / "README.txt").write_text(
+              "Selected original image assets exported from the recovered Unity project for visual inspection/editing.\n"
+              "No game scenes or level layouts were changed. This ZIP contains selected assets only, not the full project.\n",
+              encoding="utf-8")
+          total = sum(p.stat().st_size for p in out.rglob("*") if p.is_file())
+          print(f"Selected {sum(row[1] == 'OK' for row in manifest)} assets; output size {total/1024/1024:.2f} MiB")
+          print("\n".join(f"{row[1]} {row[0]}" for row in manifest))
+          PY
+
+      - name: Upload selected source images
+        uses: actions/upload-artifact@v4
+        with:
+          name: kadaya-selected-source-images
+          path: selected-source-assets/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
