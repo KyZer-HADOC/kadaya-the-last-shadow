@@ -1,0 +1,1 @@
+Trigger selected original visual asset export from the recovery artifact. No game files or maps are modified by this marker.
