@@ -1,0 +1,1 @@
+Trigger cloud scan for user-facing UI text, story fields, and skill/weapon names. Read-only, no scene layout changes.
