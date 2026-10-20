@@ -1,0 +1,130 @@
+name: Inspect Kadaya ability implementation stubs
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful Unity recovery workflow run ID
+        required: true
+        default: "39362669794"
+        type: string
+  push:
+    paths:
+      - "analysis/run-ability-source-inspection.txt"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Download recovered Unity project in GitHub cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id || '39362669794' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Inspect ability script field declarations and scene serialized values
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          root=Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects=[p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                    if p.parent.name=="ProjectSettings" and (p.parent.parent/"Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Recovered Unity project root not found.")
+          project=projects[0]
+          assets=project/"Assets"
+          target_classes=["PlayerDash","SkillButton","SkillTree","HideObj","DisguiseManager",
+                          "CotTruyenLeader","LevelLeader","StoryCanvas","ShopPanel","HUDText"]
+          lines=[
+              "# Kadaya ability implementation/source inspection",
+              "",
+              "Read-only inspection of recovered script stubs and scene component fields. No scenes, maps, levels, or assets were changed.",
+              f"- Unity version: {(project/'ProjectSettings/ProjectVersion.txt').read_text(errors='ignore').strip() if (project/'ProjectSettings/ProjectVersion.txt').exists() else 'unknown'}",
+              "",
+              "## Recovered C# declarations",
+          ]
+          class_guids={}
+          for cls in target_classes:
+              matches=[p for p in assets.rglob(cls+".cs") if p.is_file()]
+              lines += ["", f"### {cls}"]
+              if not matches:
+                  lines.append("- Source/stub file not found.")
+                  continue
+              for path in matches[:4]:
+                  lines.append(f"- File: {path.relative_to(project).as_posix()} ({path.stat().st_size} bytes)")
+                  try: raw=path.read_text(errors="ignore")
+                  except OSError: raw=""
+                  for match in re.finditer(r"(?m)^\s*(?:\[[^\n]+\]\s*)?(?:(?:public|private|protected|internal|static|readonly|const|virtual|override|sealed|new|abstract|extern|partial|async|serialized)\s+)+[^;{}()\n]+(?:;|\{\s*get;)",raw):
+                      value=" ".join(match.group(0).split())
+                      if value and len(value)<280:
+                          lines.append("  - "+value)
+                  if not raw.strip():
+                      lines.append("  - File is empty.")
+                  meta=Path(str(path)+".meta")
+                  if meta.exists():
+                      m=re.search(r"(?m)^guid:\s*([0-9a-fA-F]{32})",meta.read_text(errors="ignore"))
+                      if m: class_guids[cls]=m.group(1).lower()
+
+          lines += ["", "## Serialized values in scenes referencing these scripts",
+                    "Only script component blocks are shown. The workflow never writes back to the scene files."]
+          scene_files=sorted((p for p in (assets/"Scenes").rglob("*.unity") if p.is_file()),key=lambda p:p.as_posix()) if (assets/"Scenes").exists() else sorted(assets.rglob("*.unity"),key=lambda p:p.as_posix())
+          for cls,guid in class_guids.items():
+              lines += ["",f"### {cls} (script GUID {guid})"]
+              count=0
+              for scene in scene_files:
+                  try: raw=scene.read_text(errors="ignore")
+                  except OSError: continue
+                  # Split Unity YAML document boundaries and retain components whose m_Script GUID matches.
+                  docs=re.split(r"(?m)^--- !u!\d+ &-?\d+\s*$",raw)
+                  for block in docs:
+                      if re.search(r"(?m)^\s*m_Script:\s*\{[^}]*guid:\s*"+re.escape(guid)+r"\b",block,re.I):
+                          body=[s.rstrip() for s in block.splitlines() if s.strip()]
+                          lines.append(f"- {scene.relative_to(project).as_posix()}:")
+                          lines.extend("    "+s[:260] for s in body[:70])
+                          count+=1
+                          if count>=18:
+                              break
+                  if count>=18: break
+              if count==0: lines.append("- No serialized component instances found in exported scene YAML.")
+              elif count>=18: lines.append("- Listing capped at 18 component instances.")
+
+          lines += [
+              "",
+              "## Feasibility boundary",
+              "- If serializable public fields control an existing ability, tuning them may be possible after the exact field/value layout is confirmed.",
+              "- Missing IL2CPP method bodies cannot be made into new gameplay mechanics by changing UI labels alone. Do not claim a new ability's logic works until a signed APK is tested on a device.",
+              "- The original scene hierarchy, transforms, colliders and level layout remain unchanged."
+          ]
+          out=Path("analysis/kadaya-ability-source-inspection.md")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text("\n".join(lines)+"\n",encoding="utf-8")
+          print("\n".join(lines[:220]))
+          print(f"Report saved: {out} ({out.stat().st_size:,} bytes)")
+          PY
+      - name: Commit small inspection report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-ability-source-inspection.md
+          if git diff --cached --quiet; then
+            echo "Report unchanged."
+          else
+            git commit -m "Inspect serialized ability field definitions"
+            git push
+          fi
