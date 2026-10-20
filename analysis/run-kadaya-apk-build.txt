@@ -1,1 +1,1 @@
-Build Kadaya Android test APK from the validated patch run 39443768595. Include actual serialized story/tutorial dialogue rewrites, character/weapon/effect and menu/boss art reskin, app title and icons. Preserve playable map/level structure.
+Build Kadaya APK from patch run 39451554485: updated UI ability/weapon labels and descriptions, bilingual story/tutorial dialogue, reskinned character/effect/menu art and launcher branding. Preserve maps and all playable level layouts.
