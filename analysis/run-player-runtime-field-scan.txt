@@ -1,0 +1,1 @@
+Run a read-only correlation scan of serialized NinjaMovementScript bytes around fields referenced by ARM64 disassembly. Do not modify the game.
