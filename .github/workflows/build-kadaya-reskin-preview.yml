@@ -422,6 +422,147 @@ jobs:
               new.save(preview / (key.replace(" ","_") + "-kadaya.png"))
               print(f"Patched texture {data.m_Name}: {orig.size[0]}x{orig.size[1]} in {info['file']}")
 
+          # Rebrand existing ability/weapon names in Unity UI Text components.
+          # This changes displayed labels only; the existing gameplay values and mechanics stay intact.
+          ui_exact_map = {
+              "greatly increases swim speed.": "Greatly increases Shadow Swim speed.",
+              "reduces disguise cooldown by 1 sec.": "Reduces Shadow Veil cooldown by 1 sec.",
+              "reduces disguise cooldown by 20%.": "Reduces Shadow Veil cooldown by 20%.",
+              "increases disguise duration by 0.5 sec.": "Increases Shadow Veil duration by 0.5 sec.",
+              "activating disguise gains a temporarily barrier that lasts for 0.8 sec.": "Activating Shadow Veil grants a temporary barrier lasting 0.8 sec.",
+              "gains a temporarily barrier after using disguise.": "Gains a temporary barrier after using Shadow Veil.",
+              "critical strike": "SHADOW STRIKE",
+              "double jump": "SHADOW LEAP",
+              "speedy recovery": "SHADOW RECOVERY",
+              "golden shuriken": "CRIMSON KUNAI",
+              "sword of tatsuma": "KADAYA'S SHADOW BLADE",
+              "augment: power roll": "AUGMENT: SHADOW ROLL",
+              "augment: critical mastery": "AUGMENT: SHADOW STRIKE",
+              "disguise": "SHADOW VEIL",
+              "new ability acquired": "NEW SHADOW TECHNIQUE",
+              "sword strike (melee)": "SHADOW BLADE STRIKE (MELEE)",
+              "dodge roll/air dash": "SHADOW ROLL / SHADOW DASH",
+              "throw shuriken (ranged)": "THROW SHADOW KUNAI (RANGED)",
+              "health info": "KADAYA VITALS",
+              "it's time to upgrade your skills": "Time to awaken your Shadow Techniques.",
+              "skill upgrades": "Shadow techniques",
+              "you already collected this artifact.": "You already collected this Shadow Relic.",
+              "there is an artifact somewhere in this stage.": "A Shadow Relic is hidden somewhere in this stage.",
+              "there is an artifact somewhere in this level.": "A Shadow Relic is hidden somewhere in this level.",
+              "artifacts are powerful items which provide arashi with great benefits.": "Shadow Relics are powerful items that strengthen Kadaya.",
+              "artifacts are hidden across story mode. they can be found in very tricky locations.": "Shadow Relics are hidden throughout the campaign, often in difficult locations.",
+              "you can unlock artifacts immediately by purchasing": "You can unlock Shadow Relics immediately by purchasing",
+              "reveals artifact location.": "Reveals the Shadow Relic location.",
+              "shuriken has a chance to become a sword": "Shadow Kunai has a chance to become a Shadow Blade",
+              "shuriken automatically switches to sword when you are close to an enemy.": "Shadow Kunai automatically switches to the Shadow Blade near an enemy.",
+              "shuriken has a chance to deal critical damage that instantly kills the enemy.": "Shadow Kunai can critically strike and instantly defeat an enemy.",
+              "passively boosts arashi's essential survival skills.": "Passively strengthens Kadaya's essential survival skills.",
+          }
+
+          def preserve_case(match, replacement):
+              original = match.group(0)
+              if original.isupper():
+                  return replacement.upper()
+              if original[:1].isupper():
+                  return replacement[:1].upper() + replacement[1:]
+              return replacement.lower()
+
+          def transform_ui_label(value):
+              normalized = " ".join(value.split()).casefold()
+              exact = ui_exact_map.get(normalized)
+              if exact is not None:
+                  return exact
+
+              changed = value
+              # Keep existing behavior but present it with Kadaya's dark-fantasy naming.
+              replacements = [
+                  (r"\\byour son\\b", "your friend Krayoo"),
+                  (r"\\barashi\\b", "Kadaya"),
+                  (r"\\bdosu\\b", "Raizen"),
+                  (r"\\byasha\\b", "the Crimson Archer"),
+                  (r"\\bkanashi\\b", "the Crimson Swordmaster"),
+                  (r"\\bkido\\b", "the Dread Knight"),
+                  (r"\\braven\\b", "the Wanderer"),
+                  (r"\\bdisguise\\b", "Shadow Veil"),
+                  (r"\\bshuriken\\b", "Shadow Kunai"),
+                  (r"\\bdodge roll\\b", "Shadow Roll"),
+                  (r"\\bdash\\b", "Shadow Dash"),
+                  (r"\\bsword\\b", "Shadow Blade"),
+                  (r"\\bartifacts\\b", "Shadow Relics"),
+                  (r"\\bartifact\\b", "Shadow Relic"),
+              ]
+              for pattern, replacement_name in replacements:
+                  changed = re.sub(pattern, lambda match, replacement_name=replacement_name: preserve_case(match, replacement_name), changed, flags=re.IGNORECASE)
+              changed = re.sub(r"(?i)\\bKadaya is now be able to Shadow Dash through\\b", "Kadaya can now Shadow Dash through", changed)
+              return changed
+
+          ui_text_changes = []
+          ui_text_skipped = 0
+          ui_text_examined = 0
+          for obj in env.objects:
+              if getattr(obj.type, "name", "") != "MonoBehaviour":
+                  continue
+              try:
+                  basic = obj.read(check_read=False)
+                  script_ref = getattr(basic, "m_Script", None)
+                  if script_ref is None:
+                      continue
+                  script_data = script_ref.read()
+                  if str(getattr(script_data, "m_ClassName", "") or "") != "Text":
+                      continue
+
+                  raw = obj.get_raw_data()
+                  # For this game's stripped UnityEngine.UI.Text layout, the first text field
+                  # begins at byte 148 with its UTF-8 byte length stored at bytes 144..147.
+                  if len(raw) < 152:
+                      ui_text_skipped += 1
+                      continue
+                  old_len = int.from_bytes(raw[144:148], "little", signed=False)
+                  if old_len < 1 or old_len > 4096 or 148 + old_len > len(raw):
+                      ui_text_skipped += 1
+                      continue
+                  old_bytes = raw[148:148 + old_len]
+                  if b"\\x00" in old_bytes:
+                      ui_text_skipped += 1
+                      continue
+                  try:
+                      old_text = old_bytes.decode("utf-8")
+                  except UnicodeDecodeError:
+                      ui_text_skipped += 1
+                      continue
+                  ui_text_examined += 1
+                  new_text = transform_ui_label(old_text)
+                  if new_text == old_text:
+                      continue
+
+                  new_bytes = new_text.encode("utf-8")
+                  new_raw = raw[:144] + len(new_bytes).to_bytes(4, "little") + new_bytes + raw[148 + old_len:]
+                  obj.set_raw_data(new_raw)
+                  ui_text_changes.append({
+                      "file": getattr(getattr(obj, "assets_file", None), "name", "unknown"),
+                      "path_id": int(getattr(obj, "path_id", 0)),
+                      "old": old_text[:320],
+                      "new": new_text[:360],
+                  })
+              except Exception:
+                  ui_text_skipped += 1
+                  continue
+
+          ui_text_unique = []
+          ui_text_seen = set()
+          for row in ui_text_changes:
+              key = (row["old"], row["new"])
+              if key not in ui_text_seen:
+                  ui_text_seen.add(key)
+                  ui_text_unique.append({"old": row["old"], "new": row["new"]})
+          (preview / "kadaya-ui-label-changes.json").write_text(json.dumps({
+              "objects_examined": ui_text_examined,
+              "objects_changed": len(ui_text_changes),
+              "objects_skipped": ui_text_skipped,
+              "unique_rewrites": ui_text_unique,
+          }, ensure_ascii=False, indent=2), encoding="utf-8")
+          print(f"Updated {len(ui_text_changes)} existing UI text components ({len(ui_text_unique)} unique label/description rewrites); examined {ui_text_examined}, skipped {ui_text_skipped}.")
+
           # Replace the serialized story/tutorial dialogue while leaving transforms, colliders,
           # scene object order, camera positions, geometry, and all playable level layouts untouched.
           def normalize_text(value):
