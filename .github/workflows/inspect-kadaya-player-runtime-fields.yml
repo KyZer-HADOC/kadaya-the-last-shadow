@@ -1,0 +1,121 @@
+name: Inspect serialized Kadaya player runtime fields
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-player-runtime-field-scan.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Install UnityPy
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy
+      - name: Scan raw serialized NinjaMovementScript fields (read-only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import defaultdict, Counter
+          import struct, math, UnityPy
+
+          env=UnityPy.load(str(Path("assets/bin/Data")))
+          samples=[]
+          counts=Counter()
+          errors=Counter()
+          target_offsets=[32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92,96,100,104,108,112,116,120,124,
+                          280,284,288,292,296,300,304,308,312,316,320,324,328,332,336,340,
+                          432,436,440,444,448,452,456,460,464,468,472,476,480,
+                          720,724,728,732,736,740,744,748,752,756,760,764,768,772,776,780,
+                          824,828,832,836,840,844,848,912,916,920,924,928,932,936,
+                          1224,1228,1232,1236,1240,1244,1248,1260,1264,1268,1272,1276]
+          def f32(raw,off):
+              if off+4>len(raw): return None
+              v=struct.unpack_from("<f",raw,off)[0]
+              return round(v,6) if math.isfinite(v) and abs(v)<1e7 else None
+          def u32(raw,off):
+              return struct.unpack_from("<I",raw,off)[0] if off+4<=len(raw) else None
+          for obj in env.objects:
+              if getattr(obj.type,"name","")!="MonoBehaviour": continue
+              try:
+                  basic=obj.read(check_read=False)
+                  ptr=getattr(basic,"m_Script",None)
+                  if not ptr: continue
+                  script=ptr.read()
+                  name=str(getattr(script,"m_ClassName","") or "")
+                  if name!="NinjaMovementScript": continue
+                  counts[name]+=1
+                  if len(samples)>=10: continue
+                  raw=obj.get_raw_data()
+                  counts["payload_bytes_"+str(len(raw))]+=1
+                  record={
+                    "file":getattr(getattr(obj,"assets_file",None),"name","unknown"),
+                    "path_id":int(getattr(obj,"path_id",0)),
+                    "len":len(raw),
+                    "first_144":raw[:144].hex(" "),
+                    "regions":{},
+                    "values":{}
+                  }
+                  for start,end in [(256,360),(416,496),(704,800),(808,864),(896,952),(1200,1296)]:
+                      record["regions"][f"{start}-{end}"]=raw[start:min(end,len(raw))].hex(" ")
+                  for off in target_offsets:
+                      if off+4<=len(raw):
+                          record["values"][str(off)]={"f32":f32(raw,off),"u32":u32(raw,off),"hex":raw[off:off+4].hex(" ")}
+                  samples.append(record)
+              except Exception as exc:
+                  errors[type(exc).__name__]+=1
+
+          lines=[
+            "# Kadaya serialized player-field scan","",
+            "Read-only scan. No scene, map, level, asset or native binary was changed.",
+            f"- Total Unity objects parsed: {len(env.objects):,}",
+            f"- NinjaMovementScript components detected: {counts['NinjaMovementScript']}",
+            "- UnityPy reports the custom MonoBehaviour typetrees as stripped; this report inspects raw byte data only.",
+            "- Important: native IL2CPP object offsets are not automatically the same as serialized byte offsets. This report is for layout correlation only, not permission to patch a guessed offset.",
+            "",
+            "## Payload sizes",
+          ]
+          lines += [f"- {k.removeprefix('payload_bytes_')} bytes: {v} component(s)" for k,v in counts.items() if k.startswith("payload_bytes_")]
+          lines += ["","## Sample objects"]
+          for s in samples:
+              lines += ["",f"### {s['file']} path_id={s['path_id']} bytes={s['len']}",
+                        "First 144 bytes: "+s["first_144"]]
+              for region,data in s["regions"].items():
+                  lines.append(f"Bytes {region}: {data}")
+              lines.append("Candidate offsets (serialized byte offsets):")
+              for off,value in s["values"].items():
+                  lines.append(f"- {off}: float={value['f32']} uint32={value['u32']} hex={value['hex']}")
+          lines += ["","## Parse errors"]+[f"- {k}: {v}" for k,v in errors.most_common()] or ["- None."]
+          lines += [
+            "","## Safe-patching rule",
+            "- Only patch a gameplay value after its real serialized field has been identified with multiple independent checks (native field access, object layout, cross-instance consistency, and save/reopen validation).",
+            "- Map, level, object hierarchy, transforms and colliders are out of scope and must remain unchanged."
+          ]
+          out=Path("analysis/kadaya-serialized-player-field-scan.md")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text("\n".join(lines)+"\n",encoding="utf-8")
+          print(f"Report written: {out} ({out.stat().st_size:,} bytes)")
+          print("\n".join(lines[:150]))
+          PY
+      - name: Commit compact field-scan report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-serialized-player-field-scan.md
+          if git diff --cached --quiet; then
+            echo "Field report unchanged."
+          else
+            git commit -m "Inspect serialized player component fields"
+            git push
+          fi
