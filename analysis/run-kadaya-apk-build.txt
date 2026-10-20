@@ -1,1 +1,1 @@
-Rerun APK build after allowing Apktool-normalized launcher icon path names. Preserve game scenes/maps/levels.
+Build updated Kadaya APK using the expanded visual patch: main character/weapon/effect sprites, shop/menu/character selection UI, boss/NPC art, and bilingual opening story panel. Keep existing playable scenes and levels untouched.
