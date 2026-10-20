@@ -87,7 +87,7 @@ jobs:
               lines += ["",f"### {name} — total instances {counts[name]}"]
               for rec in rows[name]:
                   lines.append(f"- Asset file: {rec['asset_file']}; path_id: {rec['path_id']}; raw bytes: {rec['bytes']}")
-                  lines.append("  Readable typetree keys: "+(", ".join(rec["tree_keys"]) if rec["tree_keys"] else "(none)")
+                  lines.append("  Readable typetree keys: "+(", ".join(rec["tree_keys"]) if rec["tree_keys"] else "(none)"))
                   if rec.get("tree_error"):
                       lines.append("  Typetree error: "+rec["tree_error"])
                   lines.append("  First 224 bytes (hex): "+rec["hex"])
