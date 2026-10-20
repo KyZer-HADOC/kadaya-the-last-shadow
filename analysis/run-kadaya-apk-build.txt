@@ -1,1 +1,1 @@
-Build Kadaya Android APK from validated patch run 39460413206. Include +20% Shadow Dash speed and +10% duration, updated UI ability/weapon names, story dialogue/card and reskinned title/character/effects. Preserve all map and level scene layouts.
+Build a side-by-side installable Kadaya APK from validated patch run 39460413206 using package ID com.kyzerhadoc.kadaya. Include Shadow Dash +20% speed/+10% duration, rebranded ability UI, story dialogue/card, icon/title/visual reskin. Keep the original game install and saved progress untouched; preserve maps and level layouts.
