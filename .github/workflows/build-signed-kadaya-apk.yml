@@ -6,7 +6,7 @@ on:
       reskin_run_id:
         description: "Successful visual reskin workflow run ID"
         required: true
-        default: "39399260825"
+        default: "39441299295"
         type: string
   push:
     paths:
@@ -50,7 +50,7 @@ jobs:
           name: kadaya-reskin-visual-patch
           path: ${{ runner.temp }}/kadaya-visual-patch
           repository: ${{ github.repository }}
-          run-id: ${{ inputs.reskin_run_id || '39399260825' }}
+          run-id: ${{ inputs.reskin_run_id || '39441299295' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download and verify official Apktool 3.0.3
@@ -272,11 +272,11 @@ jobs:
           cat > kadaya-final-build/README.txt <<'EOF'
           KADAYA | THE AGE OF SHADOWS — visual test build
 
-          This is a signed APK test build with Kadaya-branded title/character/UI visuals and launcher icon.
-          The original gameplay scenes, maps and level layouts were not edited.
+          This is a signed APK test build with Kadaya-branded title/character/UI visuals, the recolored character/weapon/boss atlases, launcher icon, and a bilingual story prologue texture.
+          Existing playable map/level scenes and level layouts were not edited.
           This build uses a temporary test signing key generated during CI; it cannot update an installation signed with the original developer's key.
           If the original game is installed, back up progress before uninstalling it to try this test build.
-          Story/dialogue and gameplay-ability logic are not claimed as finished in this visual-only build.
+          The story text is embedded into a visual story panel. The original IL2CPP story logic and ability mechanics have not been rewritten; changing actual gameplay behavior needs the original editable source or a separate native-code mod and must be tested.
           Do not redistribute this build unless you have permission to use and distribute all original game assets.
           EOF
           sha256sum kadaya-final-build/Kadaya-The-Age-of-Shadows.apk > kadaya-final-build/SHA256SUMS.txt
