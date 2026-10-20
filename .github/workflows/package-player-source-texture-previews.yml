@@ -1,0 +1,40 @@
+name: Package Kadaya player texture previews
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/player-source-textures/**"
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout lightweight texture report
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Package only selected player texture images
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/kadaya-player-textures"
+          cp analysis/player-source-textures/*.png "$RUNNER_TEMP/kadaya-player-textures/" 2>/dev/null || true
+          cp analysis/player-source-textures/*.jpg "$RUNNER_TEMP/kadaya-player-textures/" 2>/dev/null || true
+          cp analysis/player-source-textures/*.csv "$RUNNER_TEMP/kadaya-player-textures/" 2>/dev/null || true
+          cp analysis/player-source-textures/README.md "$RUNNER_TEMP/kadaya-player-textures/" 2>/dev/null || true
+          test -n "$(find "$RUNNER_TEMP/kadaya-player-textures" -type f -print -quit)"
+          du -sh "$RUNNER_TEMP/kadaya-player-textures"
+
+      - name: Upload small player-texture preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kadaya-player-source-texture-previews
+          path: ${{ runner.temp }}/kadaya-player-textures/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
