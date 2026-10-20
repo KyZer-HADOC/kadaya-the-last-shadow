@@ -1,0 +1,277 @@
+name: Build signed Kadaya Android test APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      reskin_run_id:
+        description: "Successful visual reskin workflow run ID"
+        required: true
+        default: "39399260825"
+        type: string
+  push:
+    paths:
+      - "analysis/run-kadaya-apk-build.txt"
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout extracted Android game files
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Java for Apktool
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android build tools
+        uses: android-actions/setup-android@v3
+
+      - name: Install zipalign and apksigner
+        shell: bash
+        run: |
+          set -euo pipefail
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "build-tools;35.0.0" >/dev/null
+          echo "$ANDROID_HOME/build-tools/35.0.0" >> "$GITHUB_PATH"
+
+      - name: Download the validated visual patch from GitHub Actions
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-reskin-visual-patch
+          path: ${{ runner.temp }}/kadaya-visual-patch
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.reskin_run_id || '39399260825' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download and verify official Apktool 3.0.3
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --retry-delay 2 \
+            "https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_3.0.3.jar" \
+            --output "$RUNNER_TEMP/apktool.jar"
+          echo "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423  $RUNNER_TEMP/apktool.jar" | sha256sum --check
+          java -jar "$RUNNER_TEMP/apktool.jar" --version
+
+      - name: Re-create the base APK ZIP from the extracted APK tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED, ZIP_STORED
+          import os
+
+          repo = Path.cwd()
+          output = Path(os.environ["RUNNER_TEMP"]) / "kadaya-base.apk"
+          excluded_roots = {".git", ".github", "analysis", "gameplay"}
+          excluded_root_files = {".gitignore", ".gitattributes", "README.md", "LICENSE", "LICENSE.txt"}
+          # Keep APK binary payloads uncompressed; compress the small text/XML/proto payloads.
+          stored_exts = {
+              ".so", ".dex", ".arsc", ".unity3d", ".resource", ".ress", ".dat",
+              ".png", ".jpg", ".jpeg", ".webp", ".ogg", ".mp3", ".wav", ".mp4",
+              ".ttf", ".otf", ".bin", ".pak", ".obb", ".bundle"
+          }
+          file_count = 0
+          total_bytes = 0
+          with ZipFile(output, "w", allowZip64=True) as zf:
+              for p in sorted(repo.rglob("*")):
+                  if not p.is_file():
+                      continue
+                  rel = p.relative_to(repo)
+                  if rel.parts[0] in excluded_roots:
+                      continue
+                  if len(rel.parts) == 1 and rel.name in excluded_root_files:
+                      continue
+                  lower_parts = [s.lower() for s in rel.parts]
+                  # Remove obsolete APK signing blocks/files; the rebuilt APK will be re-signed.
+                  if lower_parts[0] == "meta-inf" and (
+                      p.suffix.lower() in {".rsa", ".sf", ".dsa", ".ec"} or p.name.lower() == "manifest.mf"
+                  ):
+                      continue
+                  method = ZIP_STORED if p.suffix.lower() in stored_exts or p.name in {
+                      "AndroidManifest.xml", "resources.arsc"
+                  } else ZIP_DEFLATED
+                  zf.write(p, rel.as_posix(), compress_type=method)
+                  file_count += 1
+                  total_bytes += p.stat().st_size
+          with ZipFile(output, "r") as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise SystemExit(f"Base APK ZIP integrity check failed at {bad}")
+              names = set(zf.namelist())
+              for required in ("AndroidManifest.xml", "classes.dex", "assets/bin/Data/data.unity3d", "resources.arsc"):
+                  if required not in names:
+                      raise SystemExit(f"Required APK entry missing: {required}")
+          print(f"Created base APK archive from {file_count} files / {total_bytes:,} uncompressed bytes.")
+          print(f"Compressed base archive: {output.stat().st_size:,} bytes.")
+          PY
+
+      - name: Decode APK so we can safely update the app label and resources
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -Xmx4g -jar "$RUNNER_TEMP/apktool.jar" d \
+            "$RUNNER_TEMP/kadaya-base.apk" \
+            --force --no-src \
+            --output "$RUNNER_TEMP/kadaya-decoded"
+
+      - name: Apply the visual patch, launcher icon and Kadaya app name
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil, xml.etree.ElementTree as ET, json, hashlib
+
+          tmp = Path(__import__("os").environ["RUNNER_TEMP"])
+          decoded = tmp / "kadaya-decoded"
+          patch = tmp / "kadaya-visual-patch"
+          replacement_bundle = patch / "assets/bin/Data/data.unity3d"
+          if not replacement_bundle.is_file():
+              raise SystemExit("Validated patched data.unity3d missing from patch artifact.")
+
+          target_bundle = decoded / "assets/bin/Data/data.unity3d"
+          if not target_bundle.exists():
+              raise SystemExit("Decoded APK is missing assets/bin/Data/data.unity3d.")
+          shutil.copy2(replacement_bundle, target_bundle)
+
+          icon_count = 0
+          for source in (patch / "icons").rglob("app_icon*.png"):
+              rel = source.relative_to(patch / "icons")
+              dest = decoded / "res" / rel
+              if dest.parent.is_dir():
+                  shutil.copy2(source, dest)
+                  icon_count += 1
+          if icon_count < 6:
+              raise SystemExit(f"Only {icon_count} launcher-icon files were replaced; expected density variants.")
+
+          # Always create one canonical string and set the application label to reference it.
+          values_dir = decoded / "res/values"
+          values_dir.mkdir(parents=True, exist_ok=True)
+          strings_file = values_dir / "strings.xml"
+          if strings_file.exists():
+              tree = ET.parse(strings_file)
+              resources = tree.getroot()
+          else:
+              resources = ET.Element("resources")
+              tree = ET.ElementTree(resources)
+
+          label_name = "kadaya_app_name"
+          entry = next((node for node in resources.findall("string") if node.get("name") == label_name), None)
+          if entry is None:
+              entry = ET.SubElement(resources, "string", {"name": label_name, "translatable": "false"})
+          entry.text = "Kadaya | The Age of Shadows"
+          ET.register_namespace("android", "http://schemas.android.com/apk/res/android")
+          tree.write(strings_file, encoding="utf-8", xml_declaration=True)
+
+          manifest_file = decoded / "AndroidManifest.xml"
+          tree = ET.parse(manifest_file)
+          root = tree.getroot()
+          android_ns = "{http://schemas.android.com/apk/res/android}"
+          app = root.find("application")
+          if app is None:
+              raise SystemExit("AndroidManifest.xml has no application element.")
+          app.set(android_ns + "label", "@string/kadaya_app_name")
+          tree.write(manifest_file, encoding="utf-8", xml_declaration=True)
+
+          report = json.loads((patch / "patch-report.json").read_text(encoding="utf-8"))
+          report["launcher_icons_replaced"] = icon_count
+          report["application_label"] = "Kadaya | The Age of Shadows"
+          report["patched_bundle_in_decoded_apk_bytes"] = target_bundle.stat().st_size
+          report["patched_bundle_sha256"] = hashlib.sha256(target_bundle.read_bytes()).hexdigest()
+          report["scenes_maps_and_levels_modified"] = False
+          (tmp / "kadaya-build-report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+          print(f"Copied visual patch bundle: {target_bundle.stat().st_size:,} bytes.")
+          print(f"Updated {icon_count} launcher icon files.")
+          print("Application label set to Kadaya | The Age of Shadows.")
+          PY
+
+      - name: Build the unsigned APK with Apktool
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -Xmx4g -jar "$RUNNER_TEMP/apktool.jar" b \
+            "$RUNNER_TEMP/kadaya-decoded" \
+            --force --no-crunch \
+            --output "$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-unsigned.apk"
+          test -s "$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-unsigned.apk"
+          ls -lh "$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-unsigned.apk"
+
+      - name: Align, sign and validate the APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          UNSIGNED="$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-unsigned.apk"
+          ALIGNED="$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-aligned.apk"
+          SIGNED="$RUNNER_TEMP/Kadaya-The-Age-of-Shadows.apk"
+          KEYSTORE="$RUNNER_TEMP/kadaya-test-signing.keystore"
+          PASS="$(python3 -c 'import secrets; print(secrets.token_urlsafe(24))')"
+
+          keytool -genkeypair -noprompt \
+            -keystore "$KEYSTORE" -storepass "$PASS" -keypass "$PASS" \
+            -alias kadaya-test -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Kadaya Test Build, OU=Kadaya, O=KyZer, L=Weeraketiya, ST=Southern, C=LK" >/dev/null
+
+          zipalign -P 16 -f 4 "$UNSIGNED" "$ALIGNED"
+          apksigner sign --ks "$KEYSTORE" --ks-key-alias kadaya-test \
+            --ks-pass "pass:$PASS" --key-pass "pass:$PASS" \
+            --out "$SIGNED" "$ALIGNED"
+          apksigner verify --verbose "$SIGNED"
+          aapt dump badging "$SIGNED" > "$RUNNER_TEMP/kadaya-badging.txt"
+          grep -E "^package:|^application-label:" "$RUNNER_TEMP/kadaya-badging.txt" | head -n 8
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import os
+          apk = Path(os.environ["RUNNER_TEMP"]) / "Kadaya-The-Age-of-Shadows.apk"
+          with ZipFile(apk) as z:
+              names = set(z.namelist())
+              assert "AndroidManifest.xml" in names
+              assert "assets/bin/Data/data.unity3d" in names
+              assert "res/mipmap-xxxhdpi-v4/app_icon.png" in names
+              assert "classes.dex" in names
+              bad = z.testzip()
+              if bad: raise SystemExit(f"Final APK ZIP integrity error at {bad}")
+          print(f"Final APK ready: {apk.stat().st_size:,} bytes.")
+          PY
+
+      - name: Prepare compact download package and report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p kadaya-final-build
+          cp "$RUNNER_TEMP/Kadaya-The-Age-of-Shadows.apk" kadaya-final-build/
+          cp "$RUNNER_TEMP/kadaya-build-report.json" kadaya-final-build/
+          cp "$RUNNER_TEMP/kadaya-badging.txt" kadaya-final-build/
+          cat > kadaya-final-build/README.txt <<'EOF'
+          KADAYA | THE AGE OF SHADOWS — visual test build
+
+          This is a signed APK test build with Kadaya-branded title/character/UI visuals and launcher icon.
+          The original gameplay scenes, maps and level layouts were not edited.
+          This build uses a temporary test signing key generated during CI; it cannot update an installation signed with the original developer's key.
+          If the original game is installed, back up progress before uninstalling it to try this test build.
+          Story/dialogue and gameplay-ability logic are not claimed as finished in this visual-only build.
+          Do not redistribute this build unless you have permission to use and distribute all original game assets.
+          EOF
+          sha256sum kadaya-final-build/Kadaya-The-Age-of-Shadows.apk > kadaya-final-build/SHA256SUMS.txt
+          ls -lh kadaya-final-build/
+
+      - name: Upload the signed Kadaya APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: kadaya-the-age-of-shadows-android-test-build
+          path: kadaya-final-build/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
