@@ -1,0 +1,63 @@
+name: Recover Unity project in GitHub
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Get pinned AssetRipper sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/github/AssetRipper"
+          git clone --depth 1 --branch 2.0.0 https://github.com/AssetRipper/AssetRipper.git "$RUNNER_TEMP/github/AssetRipper/AssetRipper"
+          git init "$RUNNER_TEMP/github/AssetRipperCLI"
+          git -C "$RUNNER_TEMP/github/AssetRipperCLI" remote add origin https://github.com/neoedmund/AssetRipperCLI.git
+          git -C "$RUNNER_TEMP/github/AssetRipperCLI" fetch --depth 1 origin 3caa188b31bbbddfe8e9e1f7bf3fdbbf67107055
+          git -C "$RUNNER_TEMP/github/AssetRipperCLI" checkout FETCH_HEAD
+
+      - name: Build the AssetRipper command-line wrapper
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet publish "$RUNNER_TEMP/github/AssetRipperCLI/AssetRipperCLI.csproj" -c Release -r linux-x64 --self-contained true -o "$RUNNER_TEMP/assetripper-publish"
+
+      - name: Recover Unity assets to a separate cloud folder
+        shell: bash
+        run: |
+          set -euo pipefail
+          INPUT="$GITHUB_WORKSPACE/assets/bin/Data"
+          OUTPUT="$RUNNER_TEMP/kadaya-recovered-project"
+          test -d "$INPUT" || { echo "Unity data folder not found: $INPUT"; exit 1; }
+          test -f "$INPUT/data.unity3d" || { echo "Expected data.unity3d not found in $INPUT"; exit 1; }
+          "$RUNNER_TEMP/assetripper-publish/AssetRipperCLI" "$INPUT" "$OUTPUT"
+          echo "Recovered output size:"
+          du -sh "$OUTPUT"
+          echo "Recovered file count:"
+          find "$OUTPUT" -type f | wc -l
+
+      - name: Upload recovered project as a downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project/
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
