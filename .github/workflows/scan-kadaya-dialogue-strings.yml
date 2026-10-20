@@ -19,6 +19,9 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Install Unity asset parser
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy
+
       - name: Scan runtime metadata and serialized text fields
         shell: bash
         run: |
