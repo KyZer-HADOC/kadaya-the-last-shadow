@@ -1,0 +1,164 @@
+name: Inspect Kadaya story and character assets
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Successful recovery workflow run ID"
+        required: true
+        default: "39362669794"
+        type: string
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download recovered project in GitHub cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Inspect dialogue and character asset references without editing scenes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          from collections import Counter
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects = [p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                      if p.parent.name == "ProjectSettings" and (p.parent.parent / "Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Unity project root not found.")
+          project = projects[0]
+          assets = project / "Assets"
+
+          guid_to_path = {}
+          for meta in assets.rglob("*.meta"):
+              try:
+                  raw = meta.read_text(errors="ignore")
+              except OSError:
+                  continue
+              m = re.search(r"(?m)^guid:\s*([0-9a-fA-F]{32})\s*$", raw)
+              if m:
+                  guid_to_path[m.group(1).lower()] = meta.with_suffix("")
+
+          scene_dir = assets / "Scenes"
+          names = ["First.unity", "Select.unity", "CotTruyen.unity", "CotTruyen2Ending.unity", "LevelLeader.unity"]
+          scenes = [scene_dir / name for name in names if (scene_dir / name).exists()]
+
+          lines = [
+              "# Kadaya story and character asset inspection",
+              "",
+              "Generated in GitHub cloud. This is an inspection report only; no scene, map or level file was changed.",
+              "",
+              "Unity version: " + ((project / "ProjectSettings/ProjectVersion.txt").read_text(errors="ignore").strip()
+                                  if (project / "ProjectSettings/ProjectVersion.txt").exists() else "unknown"),
+              f"Indexed asset GUIDs: {len(guid_to_path)}",
+              f"Scenes inspected: {len(scenes)}",
+              "",
+              "## Text serialized into title, selection and story scenes",
+          ]
+
+          for scene in scenes:
+              raw = scene.read_text(errors="ignore")
+              lines += ["", "### " + scene.relative_to(project).as_posix()]
+              docs = re.split(r"(?m)^--- !u!\d+ &(-?\d+)\s*$", raw)
+              object_names = {}
+              for i in range(1, len(docs), 2):
+                  fid = docs[i]
+                  body = docs[i + 1] if i + 1 < len(docs) else ""
+                  if "GameObject:" in body[:200]:
+                      nm = re.search(r"(?m)^  m_Name:\s*(.*)$", body)
+                      if nm:
+                          object_names[fid] = nm.group(1).strip().strip('"')
+
+              shown_text = 0
+              sprite_refs = []
+              scripts = Counter()
+              for i in range(1, len(docs), 2):
+                  fid = docs[i]
+                  body = docs[i + 1] if i + 1 < len(docs) else ""
+                  if not body.strip():
+                      continue
+                  go = re.search(r"(?m)^  m_GameObject:\s*\{fileID:\s*(-?\d+)", body)
+                  go_name = object_names.get(go.group(1), "unknown") if go else "component/asset"
+                  script = re.search(r"(?m)^  m_Script:\s*\{[^}]*guid:\s*([0-9a-fA-F]{32})", body)
+                  if script:
+                      asset_path = guid_to_path.get(script.group(1).lower())
+                      if asset_path:
+                          scripts[asset_path.relative_to(project).as_posix()] += 1
+
+                  for match in re.finditer(r"(?m)^\s*(m_text|m_Text|text|m_Content):\s*(.*)$", body):
+                      key, value = match.group(1), match.group(2).strip().strip('"')
+                      if not value or value in {"0", "1"} or len(value) > 500:
+                          continue
+                      lines.append(f"- object={go_name} | {key} = {value}")
+                      shown_text += 1
+                      if shown_text >= 140:
+                          lines.append("- Listing capped at 140 text fields for this scene.")
+                          break
+
+                  for match in re.finditer(r"(?m)^\s*m_(?:Sprite|Texture):\s*\{[^}]*guid:\s*([0-9a-fA-F]{32})", body):
+                      asset_path = guid_to_path.get(match.group(1).lower())
+                      if asset_path:
+                          sprite_refs.append((go_name, asset_path.relative_to(project).as_posix()))
+
+              if shown_text == 0:
+                  lines.append("- No readable serialized text fields found.")
+              lines += ["", "Visual asset references resolved from these scenes:"]
+              unique_refs = list(dict.fromkeys(sprite_refs))
+              lines += [f"- {go_name} -> {path}" for go_name, path in unique_refs[:80]] or ["- No direct references resolved."]
+              lines += ["", "Script/component references resolved from these scenes:"]
+              lines += [f"- {path} ({count} component references)" for path, count in scripts.most_common(45)] or ["- No references resolved."]
+
+          image_exts = {".png", ".jpg", ".jpeg", ".webp", ".tga", ".psd"}
+          image_paths = sorted([p for p in assets.rglob("*") if p.is_file() and p.suffix.lower() in image_exts],
+                               key=lambda p: p.as_posix())
+          pattern = re.compile(r"arashi|character|layout|title|logo|icon|main|story|weapon|sword|skill|boss|map|menu|select|skin|button|background|enemy|ninja|shadow", re.I)
+          selected = [p for p in image_paths if pattern.search(p.stem)]
+          lines += ["", "## Named image assets to inspect"]
+          lines += [f"- {p.relative_to(project).as_posix()} ({p.stat().st_size:,} bytes)" for p in selected[:350]] or ["- No named matches."]
+          lines += [
+              "",
+              "## Technical limits",
+              "The game was recovered from an IL2CPP Android build. Recovered C# files are likely script stubs rather than original logic. Visual/serialized text edits may be possible after correct references are mapped; changing ability behavior may require original source code.",
+              "No assets were modified by this report."
+          ]
+          out = Path("analysis/kadaya-story-character-inspection.md")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          print(f"Created {out} ({out.stat().st_size:,} bytes)")
+          PY
+
+      - name: Commit small report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-story-character-inspection.md
+          if git diff --cached --quiet; then
+            echo "Report unchanged."
+          else
+            git commit -m "Add story and character asset inspection"
+            git push
+          fi
+      - name: Add report summary
+        run: head -n 120 analysis/kadaya-story-character-inspection.md >> "$GITHUB_STEP_SUMMARY"
