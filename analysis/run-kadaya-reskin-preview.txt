@@ -1,1 +1,1 @@
-Rebuild expanded reskin with balanced dark-crimson grading, story/dialogue panel fully inside its frame, and unchanged game maps/levels.
+Build expanded Kadaya patch with actual serialized story/tutorial TextMesh dialogue rewrites and color-graded character/weapon/menu/story/boss atlases. Preserve all existing playable scene transforms, colliders, maps and level layouts.
