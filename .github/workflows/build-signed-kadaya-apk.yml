@@ -194,6 +194,39 @@ jobs:
           tree = ET.parse(manifest_file)
           root = tree.getroot()
           android_ns = "{http://schemas.android.com/apk/res/android}"
+          old_package = root.get("package")
+          new_package = "com.kyzerhadoc.kadaya"
+          if not old_package:
+              raise SystemExit("AndroidManifest.xml is missing its original package name.")
+
+          # Give Kadaya its own install identity so it can be installed alongside the original.
+          # Keep component class names pointing at existing DEX classes, but move package-scoped
+          # authorities/permissions/task affinities to the new application ID to avoid collisions.
+          for node in root.iter():
+              for attr in (
+                  android_ns + "name",
+                  android_ns + "targetActivity",
+                  android_ns + "parentActivityName",
+                  android_ns + "backupAgent",
+                  android_ns + "appComponentFactory",
+                  android_ns + "manageSpaceActivity",
+              ):
+                  value = node.get(attr)
+                  if value and value.startswith("."):
+                      node.set(attr, old_package + value)
+
+              for attr in (
+                  android_ns + "authorities",
+                  android_ns + "permission",
+                  android_ns + "readPermission",
+                  android_ns + "writePermission",
+                  android_ns + "taskAffinity",
+              ):
+                  value = node.get(attr)
+                  if value == old_package or (value and value.startswith(old_package + ".")):
+                      node.set(attr, new_package + value[len(old_package):])
+
+          root.set("package", new_package)
           app = root.find("application")
           if app is None:
               raise SystemExit("AndroidManifest.xml has no application element.")
@@ -203,6 +236,7 @@ jobs:
           report = json.loads((patch / "patch-report.json").read_text(encoding="utf-8"))
           report["launcher_icons_replaced"] = icon_count
           report["application_label"] = "Kadaya | The Age of Shadows"
+          report["application_id"] = "com.kyzerhadoc.kadaya"
           report["patched_bundle_in_decoded_apk_bytes"] = target_bundle.stat().st_size
           report["patched_bundle_sha256"] = hashlib.sha256(target_bundle.read_bytes()).hexdigest()
           report["scenes_maps_and_levels_modified"] = False
@@ -245,6 +279,7 @@ jobs:
           apksigner verify --verbose "$SIGNED"
           aapt dump badging "$SIGNED" > "$RUNNER_TEMP/kadaya-badging.txt"
           grep -E "^package:|^application-label:" "$RUNNER_TEMP/kadaya-badging.txt" | head -n 8
+          grep -q "^package: name='com.kyzerhadoc.kadaya'" "$RUNNER_TEMP/kadaya-badging.txt"
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile
@@ -270,15 +305,14 @@ jobs:
           cp "$RUNNER_TEMP/kadaya-build-report.json" kadaya-final-build/
           cp "$RUNNER_TEMP/kadaya-badging.txt" kadaya-final-build/
           cat > kadaya-final-build/README.txt <<'EOF'
-          KADAYA | THE AGE OF SHADOWS — visual test build
+          KADAYA | THE AGE OF SHADOWS — side-by-side visual/gameplay-parameter test build
 
-          This signed Kadaya visual/gameplay-parameter test build includes a reskinned character/weapon/effect atlas, Kadaya title and launcher icon, bilingual story-card artwork, updated in-game tutorial/story TextMesh strings, and rebranded ability/weapon UI labels.
+          Package ID: com.kyzerhadoc.kadaya. This mod build is designed to install alongside the original app so the original game's installation and saved progress remain untouched.
+          This signed build includes a reskinned character/weapon/effect atlas, Kadaya title and launcher icon, bilingual story-card artwork, updated in-game tutorial/story TextMesh strings, and rebranded ability/weapon UI labels.
           The existing Shadow Dash has been tuned in serialized player components: dash speed +20% and dash duration +10%, with all 84 player components verified after the Unity bundle was reopened.
           Existing labels include Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, and Sword of Tatsuma to Kadaya's Shadow Blade. The labels still call the original abilities; genuinely new ability code is not added yet.
           Existing playable map/level scenes, transforms, colliders and level layouts were not edited.
-          This build uses a temporary test signing key generated during CI; it cannot update an installation signed with the original developer's key.
-          The app still uses the original package ID and this APK has a temporary test signing key, so it cannot update an original installation. Back up progress before uninstalling the original game to test this build.
-          The recovered project did not contain editable C# gameplay source. No new native ability methods were added; only existing Dash parameters were tuned.
+          This APK uses a temporary test signing key. The recovered project did not contain editable C# gameplay source; no new native ability methods were added, only existing Dash parameters were tuned.
           Do not redistribute this build unless you have permission to use and distribute all original game assets.
           EOF
           sha256sum kadaya-final-build/Kadaya-The-Age-of-Shadows.apk > kadaya-final-build/SHA256SUMS.txt
@@ -287,7 +321,7 @@ jobs:
       - name: Upload the signed Kadaya APK
         uses: actions/upload-artifact@v4
         with:
-          name: kadaya-the-age-of-shadows-android-test-build
+          name: kadaya-the-age-of-shadows-side-by-side-test-build
           path: kadaya-final-build/
           if-no-files-found: error
           retention-days: 3
