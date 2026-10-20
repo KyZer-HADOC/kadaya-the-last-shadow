@@ -1,0 +1,290 @@
+name: Map player sprites to runtime texture atlases
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful Unity recovery workflow run ID
+        required: true
+        default: "39362669794"
+        type: string
+  push:
+    paths:
+      - "analysis/run-sprite-texture-map.txt"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download original recovered project in cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id || '39362669794' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install runtime asset parser
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy Pillow
+
+      - name: Link player sprite parts to the original Texture2D assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import defaultdict, Counter
+          from PIL import Image, ImageOps, ImageDraw
+          import UnityPy, csv, re, math
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          project_dirs = [p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                          if p.parent.name == "ProjectSettings" and (p.parent.parent / "Assets").is_dir()]
+          if not project_dirs:
+              raise SystemExit("Recovered Unity project root not found.")
+          project = project_dirs[0]
+          scene = project / "Assets/Scenes/b1.unity"
+          if not scene.exists():
+              raise SystemExit("Recovered b1.unity scene not found.")
+
+          scene_text = scene.read_text(errors="ignore")
+          # Read SpriteRenderer object references attached to the actual Arashi rig.
+          blocks = re.split(r"(?m)^--- !u!(\d+) &(-?\d+)\s*$", scene_text)
+          records = {}
+          for i in range(1, len(blocks), 3):
+              if i+2 < len(blocks):
+                  records[blocks[i+1]] = (blocks[i], blocks[i+2])
+
+          go_names = {}
+          go_components = defaultdict(list)
+          component_to_go = {}
+          transform_to_go = {}
+          go_to_transform = {}
+          transform_children = defaultdict(list)
+          for fid, (cid, body) in records.items():
+              if cid == "1":
+                  nm = re.search(r"(?m)^  m_Name:\s*(.*)$", body)
+                  if nm:
+                      go_names[fid] = nm.group(1).strip().strip('"')
+                  for m in re.finditer(r"(?m)^  - component:\s*\{fileID:\s*(-?\d+)", body):
+                      go_components[fid].append(m.group(1))
+              own = re.search(r"(?m)^  m_GameObject:\s*\{fileID:\s*(-?\d+)", body)
+              if own:
+                  component_to_go[fid] = own.group(1)
+              if cid == "4":
+                  gm = re.search(r"(?m)^  m_GameObject:\s*\{fileID:\s*(-?\d+)", body)
+                  if gm:
+                      transform_to_go[fid] = gm.group(1)
+                      go_to_transform[gm.group(1)] = fid
+                  for child in re.finditer(r"(?m)^  - \{fileID:\s*(-?\d+)\s*\}", body):
+                      transform_children[fid].append(child.group(1))
+          for go, comps in go_components.items():
+              for comp in comps:
+                  component_to_go.setdefault(comp, go)
+
+          arashi_roots = [fid for fid,name in go_names.items() if name.lower() in {"arashi", "ninjaplayer"}]
+          rig_objects = set()
+          todo = []
+          for go in arashi_roots:
+              tf = go_to_transform.get(go)
+              if tf:
+                  todo.append(tf)
+          seen = set()
+          while todo:
+              tf = todo.pop()
+              if tf in seen:
+                  continue
+              seen.add(tf)
+              go = transform_to_go.get(tf)
+              if go:
+                  rig_objects.add(go)
+              todo.extend(transform_children.get(tf, []))
+
+          candidate_sprite_names = set()
+          for fid,(cid,body) in records.items():
+              if cid != "212":
+                  continue
+              go = component_to_go.get(fid, "")
+              if go in rig_objects:
+                  m = re.search(r"(?m)^  m_Sprite:\s*\{fileID:\s*(-?\d+)", body)
+                  if m:
+                      candidate_sprite_names.add(int(m.group(1)))
+          # Keep named part hints even if a renderer is nested unusually.
+          part_hint = re.compile(r"banchan|chan_|chantrai|chanphai|dui_|dui(phai|trai)|body|va(i|i)|head|neck|non|toc|kiem|weapon|baokiem|chuoikiem|thoitieu", re.I)
+
+          data_dir = project / "assets/bin/Data"
+          env = UnityPy.load(str(data_dir))
+          tex_by_key = {}
+          sprite_rows = []
+          tex_objects = {}
+          for obj in env.objects:
+              kind = getattr(obj.type, "name", str(obj.type))
+              key = (getattr(obj.assets_file, "name", "unknown"), int(getattr(obj, "path_id", 0)))
+              if kind == "Texture2D":
+                  try:
+                      dat = obj.read()
+                      name = str(getattr(dat, "m_Name", "") or "")
+                      width = int(getattr(dat, "m_Width", 0) or 0)
+                      height = int(getattr(dat, "m_Height", 0) or 0)
+                      tex_by_key[key] = {"name":name,"width":width,"height":height,"obj":obj}
+                  except Exception:
+                      pass
+
+          type_counts = Counter()
+          for obj in env.objects:
+              if getattr(obj.type, "name", "") != "Sprite":
+                  continue
+              key = (getattr(obj.assets_file, "name", "unknown"), int(getattr(obj, "path_id", 0)))
+              try:
+                  dat = obj.read()
+                  name = str(getattr(dat, "m_Name", "") or "")
+                  # Unity serialized Sprite m_RD.texture pointer fields.
+                  rd = getattr(dat, "m_RD", None)
+                  pptr = getattr(rd, "texture", None) if rd is not None else None
+                  path_id = int(getattr(pptr, "path_id", 0) or 0)
+                  file_id = int(getattr(pptr, "file_id", 0) or 0)
+                  target_file = getattr(pptr, "assets_file", None)
+                  target_name = getattr(target_file, "name", None) if target_file else None
+                  tex = None
+                  if target_name:
+                      tex = tex_by_key.get((target_name, path_id))
+                  if tex is None:
+                      matches = [(k,v) for k,v in tex_by_key.items() if k[1] == path_id]
+                      if len(matches) == 1:
+                          tex = matches[0][1]
+                  # Use texture read fallback if PPtr offers one.
+                  if tex is None and pptr is not None:
+                      for method_name in ("read", "deref"):
+                          method = getattr(pptr, method_name, None)
+                          if callable(method):
+                              try:
+                                  tobj = method()
+                                  if tobj is not None and hasattr(tobj, "read"):
+                                      tdata = tobj.read()
+                                      tex = {"name":str(getattr(tdata,"m_Name","") or ""),
+                                             "width":int(getattr(tdata,"m_Width",0) or 0),
+                                             "height":int(getattr(tdata,"m_Height",0) or 0),
+                                             "obj":tobj}
+                                      break
+                              except Exception:
+                                  pass
+                  go_name = ""
+                  source_part = ""
+                  sprite_rows.append({
+                      "sprite_name":name,
+                      "sprite_file":key[0],
+                      "sprite_path_id":key[1],
+                      "texture_name":tex["name"] if tex else "",
+                      "texture_width":tex["width"] if tex else "",
+                      "texture_height":tex["height"] if tex else "",
+                      "texture_path_id":path_id,
+                      "texture_file_id":file_id,
+                      "texture_file":target_name or "",
+                      "referenced_in_player_rig":int(key[1] in candidate_sprite_names),
+                  })
+              except Exception as exc:
+                  continue
+
+          outdir = Path("analysis/player-texture-map")
+          outdir.mkdir(parents=True, exist_ok=True)
+          outcsv = outdir / "sprite-texture-index.csv"
+          fields = list(sprite_rows[0].keys()) if sprite_rows else ["sprite_name","sprite_file","sprite_path_id","texture_name","texture_width","texture_height","texture_path_id","texture_file_id","texture_file","referenced_in_player_rig"]
+          with outcsv.open("w", newline="", encoding="utf-8") as f:
+              wr = csv.DictWriter(f, fieldnames=fields)
+              wr.writeheader()
+              wr.writerows(sprite_rows)
+
+          # Render thumbnails of the actual Texture2D assets referenced by rig sprites.
+          relevant_textures = {}
+          for row in sprite_rows:
+              if not row["referenced_in_player_rig"] or not row["texture_name"]:
+                  continue
+              for key,info in tex_by_key.items():
+                  if info["name"] == row["texture_name"] and (not row["texture_file"] or key[0] == row["texture_file"]):
+                      relevant_textures[key] = info
+
+          previews = []
+          for key,info in relevant_textures.items():
+              try:
+                  dat = info["obj"].read()
+                  image = dat.image
+                  if image is None:
+                      continue
+                  image = image.convert("RGBA")
+                  image.thumbnail((450,450), Image.Resampling.LANCZOS)
+                  cell = Image.new("RGBA",(480,510),(27,27,33,255))
+                  cell.alpha_composite(image,(15+(450-image.width)//2,10+(450-image.height)//2))
+                  draw = ImageDraw.Draw(cell)
+                  draw.text((10,466),f"{info['name']} ({info['width']}x{info['height']})",fill=(245,245,245,255))
+                  draw.text((10,487),f"{key[0]} path_id={key[1]}",fill=(180,180,190,255))
+                  previews.append((key,cell))
+                  name = re.sub(r"[^A-Za-z0-9_.-]+","_",info["name"] or "texture")
+                  image.save(outdir / f"{name}_{key[1]}.png")
+              except Exception:
+                  pass
+
+          if previews:
+              cols=2; rows=math.ceil(len(previews)/cols)
+              sheet=Image.new("RGBA",(cols*480,rows*510),(12,12,16,255))
+              for idx,(_key,cell) in enumerate(previews):
+                  sheet.alpha_composite(cell,((idx%cols)*480,(idx//cols)*510))
+              sheet.convert("RGB").save(outdir / "player-textures.jpg",quality=82,optimize=True)
+
+          lines=[
+              "# Kadaya sprite-to-texture mapping",
+              "",
+              "Read-only. The full recovery artifact was processed inside GitHub Actions; no game scenes, maps, levels or assets were changed.",
+              f"- Recover project version: {(project/'ProjectSettings/ProjectVersion.txt').read_text(errors='ignore').strip() if (project/'ProjectSettings/ProjectVersion.txt').exists() else 'unknown'}",
+              f"- Scene player SpriteRenderer sprite references: {len(candidate_sprite_names)}",
+              f"- Runtime Sprite objects indexed: {len(sprite_rows)}",
+              f"- Texture2D assets indexed: {len(tex_by_key)}",
+              f"- Player-referenced textures successfully previewed: {len(previews)}",
+              "",
+              "## Sprite names assigned to parts of the actual player hierarchy",
+          ]
+          rig_ids = candidate_sprite_names
+          lines += [f"- {row['sprite_name']} | runtime sprite path_id={row['sprite_path_id']} | texture={row['texture_name'] or 'not resolved'} | {row['texture_width']}x{row['texture_height']}" for row in sprite_rows if row["sprite_path_id"] in rig_ids]
+          lines += ["", "## Texture atlas candidates"]
+          lines += [f"- {info['name']} ({info['width']}x{info['height']}) | {key[0]} path_id={key[1]}" for key,info in relevant_textures.items()] or ["- No atlas texture path resolved; use the CSV for all 1662 sprite records."]
+          lines += ["", "## Notes",
+                    "- This scan is intended to identify the actual renderer source rather than guessing from marketing/menu artwork.",
+                    "- A later asset patch must edit only the mapped character texture(s) or menu/story textures and must keep every existing Assets/Scenes/*.unity file unchanged.",
+                    "- Rebuilding the Android game requires correctly repacking the serialized data bundle; this report does not alter the APK.",
+                    ""]
+          (outdir/"README.md").write_text("\n".join(lines),encoding="utf-8")
+          print(f"Wrote {outdir} with {len(sprite_rows)} sprite rows and {len(previews)} player texture previews.")
+          PY
+
+      - name: Commit small mapping report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/player-texture-map
+          if git diff --cached --quiet; then
+            echo "Map report unchanged."
+          else
+            git commit -m "Map player sprite parts to texture atlases"
+            git push
+          fi
+
+      - name: Upload texture atlas previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: kadaya-player-texture-previews
+          path: analysis/player-texture-map/
+          if-no-files-found: warn
+          retention-days: 3
+          compression-level: 0
