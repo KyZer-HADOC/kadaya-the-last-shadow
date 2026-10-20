@@ -6,7 +6,7 @@ on:
       reskin_run_id:
         description: "Successful visual reskin workflow run ID"
         required: true
-        default: "39452918403"
+        default: "39460413206"
         type: string
   push:
     paths:
@@ -50,7 +50,7 @@ jobs:
           name: kadaya-reskin-visual-patch
           path: ${{ runner.temp }}/kadaya-visual-patch
           repository: ${{ github.repository }}
-          run-id: ${{ inputs.reskin_run_id || '39452918403' }}
+          run-id: ${{ inputs.reskin_run_id || '39460413206' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download and verify official Apktool 3.0.3
@@ -272,12 +272,13 @@ jobs:
           cat > kadaya-final-build/README.txt <<'EOF'
           KADAYA | THE AGE OF SHADOWS — visual test build
 
-          This is a signed Kadaya visual test build with a reskinned character/weapon/effect atlas, Kadaya title and launcher icon, two bilingual story-card artworks, rewritten in-game tutorial/story TextMesh strings, and rebranded ability/weapon UI labels.
-          Existing ability/weapon UI labels were rebranded (e.g. Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, Sword of Tatsuma to Kadaya's Shadow Blade), while the underlying mechanics remain from the source game.
+          This signed Kadaya visual/gameplay-parameter test build includes a reskinned character/weapon/effect atlas, Kadaya title and launcher icon, bilingual story-card artwork, updated in-game tutorial/story TextMesh strings, and rebranded ability/weapon UI labels.
+          The existing Shadow Dash has been tuned in serialized player components: dash speed +20% and dash duration +10%, with all 84 player components verified after the Unity bundle was reopened.
+          Existing labels include Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, and Sword of Tatsuma to Kadaya's Shadow Blade. The labels still call the original abilities; genuinely new ability code is not added yet.
           Existing playable map/level scenes, transforms, colliders and level layouts were not edited.
           This build uses a temporary test signing key generated during CI; it cannot update an installation signed with the original developer's key.
-          If the original game is installed, back up progress before uninstalling it to try this test build.
-          The renamed UI still invokes the original game's abilities; their underlying code/mechanics have not been rewritten because the recovered package is IL2CPP and lacks original editable gameplay source.
+          The app still uses the original package ID and this APK has a temporary test signing key, so it cannot update an original installation. Back up progress before uninstalling the original game to test this build.
+          The recovered project did not contain editable C# gameplay source. No new native ability methods were added; only existing Dash parameters were tuned.
           Do not redistribute this build unless you have permission to use and distribute all original game assets.
           EOF
           sha256sum kadaya-final-build/Kadaya-The-Age-of-Shadows.apk > kadaya-final-build/SHA256SUMS.txt
