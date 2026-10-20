@@ -1,1 +1,1 @@
-Rebuild Kadaya visual/story/UI patch and tune existing Shadow Dash parameters after correcting serialized float alignment. Preserve original playable maps, levels and scene layouts.
+Build next Kadaya patch with verified Dash tuning (+20% speed, +10% duration), existing Jump force +10%, rebranded ability/weapon UI labels, bilingual story dialogue/card, and ash-black/crimson visual reskin. Do not touch maps, level layouts, scene transforms or colliders.
