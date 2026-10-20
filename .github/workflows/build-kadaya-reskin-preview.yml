@@ -35,7 +35,7 @@ jobs:
           from pathlib import Path
           from PIL import Image, ImageDraw, ImageFont, ImageFilter
           import numpy as np
-          import UnityPy, shutil, json, hashlib, re, os
+          import UnityPy, shutil, json, hashlib, re, os, struct, math
 
           source_data = Path("assets/bin/Data")
           original_bundle = source_data / "data.unity3d"
@@ -690,6 +690,93 @@ jobs:
               "unique_dialogue_rewrites": dialogue_summary,
           }, ensure_ascii=False, indent=2), encoding="utf-8")
 
+          # Tune the existing Dash ability in its serialized component data.
+          # Unity's stripped custom MonoBehaviour stream begins after the 32-byte base header.
+          # Two bools are stored as single bytes, so later floats are not 4-byte aligned:
+          # maxVelocity=66, dashSpeedUp=70, dashSpeedDown=74, dashSpeed=78, dashTime=90.
+          # This modifies only existing numeric fields. It creates no new methods or abilities.
+          dash_tuning_changes = []
+          dash_tuning_expected = {}
+          dash_components_seen = 0
+          dash_components_skipped = 0
+          for obj in env.objects:
+              if getattr(obj.type, "name", "") != "MonoBehaviour":
+                  continue
+              try:
+                  header = obj.read(check_read=False)
+                  script_ref = getattr(header, "m_Script", None)
+                  if script_ref is None:
+                      continue
+                  script_data = script_ref.read()
+                  if str(getattr(script_data, "m_ClassName", "") or "") != "NinjaMovementScript":
+                      continue
+
+                  dash_components_seen += 1
+                  raw = obj.get_raw_data()
+                  if len(raw) < 104:
+                      dash_components_skipped += 1
+                      continue
+
+                  old_speed = struct.unpack_from("<f", raw, 78)[0]
+                  old_duration = struct.unpack_from("<f", raw, 90)[0]
+                  # Require sensible known game values; never patch if the layout/value signature differs.
+                  if (not math.isfinite(old_speed) or not math.isfinite(old_duration)
+                      or not (15.0 <= old_speed <= 60.0)
+                      or not (0.15 <= old_duration <= 0.8)):
+                      dash_components_skipped += 1
+                      continue
+
+                  new_speed = round(old_speed * 1.20, 5)
+                  new_duration = round(old_duration * 1.10, 5)
+                  mutable = bytearray(raw)
+                  struct.pack_into("<f", mutable, 78, new_speed)
+                  struct.pack_into("<f", mutable, 90, new_duration)
+                  obj.set_raw_data(bytes(mutable))
+
+                  asset_file = getattr(getattr(obj, "assets_file", None), "name", "unknown")
+                  path_id = int(getattr(obj, "path_id", 0))
+                  key = (asset_file, path_id)
+                  dash_tuning_expected[key] = {
+                      "old_speed": old_speed,
+                      "new_speed": new_speed,
+                      "old_duration": old_duration,
+                      "new_duration": new_duration,
+                  }
+                  dash_tuning_changes.append({
+                      "file": asset_file,
+                      "path_id": path_id,
+                      "old_dash_speed": old_speed,
+                      "new_dash_speed": new_speed,
+                      "old_dash_time_seconds": old_duration,
+                      "new_dash_time_seconds": new_duration,
+                  })
+              except Exception:
+                  dash_components_skipped += 1
+                  continue
+
+          if len(dash_tuning_changes) < 20:
+              raise SystemExit(
+                  f"Dash parameter patch refused: expected at least 20 recognized player components; "
+                  f"found {len(dash_tuning_changes)} of {dash_components_seen}."
+              )
+          dash_summary = {
+              "player_components_seen": dash_components_seen,
+              "player_components_tuned": len(dash_tuning_changes),
+              "player_components_skipped": dash_components_skipped,
+              "dash_speed_multiplier": 1.20,
+              "dash_duration_multiplier": 1.10,
+              "details": dash_tuning_changes,
+              "note": "Existing Dash is faster and lasts slightly longer. No new native ability logic is added."
+          }
+          (preview / "kadaya-shadow-dash-tuning.json").write_text(
+              json.dumps(dash_summary, ensure_ascii=False, indent=2), encoding="utf-8"
+          )
+          print(
+              f"Tuned existing Shadow Dash parameters on {len(dash_tuning_changes)} "
+              f"NinjaMovementScript components: speed +20%, duration +10%; "
+              f"seen {dash_components_seen}, skipped {dash_components_skipped}."
+          )
+
           # Make the bundle visible as changed so UnityPy repacks the parent container.
           marker = getattr(bundle, "mark_changed", None)
           if callable(marker):
@@ -724,6 +811,52 @@ jobs:
           for key in wanted:
               if check[key]["sha256"] == original_hashes[key]:
                   raise SystemExit(f"Validation failed: {key} did not change in the saved bundle.")
+
+          # Validate existing Dash values after the Unity bundle has been saved and reopened.
+          reopened_dash = {}
+          for obj in env2.objects:
+              if getattr(obj.type, "name", "") != "MonoBehaviour":
+                  continue
+              try:
+                  header = obj.read(check_read=False)
+                  script_ref = getattr(header, "m_Script", None)
+                  if script_ref is None:
+                      continue
+                  script_data = script_ref.read()
+                  if str(getattr(script_data, "m_ClassName", "") or "") != "NinjaMovementScript":
+                      continue
+                  raw = obj.get_raw_data()
+                  if len(raw) < 104:
+                      continue
+                  key = (
+                      getattr(getattr(obj, "assets_file", None), "name", "unknown"),
+                      int(getattr(obj, "path_id", 0)),
+                  )
+                  reopened_dash[key] = {
+                      "dash_speed": struct.unpack_from("<f", raw, 78)[0],
+                      "dash_time": struct.unpack_from("<f", raw, 90)[0],
+                  }
+              except Exception:
+                  continue
+
+          dash_validation_failures = []
+          for key, expected in dash_tuning_expected.items():
+              got = reopened_dash.get(key)
+              if got is None:
+                  dash_validation_failures.append(f"{key}: component missing after reopen")
+                  continue
+              if abs(got["dash_speed"] - expected["new_speed"]) > 0.002:
+                  dash_validation_failures.append(f"{key}: dash speed not preserved")
+              if abs(got["dash_time"] - expected["new_duration"]) > 0.002:
+                  dash_validation_failures.append(f"{key}: dash duration not preserved")
+          if dash_validation_failures:
+              raise SystemExit("Shadow Dash parameter validation failed: " + "; ".join(dash_validation_failures[:12]))
+          if len(dash_tuning_expected) != len(reopened_dash.keys() & dash_tuning_expected.keys()):
+              raise SystemExit("Not every tuned Shadow Dash component was found after bundle reopen.")
+          print(
+              f"Validated Shadow Dash parameters after reopen: "
+              f"{len(dash_tuning_expected)} component(s), speed +20%, duration +10%."
+          )
 
           # Verify the actual serialized story/tutorial words, not just the overlaid story artwork.
           reopened_texts = []
@@ -829,8 +962,10 @@ jobs:
               "serialized_dialogue_unique_rewrites": json.loads((preview / "kadaya-story-dialogue-changes.json").read_text(encoding="utf-8"))["unique_dialogue_rewrites"],
               "serialized_ui_text_objects_changed": len(ui_text_changes),
               "serialized_ui_text_unique_rewrites": json.loads((preview / "kadaya-ui-label-changes.json").read_text(encoding="utf-8"))["unique_rewrites"],
+              "existing_shadow_dash_components_tuned": len(dash_tuning_changes),
+              "shadow_dash_parameters": json.loads((preview / "kadaya-shadow-dash-tuning.json").read_text(encoding="utf-8")),
               "icons": icon_records,
-              "note": "This is a data bundle + launcher icon patch, not yet a complete signed APK. Existing ability/weapon labels, selected descriptions, story/tutorial text and artwork/UI atlases were rebranded; gameplay mechanics, transforms, colliders, maps and level layouts were not edited."
+              "note": "This data bundle + launcher icon patch rebrands visual/story/UI assets and tunes existing Dash parameters (+20% speed, +10% duration). It does not add new native ability code. Playable scene transforms, colliders, maps and level layouts were not edited."
           }
           (output/"patch-report.json").write_text(json.dumps(report,indent=2),encoding="utf-8")
           (output/"README-PATCH.txt").write_text(
