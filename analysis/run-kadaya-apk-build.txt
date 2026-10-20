@@ -1,1 +1,1 @@
-Build Kadaya APK from patch run 39451554485: updated UI ability/weapon labels and descriptions, bilingual story/tutorial dialogue, reskinned character/effect/menu art and launcher branding. Preserve maps and all playable level layouts.
+Build Kadaya APK from expanded patch run 39452918403. Include rebranded skill/weapon UI labels, the new bilingual story card and dialogue, reskinned character/effect/menu art, and launcher branding. Preserve all existing playable levels and scene layouts.
