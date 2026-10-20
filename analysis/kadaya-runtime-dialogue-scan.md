@@ -934,1006 +934,1211 @@ Read-only analysis. No game files were modified.
 - N12_GLOBAL__N_116itanium_demangle20MemberLikeFriendNameE
 - .text
 
-## Serialized object string fields
+## Serialized dialogue and UI text fields
 - Read errors (object parser): 33,432
-- String-like serialized fields: 276758
-- GameObject path_id=1 | m_Name=Theme | owner/name=Theme
-- GameObject path_id=2 | m_Name=Click | owner/name=Click
-- GameObject path_id=3 | m_Name=Button | owner/name=Button
-- GameObject path_id=4 | m_Name=Image | owner/name=Image
-- GameObject path_id=5 | m_Name=EventSystem | owner/name=EventSystem
-- GameObject path_id=6 | m_Name=IAP Manager | owner/name=IAP Manager
-- GameObject path_id=7 | m_Name=Main Camera | owner/name=Main Camera
-- GameObject path_id=8 | m_Name=ATF Manager | owner/name=ATF Manager
-- GameObject path_id=9 | m_Name=Canvas | owner/name=Canvas
-- GameObject path_id=10 | m_Name=Sounds | owner/name=Sounds
-- GameObject path_id=11 | m_Name=Ad Manager | owner/name=Ad Manager
-- GameObject path_id=14 | m_Name=Accept btn | owner/name=Accept btn
-- GameObject path_id=15 | m_Name=GDPR Popup | owner/name=GDPR Popup
-- GameObject path_id=17 | m_Name=Policy Btn | owner/name=Policy Btn
-- GameObject path_id=18 | m_Name=Do not accept btn | owner/name=Do not accept btn
-- GameObject path_id=19 | m_Name=Image | owner/name=Image
-- GameObject path_id=20 | m_Name=Content | owner/name=Content
-- GameObject path_id=21 | m_Name=Trang | owner/name=Trang
-- GameObject path_id=22 | m_Name=Fill | owner/name=Fill
-- GameObject path_id=23 | m_Name=GDPR | owner/name=GDPR
-- GameObject path_id=24 | m_Name=LevelLeader | owner/name=LevelLeader
-- GameObject path_id=1 | m_Name=Character | owner/name=Character
-- GameObject path_id=2 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=3 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=4 | m_Name=Image | owner/name=Image
-- GameObject path_id=5 | m_Name=A2 Infomation | owner/name=A2 Infomation
-- GameObject path_id=6 | m_Name=Atf btn | owner/name=Atf btn
-- GameObject path_id=7 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=8 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=9 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=10 | m_Name=Scroll View | owner/name=Scroll View
-- GameObject path_id=11 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=12 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=13 | m_Name=ClickNext | owner/name=ClickNext
-- GameObject path_id=14 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=15 | m_Name=Equiped | owner/name=Equiped
-- GameObject path_id=16 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=17 | m_Name=Glow img | owner/name=Glow img
-- GameObject path_id=18 | m_Name=Button (1) | owner/name=Button (1)
-- GameObject path_id=19 | m_Name=Viewport | owner/name=Viewport
-- GameObject path_id=20 | m_Name=Skill Upped 6 | owner/name=Skill Upped 6
-- GameObject path_id=22 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=23 | m_Name=Image | owner/name=Image
-- GameObject path_id=24 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=25 | m_Name=Info 4 | owner/name=Info 4
-- GameObject path_id=27 | m_Name=Image | owner/name=Image
-- GameObject path_id=28 | m_Name=sang (1) | owner/name=sang (1)
-- GameObject path_id=29 | m_Name=Image | owner/name=Image
-- GameObject path_id=30 | m_Name=Button 6 | owner/name=Button 6
-- GameObject path_id=31 | m_Name=ATF Process | owner/name=ATF Process
-- GameObject path_id=32 | m_Name=Dm | owner/name=Dm
-- GameObject path_id=33 | m_Name=Image | owner/name=Image
-- GameObject path_id=34 | m_Name=ATF Img | owner/name=ATF Img
-- GameObject path_id=35 | m_Name=sang | owner/name=sang
-- GameObject path_id=36 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=37 | m_Name=Info 4 | owner/name=Info 4
-- GameObject path_id=38 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=39 | m_Name=Setting board | owner/name=Setting board
-- GameObject path_id=40 | m_Name=Button 8 | owner/name=Button 8
-- GameObject path_id=41 | m_Name=Button 10 | owner/name=Button 10
-- GameObject path_id=42 | m_Name=Button 2 | owner/name=Button 2
-- GameObject path_id=43 | m_Name=Button info | owner/name=Button info
-- GameObject path_id=44 | m_Name=Bonus | owner/name=Bonus
-- GameObject path_id=45 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=46 | m_Name=Close | owner/name=Close
-- GameObject path_id=47 | m_Name=Home Img | owner/name=Home Img
-- GameObject path_id=48 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=49 | m_Name=Button 1 | owner/name=Button 1
-- GameObject path_id=50 | m_Name=Level Panel | owner/name=Level Panel
-- GameObject path_id=51 | m_Name=Panel Dash | owner/name=Panel Dash
-- GameObject path_id=52 | m_Name=DarkBack | owner/name=DarkBack
-- GameObject path_id=53 | m_Name=Toast | owner/name=Toast
-- GameObject path_id=54 | m_Name=Glow img | owner/name=Glow img
-- GameObject path_id=55 | m_Name=Board vien | owner/name=Board vien
-- GameObject path_id=56 | m_Name=Info 4 | owner/name=Info 4
-- GameObject path_id=57 | m_Name=Rate Us | owner/name=Rate Us
-- GameObject path_id=58 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
-- GameObject path_id=59 | m_Name=Yes | owner/name=Yes
-- GameObject path_id=60 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=61 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=62 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=63 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=64 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=65 | m_Name=Name | owner/name=Name
-- GameObject path_id=66 | m_Name=Main Image (1) | owner/name=Main Image (1)
-- GameObject path_id=67 | m_Name=Vang | owner/name=Vang
-- GameObject path_id=68 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=69 | m_Name=sang | owner/name=sang
-- GameObject path_id=70 | m_Name=Main Image | owner/name=Main Image
-- GameObject path_id=71 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=72 | m_Name=Star btn | owner/name=Star btn
-- GameObject path_id=73 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=74 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=75 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=76 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=77 | m_Name=Button 7 | owner/name=Button 7
-- GameObject path_id=78 | m_Name=Close | owner/name=Close
-- GameObject path_id=80 | m_Name=Text (1) | owner/name=Text (1)
-- GameObject path_id=81 | m_Name=Image | owner/name=Image
-- GameObject path_id=83 | m_Name=Image | owner/name=Image
-- GameObject path_id=84 | m_Name=Skill point img | owner/name=Skill point img
-- GameObject path_id=85 | m_Name=Lock | owner/name=Lock
-- GameObject path_id=86 | m_Name=Button 3 | owner/name=Button 3
-- GameObject path_id=87 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=88 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=89 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=90 | m_Name=sang | owner/name=sang
-- GameObject path_id=91 | m_Name=Skill Upped 7 | owner/name=Skill Upped 7
-- GameObject path_id=92 | m_Name=Bang Info | owner/name=Bang Info
-- GameObject path_id=93 | m_Name=Item 11 | owner/name=Item 11
-- GameObject path_id=94 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=95 | m_Name=Glow img | owner/name=Glow img
-- GameObject path_id=96 | m_Name=Button info | owner/name=Button info
-- GameObject path_id=97 | m_Name=Skill Tree | owner/name=Skill Tree
-- GameObject path_id=98 | m_Name=Setting | owner/name=Setting
-- GameObject path_id=99 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=100 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=101 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
-- GameObject path_id=102 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=103 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=104 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=105 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=106 | m_Name=No | owner/name=No
-- GameObject path_id=107 | m_Name=Target | owner/name=Target
-- GameObject path_id=108 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=109 | m_Name=Skill Tree Node | owner/name=Skill Tree Node
-- GameObject path_id=110 | m_Name=Found NOT | owner/name=Found NOT
-- GameObject path_id=111 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=112 | m_Name=Text (2) | owner/name=Text (2)
-- GameObject path_id=113 | m_Name=Home Btn | owner/name=Home Btn
-- GameObject path_id=114 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=115 | m_Name=Info 9 | owner/name=Info 9
-- GameObject path_id=116 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=117 | m_Name=Button (1) | owner/name=Button (1)
-- GameObject path_id=118 | m_Name=Image (1) | owner/name=Image (1)
-- GameObject path_id=119 | m_Name=Arashi (4) | owner/name=Arashi (4)
-- GameObject path_id=120 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=121 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=122 | m_Name=Rong Vang | owner/name=Rong Vang
-- GameObject path_id=123 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=124 | m_Name=Skill Upped 6 | owner/name=Skill Upped 6
-- GameObject path_id=125 | m_Name=Gold | owner/name=Gold
-- GameObject path_id=126 | m_Name=Viewport | owner/name=Viewport
-- GameObject path_id=127 | m_Name=10 do | owner/name=10 do
-- GameObject path_id=128 | m_Name=Gach Chan | owner/name=Gach Chan
-- GameObject path_id=129 | m_Name=May | owner/name=May
-- GameObject path_id=130 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=131 | m_Name=Name (4) | owner/name=Name (4)
-- GameObject path_id=132 | m_Name=Info 10 | owner/name=Info 10
-- GameObject path_id=133 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=134 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=135 | m_Name=ATF Name | owner/name=ATF Name
-- GameObject path_id=136 | m_Name=Item 4 | owner/name=Item 4
-- GameObject path_id=138 | m_Name=Text (2) | owner/name=Text (2)
-- GameObject path_id=139 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=140 | m_Name=Btn Phai | owner/name=Btn Phai
-- GameObject path_id=141 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=142 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=143 | m_Name=Image | owner/name=Image
-- GameObject path_id=144 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=145 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=146 | m_Name=Item 12 | owner/name=Item 12
-- GameObject path_id=147 | m_Name=Level Panel | owner/name=Level Panel
-- GameObject path_id=148 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=149 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=150 | m_Name=Xanh | owner/name=Xanh
-- GameObject path_id=151 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=152 | m_Name=Image | owner/name=Image
-- GameObject path_id=153 | m_Name=Home Btn (1) | owner/name=Home Btn (1)
-- GameObject path_id=154 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=155 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=156 | m_Name=Image | owner/name=Image
-- GameObject path_id=157 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=158 | m_Name=Button 5 | owner/name=Button 5
-- GameObject path_id=159 | m_Name=Info txt | owner/name=Info txt
-- GameObject path_id=160 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=161 | m_Name=Info text (4) | owner/name=Info text (4)
-- GameObject path_id=162 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=163 | m_Name=Info 7 | owner/name=Info 7
-- GameObject path_id=164 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=165 | m_Name=Skill Upped 7 | owner/name=Skill Upped 7
-- GameObject path_id=166 | m_Name=Den | owner/name=Den
-- GameObject path_id=167 | m_Name=Button | owner/name=Button
-- GameObject path_id=168 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=169 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=170 | m_Name=Rong shadow | owner/name=Rong shadow
-- GameObject path_id=171 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=172 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=173 | m_Name=Info 1 | owner/name=Info 1
-- GameObject path_id=174 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=175 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=176 | m_Name=2 do | owner/name=2 do
-- GameObject path_id=177 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=178 | m_Name=Main | owner/name=Main
-- GameObject path_id=179 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=180 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=181 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=182 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
-- GameObject path_id=183 | m_Name=Down | owner/name=Down
-- GameObject path_id=184 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=185 | m_Name=Vang | owner/name=Vang
-- GameObject path_id=186 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=187 | m_Name=Info text | owner/name=Info text
-- GameObject path_id=188 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=189 | m_Name=Music | owner/name=Music
-- GameObject path_id=190 | m_Name=Button | owner/name=Button
-- GameObject path_id=191 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=192 | m_Name=Button 1 | owner/name=Button 1
-- GameObject path_id=193 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=194 | m_Name=Map 1 | owner/name=Map 1
-- GameObject path_id=195 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=196 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=197 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=198 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=199 | m_Name=Text (2) | owner/name=Text (2)
-- GameObject path_id=200 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=201 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=202 | m_Name=Vang | owner/name=Vang
-- GameObject path_id=203 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=204 | m_Name=Button (6) | owner/name=Button (6)
-- GameObject path_id=205 | m_Name=Image | owner/name=Image
-- GameObject path_id=206 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=207 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=208 | m_Name=A5 | owner/name=A5
-- GameObject path_id=209 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=210 | m_Name=Button (6) | owner/name=Button (6)
-- GameObject path_id=211 | m_Name=Gia kc | owner/name=Gia kc
-- GameObject path_id=212 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=213 | m_Name=5 do | owner/name=5 do
-- GameObject path_id=214 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=215 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=216 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=217 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=218 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=219 | m_Name=Back ground | owner/name=Back ground
-- GameObject path_id=220 | m_Name=Toggle Panel | owner/name=Toggle Panel
-- GameObject path_id=221 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=222 | m_Name=Button (3) | owner/name=Button (3)
-- GameObject path_id=223 | m_Name=sang | owner/name=sang
-- GameObject path_id=224 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=225 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=226 | m_Name=Image | owner/name=Image
-- GameObject path_id=227 | m_Name=Gach Chan (5) | owner/name=Gach Chan (5)
-- GameObject path_id=228 | m_Name=Equip img | owner/name=Equip img
-- GameObject path_id=229 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=230 | m_Name=Remove ads btn | owner/name=Remove ads btn
-- GameObject path_id=231 | m_Name=Image | owner/name=Image
-- GameObject path_id=232 | m_Name=Image | owner/name=Image
-- GameObject path_id=233 | m_Name=Info 9 | owner/name=Info 9
-- GameObject path_id=234 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=235 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=237 | m_Name=Button 8 | owner/name=Button 8
-- GameObject path_id=238 | m_Name=Shadow (4) | owner/name=Shadow (4)
-- GameObject path_id=239 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=241 | m_Name=Name (4) | owner/name=Name (4)
-- GameObject path_id=242 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=243 | m_Name=Skill Tree | owner/name=Skill Tree
-- GameObject path_id=244 | m_Name=Image | owner/name=Image
-- GameObject path_id=245 | m_Name=Skill Upped 9 | owner/name=Skill Upped 9
-- GameObject path_id=246 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
-- GameObject path_id=247 | m_Name=Button 1 | owner/name=Button 1
-- GameObject path_id=248 | m_Name=BG | owner/name=BG
-- GameObject path_id=249 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=250 | m_Name=Store | owner/name=Store
-- GameObject path_id=251 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=253 | m_Name=Button (2) | owner/name=Button (2)
-- GameObject path_id=254 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=255 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=256 | m_Name=Name | owner/name=Name
-- GameObject path_id=257 | m_Name=Den | owner/name=Den
-- GameObject path_id=258 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=259 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=260 | m_Name=Name | owner/name=Name
-- GameObject path_id=261 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=262 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=263 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=264 | m_Name=A6 | owner/name=A6
-- GameObject path_id=265 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=266 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=267 | m_Name=A4 | owner/name=A4
-- GameObject path_id=268 | m_Name=Image | owner/name=Image
-- GameObject path_id=269 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=270 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=271 | m_Name=Name | owner/name=Name
-- GameObject path_id=272 | m_Name=Gia kc | owner/name=Gia kc
-- GameObject path_id=273 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=274 | m_Name=Rong shadow | owner/name=Rong shadow
-- GameObject path_id=275 | m_Name=Equiped | owner/name=Equiped
-- GameObject path_id=276 | m_Name=Rong Vang | owner/name=Rong Vang
-- GameObject path_id=277 | m_Name=Equip img | owner/name=Equip img
-- GameObject path_id=278 | m_Name=Button 9 | owner/name=Button 9
-- GameObject path_id=279 | m_Name=Item 5 | owner/name=Item 5
-- GameObject path_id=280 | m_Name=Panel Trai | owner/name=Panel Trai
-- GameObject path_id=281 | m_Name=Image | owner/name=Image
-- GameObject path_id=282 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=283 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=284 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=285 | m_Name=A7 Infomation | owner/name=A7 Infomation
-- GameObject path_id=286 | m_Name=Top | owner/name=Top
-- GameObject path_id=287 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=288 | m_Name=Image | owner/name=Image
-- GameObject path_id=289 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=290 | m_Name=Dm | owner/name=Dm
-- GameObject path_id=291 | m_Name=B5 | owner/name=B5
-- GameObject path_id=292 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=293 | m_Name=ClickPlay | owner/name=ClickPlay
-- GameObject path_id=294 | m_Name=Equiped | owner/name=Equiped
-- GameObject path_id=295 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=296 | m_Name=ClickBuy | owner/name=ClickBuy
-- GameObject path_id=297 | m_Name=Skill Upped 7 | owner/name=Skill Upped 7
-- GameObject path_id=298 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=299 | m_Name=Image back | owner/name=Image back
-- GameObject path_id=300 | m_Name=Name | owner/name=Name
-- GameObject path_id=301 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=302 | m_Name=Image | owner/name=Image
-- GameObject path_id=303 | m_Name=Image nhay | owner/name=Image nhay
-- GameObject path_id=304 | m_Name=SkillPoint | owner/name=SkillPoint
-- GameObject path_id=305 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=306 | m_Name=Name | owner/name=Name
-- GameObject path_id=307 | m_Name=Setting board | owner/name=Setting board
-- GameObject path_id=308 | m_Name=Button (7) | owner/name=Button (7)
-- GameObject path_id=309 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=310 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=311 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=312 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=313 | m_Name=Skill Tree Node | owner/name=Skill Tree Node
-- GameObject path_id=314 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=315 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=316 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=317 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
-- GameObject path_id=318 | m_Name=Skill Tree Node | owner/name=Skill Tree Node
-- GameObject path_id=319 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=320 | m_Name=Info 2 | owner/name=Info 2
-- GameObject path_id=321 | m_Name=Info 3 | owner/name=Info 3
-- GameObject path_id=322 | m_Name=Challence | owner/name=Challence
-- GameObject path_id=323 | m_Name=Button (3) | owner/name=Button (3)
-- GameObject path_id=324 | m_Name=Item 9 | owner/name=Item 9
-- GameObject path_id=325 | m_Name=Scroll View | owner/name=Scroll View
-- GameObject path_id=326 | m_Name=Button 8 | owner/name=Button 8
-- GameObject path_id=327 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=328 | m_Name=Item 8 | owner/name=Item 8
-- GameObject path_id=329 | m_Name=Sound Tracks | owner/name=Sound Tracks
-- GameObject path_id=330 | m_Name=Text (2) | owner/name=Text (2)
-- GameObject path_id=331 | m_Name=All Map | owner/name=All Map
-- GameObject path_id=332 | m_Name=ATF btn | owner/name=ATF btn
-- GameObject path_id=333 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=334 | m_Name=Resource Panel | owner/name=Resource Panel
-- GameObject path_id=336 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=337 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=338 | m_Name=Image | owner/name=Image
-- GameObject path_id=339 | m_Name=Skill Upped 8 | owner/name=Skill Upped 8
-- GameObject path_id=340 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=341 | m_Name=Bang Info | owner/name=Bang Info
-- GameObject path_id=342 | m_Name=Skill Upped 8 | owner/name=Skill Upped 8
-- GameObject path_id=343 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=344 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=345 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=346 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
-- GameObject path_id=347 | m_Name=Image | owner/name=Image
-- GameObject path_id=348 | m_Name=Info text (1) | owner/name=Info text (1)
-- GameObject path_id=349 | m_Name=EventSystem | owner/name=EventSystem
-- GameObject path_id=350 | m_Name=Text (2) | owner/name=Text (2)
-- GameObject path_id=351 | m_Name=Glow img | owner/name=Glow img
-- GameObject path_id=352 | m_Name=Skill Upped 2 | owner/name=Skill Upped 2
-- GameObject path_id=353 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=354 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=355 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=356 | m_Name=Star Toggle | owner/name=Star Toggle
-- GameObject path_id=357 | m_Name=Toggle Panel | owner/name=Toggle Panel
-- GameObject path_id=358 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=359 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=360 | m_Name=Info 8 | owner/name=Info 8
-- GameObject path_id=361 | m_Name=Button 9 | owner/name=Button 9
-- GameObject path_id=362 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=363 | m_Name=Image | owner/name=Image
-- GameObject path_id=364 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=365 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=366 | m_Name=Panel Att | owner/name=Panel Att
-- GameObject path_id=367 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=368 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=369 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=370 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
-- GameObject path_id=371 | m_Name=Vang | owner/name=Vang
-- GameObject path_id=372 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=373 | m_Name=ClickBack | owner/name=ClickBack
-- GameObject path_id=374 | m_Name=Gia kc | owner/name=Gia kc
-- GameObject path_id=375 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=376 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=377 | m_Name=Info | owner/name=Info
-- GameObject path_id=378 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=379 | m_Name=Dm | owner/name=Dm
-- GameObject path_id=380 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=381 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=382 | m_Name=Skill Upped 2 | owner/name=Skill Upped 2
-- GameObject path_id=383 | m_Name=ATF Process | owner/name=ATF Process
-- GameObject path_id=384 | m_Name=Info 6 | owner/name=Info 6
-- GameObject path_id=385 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=387 | m_Name=Board vien | owner/name=Board vien
-- GameObject path_id=388 | m_Name=Button 2 | owner/name=Button 2
-- GameObject path_id=389 | m_Name=SkillPoint | owner/name=SkillPoint
-- GameObject path_id=390 | m_Name=Button 1 | owner/name=Button 1
-- GameObject path_id=391 | m_Name=Star btn | owner/name=Star btn
-- GameObject path_id=392 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=393 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=394 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=395 | m_Name=Button (4) | owner/name=Button (4)
-- GameObject path_id=396 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=397 | m_Name=Button 2 | owner/name=Button 2
-- GameObject path_id=398 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=399 | m_Name=Gach Chan (4) | owner/name=Gach Chan (4)
-- GameObject path_id=400 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=401 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=402 | m_Name=Info text (1) | owner/name=Info text (1)
-- GameObject path_id=403 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=404 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=405 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=406 | m_Name=Reset | owner/name=Reset
-- GameObject path_id=407 | m_Name=Content | owner/name=Content
-- GameObject path_id=408 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=409 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=410 | m_Name=Info text (1) | owner/name=Info text (1)
-- GameObject path_id=411 | m_Name=Rong Vang | owner/name=Rong Vang
-- GameObject path_id=412 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=413 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=414 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=415 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=416 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=417 | m_Name=Xanh | owner/name=Xanh
-- GameObject path_id=418 | m_Name=Atf Toggle | owner/name=Atf Toggle
-- GameObject path_id=419 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=420 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=421 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=422 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=423 | m_Name=Btn Phai | owner/name=Btn Phai
-- GameObject path_id=424 | m_Name=Skill Upped 1 | owner/name=Skill Upped 1
-- GameObject path_id=425 | m_Name=sang | owner/name=sang
-- GameObject path_id=426 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=427 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=428 | m_Name=Button info | owner/name=Button info
-- GameObject path_id=429 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=430 | m_Name=ATF Process | owner/name=ATF Process
-- GameObject path_id=431 | m_Name=Button (3) | owner/name=Button (3)
-- GameObject path_id=432 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
-- GameObject path_id=433 | m_Name=Equip img | owner/name=Equip img
-- GameObject path_id=434 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=435 | m_Name=Info 10 | owner/name=Info 10
-- GameObject path_id=437 | m_Name=Shadow (4) | owner/name=Shadow (4)
-- GameObject path_id=438 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=439 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=440 | m_Name=PopUp | owner/name=PopUp
-- GameObject path_id=441 | m_Name=Button 6 | owner/name=Button 6
-- GameObject path_id=442 | m_Name=Board main | owner/name=Board main
-- GameObject path_id=443 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
-- GameObject path_id=444 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=445 | m_Name=Skill point img | owner/name=Skill point img
-- GameObject path_id=446 | m_Name=Atf btn | owner/name=Atf btn
-- GameObject path_id=447 | m_Name=Button (4) | owner/name=Button (4)
-- GameObject path_id=448 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=449 | m_Name=Equiped | owner/name=Equiped
-- GameObject path_id=450 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=451 | m_Name=ATF Img | owner/name=ATF Img
-- GameObject path_id=452 | m_Name=Info 2 | owner/name=Info 2
-- GameObject path_id=453 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=454 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=455 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=456 | m_Name=Item img | owner/name=Item img
-- GameObject path_id=457 | m_Name=Info text (1) | owner/name=Info text (1)
-- GameObject path_id=458 | m_Name=Info 10 | owner/name=Info 10
-- GameObject path_id=459 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=460 | m_Name=Board | owner/name=Board
-- GameObject path_id=461 | m_Name=Board Points (1) | owner/name=Board Points (1)
-- GameObject path_id=462 | m_Name=Image nhay | owner/name=Image nhay
-- GameObject path_id=463 | m_Name=Info text | owner/name=Info text
-- GameObject path_id=464 | m_Name=Button 9 | owner/name=Button 9
-- GameObject path_id=465 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=466 | m_Name=Info 3 | owner/name=Info 3
-- GameObject path_id=467 | m_Name=Info 3 | owner/name=Info 3
-- GameObject path_id=468 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=469 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=470 | m_Name=Equip Btn | owner/name=Equip Btn
-- GameObject path_id=471 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=472 | m_Name=Image | owner/name=Image
-- GameObject path_id=473 | m_Name=Image | owner/name=Image
-- GameObject path_id=474 | m_Name=Xanh | owner/name=Xanh
-- GameObject path_id=475 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=476 | m_Name=Button | owner/name=Button
-- GameObject path_id=477 | m_Name=ATF Img | owner/name=ATF Img
-- GameObject path_id=478 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
-- GameObject path_id=479 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=480 | m_Name=Skill Upped 5 | owner/name=Skill Upped 5
-- GameObject path_id=481 | m_Name=A6 Infomation | owner/name=A6 Infomation
-- GameObject path_id=482 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=483 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=484 | m_Name=Image (1) | owner/name=Image (1)
-- GameObject path_id=485 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=486 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=487 | m_Name=Star btn | owner/name=Star btn
-- GameObject path_id=488 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=489 | m_Name=Level Panel | owner/name=Level Panel
-- GameObject path_id=490 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=491 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=492 | m_Name=Text (1) | owner/name=Text (1)
-- GameObject path_id=493 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=494 | m_Name=Vien | owner/name=Vien
-- GameObject path_id=495 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=496 | m_Name=ATF Name | owner/name=ATF Name
-- GameObject path_id=497 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=498 | m_Name=Skill Upped 1 | owner/name=Skill Upped 1
-- GameObject path_id=499 | m_Name=Home Btn | owner/name=Home Btn
-- GameObject path_id=500 | m_Name=Map 2 | owner/name=Map 2
-- GameObject path_id=501 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=502 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=503 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=504 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=505 | m_Name=Info text (1) | owner/name=Info text (1)
-- GameObject path_id=506 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=507 | m_Name=Desellect All | owner/name=Desellect All
-- GameObject path_id=508 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=510 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=511 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=513 | m_Name=Button 4 | owner/name=Button 4
-- GameObject path_id=514 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
-- GameObject path_id=515 | m_Name=Image nhay | owner/name=Image nhay
-- GameObject path_id=516 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=517 | m_Name=Panel Khang | owner/name=Panel Khang
-- GameObject path_id=518 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=519 | m_Name=Theme | owner/name=Theme
-- GameObject path_id=520 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=521 | m_Name=B2 | owner/name=B2
-- GameObject path_id=522 | m_Name=Setting board | owner/name=Setting board
-- GameObject path_id=523 | m_Name=Text (1) | owner/name=Text (1)
-- GameObject path_id=524 | m_Name=B2 | owner/name=B2
-- GameObject path_id=525 | m_Name=B3 | owner/name=B3
-- GameObject path_id=526 | m_Name=Icon Sang | owner/name=Icon Sang
-- GameObject path_id=527 | m_Name=Board main | owner/name=Board main
-- GameObject path_id=528 | m_Name=Item img | owner/name=Item img
-- GameObject path_id=529 | m_Name=Main Image (1) | owner/name=Main Image (1)
-- GameObject path_id=530 | m_Name=ATF Name | owner/name=ATF Name
-- GameObject path_id=531 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=533 | m_Name=Antifact | owner/name=Antifact
-- GameObject path_id=534 | m_Name=Star Toggle | owner/name=Star Toggle
-- GameObject path_id=535 | m_Name=Info 9 | owner/name=Info 9
-- GameObject path_id=536 | m_Name=Btn Trai | owner/name=Btn Trai
-- GameObject path_id=537 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=538 | m_Name=Skill Upped 1 | owner/name=Skill Upped 1
-- GameObject path_id=539 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=540 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=541 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=542 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=543 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=544 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=545 | m_Name=Gach Chan (4) | owner/name=Gach Chan (4)
-- GameObject path_id=546 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=547 | m_Name=DarkBack | owner/name=DarkBack
-- GameObject path_id=548 | m_Name=A3 Infomation | owner/name=A3 Infomation
-- GameObject path_id=549 | m_Name=ATF Name | owner/name=ATF Name
-- GameObject path_id=551 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=552 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=553 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=554 | m_Name=Board Points (1) | owner/name=Board Points (1)
-- GameObject path_id=555 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=556 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
-- GameObject path_id=557 | m_Name=Vien | owner/name=Vien
-- GameObject path_id=558 | m_Name=Vang | owner/name=Vang
-- GameObject path_id=559 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=560 | m_Name=Level Boss | owner/name=Level Boss
-- GameObject path_id=561 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=562 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=563 | m_Name=Info 6 | owner/name=Info 6
-- GameObject path_id=564 | m_Name=Button (6) | owner/name=Button (6)
-- GameObject path_id=565 | m_Name=A2 | owner/name=A2
-- GameObject path_id=566 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=567 | m_Name=ClickNormal | owner/name=ClickNormal
-- GameObject path_id=568 | m_Name=Bui | owner/name=Bui
-- GameObject path_id=569 | m_Name=Skill Tree | owner/name=Skill Tree
-- GameObject path_id=570 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
-- GameObject path_id=571 | m_Name=Lock | owner/name=Lock
-- GameObject path_id=572 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=573 | m_Name=Level Boss | owner/name=Level Boss
-- GameObject path_id=574 | m_Name=Purchase BTN | owner/name=Purchase BTN
-- GameObject path_id=575 | m_Name=Skill Upped 2 | owner/name=Skill Upped 2
-- GameObject path_id=576 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=577 | m_Name=Info | owner/name=Info
-- GameObject path_id=580 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=581 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=582 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=583 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=584 | m_Name=Gia Vang | owner/name=Gia Vang
-- GameObject path_id=585 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=586 | m_Name=Info 5 | owner/name=Info 5
-- GameObject path_id=587 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=588 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=589 | m_Name=Button (2) | owner/name=Button (2)
-- GameObject path_id=590 | m_Name=Image | owner/name=Image
-- GameObject path_id=591 | m_Name=Button | owner/name=Button
-- GameObject path_id=592 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=593 | m_Name=Price | owner/name=Price
-- GameObject path_id=594 | m_Name=Content | owner/name=Content
-- GameObject path_id=595 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=596 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=597 | m_Name=Enter Btn | owner/name=Enter Btn
-- GameObject path_id=598 | m_Name=Btn Trai | owner/name=Btn Trai
-- GameObject path_id=599 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
-- GameObject path_id=600 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=601 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=602 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=603 | m_Name=Info 6 | owner/name=Info 6
-- GameObject path_id=604 | m_Name=DarkBack | owner/name=DarkBack
-- GameObject path_id=605 | m_Name=Equiped | owner/name=Equiped
-- GameObject path_id=606 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=607 | m_Name=Name (4) | owner/name=Name (4)
-- GameObject path_id=608 | m_Name=1 do | owner/name=1 do
-- GameObject path_id=609 | m_Name=Gold | owner/name=Gold
-- GameObject path_id=610 | m_Name=Button | owner/name=Button
-- GameObject path_id=611 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=612 | m_Name=Skill Tree Node | owner/name=Skill Tree Node
-- GameObject path_id=613 | m_Name=Text (1) | owner/name=Text (1)
-- GameObject path_id=614 | m_Name=Main Panel | owner/name=Main Panel
-- GameObject path_id=615 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=616 | m_Name=Level Panel | owner/name=Level Panel
-- GameObject path_id=617 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=618 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=620 | m_Name=Info 6 | owner/name=Info 6
-- GameObject path_id=621 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=622 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=623 | m_Name=Info 5 | owner/name=Info 5
-- GameObject path_id=624 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=625 | m_Name=Panel Mau | owner/name=Panel Mau
-- GameObject path_id=626 | m_Name=Info text (1) | owner/name=Info text (1)
-- GameObject path_id=627 | m_Name=Image | owner/name=Image
-- GameObject path_id=628 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=629 | m_Name=ATF Name | owner/name=ATF Name
-- GameObject path_id=630 | m_Name=DarkBack | owner/name=DarkBack
-- GameObject path_id=631 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=632 | m_Name=Info 1 | owner/name=Info 1
-- GameObject path_id=633 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=634 | m_Name=Home Img | owner/name=Home Img
-- GameObject path_id=635 | m_Name=Home Img | owner/name=Home Img
-- GameObject path_id=636 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=637 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=638 | m_Name=Button 7 | owner/name=Button 7
-- GameObject path_id=639 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=640 | m_Name=Scroll View | owner/name=Scroll View
-- GameObject path_id=641 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=642 | m_Name=B4 | owner/name=B4
-- GameObject path_id=643 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=644 | m_Name=B1 | owner/name=B1
-- GameObject path_id=645 | m_Name=Item img | owner/name=Item img
-- GameObject path_id=646 | m_Name=Button 5 | owner/name=Button 5
-- GameObject path_id=647 | m_Name=Board main | owner/name=Board main
-- GameObject path_id=648 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=649 | m_Name=Board vien | owner/name=Board vien
-- GameObject path_id=650 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=651 | m_Name=Skill Upped 7 | owner/name=Skill Upped 7
-- GameObject path_id=652 | m_Name=Equip img | owner/name=Equip img
-- GameObject path_id=653 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=654 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=655 | m_Name=Info text | owner/name=Info text
-- GameObject path_id=656 | m_Name=Item 3 | owner/name=Item 3
-- GameObject path_id=657 | m_Name=Dm | owner/name=Dm
-- GameObject path_id=658 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=659 | m_Name=Info | owner/name=Info
-- GameObject path_id=660 | m_Name=Vien | owner/name=Vien
-- GameObject path_id=661 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=662 | m_Name=Shadow (5) | owner/name=Shadow (5)
-- GameObject path_id=663 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=664 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=665 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=666 | m_Name=Skill Upped 9 | owner/name=Skill Upped 9
-- GameObject path_id=667 | m_Name=Button (2) | owner/name=Button (2)
-- GameObject path_id=668 | m_Name=Skill Upped 3 | owner/name=Skill Upped 3
-- GameObject path_id=669 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=670 | m_Name=Skill Upped 3 | owner/name=Skill Upped 3
-- GameObject path_id=671 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=672 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=673 | m_Name=Skill Tree Img | owner/name=Skill Tree Img
-- GameObject path_id=674 | m_Name=Info 2 | owner/name=Info 2
-- GameObject path_id=675 | m_Name=Home Img | owner/name=Home Img
-- GameObject path_id=677 | m_Name=Atf Toggle | owner/name=Atf Toggle
-- GameObject path_id=678 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
-- GameObject path_id=679 | m_Name=Image nhay | owner/name=Image nhay
-- GameObject path_id=680 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=681 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=682 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=683 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=684 | m_Name=Info txt | owner/name=Info txt
-- GameObject path_id=685 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=686 | m_Name=Label | owner/name=Label
-- GameObject path_id=687 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=688 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
-- GameObject path_id=689 | m_Name=ATF Img | owner/name=ATF Img
-- GameObject path_id=690 | m_Name=Button (3) | owner/name=Button (3)
-- GameObject path_id=691 | m_Name=Image | owner/name=Image
-- GameObject path_id=692 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=693 | m_Name=Button 5 | owner/name=Button 5
-- GameObject path_id=694 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=695 | m_Name=Equiped | owner/name=Equiped
-- GameObject path_id=696 | m_Name=Glow img | owner/name=Glow img
-- GameObject path_id=697 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=698 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=699 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=700 | m_Name=Button (7) | owner/name=Button (7)
-- GameObject path_id=701 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=702 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=703 | m_Name=Lock | owner/name=Lock
-- GameObject path_id=704 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=705 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=706 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=707 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=708 | m_Name=Skill Upped 6 | owner/name=Skill Upped 6
-- GameObject path_id=709 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=710 | m_Name=Board main | owner/name=Board main
-- GameObject path_id=711 | m_Name=Info 9 | owner/name=Info 9
-- GameObject path_id=712 | m_Name=Image | owner/name=Image
-- GameObject path_id=713 | m_Name=Credit | owner/name=Credit
-- GameObject path_id=714 | m_Name=Image back | owner/name=Image back
-- GameObject path_id=715 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=716 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=717 | m_Name=Glow img | owner/name=Glow img
-- GameObject path_id=718 | m_Name=Skill Upped 8 | owner/name=Skill Upped 8
-- GameObject path_id=719 | m_Name=Atf btn | owner/name=Atf btn
-- GameObject path_id=721 | m_Name=Button info | owner/name=Button info
-- GameObject path_id=722 | m_Name=B5 | owner/name=B5
-- GameObject path_id=723 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=724 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=725 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=726 | m_Name=Gold | owner/name=Gold
-- GameObject path_id=727 | m_Name=Shadow (4) | owner/name=Shadow (4)
-- GameObject path_id=728 | m_Name=Image back | owner/name=Image back
-- GameObject path_id=729 | m_Name=Skill Tree | owner/name=Skill Tree
-- GameObject path_id=730 | m_Name=Button 8 | owner/name=Button 8
-- GameObject path_id=731 | m_Name=Info txt | owner/name=Info txt
-- GameObject path_id=732 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=733 | m_Name=Button (4) | owner/name=Button (4)
-- GameObject path_id=734 | m_Name=Down  | owner/name=Down 
-- GameObject path_id=735 | m_Name=Button 3 | owner/name=Button 3
-- GameObject path_id=736 | m_Name=Name (4) | owner/name=Name (4)
-- GameObject path_id=737 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=738 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=739 | m_Name=Image | owner/name=Image
-- GameObject path_id=740 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=741 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=742 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=743 | m_Name=Image nhay | owner/name=Image nhay
-- GameObject path_id=744 | m_Name=Viewport | owner/name=Viewport
-- GameObject path_id=745 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=746 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=747 | m_Name=Bg | owner/name=Bg
-- GameObject path_id=748 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
-- GameObject path_id=749 | m_Name=Rong Vang | owner/name=Rong Vang
-- GameObject path_id=750 | m_Name=Button 10 | owner/name=Button 10
-- GameObject path_id=751 | m_Name=Shadow (4) | owner/name=Shadow (4)
-- GameObject path_id=753 | m_Name=A1 Infomation | owner/name=A1 Infomation
-- GameObject path_id=754 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=755 | m_Name=Button 6 | owner/name=Button 6
-- GameObject path_id=756 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=757 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=758 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=759 | m_Name=Button 2 | owner/name=Button 2
-- GameObject path_id=760 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=761 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=762 | m_Name=Star Toggle | owner/name=Star Toggle
-- GameObject path_id=763 | m_Name=Button info | owner/name=Button info
-- GameObject path_id=764 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=765 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=766 | m_Name=Info text (4) | owner/name=Info text (4)
-- GameObject path_id=767 | m_Name=Glow img | owner/name=Glow img
-- GameObject path_id=768 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=769 | m_Name=Viewport | owner/name=Viewport
-- GameObject path_id=770 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=771 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=772 | m_Name=Gia kc | owner/name=Gia kc
-- GameObject path_id=773 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=774 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=775 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=777 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=778 | m_Name=Image | owner/name=Image
-- GameObject path_id=779 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
-- GameObject path_id=780 | m_Name=Skill Upped 9 | owner/name=Skill Upped 9
-- GameObject path_id=781 | m_Name=Equip img | owner/name=Equip img
-- GameObject path_id=782 | m_Name=ATF Img | owner/name=ATF Img
-- GameObject path_id=783 | m_Name=SkillPoint | owner/name=SkillPoint
-- GameObject path_id=784 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=785 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=787 | m_Name=Close | owner/name=Close
-- GameObject path_id=788 | m_Name=Equiped | owner/name=Equiped
-- GameObject path_id=789 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=790 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=791 | m_Name=Gold | owner/name=Gold
-- GameObject path_id=792 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=793 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=794 | m_Name=sang | owner/name=sang
-- GameObject path_id=795 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=796 | m_Name=B1 | owner/name=B1
-- GameObject path_id=797 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=798 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=799 | m_Name=Button 9 | owner/name=Button 9
-- GameObject path_id=800 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=801 | m_Name=Glow | owner/name=Glow
-- GameObject path_id=802 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=803 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
-- GameObject path_id=804 | m_Name=Btn Trai | owner/name=Btn Trai
-- GameObject path_id=805 | m_Name=Info text (4) | owner/name=Info text (4)
-- GameObject path_id=806 | m_Name=A8 | owner/name=A8
-- GameObject path_id=807 | m_Name=Info 8 | owner/name=Info 8
-- GameObject path_id=808 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=809 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=810 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=811 | m_Name=Image | owner/name=Image
-- GameObject path_id=812 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=813 | m_Name=Level Boss | owner/name=Level Boss
-- GameObject path_id=814 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=815 | m_Name=Skill point img | owner/name=Skill point img
-- GameObject path_id=816 | m_Name=Rong shadow | owner/name=Rong shadow
-- GameObject path_id=817 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=818 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=819 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=820 | m_Name=Equiped | owner/name=Equiped
-- GameObject path_id=821 | m_Name=A3 | owner/name=A3
-- GameObject path_id=822 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=823 | m_Name=Vong Tron | owner/name=Vong Tron
-- GameObject path_id=824 | m_Name=Text (3) | owner/name=Text (3)
-- GameObject path_id=825 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=826 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=827 | m_Name=Image | owner/name=Image
-- GameObject path_id=828 | m_Name=Star Process | owner/name=Star Process
-- GameObject path_id=829 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=830 | m_Name=Equip img | owner/name=Equip img
-- GameObject path_id=831 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=832 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=833 | m_Name=A4 InfomatioN | owner/name=A4 InfomatioN
-- GameObject path_id=834 | m_Name=Skill Tree Img | owner/name=Skill Tree Img
-- GameObject path_id=835 | m_Name=Skill Tree (1) | owner/name=Skill Tree (1)
-- GameObject path_id=836 | m_Name=Button 3 | owner/name=Button 3
-- GameObject path_id=837 | m_Name=Item 6 | owner/name=Item 6
-- GameObject path_id=838 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=839 | m_Name=Skill Upped 2 | owner/name=Skill Upped 2
-- GameObject path_id=840 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
-- GameObject path_id=841 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=842 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
-- GameObject path_id=843 | m_Name=Panel Trans | owner/name=Panel Trans
-- GameObject path_id=844 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=845 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=846 | m_Name=Content | owner/name=Content
-- GameObject path_id=848 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=849 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=851 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=852 | m_Name=Content | owner/name=Content
-- GameObject path_id=853 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=854 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=855 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=856 | m_Name=Gach Chan | owner/name=Gach Chan
-- GameObject path_id=857 | m_Name=Info text (4) | owner/name=Info text (4)
-- GameObject path_id=858 | m_Name=Button 4 | owner/name=Button 4
-- GameObject path_id=859 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=860 | m_Name=Disguise Panel | owner/name=Disguise Panel
-- GameObject path_id=861 | m_Name=Shop | owner/name=Shop
-- GameObject path_id=862 | m_Name=Button 10 | owner/name=Button 10
-- GameObject path_id=863 | m_Name=Star btn | owner/name=Star btn
-- GameObject path_id=864 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=865 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=866 | m_Name=Btn Trai | owner/name=Btn Trai
-- GameObject path_id=867 | m_Name=Shadow (2) | owner/name=Shadow (2)
-- GameObject path_id=868 | m_Name=Text (1) | owner/name=Text (1)
-- GameObject path_id=869 | m_Name=Watch Videos | owner/name=Watch Videos
-- GameObject path_id=870 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=871 | m_Name=Item 2 | owner/name=Item 2
-- GameObject path_id=872 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=873 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=874 | m_Name=Info 4 | owner/name=Info 4
-- GameObject path_id=875 | m_Name=A7 | owner/name=A7
-- GameObject path_id=876 | m_Name=Info text (2) | owner/name=Info text (2)
-- GameObject path_id=877 | m_Name=Panel Phai | owner/name=Panel Phai
-- GameObject path_id=878 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=879 | m_Name=Shadow (1) | owner/name=Shadow (1)
-- GameObject path_id=880 | m_Name=Info text (3) | owner/name=Info text (3)
-- GameObject path_id=881 | m_Name=Skill Upped 3 | owner/name=Skill Upped 3
-- GameObject path_id=882 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=883 | m_Name=Item img | owner/name=Item img
-- GameObject path_id=884 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
-- GameObject path_id=885 | m_Name=Info 2 | owner/name=Info 2
-- GameObject path_id=886 | m_Name=Info txt | owner/name=Info txt
-- GameObject path_id=887 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=888 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=889 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=890 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=891 | m_Name=Glow equip img | owner/name=Glow equip img
-- GameObject path_id=892 | m_Name=Button (7) | owner/name=Button (7)
-- GameObject path_id=893 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=894 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=895 | m_Name=Gach Chan (4) | owner/name=Gach Chan (4)
-- GameObject path_id=896 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=898 | m_Name=Button (1) | owner/name=Button (1)
-- GameObject path_id=899 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
-- GameObject path_id=900 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=901 | m_Name=Equip img | owner/name=Equip img
-- GameObject path_id=902 | m_Name=Setting | owner/name=Setting
-- GameObject path_id=903 | m_Name=Gia kc | owner/name=Gia kc
-- GameObject path_id=904 | m_Name=Text (1) | owner/name=Text (1)
-- GameObject path_id=905 | m_Name=Info text (4) | owner/name=Info text (4)
-- GameObject path_id=906 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=907 | m_Name=Info 7 | owner/name=Info 7
-- GameObject path_id=908 | m_Name=A5 Infomation | owner/name=A5 Infomation
-- GameObject path_id=909 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=910 | m_Name=Image | owner/name=Image
-- GameObject path_id=911 | m_Name=Bang Info | owner/name=Bang Info
-- GameObject path_id=912 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=913 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=914 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=915 | m_Name=Main Camera | owner/name=Main Camera
-- GameObject path_id=916 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=917 | m_Name=Board vien | owner/name=Board vien
-- GameObject path_id=918 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=920 | m_Name=Viewport | owner/name=Viewport
-- GameObject path_id=921 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=922 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
-- GameObject path_id=923 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=924 | m_Name=Button 8 | owner/name=Button 8
-- GameObject path_id=925 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=926 | m_Name=Button (1) | owner/name=Button (1)
-- GameObject path_id=927 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
-- GameObject path_id=928 | m_Name=Gach Chan | owner/name=Gach Chan
-- GameObject path_id=929 | m_Name=Skill point img | owner/name=Skill point img
-- GameObject path_id=930 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
-- GameObject path_id=931 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=932 | m_Name=Item 7 | owner/name=Item 7
-- GameObject path_id=933 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=934 | m_Name=ClickFalseLevel | owner/name=ClickFalseLevel
-- GameObject path_id=935 | m_Name=Skill Tree Img | owner/name=Skill Tree Img
-- GameObject path_id=936 | m_Name=Den | owner/name=Den
-- GameObject path_id=937 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=938 | m_Name=Info text (1) | owner/name=Info text (1)
-- GameObject path_id=939 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=940 | m_Name=Star Toggle | owner/name=Star Toggle
-- GameObject path_id=941 | m_Name=ATF Img | owner/name=ATF Img
-- GameObject path_id=942 | m_Name=Name | owner/name=Name
-- GameObject path_id=943 | m_Name=Right | owner/name=Right
-- GameObject path_id=944 | m_Name=Left | owner/name=Left
-- GameObject path_id=945 | m_Name=Close | owner/name=Close
-- GameObject path_id=946 | m_Name=Shadow (3) | owner/name=Shadow (3)
-- GameObject path_id=947 | m_Name=Board Points | owner/name=Board Points
-- GameObject path_id=948 | m_Name=Close btn | owner/name=Close btn
-- GameObject path_id=949 | m_Name=ATF Toggle | owner/name=ATF Toggle
-- GameObject path_id=950 | m_Name=Glow img | owner/name=Glow img
-- GameObject path_id=951 | m_Name=Info txt | owner/name=Info txt
-- GameObject path_id=952 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=953 | m_Name=Story | owner/name=Story
-- GameObject path_id=955 | m_Name=Map 4 | owner/name=Map 4
-- GameObject path_id=956 | m_Name=ATF Name | owner/name=ATF Name
-- GameObject path_id=957 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=958 | m_Name=Info 10 | owner/name=Info 10
-- GameObject path_id=959 | m_Name=Ten | owner/name=Ten
-- GameObject path_id=960 | m_Name=Skill Upped 5 | owner/name=Skill Upped 5
-- GameObject path_id=961 | m_Name=Info | owner/name=Info
-- GameObject path_id=962 | m_Name=Name (1) | owner/name=Name (1)
-- GameObject path_id=963 | m_Name=Image | owner/name=Image
-- GameObject path_id=964 | m_Name=Gia kc | owner/name=Gia kc
-- GameObject path_id=965 | m_Name=Shop | owner/name=Shop
-- GameObject path_id=966 | m_Name=Star Process | owner/name=Star Process
-- GameObject path_id=967 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=968 | m_Name=Info text (1) | owner/name=Info text (1)
-- GameObject path_id=969 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=970 | m_Name=Text (3) | owner/name=Text (3)
-- GameObject path_id=971 | m_Name=Image | owner/name=Image
-- GameObject path_id=972 | m_Name=Item img | owner/name=Item img
-- GameObject path_id=973 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=974 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=975 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=976 | m_Name=Info 2 | owner/name=Info 2
-- GameObject path_id=977 | m_Name=Shadow | owner/name=Shadow
-- GameObject path_id=978 | m_Name=Skill Upped 9 | owner/name=Skill Upped 9
-- GameObject path_id=979 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=980 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
-- GameObject path_id=981 | m_Name=Gach Chan (4) | owner/name=Gach Chan (4)
-- GameObject path_id=982 | m_Name=Equip img | owner/name=Equip img
-- GameObject path_id=983 | m_Name=Small Img | owner/name=Small Img
-- GameObject path_id=984 | m_Name=Artifact | owner/name=Artifact
-- GameObject path_id=985 | m_Name=Item img | owner/name=Item img
-- GameObject path_id=986 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=987 | m_Name=Image | owner/name=Image
-- GameObject path_id=988 | m_Name=Image | owner/name=Image
-- GameObject path_id=989 | m_Name=Bang Info | owner/name=Bang Info
-- GameObject path_id=990 | m_Name=Big Select | owner/name=Big Select
-- GameObject path_id=991 | m_Name=Name (2) | owner/name=Name (2)
-- GameObject path_id=992 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=993 | m_Name=ATF Process | owner/name=ATF Process
-- GameObject path_id=995 | m_Name=Top | owner/name=Top
-- GameObject path_id=996 | m_Name=Small Img Xam | owner/name=Small Img Xam
-- GameObject path_id=997 | m_Name=Skill Upped 5 | owner/name=Skill Upped 5
-- GameObject path_id=998 | m_Name=Big Img | owner/name=Big Img
-- GameObject path_id=999 | m_Name=Skill point Txt | owner/name=Skill point Txt
-- GameObject path_id=1000 | m_Name=Image | owner/name=Image
-- GameObject path_id=1001 | m_Name=Text (1) | owner/name=Text (1)
-- GameObject path_id=1003 | m_Name=Image | owner/name=Image
-- GameObject path_id=1004 | m_Name=Info text | owner/name=Info text
-- GameObject path_id=1005 | m_Name=Dark | owner/name=Dark
-- GameObject path_id=1006 | m_Name=Purchased | owner/name=Purchased
-- GameObject path_id=1007 | m_Name=Button (6) | owner/name=Button (6)
-- GameObject path_id=1008 | m_Name=Name (3) | owner/name=Name (3)
-- GameObject path_id=1009 | m_Name=Down (1) | owner/name=Down (1)
+- MonoBehaviour/TextMesh/TextAsset objects examined: 4,085
+- Non-empty text fields found: 1,150
+- TextMesh file=level5 path_id=2747 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2748 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2749 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2750 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2751 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2752 | m_Text= | value=critical
+- TextMesh file=level5 path_id=2753 | m_Text= | value=critical
+- TextMesh file=level5 path_id=2754 | m_Text= | value=critical
+- TextMesh file=level5 path_id=2755 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2756 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2757 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2758 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2759 | m_Text= | value=+169
+- TextMesh file=level5 path_id=2760 | m_Text= | value=good luck, arashi.
+- TextMesh file=level5 path_id=2761 | m_Text= | value=Here stands the first guardian, kanashi
+the sword master.
+- TextMesh file=level5 path_id=2762 | m_Text= | value=dosu's tower is sealed by 
+a magical bond between his
+guardians.
+- TextMesh file=level5 path_id=2763 | m_Text= | value=in order to gain access to it,
+you must defeat all the guardians.
+- TextMesh file=level5 path_id=2764 | m_Text= | value=I WILL CATCH YOU UP. 
+HURRY UP AND JUMP ARASHI!
+- TextMesh file=level6 path_id=2756 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2757 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2758 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2759 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2760 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2761 | m_Text= | value=critical
+- TextMesh file=level6 path_id=2762 | m_Text= | value=critical
+- TextMesh file=level6 path_id=2763 | m_Text= | value=critical
+- TextMesh file=level6 path_id=2764 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2765 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2766 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2767 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2768 | m_Text= | value=+169
+- TextMesh file=level6 path_id=2769 | m_Text= | value=your best stragety is timing your
+dodge roll and disguise carefully. 
+                   good luck.
+- TextMesh file=level6 path_id=2770 | m_Text= | value=it would be a great disadvantage for
+you if you fight him from a distance.
+- TextMesh file=level6 path_id=2771 | m_Text= | value=your opponent this time
+is Yasha the bow master.
+- TextMesh file=level6 path_id=2772 | m_Text= | value=he's extremely agile and always
+ manages to escape his enemies.
+- TextMesh file=level6 path_id=2773 | m_Text= | value=I WILL CATCH YOU UP. 
+HURRY UP AND JUMP ARASHI!
+- TextMesh file=level7 path_id=2988 | m_Text= | value=+169
+- TextMesh file=level7 path_id=2989 | m_Text= | value=+169
+- TextMesh file=level7 path_id=2990 | m_Text= | value=+169
+- TextMesh file=level7 path_id=2991 | m_Text= | value=+169
+- TextMesh file=level7 path_id=2992 | m_Text= | value=+169
+- TextMesh file=level7 path_id=2993 | m_Text= | value=critical
+- TextMesh file=level7 path_id=2994 | m_Text= | value=critical
+- TextMesh file=level7 path_id=2995 | m_Text= | value=critical
+- TextMesh file=level7 path_id=2996 | m_Text= | value=+169
+- TextMesh file=level7 path_id=2997 | m_Text= | value=+169
+- TextMesh file=level7 path_id=2998 | m_Text= | value=+169
+- TextMesh file=level7 path_id=2999 | m_Text= | value=+169
+- TextMesh file=level7 path_id=3000 | m_Text= | value=+169
+- TextMesh file=level7 path_id=3001 | m_Text= | value=You are just a pawn in this game arashi
+- TextMesh file=level7 path_id=3002 | m_Text= | value=good luck, arashi.
+- TextMesh file=level7 path_id=3003 | m_Text= | value=Just a puppet, nothing more... 
+              Hahahaha
+- TextMesh file=level7 path_id=3004 | m_Text= | value=stay calm and don't let his
+combat pace affect you.
+- TextMesh file=level7 path_id=3005 | m_Text= | value=this is the last guardian,
+    Kido the terror.
+- TextMesh file=level7 path_id=3006 | m_Text= | value=defeat him and then you can break
+the seal of the portal that leads
+to dosu's tower.
+- TextMesh file=level7 path_id=3007 | m_Text= | value=I WILL CATCH YOU UP. 
+HURRY UP AND JUMP ARASHI!
+- TextMesh file=level8 path_id=2181 | m_Text= | value=critical
+- TextMesh file=level8 path_id=2182 | m_Text= | value=critical
+- TextMesh file=level8 path_id=2183 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2184 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2185 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2186 | m_Text= | value=critical
+- TextMesh file=level8 path_id=2187 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2188 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2189 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2190 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2191 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2192 | m_Text= | value=+169
+- TextMesh file=level8 path_id=2193 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4074 | m_Text= | value=presents
+- TextMesh file=level9 path_id=4075 | m_Text= | value=I WAS SENT TO RESCUE YOU. 
+YOU CAN CALL ME RAVEN.
+- TextMesh file=level9 path_id=4076 | m_Text= | value=YOU MUST HAVE HUNDRED QUESTIONS NOW. 
+           BUT OUR TIME IS RUNNING OUT.
+- TextMesh file=level9 path_id=4077 | m_Text= | value=LET'S NOT WASTE ANY MOMENT ANYMORE.
+ THIS ARTIFACT WILL RESTORE YOUR POWER.
+- TextMesh file=level9 path_id=4078 | m_Text= | value=BP GAMES
+- TextMesh file=level9 path_id=4079 | m_Text= | value=YOU NEED TO TRUST ME. I AM YOUR LAST HOPE 
+IF YOU WANT TO FIND DOSU AND YOUR SON.
+- TextMesh file=level9 path_id=4080 | m_Text= | value=I WILL CATCH YOU UP. 
+HURRY UP AND JUMP ARASHI!
+- TextMesh file=level9 path_id=4081 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4082 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4083 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4084 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4085 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4086 | m_Text= | value=critical
+- TextMesh file=level9 path_id=4087 | m_Text= | value=critical
+- TextMesh file=level9 path_id=4088 | m_Text= | value=critical
+- TextMesh file=level9 path_id=4089 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4090 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4091 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4092 | m_Text= | value=+169
+- TextMesh file=level9 path_id=4093 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3497 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3498 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3499 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3500 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3501 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3502 | m_Text= | value=critical
+- TextMesh file=level10 path_id=3503 | m_Text= | value=critical
+- TextMesh file=level10 path_id=3504 | m_Text= | value=critical
+- TextMesh file=level10 path_id=3505 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3506 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3507 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3508 | m_Text= | value=+169
+- TextMesh file=level10 path_id=3509 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4060 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4061 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4062 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4063 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4064 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4065 | m_Text= | value=critical
+- TextMesh file=level11 path_id=4066 | m_Text= | value=critical
+- TextMesh file=level11 path_id=4067 | m_Text= | value=critical
+- TextMesh file=level11 path_id=4068 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4069 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4070 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4071 | m_Text= | value=+169
+- TextMesh file=level11 path_id=4072 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4603 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4604 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4605 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4606 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4607 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4608 | m_Text= | value=critical
+- TextMesh file=level12 path_id=4609 | m_Text= | value=critical
+- TextMesh file=level12 path_id=4610 | m_Text= | value=critical
+- TextMesh file=level12 path_id=4611 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4612 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4613 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4614 | m_Text= | value=+169
+- TextMesh file=level12 path_id=4615 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5280 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5281 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5282 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5283 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5284 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5285 | m_Text= | value=critical
+- TextMesh file=level13 path_id=5286 | m_Text= | value=critical
+- TextMesh file=level13 path_id=5287 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5288 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5289 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5290 | m_Text= | value=+169
+- TextMesh file=level13 path_id=5291 | m_Text= | value=critical
+- TextMesh file=level13 path_id=5292 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5496 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5497 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5498 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5499 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5500 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5501 | m_Text= | value=critical
+- TextMesh file=level14 path_id=5502 | m_Text= | value=critical
+- TextMesh file=level14 path_id=5503 | m_Text= | value=critical
+- TextMesh file=level14 path_id=5504 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5505 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5506 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5507 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5508 | m_Text= | value=+169
+- TextMesh file=level14 path_id=5509 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level15 path_id=6629 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6630 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6631 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6632 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6633 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6634 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6635 | m_Text= | value=critical
+- TextMesh file=level15 path_id=6636 | m_Text= | value=critical
+- TextMesh file=level15 path_id=6637 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6638 | m_Text= | value=critical
+- TextMesh file=level15 path_id=6639 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6640 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6641 | m_Text= | value=+169
+- TextMesh file=level15 path_id=6642 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level15 path_id=6643 | m_Text= | value=stay alive, arashi.
+- TextMesh file=level15 path_id=6644 | m_Text= | value=the cold will hurt you badly. try to find
+shelters like what we are staying in now.
+- TextMesh file=level15 path_id=6645 | m_Text= | value=the storm is raging outside.
+- TextMesh file=level15 path_id=6646 | m_Text= | value=it looks like dosu knows that
+      you have been awaken.
+- TextMesh file=level15 path_id=6647 | m_Text= | value=I WILL CATCH YOU UP. 
+HURRY UP AND JUMP ARASHI!
+- TextMesh file=level16 path_id=7369 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7370 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7371 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7372 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7373 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7374 | m_Text= | value=critical
+- TextMesh file=level16 path_id=7375 | m_Text= | value=critical
+- TextMesh file=level16 path_id=7376 | m_Text= | value=critical
+- TextMesh file=level16 path_id=7377 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7378 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7379 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7380 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7381 | m_Text= | value=+169
+- TextMesh file=level16 path_id=7382 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level17 path_id=6699 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6700 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6701 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6702 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6703 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6704 | m_Text= | value=critical
+- TextMesh file=level17 path_id=6705 | m_Text= | value=critical
+- TextMesh file=level17 path_id=6706 | m_Text= | value=critical
+- TextMesh file=level17 path_id=6707 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6708 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6709 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6710 | m_Text= | value=+169
+- TextMesh file=level17 path_id=6711 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6480 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6481 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6482 | m_Text= | value=critical
+- TextMesh file=level18 path_id=6483 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6484 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6485 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6486 | m_Text= | value=critical
+- TextMesh file=level18 path_id=6487 | m_Text= | value=critical
+- TextMesh file=level18 path_id=6488 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6489 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6490 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6491 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6492 | m_Text= | value=+169
+- TextMesh file=level18 path_id=6493 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level19 path_id=6734 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6735 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6736 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6737 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6738 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6739 | m_Text= | value=critical
+- TextMesh file=level19 path_id=6740 | m_Text= | value=critical
+- TextMesh file=level19 path_id=6741 | m_Text= | value=critical
+- TextMesh file=level19 path_id=6742 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6743 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6744 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6745 | m_Text= | value=+169
+- TextMesh file=level19 path_id=6746 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7049 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7050 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7051 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7052 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7053 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7054 | m_Text= | value=critical
+- TextMesh file=level20 path_id=7055 | m_Text= | value=critical
+- TextMesh file=level20 path_id=7056 | m_Text= | value=critical
+- TextMesh file=level20 path_id=7057 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7058 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7059 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7060 | m_Text= | value=+169
+- TextMesh file=level20 path_id=7061 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6319 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6320 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6321 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6322 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6323 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6324 | m_Text= | value=critical
+- TextMesh file=level21 path_id=6325 | m_Text= | value=critical
+- TextMesh file=level21 path_id=6326 | m_Text= | value=critical
+- TextMesh file=level21 path_id=6327 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6328 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6329 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6330 | m_Text= | value=+169
+- TextMesh file=level21 path_id=6331 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6853 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6854 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6855 | m_Text= | value=critical
+- TextMesh file=level22 path_id=6856 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6857 | m_Text= | value=critical
+- TextMesh file=level22 path_id=6858 | m_Text= | value=critical
+- TextMesh file=level22 path_id=6859 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6860 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6861 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6862 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6863 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6864 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6865 | m_Text= | value=+169
+- TextMesh file=level22 path_id=6866 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level23 path_id=7530 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7531 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7532 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7533 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7534 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7535 | m_Text= | value=critical
+- TextMesh file=level23 path_id=7536 | m_Text= | value=critical
+- TextMesh file=level23 path_id=7537 | m_Text= | value=critical
+- TextMesh file=level23 path_id=7538 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7539 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7540 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7541 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7542 | m_Text= | value=+169
+- TextMesh file=level23 path_id=7543 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level24 path_id=8289 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8290 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8291 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8292 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8293 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8294 | m_Text= | value=critical
+- TextMesh file=level24 path_id=8295 | m_Text= | value=critical
+- TextMesh file=level24 path_id=8296 | m_Text= | value=critical
+- TextMesh file=level24 path_id=8297 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8298 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8299 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8300 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8301 | m_Text= | value=+169
+- TextMesh file=level24 path_id=8302 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level25 path_id=7470 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7471 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7472 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7473 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7474 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7475 | m_Text= | value=critical
+- TextMesh file=level25 path_id=7476 | m_Text= | value=critical
+- TextMesh file=level25 path_id=7477 | m_Text= | value=critical
+- TextMesh file=level25 path_id=7478 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7479 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7480 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7481 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7482 | m_Text= | value=+169
+- TextMesh file=level25 path_id=7483 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level26 path_id=7173 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7174 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7175 | m_Text= | value=critical
+- TextMesh file=level26 path_id=7176 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7177 | m_Text= | value=critical
+- TextMesh file=level26 path_id=7178 | m_Text= | value=critical
+- TextMesh file=level26 path_id=7179 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7180 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7181 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7182 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7183 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7184 | m_Text= | value=+169
+- TextMesh file=level26 path_id=7185 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7774 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7775 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7776 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7777 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7778 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7779 | m_Text= | value=critical
+- TextMesh file=level27 path_id=7780 | m_Text= | value=critical
+- TextMesh file=level27 path_id=7781 | m_Text= | value=critical
+- TextMesh file=level27 path_id=7782 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7783 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7784 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7785 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7786 | m_Text= | value=+169
+- TextMesh file=level27 path_id=7787 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level28 path_id=7857 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7858 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7859 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7860 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7861 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7862 | m_Text= | value=critical
+- TextMesh file=level28 path_id=7863 | m_Text= | value=critical
+- TextMesh file=level28 path_id=7864 | m_Text= | value=critical
+- TextMesh file=level28 path_id=7865 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7866 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7867 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7868 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7869 | m_Text= | value=+169
+- TextMesh file=level28 path_id=7870 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level29 path_id=7187 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7188 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7189 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7190 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7191 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7192 | m_Text= | value=critical
+- TextMesh file=level29 path_id=7193 | m_Text= | value=critical
+- TextMesh file=level29 path_id=7194 | m_Text= | value=critical
+- TextMesh file=level29 path_id=7195 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7196 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7197 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7198 | m_Text= | value=+169
+- TextMesh file=level29 path_id=7199 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7500 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7501 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7502 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7503 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7504 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7505 | m_Text= | value=critical
+- TextMesh file=level30 path_id=7506 | m_Text= | value=critical
+- TextMesh file=level30 path_id=7507 | m_Text= | value=critical
+- TextMesh file=level30 path_id=7508 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7509 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7510 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7511 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7512 | m_Text= | value=+169
+- TextMesh file=level30 path_id=7513 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level31 path_id=8575 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8576 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8577 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8578 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8579 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8580 | m_Text= | value=critical
+- TextMesh file=level31 path_id=8581 | m_Text= | value=critical
+- TextMesh file=level31 path_id=8582 | m_Text= | value=critical
+- TextMesh file=level31 path_id=8583 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8584 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8585 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8586 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8587 | m_Text= | value=+169
+- TextMesh file=level31 path_id=8588 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level32 path_id=7448 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7449 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7450 | m_Text= | value=critical
+- TextMesh file=level32 path_id=7451 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7452 | m_Text= | value=critical
+- TextMesh file=level32 path_id=7453 | m_Text= | value=critical
+- TextMesh file=level32 path_id=7454 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7455 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7456 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7457 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7458 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7459 | m_Text= | value=+169
+- TextMesh file=level32 path_id=7460 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7745 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7746 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7747 | m_Text= | value=critical
+- TextMesh file=level33 path_id=7748 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7749 | m_Text= | value=critical
+- TextMesh file=level33 path_id=7750 | m_Text= | value=critical
+- TextMesh file=level33 path_id=7751 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7752 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7753 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7754 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7755 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7756 | m_Text= | value=+169
+- TextMesh file=level33 path_id=7757 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6727 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6728 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6729 | m_Text= | value=critical
+- TextMesh file=level34 path_id=6730 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6731 | m_Text= | value=critical
+- TextMesh file=level34 path_id=6732 | m_Text= | value=critical
+- TextMesh file=level34 path_id=6733 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6734 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6735 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6736 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6737 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6738 | m_Text= | value=+169
+- TextMesh file=level34 path_id=6739 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6749 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6750 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6751 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6752 | m_Text= | value=critical
+- TextMesh file=level35 path_id=6753 | m_Text= | value=critical
+- TextMesh file=level35 path_id=6754 | m_Text= | value=critical
+- TextMesh file=level35 path_id=6755 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6756 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6757 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6758 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6759 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6760 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6761 | m_Text= | value=+169
+- TextMesh file=level35 path_id=6762 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level36 path_id=10266 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10267 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10268 | m_Text= | value=critical
+- TextMesh file=level36 path_id=10269 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10270 | m_Text= | value=critical
+- TextMesh file=level36 path_id=10271 | m_Text= | value=critical
+- TextMesh file=level36 path_id=10272 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10273 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10274 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10275 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10276 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10277 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10278 | m_Text= | value=+169
+- TextMesh file=level36 path_id=10279 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level37 path_id=7319 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7320 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7321 | m_Text= | value=critical
+- TextMesh file=level37 path_id=7322 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7323 | m_Text= | value=critical
+- TextMesh file=level37 path_id=7324 | m_Text= | value=critical
+- TextMesh file=level37 path_id=7325 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7326 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7327 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7328 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7329 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7330 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7331 | m_Text= | value=+169
+- TextMesh file=level37 path_id=7332 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level38 path_id=7756 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7757 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7758 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7759 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7760 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7761 | m_Text= | value=critical
+- TextMesh file=level38 path_id=7762 | m_Text= | value=critical
+- TextMesh file=level38 path_id=7763 | m_Text= | value=critical
+- TextMesh file=level38 path_id=7764 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7765 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7766 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7767 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7768 | m_Text= | value=+169
+- TextMesh file=level38 path_id=7769 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level39 path_id=7168 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7169 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7170 | m_Text= | value=critical
+- TextMesh file=level39 path_id=7171 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7172 | m_Text= | value=critical
+- TextMesh file=level39 path_id=7173 | m_Text= | value=critical
+- TextMesh file=level39 path_id=7174 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7175 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7176 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7177 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7178 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7179 | m_Text= | value=+169
+- TextMesh file=level39 path_id=7180 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8274 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8275 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8276 | m_Text= | value=critical
+- TextMesh file=level40 path_id=8277 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8278 | m_Text= | value=critical
+- TextMesh file=level40 path_id=8279 | m_Text= | value=critical
+- TextMesh file=level40 path_id=8280 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8281 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8282 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8283 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8284 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8285 | m_Text= | value=+169
+- TextMesh file=level40 path_id=8286 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8065 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8066 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8067 | m_Text= | value=critical
+- TextMesh file=level41 path_id=8068 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8069 | m_Text= | value=critical
+- TextMesh file=level41 path_id=8070 | m_Text= | value=critical
+- TextMesh file=level41 path_id=8071 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8072 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8073 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8074 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8075 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8076 | m_Text= | value=+169
+- TextMesh file=level41 path_id=8077 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8843 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8844 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8845 | m_Text= | value=critical
+- TextMesh file=level42 path_id=8846 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8847 | m_Text= | value=critical
+- TextMesh file=level42 path_id=8848 | m_Text= | value=critical
+- TextMesh file=level42 path_id=8849 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8850 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8851 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8852 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8853 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8854 | m_Text= | value=+169
+- TextMesh file=level42 path_id=8855 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6286 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6287 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6288 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6289 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6290 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6291 | m_Text= | value=critical
+- TextMesh file=level43 path_id=6292 | m_Text= | value=critical
+- TextMesh file=level43 path_id=6293 | m_Text= | value=critical
+- TextMesh file=level43 path_id=6294 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6295 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6296 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6297 | m_Text= | value=+169
+- TextMesh file=level43 path_id=6298 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8622 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8623 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8624 | m_Text= | value=critical
+- TextMesh file=level44 path_id=8625 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8626 | m_Text= | value=critical
+- TextMesh file=level44 path_id=8627 | m_Text= | value=critical
+- TextMesh file=level44 path_id=8628 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8629 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8630 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8631 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8632 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8633 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8634 | m_Text= | value=+169
+- TextMesh file=level44 path_id=8635 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level45 path_id=8094 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8095 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8096 | m_Text= | value=critical
+- TextMesh file=level45 path_id=8097 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8098 | m_Text= | value=critical
+- TextMesh file=level45 path_id=8099 | m_Text= | value=critical
+- TextMesh file=level45 path_id=8100 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8101 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8102 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8103 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8104 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8105 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8106 | m_Text= | value=+169
+- TextMesh file=level45 path_id=8107 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level46 path_id=7622 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7623 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7624 | m_Text= | value=critical
+- TextMesh file=level46 path_id=7625 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7626 | m_Text= | value=critical
+- TextMesh file=level46 path_id=7627 | m_Text= | value=critical
+- TextMesh file=level46 path_id=7628 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7629 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7630 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7631 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7632 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7633 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7634 | m_Text= | value=+169
+- TextMesh file=level46 path_id=7635 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level47 path_id=7332 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7333 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7334 | m_Text= | value=critical
+- TextMesh file=level47 path_id=7335 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7336 | m_Text= | value=critical
+- TextMesh file=level47 path_id=7337 | m_Text= | value=critical
+- TextMesh file=level47 path_id=7338 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7339 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7340 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7341 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7342 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7343 | m_Text= | value=+169
+- TextMesh file=level47 path_id=7344 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7511 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7512 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7513 | m_Text= | value=critical
+- TextMesh file=level48 path_id=7514 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7515 | m_Text= | value=critical
+- TextMesh file=level48 path_id=7516 | m_Text= | value=critical
+- TextMesh file=level48 path_id=7517 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7518 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7519 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7520 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7521 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7522 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7523 | m_Text= | value=+169
+- TextMesh file=level48 path_id=7524 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level49 path_id=6294 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6295 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6296 | m_Text= | value=critical
+- TextMesh file=level49 path_id=6297 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6298 | m_Text= | value=critical
+- TextMesh file=level49 path_id=6299 | m_Text= | value=critical
+- TextMesh file=level49 path_id=6300 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6301 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6302 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6303 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6304 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6305 | m_Text= | value=+169
+- TextMesh file=level49 path_id=6306 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8909 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8910 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8911 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8912 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8913 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8914 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8915 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8916 | m_Text= | value=critical
+- TextMesh file=level50 path_id=8917 | m_Text= | value=critical
+- TextMesh file=level50 path_id=8918 | m_Text= | value=critical
+- TextMesh file=level50 path_id=8919 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8920 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8921 | m_Text= | value=+169
+- TextMesh file=level50 path_id=8922 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level51 path_id=8583 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8584 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8585 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8586 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8587 | m_Text= | value=critical
+- TextMesh file=level51 path_id=8588 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8589 | m_Text= | value=critical
+- TextMesh file=level51 path_id=8590 | m_Text= | value=critical
+- TextMesh file=level51 path_id=8591 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8592 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8593 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8594 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8595 | m_Text= | value=+169
+- TextMesh file=level51 path_id=8596 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level52 path_id=8320 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8321 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8322 | m_Text= | value=critical
+- TextMesh file=level52 path_id=8323 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8324 | m_Text= | value=critical
+- TextMesh file=level52 path_id=8325 | m_Text= | value=critical
+- TextMesh file=level52 path_id=8326 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8327 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8328 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8329 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8330 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8331 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8332 | m_Text= | value=+169
+- TextMesh file=level52 path_id=8333 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level53 path_id=7647 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7648 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7649 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7650 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7651 | m_Text= | value=critical
+- TextMesh file=level53 path_id=7652 | m_Text= | value=critical
+- TextMesh file=level53 path_id=7653 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7654 | m_Text= | value=critical
+- TextMesh file=level53 path_id=7655 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7656 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7657 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7658 | m_Text= | value=+169
+- TextMesh file=level53 path_id=7659 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7893 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7894 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7895 | m_Text= | value=critical
+- TextMesh file=level54 path_id=7896 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7897 | m_Text= | value=critical
+- TextMesh file=level54 path_id=7898 | m_Text= | value=critical
+- TextMesh file=level54 path_id=7899 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7900 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7901 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7902 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7903 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7904 | m_Text= | value=+169
+- TextMesh file=level54 path_id=7905 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7436 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7437 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7438 | m_Text= | value=critical
+- TextMesh file=level55 path_id=7439 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7440 | m_Text= | value=critical
+- TextMesh file=level55 path_id=7441 | m_Text= | value=critical
+- TextMesh file=level55 path_id=7442 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7443 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7444 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7445 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7446 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7447 | m_Text= | value=+169
+- TextMesh file=level55 path_id=7448 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7154 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7155 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7156 | m_Text= | value=critical
+- TextMesh file=level56 path_id=7157 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7158 | m_Text= | value=critical
+- TextMesh file=level56 path_id=7159 | m_Text= | value=critical
+- TextMesh file=level56 path_id=7160 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7161 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7162 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7163 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7164 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7165 | m_Text= | value=+169
+- TextMesh file=level56 path_id=7166 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8753 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8754 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8755 | m_Text= | value=critical
+- TextMesh file=level57 path_id=8756 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8757 | m_Text= | value=critical
+- TextMesh file=level57 path_id=8758 | m_Text= | value=critical
+- TextMesh file=level57 path_id=8759 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8760 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8761 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8762 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8763 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8764 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8765 | m_Text= | value=+169
+- TextMesh file=level57 path_id=8766 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level58 path_id=7449 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7450 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7451 | m_Text= | value=critical
+- TextMesh file=level58 path_id=7452 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7453 | m_Text= | value=critical
+- TextMesh file=level58 path_id=7454 | m_Text= | value=critical
+- TextMesh file=level58 path_id=7455 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7456 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7457 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7458 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7459 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7460 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7461 | m_Text= | value=+169
+- TextMesh file=level58 path_id=7462 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level59 path_id=8570 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8571 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8572 | m_Text= | value=critical
+- TextMesh file=level59 path_id=8573 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8574 | m_Text= | value=critical
+- TextMesh file=level59 path_id=8575 | m_Text= | value=critical
+- TextMesh file=level59 path_id=8576 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8577 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8578 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8579 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8580 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8581 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8582 | m_Text= | value=+169
+- TextMesh file=level59 path_id=8583 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level60 path_id=6762 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6763 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6764 | m_Text= | value=critical
+- TextMesh file=level60 path_id=6765 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6766 | m_Text= | value=critical
+- TextMesh file=level60 path_id=6767 | m_Text= | value=critical
+- TextMesh file=level60 path_id=6768 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6769 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6770 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6771 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6772 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6773 | m_Text= | value=+169
+- TextMesh file=level60 path_id=6774 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7898 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7899 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7900 | m_Text= | value=critical
+- TextMesh file=level61 path_id=7901 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7902 | m_Text= | value=critical
+- TextMesh file=level61 path_id=7903 | m_Text= | value=critical
+- TextMesh file=level61 path_id=7904 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7905 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7906 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7907 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7908 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7909 | m_Text= | value=+169
+- TextMesh file=level61 path_id=7910 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7983 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7984 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7985 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7986 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7987 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7988 | m_Text= | value=critical
+- TextMesh file=level62 path_id=7989 | m_Text= | value=critical
+- TextMesh file=level62 path_id=7990 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7991 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7992 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7993 | m_Text= | value=critical
+- TextMesh file=level62 path_id=7994 | m_Text= | value=+169
+- TextMesh file=level62 path_id=7995 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8720 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8721 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8722 | m_Text= | value=critical
+- TextMesh file=level63 path_id=8723 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8724 | m_Text= | value=critical
+- TextMesh file=level63 path_id=8725 | m_Text= | value=critical
+- TextMesh file=level63 path_id=8726 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8727 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8728 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8729 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8730 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8731 | m_Text= | value=+169
+- TextMesh file=level63 path_id=8732 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8565 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8566 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8567 | m_Text= | value=critical
+- TextMesh file=level64 path_id=8568 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8569 | m_Text= | value=critical
+- TextMesh file=level64 path_id=8570 | m_Text= | value=critical
+- TextMesh file=level64 path_id=8571 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8572 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8573 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8574 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8575 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8576 | m_Text= | value=+169
+- TextMesh file=level64 path_id=8577 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9326 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9327 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9328 | m_Text= | value=critical
+- TextMesh file=level65 path_id=9329 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9330 | m_Text= | value=critical
+- TextMesh file=level65 path_id=9331 | m_Text= | value=critical
+- TextMesh file=level65 path_id=9332 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9333 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9334 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9335 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9336 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9337 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9338 | m_Text= | value=+169
+- TextMesh file=level65 path_id=9339 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level66 path_id=7962 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7963 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7964 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7965 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7966 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7967 | m_Text= | value=critical
+- TextMesh file=level66 path_id=7968 | m_Text= | value=critical
+- TextMesh file=level66 path_id=7969 | m_Text= | value=critical
+- TextMesh file=level66 path_id=7970 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7971 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7972 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7973 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7974 | m_Text= | value=+169
+- TextMesh file=level66 path_id=7975 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level67 path_id=7518 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7519 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7520 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7521 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7522 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7523 | m_Text= | value=critical
+- TextMesh file=level67 path_id=7524 | m_Text= | value=critical
+- TextMesh file=level67 path_id=7525 | m_Text= | value=critical
+- TextMesh file=level67 path_id=7526 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7527 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7528 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7529 | m_Text= | value=+169
+- TextMesh file=level67 path_id=7530 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7398 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7399 | m_Text= | value=critical
+- TextMesh file=level68 path_id=7400 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7401 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7402 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7403 | m_Text= | value=critical
+- TextMesh file=level68 path_id=7404 | m_Text= | value=critical
+- TextMesh file=level68 path_id=7405 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7406 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7407 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7408 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7409 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7410 | m_Text= | value=+169
+- TextMesh file=level68 path_id=7411 | m_Text= | value=You already collected
+this artifact.
+- TextMesh file=level69 path_id=5683 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5684 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5685 | m_Text= | value=critical
+- TextMesh file=level69 path_id=5686 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5687 | m_Text= | value=critical
+- TextMesh file=level69 path_id=5688 | m_Text= | value=critical
+- TextMesh file=level69 path_id=5689 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5690 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5691 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5692 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5693 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5694 | m_Text= | value=+169
+- TextMesh file=level69 path_id=5695 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6253 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6254 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6255 | m_Text= | value=critical
+- TextMesh file=level70 path_id=6256 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6257 | m_Text= | value=critical
+- TextMesh file=level70 path_id=6258 | m_Text= | value=critical
+- TextMesh file=level70 path_id=6259 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6260 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6261 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6262 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6263 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6264 | m_Text= | value=+169
+- TextMesh file=level70 path_id=6265 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6291 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6292 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6293 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6294 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6295 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6296 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6297 | m_Text= | value=critical
+- TextMesh file=level71 path_id=6298 | m_Text= | value=critical
+- TextMesh file=level71 path_id=6299 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6300 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6301 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6302 | m_Text= | value=+169
+- TextMesh file=level71 path_id=6303 | m_Text= | value=critical
+- TextMesh file=level72 path_id=6031 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6032 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6033 | m_Text= | value=critical
+- TextMesh file=level72 path_id=6034 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6035 | m_Text= | value=critical
+- TextMesh file=level72 path_id=6036 | m_Text= | value=critical
+- TextMesh file=level72 path_id=6037 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6038 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6039 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6040 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6041 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6042 | m_Text= | value=+169
+- TextMesh file=level72 path_id=6043 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6775 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6776 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6777 | m_Text= | value=critical
+- TextMesh file=level73 path_id=6778 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6779 | m_Text= | value=critical
+- TextMesh file=level73 path_id=6780 | m_Text= | value=critical
+- TextMesh file=level73 path_id=6781 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6782 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6783 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6784 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6785 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6786 | m_Text= | value=+169
+- TextMesh file=level73 path_id=6787 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6832 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6833 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6834 | m_Text= | value=critical
+- TextMesh file=level74 path_id=6835 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6836 | m_Text= | value=critical
+- TextMesh file=level74 path_id=6837 | m_Text= | value=critical
+- TextMesh file=level74 path_id=6838 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6839 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6840 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6841 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6842 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6843 | m_Text= | value=+169
+- TextMesh file=level74 path_id=6844 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5192 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5193 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5194 | m_Text= | value=critical
+- TextMesh file=level75 path_id=5195 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5196 | m_Text= | value=critical
+- TextMesh file=level75 path_id=5197 | m_Text= | value=critical
+- TextMesh file=level75 path_id=5198 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5199 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5200 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5201 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5202 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5203 | m_Text= | value=+169
+- TextMesh file=level75 path_id=5204 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6211 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6212 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6213 | m_Text= | value=critical
+- TextMesh file=level76 path_id=6214 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6215 | m_Text= | value=critical
+- TextMesh file=level76 path_id=6216 | m_Text= | value=critical
+- TextMesh file=level76 path_id=6217 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6218 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6219 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6220 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6221 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6222 | m_Text= | value=+169
+- TextMesh file=level76 path_id=6223 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6138 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6139 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6140 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6141 | m_Text= | value=critical
+- TextMesh file=level77 path_id=6142 | m_Text= | value=critical
+- TextMesh file=level77 path_id=6143 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6144 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6145 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6146 | m_Text= | value=critical
+- TextMesh file=level77 path_id=6147 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6148 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6149 | m_Text= | value=+169
+- TextMesh file=level77 path_id=6150 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18303 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18304 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18305 | m_Text= | value=critical
+- TextMesh file=level78 path_id=18306 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18307 | m_Text= | value=critical
+- TextMesh file=level78 path_id=18308 | m_Text= | value=critical
+- TextMesh file=level78 path_id=18309 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18310 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18311 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18312 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18313 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18314 | m_Text= | value=+169
+- TextMesh file=level78 path_id=18315 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7891 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7892 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7893 | m_Text= | value=critical
+- TextMesh file=level79 path_id=7894 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7895 | m_Text= | value=critical
+- TextMesh file=level79 path_id=7896 | m_Text= | value=critical
+- TextMesh file=level79 path_id=7897 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7898 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7899 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7900 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7901 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7902 | m_Text= | value=+169
+- TextMesh file=level79 path_id=7903 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6384 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6385 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6386 | m_Text= | value=critical
+- TextMesh file=level80 path_id=6387 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6388 | m_Text= | value=critical
+- TextMesh file=level80 path_id=6389 | m_Text= | value=critical
+- TextMesh file=level80 path_id=6390 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6391 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6392 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6393 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6394 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6395 | m_Text= | value=+169
+- TextMesh file=level80 path_id=6396 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7599 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7600 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7601 | m_Text= | value=critical
+- TextMesh file=level81 path_id=7602 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7603 | m_Text= | value=critical
+- TextMesh file=level81 path_id=7604 | m_Text= | value=critical
+- TextMesh file=level81 path_id=7605 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7606 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7607 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7608 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7609 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7610 | m_Text= | value=+169
+- TextMesh file=level81 path_id=7611 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6751 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6752 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6753 | m_Text= | value=critical
+- TextMesh file=level82 path_id=6754 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6755 | m_Text= | value=critical
+- TextMesh file=level82 path_id=6756 | m_Text= | value=critical
+- TextMesh file=level82 path_id=6757 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6758 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6759 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6760 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6761 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6762 | m_Text= | value=+169
+- TextMesh file=level82 path_id=6763 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7236 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7237 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7238 | m_Text= | value=critical
+- TextMesh file=level83 path_id=7239 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7240 | m_Text= | value=critical
+- TextMesh file=level83 path_id=7241 | m_Text= | value=critical
+- TextMesh file=level83 path_id=7242 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7243 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7244 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7245 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7246 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7247 | m_Text= | value=+169
+- TextMesh file=level83 path_id=7248 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6310 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6311 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6312 | m_Text= | value=critical
+- TextMesh file=level84 path_id=6313 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6314 | m_Text= | value=critical
+- TextMesh file=level84 path_id=6315 | m_Text= | value=critical
+- TextMesh file=level84 path_id=6316 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6317 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6318 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6319 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6320 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6321 | m_Text= | value=+169
+- TextMesh file=level84 path_id=6322 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5870 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5871 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5872 | m_Text= | value=critical
+- TextMesh file=level85 path_id=5873 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5874 | m_Text= | value=critical
+- TextMesh file=level85 path_id=5875 | m_Text= | value=critical
+- TextMesh file=level85 path_id=5876 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5877 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5878 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5879 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5880 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5881 | m_Text= | value=+169
+- TextMesh file=level85 path_id=5882 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4899 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4900 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4901 | m_Text= | value=critical
+- TextMesh file=level86 path_id=4902 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4903 | m_Text= | value=critical
+- TextMesh file=level86 path_id=4904 | m_Text= | value=critical
+- TextMesh file=level86 path_id=4905 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4906 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4907 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4908 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4909 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4910 | m_Text= | value=+169
+- TextMesh file=level86 path_id=4911 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5748 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5749 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5750 | m_Text= | value=critical
+- TextMesh file=level87 path_id=5751 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5752 | m_Text= | value=critical
+- TextMesh file=level87 path_id=5753 | m_Text= | value=critical
+- TextMesh file=level87 path_id=5754 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5755 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5756 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5757 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5758 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5759 | m_Text= | value=+169
+- TextMesh file=level87 path_id=5760 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6515 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6516 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6517 | m_Text= | value=critical
+- TextMesh file=level88 path_id=6518 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6519 | m_Text= | value=critical
+- TextMesh file=level88 path_id=6520 | m_Text= | value=critical
+- TextMesh file=level88 path_id=6521 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6522 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6523 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6524 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6525 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6526 | m_Text= | value=+169
+- TextMesh file=level88 path_id=6527 | m_Text= | value=+169
