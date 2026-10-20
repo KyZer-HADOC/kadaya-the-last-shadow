@@ -1,0 +1,1939 @@
+# Kadaya runtime dialogue / ability string scan
+
+Read-only analysis. No game files were modified.
+
+- global-metadata.dat size: 8,556,800 bytes
+- IL2CPP metadata magic: 0xFAB11BAF
+- IL2CPP metadata version: 31
+
+## Matching native strings: global-metadata.dat (1500)
+- ( (0x (Instance) (Obsolete) (at  (id= (index= (source= ({0}) ******** +  ,  - Google BillingResponseCode =  - Y:  - onPurchasesUpdated: purchases list is empty - Google BillingResponseCode =  --->  ->  ... ... } / /  :  
+- could not convert from '<b>null ( could not convert from '<b>null</b>' to '<b> could not convert from type '<b> does not exist in  does not have a valid constructor doesn't have _ColorMask property doesn't have _Stencil 
+- not allowed in this context not defined not found in  not found in the Rooms list. not have property twist not supported for XML stialization of type ' parameter(s). Available command(s): references left. registered. req
+- " must start with "--" prefix." standalone="" which is readonly at runtime and can be modified only through Project Settings. The value provided as initialization option will be ignored. Please update InitializationOptio
+- ' ' (obj = ' <''> expression.' and may affect performance. The callback should be used only in debugging scenario and won't work outside development builds' at ' because there is no data source.' could not be created: ' 
+- -0-99999999999999999999999999999999999999-=->->{0} C({1}) S({2})-INF-Infinity-_.!~*'()-bar-container-handle-i-image-inf-infinity-item-label-r-underline-unity-background-image-tint-color-unity-background-scale-mode-unity-
+- 0M0x0x{0:X2}0x{0:X}11.01.0.3751.11.1.01.2.156.11235.1.1.2.11.2.7451.2.840.10040.4.11.2.840.10040.4.31.2.840.10045.2.11.2.840.10045.3.1.11.2.840.10045.3.1.21.2.840.10045.3.1.31.2.840.10045.3.1.41.2.840.10045.3.1.51.2.840.
+- <comm.ADP.TraceException|ERR|CATCH> '{0}'<comm.ADP.TraceException|ERR|THROW> '{0}'<complexType><ds.DataColumn.DataColumn|API> {0}, columnName='{1}', expr='{2}', type={3}<ds.DataColumn.set_AllowDBNull|API> {0}, {1}<ds.Dat
+- [Environment: FakeStore]?>??????xml@@&;:<>=?"'/\!#%+$,{}|^[]`@@@@@@@@encoding@internalSubset@name@public@standalone@system@versionAA Constraint named '{0}' already belongs to this DataTable.A DataColumn of type '{0}' doe
+- AbortAbsAbsoluteUriAccelerometer: AcceptAccept-CharsetAccept-EncodingAccept-LanguageAccept-RangesAcceptRejectRuleAcceptedAccess deniedAccess to the path "{0}" is denied.Access to the path '{0}' is denied.Access to the pa
+- An error occurred when adding a cookie to the container.An error occurred when parsing the Cookie header for Uri '{0}'.An error occurred while deserializing the object.  The serialized data is corrupt.An error occurred w
+- Assets/LevelPlay/ResourcesAssignLocalAssignLocalBoxAssignLocalClosureAsyncAsync: AsyncRequestCallbackAt least one element in the specified array was null.At least one field must be present.At least one object must implem
+- : Command name can't be empty!Command name can't contain whitespace: Command:{0} Description:{1}CommentCommentURLCommon Language Runtime detected an invalid program.CompareInfoCompareInfo - CompareOption.Ordinal cannot b
+- URL: Couldn't impersonate token.Couldn't load Modules systemCouldn't search assembly for [ConsoleMethod] attributes: Couldn't store <{0}> in {1} Column.  Expected type is {2}.Couldn't switch back to original token.CountC
+- the minimum amount of waypoints for a single curve is 3)Culture ID {0} (0x{1}) is not a supported culture.Culture is not supported.Culture name CuoiDeuCurrency code cannot be null or empty.CurrentCurrent Camera PositionC
+- SetAnimationTarget: the new target is of a different type from the one set in the InspectorDOTweenSettingsDPDQDSADTDDTD is not allowed in XML fragments.DTD is prohibited in this XML document.DTD must be defined before th
+- : DropdownDropdown (Legacy)Dropdown ListDropdown.valueDtdProcessingDuDuDayDuaDauRaDayDuaDauRaDay2Due time too largeDuingDupDuplicateDuplicate AttributeUsageAttribute cannot be specified on an attribute type.Duplicate DOT
+- EREFUSEDERNERROR: ERROR: 'ERROR: Cannot Match both Vertical & Horizontal.ERROR: can't find command 'ERROR: couldn't parse ERROR: something went wrongESDHETBETagEUREValueEXTERNALEach value has to be >= 0.Early HintsEffect
+- : Elements with the same name and in the same scope must have the same type.Email Name: EmptyEmpty choice cannot be satisfied if 'minOccurs' is not equal to 0.Empty name is not legal.Empty path name is not legal.Empty ta
+- Failed to write data to TLS contextFailure has occurred while loading a type.Failure reason: Fake App StoreFake StoreFake descriptionFake store testing: failed to fetch products.Fake title for FallDownFalseFaroeseFaroese
+- : FrameSelectedFrameSelectedWithLockFrenchFrench (Belgium)French (Canada)French (France)French (Luxembourg)French (Principality of Monaco)French (Switzerland)Freq.FriFridayFrisian (Netherlands)FromFuchsiaFullFullPathFull
+- : GuidGuid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).Guid string should only contain hexadecimal characters.Guid {..}GujaratiGujarati (India)Gyro: HH:mmHEADHHHH:HH:mmHH:mm:HH:mm:ssHH:m
+- : Improperly protected machine's key pairs in '{0}'.Improperly protected user's key pairs in '{0}'.InIn a player, panel context type must be set to Player.InAppPurchasingInactiveBorderInactiveCaptionInactiveCaptionTextIn
+- : Materials/Mask-MaterialMaterials/Mask-Material not found!Materials/Sprites-Alpha-Mask-WorldCoordsMaterials/Sprites-Alpha-Mask-WorldCoords not found!MattingMaxMax Cubemap Size: Max Size must be greater than 0Max Texture
+- : Mesh can not have more than 65000 verticesMesh data array length can't be negative.Mesh data array start index can't be negative.Mesh data array start is outside of array size.Mesh data array start+count is outside of 
+- Enabled: Multiple constructors with the JsonConstructorAttribute.Multiple custom attributes of the same type found.Multiple definition of element '{0}' causes the content model to become ambiguous. A content model must b
+- <KeyValueNameInfo PoolNameTableNamed parameter array cannot be bigger than argument array.Named parameter value must not be null.NamespaceNamespace '{0}' is not available to be referenced in this schema.Namespace attribu
+- l (Norway)Norwegian, Nynorsk (Norway)NotNot AcceptableNot ExtendedNot FoundNot ImplementedNot ModifiedNot a color valueNot a string valueNot a tty.Not a valid calendar for the given culture.Not a valid charNot a valid cl
+- Ok,quitOkXongViecOldLaceOliveOliveDrabOmitXmlDeclarationOnCheckEntitlementOnClick_IEOnDeserialization method was called while the object was not being deserialized.OnDespawnedOnEntitlementRevokedOnFetchStorePromotionOrde
+- PYGPackage registration has been locked. Make sure to register service packages in[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)].Package with hash[{0}] does not exist!PackageManagerPadding is 
+- Quantifier {x,y} following nothing.Quaternion tweens require a Vector3 endValueQuechua (Bolivia)Quechua (Ecuador)Quechua (Peru)Queue empty.Queue grow factor must be between {0} and {1}.QueueOrCreateDataConectionQuitQuota
+- : SkipToEndElementSkipping captureSkipping product with empty or null ID from Google Play store response. Detail: SkyBlueSlateBlueSlateGraySlideLevelSliderSlider.valueSliderMixedSliding AreaSlot '{0}' was not found. Exis
+- : StopStop Constant ShakeStop Trail1Stop Trail1 SmoothlyStop Trail2Stop Trail2 SmoothlyStopAniStopped wanderingStoreStore Factory not present to create any new storesStore is not connected. Please check your internet con
+- Target table {0} missing definition for column {1}.Target type {0} is not a value type or a non-abstract class.TargetHostTargetSiteTargetsTargets Mid PointTask.ContinueWith: Task.DelayTask.UnwrapTask.WhenAllTask: TaskFac
+- : TrackResurrectionTrackedObjectTrailerTrajectoryPredictionObjTransInTransInUseTransLevelTransOutTransaction ID is null or emptyTransfer-EncodingTransferEncoding requires the SendChunked property to be set to true.Transi
+- <Container TypeAsTypeAs TypeConversion no converter has been registered for SrcType=[{0}] to DstType=[{1}]TypeDescriptorTypeEqualsTypeIsTypeIs TypeLoadAssemblyNameTypeLoadClassNameTypeLoadMessageArgTypeLoadResourceIDType
+- : VisualElement Generic Menu needs a target to find a root to attach to.VisualElement.elementPanel is null! Cannot load persistent data.VisualElement.elementPanel is null! Cannot load view data.VisualElementAsset has a R
+- : XienXml type 'List of {0}' does not support Clr type '{1}'.Xml type 'List of {0}' does not support a conversion from Clr type '{1}' to Clr type '{2}'.Xml type '{0}' cannot convert from Clr type '{1}' unless the destina
+- and much more with each task needing only one line of code.iTween works with C#, JavaScript and Boo. For full documentation and examples visit:iTween: Unsupported easeType supplied! Default will be used.iTween: Unsupport
+- notationnowrapnowrap | wrap | wrap-reversenpansnsmgrnsonso-ZAntlmnullnullableTypenumBytesnumbernumberOfUnitsoobjobjectobject object must be MarshalByRefobjectIDobjectID cannot be less than or equal to zero.objectInfo.obj
+- svsv-FIsv-SEsvfsvkswsw-KEswitchswitchNamesxsysyncsyrsyr-SYsysidsystemsystem.runtime.remotingsystem.security.cryptography.asymmetricalgorithmsystem.security.cryptography.dessystem.security.cryptography.descryptoservicepro
+- {0} {0} (0x{0:x4}){0} ({1}){0} ({1}) (pinned){0} - error code: {1}{0} - error code: {1}, verify result: {2}{0} :: This DOTweenAnimation isn't valid and its tween won't be created{0} :: This DOTweenAnimation's target is N
+- GetText
+- password
+- start
+- Start
+- GetExtenderType
+- ToDashTypeValue
+- textInfo
+- Context
+- context
+- SafePasswordHandle
+- TryParseGuidWithDashes
+- AllowDashes
+- RequireDashes
+- get_IsContextful
+- IsContextfulImpl
+- IsContextful
+- AppContext
+- AppContextSwitches
+- ContextBoundObject
+- ContextStaticAttribute
+- AppContextDefaultValues
+- getFriendlyName
+- InternalSetContext
+- InternalGetContext
+- InternalGetDefaultContext
+- History
+- shadow_copy_directories
+- shadow_copy_files
+- contextType
+- EnterShadowMode
+- ExitShadowMode
+- contextChanged
+- <ThreadContextChanged>k__BackingField
+- useSynchronizationContext
+- useExecutionContext
+- targetSyncContext
+- executionContext
+- CancellationCallbackCoreWork_OnSyncContext
+- targetExecutionContext
+- ExecutionContextCallback
+- TargetExecutionContext
+- s_executionContextCallback
+- WithSyncContext
+- TargetSyncContext
+- ContinueTryEnter
+- ContinueTryEnterWithThreadTracking
+- ContextCallback
+- ExecutionContextSwitcher
+- ExecutionContext
+- OnAsyncLocalContextChanged
+- get_LogicalCallContext
+- set_LogicalCallContext
+- get_IllogicalCallContext
+- set_IllogicalCallContext
+- get_SynchronizationContext
+- set_SynchronizationContext
+- get_SynchronizationContextNoFlow
+- set_SynchronizationContextNoFlow
+- SetExecutionContext
+- IsDefaultFTContext
+- _syncContext
+- _syncContextNoFlow
+- _logicalCallContext
+- _illogicalCallContext
+- LogicalCallContext
+- IllogicalCallContext
+- SynchronizationContext
+- SynchronizationContextNoFlow
+- DangerousGetRawExecutionContext
+- exitContext
+- SynchronizationContextProperties
+- syncContext
+- SetSynchronizationContext
+- GetThreadLocalContext
+- OSSpecificSynchronizationContext
+- osContext
+- GetOSContext
+- osSynchronizationContext
+- m_OSSynchronizationContext
+- s_ContextCache
+- InvocationContext
+- _osContext
+- SetExecutionContextHelper
+- ThreadStart_Context
+- _executionContext
+- GetExecutionContextReader
+- get_ExecutionContextBelongsToCurrentScope
+- set_ExecutionContextBelongsToCurrentScope
+- GetMutableExecutionContext
+- get_CurrentContext
+- m_ExecutionContext
+- m_ExecutionContextBelongsToOuterScope
+- ExecutionContextBelongsToCurrentScope
+- CurrentContext
+- WaitCallback_Context
+- current_appcontext
+- _continueOnCapturedContext
+- relatedContext
+- continueOnCapturedContext
+- ContinueWith
+- get_CapturedContext
+- set_CapturedContext
+- flowExecutionContext
+- ContinueWithCore
+- CapturedContext
+- m_capturedContext
+- SynchronizationContextAwaitTaskContinuation
+- m_syncContext
+- FromCurrentSynchronizationContext
+- SynchronizationContextTaskScheduler
+- m_synchronizationContext
+- UseSchedulingContext
+- FlowExecutionContext
+- System.Text
+- streamingContext
+- set_Text
+- IsValidText
+- level
+- set_m_strText
+- SearchForTextOfLocalName
+- invalid_text_chars
+- m_strText
+- ThrowIfContextInvalid
+- GetInvalidContextException
+- WindowsImpersonationContext
+- useContext
+- m_bootstrapContext
+- get_ContextAttributes
+- ContextAttributes
+- CreateClientProxyForContextBound
+- CreateContextBoundObjectIdentity
+- get_Context
+- set_Context
+- _context
+- serverContext
+- GetPropertiesForNewContext
+- IsContextOK
+- get_IsContextBoundObject
+- get_TargetContext
+- InCurrentContext
+- IsContextBoundObject
+- TargetContext
+- _targetContext
+- System.Runtime.Remoting.Contexts
+- RegisterContext
+- ReleaseContext
+- get_DefaultContext
+- get_ContextID
+- get_ContextProperties
+- get_IsDefaultContext
+- get_NeedsContextSink
+- GetServerContextSinkChain
+- GetClientContextSinkChain
+- newContext
+- SwitchToContext
+- CreateNewContext
+- context_id
+- default_server_context_sink
+- server_context_sink_chain
+- client_context_sink_chain
+- context_properties
+- context_dynamic_properties
+- DefaultContext
+- ContextID
+- ContextProperties
+- IsDefaultContext
+- NeedsContextSink
+- ContextCallbackObject
+- CrossContextChannel
+- ContextRestoreSink
+- CrossContextDelegate
+- IContextAttribute
+- IContextProperty
+- IsNewContextOK
+- IContributeClientContextSink
+- GetClientContextSink
+- IContributeServerContextSink
+- GetServerContextSink
+- get_CrossContextChannel
+- _crossContextSink
+- CrossContextUrl
+- _ContextID
+- ContextLevelActivator
+- contextProperties
+- _contextProperties
+- CallContext
+- SetCurrentCallContext
+- SetLogicalCallContext
+- get_HostContext
+- set_HostContext
+- m_HostContext
+- HostContext
+- s_callContextType
+- CallContextSecurityData
+- CallContextRemotingData
+- SaveLogicalCallContext
+- GetLogicalCallContext
+- _callContext
+- ClientContextTerminatorSink
+- ClientContextReplySink
+- get_IsContextOk
+- set_IsContextOk
+- _isContextOk
+- IsContextOk
+- ServerContextTerminatorSink
+- m_context
+- m_streamingContext
+- StreamingContext
+- m_additionalContext
+- StreamingContextStates
+- callContext
+- NoContext
+- ContextInline
+- ContextInArray
+- ReliabilityContractAttribute
+- m_continueOnCapturedContext
+- NotifySynchronizationContextOfCompletion
+- targetContext
+- m_defaultContextAction
+- flowContext
+- FriendAccessAllowedAttribute
+- HebrewNumberParsingContext
+- ContinueParsing
+- DashPunctuation
+- get_LengthInTextElements
+- GetCurrentTextElementLen
+- LengthInTextElements
+- TextInfo
+- m_textInfoName
+- get_STEXTINFO
+- STEXTINFO
+- TextInfoToUpperData
+- TextInfoToLowerData
+- get_TextInfo
+- GetTextInfoData
+- CreateTextInfo
+- textinfo_data
+- EnableEditAndContinue
+- WdiContext
+- <Level>k__BackingField
+- Level
+- System.Buffers.Text
+- TextReader
+- NullTextReader
+- SyncTextReader
+- TextWriter
+- NullTextWriter
+- SyncTextWriter
+- OpenText
+- WriteAllText
+- continueOnError
+- GetExtension
+- GetFileNameWithoutExtension
+- InternalContinueOnError
+- ContinueOnError
+- OnUpdateDynamicTextures
+- InvokeUpdateDynamicTextures
+- RepaintTexturedElements
+- texture
+- SetDynamicTexture
+- textureRegistry
+- Readability
+- IsTextureFormatSupported
+- IsTextureValid
+- get_maxSubTextureSize
+- set_maxSubTextureSize
+- m_MaxSubTextureSize
+- maxSubTextureSize
+- TextureInfo
+- BindingActivationContext
+- BindingContext
+- GetExtractValueErrorString
+- get_bindingContext
+- set_bindingContext
+- <bindingContext>k__BackingField
+- bindingContext
+- GetResolvedDataSourceContext
+- set_context
+- m_LastContext
+- GetHierarchicalDataSourceContext
+- RemoveHierarchyDataSourceContextFromElement
+- m_ResolvedHierarchicalDataSourceContext
+- DataSourceContext
+- DataSourceContextChanged
+- previousContext
+- m_PreviousContext
+- m_NewContext
+- additionalContext
+- SetBindingContext
+- ContextualMenuManager
+- ContextualMenuManipulator
+- IsOSXContextualMenuPlatform
+- OnContextualMenuEvent
+- get_toggleOnTextClick
+- set_toggleOnTextClick
+- get_text
+- set_text
+- textProperty
+- <toggleOnTextClick>k__BackingField
+- m_OriginalText
+- toggleOnTextClick
+- get_textElement
+- m_TextElement
+- textUssClassName
+- textElement
+- PopupTextElement
+- get_inputTextField
+- set_inputTextField
+- UpdateTextFieldVisibility
+- UpdateTextFieldValue
+- OnTextFieldFocusIn
+- OnTextFieldFocusOut
+- OnTextFieldValueChange
+- <inputTextField>k__BackingField
+- m_IsEditingTextField
+- textFieldClassName
+- inputTextField
+- m_Text
+- textString
+- UpdateValueFromText
+- UpdateTextFromValue
+- GetTextureDisplaySize
+- m_CachedContextWidthElement
+- KeyboardTextEditorEventHandler
+- ApplyTextIfNeeded
+- TextEditorEventHandler
+- TextField
+- get_textInput
+- isPasswordField
+- textInput
+- TextInput
+- get_parentTextField
+- parentTextField
+- TextInputBaseField`1
+- set_password
+- get_placeholderText
+- set_placeholderText
+- textInputBase
+- get_textInputBase
+- get_textSelection
+- get_textEdition
+- get_isPasswordField
+- set_isPasswordField
+- get_doubleClickSelectsWord
+- set_doubleClickSelectsWord
+- isPasswordFieldProperty
+- textSelectionProperty
+- textEditionProperty
+- placeholderTextProperty
+- doubleClickSelectsWordProperty
+- textInputUssName
+- m_TextInputBase
+- m_UpdateTextFromValue
+- placeholderText
+- textSelection
+- textEdition
+- doubleClickSelectsWord
+- m_Password
+- m_PlaceholderText
+- TextInputBase
+- set_textElement
+- get_originalText
+- TextElementOnGeometryChangedEvent
+- <textElement>k__BackingField
+- innerTextElementUssClassName
+- innerTextElementWithScrollViewUssClassName
+- horizontalVariantInnerTextElementUssClassName
+- verticalVariantInnerTextElementUssClassName
+- verticalHorizontalVariantInnerTextElementUssClassName
+- originalText
+- TouchScreenTextEditorEventHandler
+- add_headerContextMenuPopulateEvent
+- remove_headerContextMenuPopulateEvent
+- OnContextMenuPopulateEvent
+- headerContextMenuPopulateEvent
+- RaiseHeaderContextMenuPopulate
+- TextValueField`1
+- get_textValueInput
+- textValueInput
+- TextValueInput
+- get_textValueFieldParent
+- textValueFieldParent
+- TextValueFieldTraits`2
+- noTextVariantUssClassName
+- get_texture
+- set_texture
+- <texture>k__BackingField
+- TextureProperty
+- skipText
+- get_isEditorContext
+- isEditorContext
+- m_DispatchContexts
+- DispatchContext
+- KeyboardEventExtensions
+- ContextClickEvent
+- ContextualMenuPopulateEvent
+- m_ContextualMenuManager
+- set_selectedTextElement
+- m_SelectedTextElement
+- selectedTextElement
+- textInputEvent
+- ProcessTextInputEvent
+- <ProcessTextInputEvent>b__12_0
+- FocusBasedEventSequenceContext
+- get_targetTexture
+- set_targetTexture
+- m_TargetTexture
+- textSettings
+- targetTexture
+- SetTargetTexture
+- get_contextType
+- set_contextType
+- contextTypeProperty
+- m_ContextType
+- MakeTexturedRect
+- MakeTexturedRect_Injected
+- spriteTexture
+- textureSize
+- texturePixelsPerPoint
+- ContextType
+- get_contextualMenuManager
+- set_contextualMenuManager
+- <contextualMenuManager>k__BackingField
+- contextualMenuManager
+- <contextType>k__BackingField
+- get_textureId
+- set_textureId
+- UpdateAtlasTexture
+- CreateAtlasTexture
+- <textureId>k__BackingField
+- s_TextureCounter
+- textureId
+- TextureOptions
+- MeshGenerationContext
+- textureOptions
+- TextureId
+- TextureRegistry
+- GetTexture
+- m_Textures
+- m_TextureToId
+- maxTextures
+- <start>k__BackingField
+- get_renderTexture
+- set_renderTexture
+- FromTexture2D
+- FromRenderTexture
+- m_Texture
+- m_RenderTexture
+- renderTexture
+- RenderTextureProperty
+- textShadow
+- StartAnimationInlineTextShadow
+- get_textOverflow
+- get_textShadow
+- get_unityEditorTextRenderingMode
+- get_unityTextAlign
+- get_unityTextAutoSize
+- get_unityTextGenerator
+
+## Matching native strings: libil2cpp.so (213)
+- mono_class_get_context
+- mono_method_get_context
+- mono_arch_context_get_int_reg
+- mono_arch_context_set_int_reg
+- mono_restore_context
+- pthread_mutex_unlock
+- pthread_rwlock_unlock
+- _ZNSt6__ndk18__sp_mut6unlockEv
+- _ZNSt6__ndk15mutex6unlockEv
+- _ZNSt6__ndk115recursive_mutex6unlockEv
+- _ZNSt6__ndk111timed_mutex6unlockEv
+- _ZNSt6__ndk121recursive_timed_mutex6unlockEv
+- UnityEngine.Camera::set_targetTexture_Injected(System.IntPtr,System.IntPtr)
+- UnityEngine.Texture::get_isReadable_Injected(System.IntPtr)
+- UnityEngine.SystemInfo::SupportsShadows()
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::IsCompressedFormat_Native_TextureFormat(UnityEngine.TextureFormat)
+- start
+- UnityEngine.Renderer::set_shadowCastingMode_Injected(System.IntPtr,UnityEngine.Rendering.ShadowCastingMode)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetFontFaces_Internal()
+- UnityEngine.TextCore.Text.TextSelectionService::SelectToPreviousParagraph(System.IntPtr,System.Int32&)
+- UnityEngine.TextGenerator::Internal_Destroy(System.IntPtr)
+- UnityEngine.Renderer::set_receiveShadows_Injected(System.IntPtr,System.Boolean)
+- UnityEngine.Shader::SetGlobalTextureImpl_Injected(System.Int32,System.IntPtr)
+- UnityEngine.Texture::set_mipMapBias_Injected(System.IntPtr,System.Single)
+- UnityEngine.RenderTexture::get_width_Injected(System.IntPtr)
+- UnityEngine.RenderTexture::GetColorBuffer_Injected(System.IntPtr,UnityEngine.RenderBuffer&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetCursorLogicalIndexFromPosition_Injected(System.IntPtr,UnityEngine.Vector2&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetCursorPositionFromLogicalIndex_Injected(System.IntPtr,System.Int32,UnityEngine.Vector2&)
+- UnityEngine.TextCoreTextEngineModule.dll
+- UnityEngine.Sprite::GetSecondaryTextureCount_Injected(System.IntPtr)
+- UnityEngine.Camera::get_targetTexture_Injected(System.IntPtr)
+- UnityEngine.Material::GetTextureScaleAndOffsetImpl_Injected(System.IntPtr,System.Int32,UnityEngine.Vector4&)
+- UnityEngine.Texture2D::ApplyImpl_Injected(System.IntPtr,System.Boolean,System.Boolean)
+- UnityEngine.SystemInfo::SupportsTextureFormatNative(UnityEngine.TextureFormat)
+- UnityEngine.TextGenerator::Populate_Internal_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.IntPtr,UnityEngine.Color&,System.Int32,System.Single,System.Single,UnityEngine.FontStyle,System.Boolean,
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Runtime.Remoting.Contexts/Context.cpp(22) : Unsupported internal call for IL2CPP:Context::RegisterContext - "This icall is not supported by il2cpp."
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::GetGraphicsFormat_Native_TextureFormat(UnityEngine.TextureFormat,System.Boolean)
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::GetRenderTextureFormat(UnityEngine.Experimental.Rendering.GraphicsFormat)
+- UnityEngine.TextCore.Text.FontAsset::UpdateWeightFallbacks_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::PreviousCodePointIndex(System.IntPtr,System.Int32)
+- UnityEngine.TextCore.Text.TextSelectionService::SelectToEndOfParagraph(System.IntPtr,System.Int32&)
+- UnityEngine.Material::SetTextureOffsetImpl_Injected(System.IntPtr,System.Int32,UnityEngine.Vector2&)
+- UnityEngine.RenderTexture::GetDescriptor_Injected(System.IntPtr,UnityEngine.RenderTextureDescriptor&)
+- UnityEngine.SystemInfo::GetMaxTextureSize()
+- UnityEngine.TextCore.LowLevel.FontEngine::UnloadFontFace_Internal()
+- UnityEngine.TextCore.Text.TextSelectionService::SelectCurrentParagraph(System.IntPtr,System.Int32&,System.Int32&)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(20) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::CloseToken - "This icall 
+- ::friend
+- UnityEngine.Texture2D::GetWritableImageData_Injected(System.IntPtr,System.Int32)
+- UnityEngine.RenderTexture::SetMipMapCount_Injected(System.IntPtr,System.Int32)
+- UnityEngine.TextAsset::Internal_CreateInstance_Injected(UnityEngine.TextAsset,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::LoadFontFace_With_Size_and_FaceIndex_FromFont_Internal_Injected(System.IntPtr,System.Int32,System.Int32)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Runtime.Remoting.Contexts/Context.cpp(27) : Unsupported internal call for IL2CPP:Context::ReleaseContext - "This icall is not supported by il2cpp."
+- UnityEngine.Graphics::Internal_DrawTexture(UnityEngine.Internal_DrawTextureArguments&)
+- UnityEngine.TextCore.LowLevel.FontEngine::LoadFontFace_With_Size_by_FamilyName_and_StyleName_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32)
+- UnityEngine.TextCore.Text.FontAsset::UpdateFaceInfo_Injected(System.IntPtr,UnityEngine.TextCore.FaceInfo&)
+- UnityEngine.TextCore.Text.TextSettings::UpdateFallbacks_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetFirstCharacterIndexOnLine(System.IntPtr,System.Int32)
+- UnityEngine.Texture::get_filterMode_Injected(System.IntPtr)
+- UnityEngine.Texture2D::SetAllPixels32_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32)
+- UnityEngine.RenderTexture::SetRenderTextureDescriptor_Injected(System.IntPtr,UnityEngine.RenderTextureDescriptor&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetFaceInfo_Internal(UnityEngine.TextCore.FaceInfo&)
+- UnityEngine.CanvasRenderer::SetSecondaryTextureCount_Injected(System.IntPtr,System.Int32)
+- void __cxxabiv1::scan_eh_tab(scan_results &, _Unwind_Action, bool, _Unwind_Exception *, _Unwind_Context *)
+- UnityEngine.Material::GetTextureImpl_Injected(System.IntPtr,System.Int32)
+- UnityEngine.TextMesh::set_text_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetGlyphIndex(System.UInt32)
+- UnityEngine.TextCore.LowLevel.FontEngine::TryAddGlyphToTexture_Internal_Injected(System.UInt32,System.Int32,UnityEngine.TextCore.LowLevel.GlyphPackingMode,UnityEngine.Bindings.BlittableArrayWrapper&,System.Int32&,UnityEn
+- UnityEngine.CanvasRenderer::SetTexture_Injected(System.IntPtr,System.IntPtr)
+- GC Warning: Out of Memory!  Trying to continue...
+- UnityEngine.Texture2D::get_whiteTexture_Injected()
+- UnityEngine.Texture2D::SetPixelImpl_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Color&)
+- UnityEngine.TextAsset::get_bytes_Injected(System.IntPtr)
+- UnityEngine.GUIStyleState::set_textColor_Injected(System.IntPtr,UnityEngine.Color&)
+- UnityEngine.TextCore.Text.TextGenerationInfo::Create()
+- UnityEngine.SystemInfo::Supports2DArrayTextures()
+- UnityEngine.TextCore.LowLevel.FontEngine::ResetAtlasTexture_Injected(System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::LineUpCharacterPosition(System.IntPtr,System.Int32)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(27) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::RevertToSelf - "This ical
+- UnityEngine.Sprite::get_associatedAlphaSplitTexture_Injected(System.IntPtr)
+- UnityEngine.GUIStyle::Internal_DestroyTextGenerator(System.Int32)
+- UnityEngine.TextCore.Text.TextSelectionService::GetStartOfNextWord(System.IntPtr,System.Int32)
+- operator name does not start with 'operator'
+- UnityEngine.Texture::GetDataWidth_Injected(System.IntPtr)
+- UnityEngine.Texture::get_texelSize_Injected(System.IntPtr,UnityEngine.Vector2&)
+- UnityEngine.Texture::Internal_GetActiveTextureColorSpace_Injected(System.IntPtr)
+- UnityEngine.Texture2D::GetPixelBilinearImpl_Injected(System.IntPtr,System.Int32,System.Int32,System.Single,System.Single,UnityEngine.Color&)
+- UnityEngine.RenderTexture::Internal_Create(UnityEngine.RenderTexture)
+- UnityEngine.RenderTexture::set_depthStencilFormat_Injected(System.IntPtr,UnityEngine.Experimental.Rendering.GraphicsFormat)
+- UnityEngine.RenderTexture::DiscardContents_Injected(System.IntPtr,System.Boolean,System.Boolean)
+- UnityEngine.RenderTexture::SetSRGBReadWrite_Injected(System.IntPtr,System.Boolean)
+- UnityEngine.SystemInfo::Supports3DTextures()
+- UnityEngine.Light::get_shadows_Injected(System.IntPtr)
+- UnityEngine.Texture2D::Internal_CreateImpl_Injected(UnityEngine.Texture2D,System.Int32,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,UnityEngine.Experimental.Re
+- UnityEngine.RenderTexture::GetActive_Injected()
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulateLigatureSubstitutionRecordMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulateMarkToBaseAdjustmentRecordMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.TextGenerator::GetVerticesInternal_Injected(System.IntPtr,System.Object)
+- UnityEngine.TextMesh::set_color_Injected(System.IntPtr,UnityEngine.Color&)
+- UnityEngine.Canvas::SetExternalCanvasEnabled(System.Boolean)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System/AppDomain.cpp(197) : Unsupported internal call for IL2CPP:AppDomain::InternalSetContext - "This icall is only used in the System.Runtime.Remoting na
+- UnityEngine.TextCore.LowLevel.FontEngine::TryAddGlyphsToTexture_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,UnityEngine.TextCore.LowLevel.GlyphPackingMode,UnityEngine.Bindings.BlittableArrayWr
+- UnityEngine.TextCore.Text.FontAsset::Destroy(System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::GetLineHeight(System.IntPtr,System.Int32)
+- UnityEngine.UIElements.MeshBuilderNative::MakeTexturedRect_Injected(UnityEngine.UIElements.MeshBuilderNative/NativeRectParams&,UnityEngine.UIElements.MeshWriteDataInterface&)
+- UnityEngine.Sprite::get_texture_Injected(System.IntPtr)
+- UnityEngine.TouchScreenKeyboard::get_text_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::LoadFontFace_With_Size_And_FaceIndex_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,System.Int32)
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulatePairAdjustmentRecordMarshallingArray_from_KernTable_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetMarkToBaseAdjustmentRecordsFromMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::Substring_Injected(System.IntPtr,System.Int32,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.CanvasRenderer::SetAlphaTexture_Injected(System.IntPtr,System.IntPtr)
+- Unity.TextMeshPro.dll
+- Can't start up: not enough memory
+- _Unwind_Reason_Code __cxxabiv1::__gxx_personality_v0(int, _Unwind_Action, uint64_t, _Unwind_Exception *, _Unwind_Context *)
+- UnityEngine.Light::set_shadowStrength_Injected(System.IntPtr,System.Single)
+- UnityEngine.Texture2D::get_format_Injected(System.IntPtr)
+- UnityEngine.Texture2D::GetImageDataSize_Injected(System.IntPtr)
+- UnityEngine.Texture3D::Internal_CreateImpl(UnityEngine.Texture3D,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,UnityEngine.Experimenta
+- UnityEngine.Texture2DArray::Internal_CreateImpl_Injected(UnityEngine.Texture2DArray,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,Unit
+- UnityEngine.TextCore.Text.TextSelectionService::GetEndOfPreviousWord(System.IntPtr,System.Int32)
+- UnityEngine.Light::get_shadowStrength_Injected(System.IntPtr)
+- UnityEngine.Texture::set_filterMode_Injected(System.IntPtr,UnityEngine.FilterMode)
+- UnityEngine.GUIStyle::get_richText_Injected(System.IntPtr)
+- UnityEngine.TextCore.LowLevel.FontEngine::SetTextureUploadMode(System.Boolean)
+- UnityEngine.Material::SetTextureScaleImpl_Injected(System.IntPtr,System.Int32,UnityEngine.Vector2&)
+- UnityEngine.Texture2D::ReinitializeImpl_Injected(System.IntPtr,System.Int32,System.Int32)
+- UnityEngine.Rendering.ScriptableRenderContext::GetCameras_Internal(System.Type,System.Object)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetAllLigatureSubstitutionRecords()
+- UnityEngine.TextCore.Text.FontAsset::CreateHbFaceIfNeeded()
+- UnityEngine.TextCore.Text.FontAsset::Create_Injected(UnityEngine.TextCore.FaceInfo&,System.IntPtr,System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.B
+- UnityEngine.TextGenerator::Internal_Create()
+- UnityEngine.TextCoreFontEngineModule.dll
+- UnityEngine.RenderTexture::GetDepthBuffer_Injected(System.IntPtr,UnityEngine.RenderBuffer&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetAllPairAdjustmentRecords_Injected(UnityEngine.Bindings.BlittableArrayWrapper&)
+- UnityEngine.TextCore.Text.TextLib::GetInstance_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextLib::GenerateTextInternal_Injected(System.IntPtr,UnityEngine.TextCore.NativeTextGenerationSettings&,System.IntPtr,UnityEngine.TextCore.Text.NativeTextInfo&)
+- UnityEngine.TextGenerator::get_characterCount_Injected(System.IntPtr)
+- DW_EH_PE_textrel pointer encoding not supported
+- UnityEngine.Texture2D::get_isReadable_Injected(System.IntPtr)
+- UnityEngine.TextCore.LowLevel.FontEngine::TryGetGlyphWithUnicodeValue_Internal(System.UInt32,UnityEngine.TextCore.LowLevel.GlyphLoadFlags,UnityEngine.TextCore.LowLevel.GlyphMarshallingStruct&)
+- UnityEngine.TextCore.Text.TextSelectionService::NextCodePointIndex(System.IntPtr,System.Int32)
+- UnityEngine.Cubemap::Internal_CreateImpl(UnityEngine.Cubemap,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,UnityEngine.Experimental.Rendering.TextureCreationFla
+- UnityEngine.Texture2DArray::get_isReadable_Injected(System.IntPtr)
+- UnityEngine.TouchScreenKeyboard::set_text_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetAllMarkToMarkAdjustmentRecords_Injected(UnityEngine.Bindings.BlittableArrayWrapper&)
+- UnityEngine.TextGenerator::get_lineCount_Injected(System.IntPtr)
+- UnityEngine.TextGenerator::GetLinesInternal_Injected(System.IntPtr,System.Object)
+- UnityEngine.TextRenderingModule.dll
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(34) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::SetCurrentToken - "This i
+- UnityEngine.Sprite::GetSecondaryTextures_Injected(System.IntPtr,UnityEngine.SecondarySpriteTexture[])
+- UnityEngine.Texture::get_wrapMode_Injected(System.IntPtr)
+- UnityEngine.Texture2D::ReinitializeWithTextureFormatImpl_Injected(System.IntPtr,System.Int32,System.Int32,UnityEngine.TextureFormat,System.Boolean)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetLigatureSubstitutionRecordsFromMarshallingArray(UnityEngine.TextCore.LowLevel.LigatureSubstitutionRecord[])
+- UnityEngine.TextCore.LowLevel.FontEngine::GetMarkToMarkAdjustmentRecordsFromMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.FontAsset::UpdateFallbacks_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetLineNumber(System.IntPtr,System.Int32)
+- UnityEngine.TextCore.Text.TextSelectionService::SelectToStartOfParagraph(System.IntPtr,System.Int32&)
+- UnityEngine.MaterialPropertyBlock::GetTextureImpl_Injected(System.IntPtr,System.Int32)
+- UnityEngine.Material::SetTextureImpl_Injected(System.IntPtr,System.Int32,System.IntPtr)
+- UnityEngine.CubemapArray::Internal_CreateImpl(UnityEngine.CubemapArray,System.Int32,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,UnityEngine.Experimental.Rende
+- UnityEngine.GUIStyle::Internal_GetTextRectOffset_Injected(System.IntPtr,UnityEngine.Rect&,UnityEngine.GUIContent,UnityEngine.Vector2&,UnityEngine.Vector2&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetAllMarkToBaseAdjustmentRecords_Injected(UnityEngine.Bindings.BlittableArrayWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetLastCharacterIndexOnLine(System.IntPtr,System.Int32)
+- Context
+- UnityEngine.Graphics::Internal_DrawMesh_Injected(System.IntPtr,System.Int32,UnityEngine.Matrix4x4&,System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.IntP
+- UnityEngine.RenderTexture::SetShadowSamplingMode_Injected(System.IntPtr,UnityEngine.Rendering.ShadowSamplingMode)
+- UnityEngine.TextCore.LowLevel.FontEngine::IsColorFontFace()
+- UnityEngine.TextCore.LowLevel.FontEngine::GetVariantGlyphIndex(System.UInt32,System.UInt32)
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulateMarkToMarkAdjustmentRecordMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.RenderTexture::set_width_Injected(System.IntPtr,System.Int32)
+- UnityEngine.RenderTexture::get_height_Injected(System.IntPtr)
+- UnityEngine.RenderTexture::set_height_Injected(System.IntPtr,System.Int32)
+- UnityEngine.SystemInfo::Supports3DRenderTextures()
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulatePairAdjustmentRecordMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.TextCore.Text.TextGenerationInfo::Destroy(System.IntPtr)
+- UnityEngine.CanvasRenderer::SetSecondaryTexture_Injected(System.IntPtr,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&,System.IntPtr)
+- UnityEngine.SystemInfo::GetMaxRenderTextureSize()
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::IsCrunchFormat(UnityEngine.TextureFormat)
+- UnityEngine.TextCore.LowLevel.FontEngine::LoadFontFace_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetPairAdjustmentRecordsFromMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSettings::DestroyNativeObject(System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::SelectCurrentWord(System.IntPtr,System.Int32,System.Int32&,System.Int32&)
+- unique_lock::unlock: not locked
+- CIE start does not match
+- UnityEngine.MaterialPropertyBlock::SetTextureImpl_Injected(System.IntPtr,System.Int32,System.IntPtr)
+- UnityEngine.Texture2D::ReadPixelsImpl_Injected(System.IntPtr,UnityEngine.Rect&,System.Int32,System.Int32,System.Boolean)
+- UnityEngine.RenderTexture::ReleaseTemporary_Injected(System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::LineDownCharacterPosition(System.IntPtr,System.Int32)
+- UnityEngine.TextGenerator::GetCharactersInternal_Injected(System.IntPtr,System.Object)
+- UnityEngine.Texture::GetDataHeight_Injected(System.IntPtr)
+- UnityEngine.Texture3D::get_isReadable_Injected(System.IntPtr)
+- UnityEngine.RenderTexture::SetColorFormat_Injected(System.IntPtr,UnityEngine.Experimental.Rendering.GraphicsFormat)
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::GetGraphicsFormat_Native_RenderTextureFormat(UnityEngine.RenderTextureFormat,System.Boolean)
+- UnityEngine.TextCore.Text.TextSettings::CreateNativeObject_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextLib::FindIntersectingLink_Injected(UnityEngine.Vector2&,System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::SelectToNextParagraph(System.IntPtr,System.Int32&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetHighlightRectangles_Injected(System.IntPtr,System.Int32,System.Int32,UnityEngine.Bindings.BlittableArrayWrapper&)
+- UnityEngine.TextGenerator::get_rectExtents_Injected(System.IntPtr,UnityEngine.Rect&)
+- System.Runtime.Remoting.Contexts
+- System.Text
+- UnityEngine.Texture::set_wrapMode_Injected(System.IntPtr,UnityEngine.TextureWrapMode)
+- UnityEngine.RenderTexture::SetActive_Injected(System.IntPtr)
+- UnityEngine.RenderTexture::GetTemporary_Internal_Injected(UnityEngine.RenderTextureDescriptor&)
+- UnityEngine.SystemInfo::SupportsCubemapArrayTextures()
+- UnityEngine.GUIUtility::get_textFieldInput()
+- UnityEngine.TextCore.LowLevel.FontEngine::TryGetGlyphWithIndexValue_Internal(System.UInt32,UnityEngine.TextCore.LowLevel.GlyphLoadFlags,UnityEngine.TextCore.LowLevel.GlyphMarshallingStruct&)
+- UnityEngine.TextCore.LowLevel.FontEngine::TryGetSystemFontReference_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.TextCore.LowLevel.FontReference&)
+- UnityEngine.TextCore.Text.TextLib::MeasureText_Injected(System.IntPtr,UnityEngine.TextCore.NativeTextGenerationSettings&,System.IntPtr,UnityEngine.Vector2&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetCharacterHeightFromIndex(System.IntPtr,System.Int32)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(41) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::DuplicateToken - "This ic
+- N12_GLOBAL__N_116itanium_demangle20MemberLikeFriendNameE
+- .text
+
+## Matching native strings: libil2cpp.so (209)
+- mono_class_get_context
+- mono_method_get_context
+- mono_arch_context_get_int_reg
+- mono_arch_context_set_int_reg
+- mono_restore_context
+- pthread_mutex_unlock
+- _ZNSt6__ndk18__sp_mut6unlockEv
+- _ZNSt6__ndk15mutex6unlockEv
+- _ZNSt6__ndk115recursive_mutex6unlockEv
+- _ZNSt6__ndk111timed_mutex6unlockEv
+- _ZNSt6__ndk121recursive_timed_mutex6unlockEv
+- UnityEngine.Camera::set_targetTexture_Injected(System.IntPtr,System.IntPtr)
+- UnityEngine.Texture::get_isReadable_Injected(System.IntPtr)
+- UnityEngine.SystemInfo::SupportsShadows()
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::IsCompressedFormat_Native_TextureFormat(UnityEngine.TextureFormat)
+- start
+- UnityEngine.Renderer::set_shadowCastingMode_Injected(System.IntPtr,UnityEngine.Rendering.ShadowCastingMode)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetFontFaces_Internal()
+- UnityEngine.TextCore.Text.TextSelectionService::SelectToPreviousParagraph(System.IntPtr,System.Int32&)
+- UnityEngine.TextGenerator::Internal_Destroy(System.IntPtr)
+- UnityEngine.Renderer::set_receiveShadows_Injected(System.IntPtr,System.Boolean)
+- UnityEngine.Shader::SetGlobalTextureImpl_Injected(System.Int32,System.IntPtr)
+- UnityEngine.Texture::set_mipMapBias_Injected(System.IntPtr,System.Single)
+- UnityEngine.RenderTexture::get_width_Injected(System.IntPtr)
+- UnityEngine.RenderTexture::GetColorBuffer_Injected(System.IntPtr,UnityEngine.RenderBuffer&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetCursorLogicalIndexFromPosition_Injected(System.IntPtr,UnityEngine.Vector2&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetCursorPositionFromLogicalIndex_Injected(System.IntPtr,System.Int32,UnityEngine.Vector2&)
+- UnityEngine.TextCoreTextEngineModule.dll
+- UnityEngine.Sprite::GetSecondaryTextureCount_Injected(System.IntPtr)
+- UnityEngine.Camera::get_targetTexture_Injected(System.IntPtr)
+- UnityEngine.Material::GetTextureScaleAndOffsetImpl_Injected(System.IntPtr,System.Int32,UnityEngine.Vector4&)
+- UnityEngine.Texture2D::ApplyImpl_Injected(System.IntPtr,System.Boolean,System.Boolean)
+- UnityEngine.SystemInfo::SupportsTextureFormatNative(UnityEngine.TextureFormat)
+- UnityEngine.TextGenerator::Populate_Internal_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.IntPtr,UnityEngine.Color&,System.Int32,System.Single,System.Single,UnityEngine.FontStyle,System.Boolean,
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Runtime.Remoting.Contexts/Context.cpp(22) : Unsupported internal call for IL2CPP:Context::RegisterContext - "This icall is not supported by il2cpp."
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::GetGraphicsFormat_Native_TextureFormat(UnityEngine.TextureFormat,System.Boolean)
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::GetRenderTextureFormat(UnityEngine.Experimental.Rendering.GraphicsFormat)
+- UnityEngine.TextCore.Text.FontAsset::UpdateWeightFallbacks_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::PreviousCodePointIndex(System.IntPtr,System.Int32)
+- UnityEngine.TextCore.Text.TextSelectionService::SelectToEndOfParagraph(System.IntPtr,System.Int32&)
+- UnityEngine.Material::SetTextureOffsetImpl_Injected(System.IntPtr,System.Int32,UnityEngine.Vector2&)
+- UnityEngine.RenderTexture::GetDescriptor_Injected(System.IntPtr,UnityEngine.RenderTextureDescriptor&)
+- UnityEngine.SystemInfo::GetMaxTextureSize()
+- UnityEngine.TextCore.LowLevel.FontEngine::UnloadFontFace_Internal()
+- UnityEngine.TextCore.Text.TextSelectionService::SelectCurrentParagraph(System.IntPtr,System.Int32&,System.Int32&)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(20) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::CloseToken - "This icall 
+- UnityEngine.Texture2D::GetWritableImageData_Injected(System.IntPtr,System.Int32)
+- UnityEngine.RenderTexture::SetMipMapCount_Injected(System.IntPtr,System.Int32)
+- UnityEngine.TextAsset::Internal_CreateInstance_Injected(UnityEngine.TextAsset,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::LoadFontFace_With_Size_and_FaceIndex_FromFont_Internal_Injected(System.IntPtr,System.Int32,System.Int32)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Runtime.Remoting.Contexts/Context.cpp(27) : Unsupported internal call for IL2CPP:Context::ReleaseContext - "This icall is not supported by il2cpp."
+- UnityEngine.Graphics::Internal_DrawTexture(UnityEngine.Internal_DrawTextureArguments&)
+- UnityEngine.TextCore.LowLevel.FontEngine::LoadFontFace_With_Size_by_FamilyName_and_StyleName_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32)
+- UnityEngine.TextCore.Text.FontAsset::UpdateFaceInfo_Injected(System.IntPtr,UnityEngine.TextCore.FaceInfo&)
+- UnityEngine.TextCore.Text.TextSettings::UpdateFallbacks_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetFirstCharacterIndexOnLine(System.IntPtr,System.Int32)
+- UnityEngine.Texture::get_filterMode_Injected(System.IntPtr)
+- UnityEngine.Texture2D::SetAllPixels32_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32)
+- UnityEngine.RenderTexture::SetRenderTextureDescriptor_Injected(System.IntPtr,UnityEngine.RenderTextureDescriptor&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetFaceInfo_Internal(UnityEngine.TextCore.FaceInfo&)
+- UnityEngine.CanvasRenderer::SetSecondaryTextureCount_Injected(System.IntPtr,System.Int32)
+- UnityEngine.Material::GetTextureImpl_Injected(System.IntPtr,System.Int32)
+- UnityEngine.TextMesh::set_text_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetGlyphIndex(System.UInt32)
+- UnityEngine.TextCore.LowLevel.FontEngine::TryAddGlyphToTexture_Internal_Injected(System.UInt32,System.Int32,UnityEngine.TextCore.LowLevel.GlyphPackingMode,UnityEngine.Bindings.BlittableArrayWrapper&,System.Int32&,UnityEn
+- UnityEngine.CanvasRenderer::SetTexture_Injected(System.IntPtr,System.IntPtr)
+- GC Warning: Out of Memory!  Trying to continue...
+- UnityEngine.Texture2D::get_whiteTexture_Injected()
+- UnityEngine.Texture2D::SetPixelImpl_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Color&)
+- UnityEngine.TextAsset::get_bytes_Injected(System.IntPtr)
+- UnityEngine.GUIStyleState::set_textColor_Injected(System.IntPtr,UnityEngine.Color&)
+- UnityEngine.TextCore.Text.TextGenerationInfo::Create()
+- void __cxxabiv1::scan_eh_tab(scan_results &, _Unwind_Action, bool, _Unwind_Control_Block *, _Unwind_Context *)
+- UnityEngine.SystemInfo::Supports2DArrayTextures()
+- UnityEngine.TextCore.LowLevel.FontEngine::ResetAtlasTexture_Injected(System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::LineUpCharacterPosition(System.IntPtr,System.Int32)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(27) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::RevertToSelf - "This ical
+- UnityEngine.Sprite::get_associatedAlphaSplitTexture_Injected(System.IntPtr)
+- UnityEngine.GUIStyle::Internal_DestroyTextGenerator(System.Int32)
+- UnityEngine.TextCore.Text.TextSelectionService::GetStartOfNextWord(System.IntPtr,System.Int32)
+- operator name does not start with 'operator'
+- UnityEngine.Texture::GetDataWidth_Injected(System.IntPtr)
+- UnityEngine.Texture::get_texelSize_Injected(System.IntPtr,UnityEngine.Vector2&)
+- UnityEngine.Texture::Internal_GetActiveTextureColorSpace_Injected(System.IntPtr)
+- UnityEngine.Texture2D::GetPixelBilinearImpl_Injected(System.IntPtr,System.Int32,System.Int32,System.Single,System.Single,UnityEngine.Color&)
+- UnityEngine.RenderTexture::Internal_Create(UnityEngine.RenderTexture)
+- UnityEngine.RenderTexture::set_depthStencilFormat_Injected(System.IntPtr,UnityEngine.Experimental.Rendering.GraphicsFormat)
+- UnityEngine.RenderTexture::DiscardContents_Injected(System.IntPtr,System.Boolean,System.Boolean)
+- UnityEngine.RenderTexture::SetSRGBReadWrite_Injected(System.IntPtr,System.Boolean)
+- UnityEngine.SystemInfo::Supports3DTextures()
+- UnityEngine.Light::get_shadows_Injected(System.IntPtr)
+- UnityEngine.Texture2D::Internal_CreateImpl_Injected(UnityEngine.Texture2D,System.Int32,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,UnityEngine.Experimental.Re
+- UnityEngine.RenderTexture::GetActive_Injected()
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulateLigatureSubstitutionRecordMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulateMarkToBaseAdjustmentRecordMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.TextGenerator::GetVerticesInternal_Injected(System.IntPtr,System.Object)
+- UnityEngine.TextMesh::set_color_Injected(System.IntPtr,UnityEngine.Color&)
+- UnityEngine.Canvas::SetExternalCanvasEnabled(System.Boolean)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System/AppDomain.cpp(197) : Unsupported internal call for IL2CPP:AppDomain::InternalSetContext - "This icall is only used in the System.Runtime.Remoting na
+- UnityEngine.TextCore.LowLevel.FontEngine::TryAddGlyphsToTexture_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,UnityEngine.TextCore.LowLevel.GlyphPackingMode,UnityEngine.Bindings.BlittableArrayWr
+- UnityEngine.TextCore.Text.FontAsset::Destroy(System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::GetLineHeight(System.IntPtr,System.Int32)
+- UnityEngine.UIElements.MeshBuilderNative::MakeTexturedRect_Injected(UnityEngine.UIElements.MeshBuilderNative/NativeRectParams&,UnityEngine.UIElements.MeshWriteDataInterface&)
+- UnityEngine.Sprite::get_texture_Injected(System.IntPtr)
+- UnityEngine.TouchScreenKeyboard::get_text_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::LoadFontFace_With_Size_And_FaceIndex_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,System.Int32)
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulatePairAdjustmentRecordMarshallingArray_from_KernTable_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetMarkToBaseAdjustmentRecordsFromMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::Substring_Injected(System.IntPtr,System.Int32,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.CanvasRenderer::SetAlphaTexture_Injected(System.IntPtr,System.IntPtr)
+- Unity.TextMeshPro.dll
+- Can't start up: not enough memory
+- UnityEngine.Light::set_shadowStrength_Injected(System.IntPtr,System.Single)
+- UnityEngine.Texture2D::get_format_Injected(System.IntPtr)
+- UnityEngine.Texture2D::GetImageDataSize_Injected(System.IntPtr)
+- UnityEngine.Texture3D::Internal_CreateImpl(UnityEngine.Texture3D,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,UnityEngine.Experimenta
+- UnityEngine.Texture2DArray::Internal_CreateImpl_Injected(UnityEngine.Texture2DArray,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,Unit
+- UnityEngine.TextCore.Text.TextSelectionService::GetEndOfPreviousWord(System.IntPtr,System.Int32)
+- UnityEngine.Light::get_shadowStrength_Injected(System.IntPtr)
+- UnityEngine.Texture::set_filterMode_Injected(System.IntPtr,UnityEngine.FilterMode)
+- UnityEngine.GUIStyle::get_richText_Injected(System.IntPtr)
+- UnityEngine.TextCore.LowLevel.FontEngine::SetTextureUploadMode(System.Boolean)
+- UnityEngine.Material::SetTextureScaleImpl_Injected(System.IntPtr,System.Int32,UnityEngine.Vector2&)
+- UnityEngine.Texture2D::ReinitializeImpl_Injected(System.IntPtr,System.Int32,System.Int32)
+- UnityEngine.Rendering.ScriptableRenderContext::GetCameras_Internal(System.Type,System.Object)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetAllLigatureSubstitutionRecords()
+- UnityEngine.TextCore.Text.FontAsset::CreateHbFaceIfNeeded()
+- UnityEngine.TextCore.Text.FontAsset::Create_Injected(UnityEngine.TextCore.FaceInfo&,System.IntPtr,System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.B
+- UnityEngine.TextGenerator::Internal_Create()
+- UnityEngine.TextCoreFontEngineModule.dll
+- UnityEngine.RenderTexture::GetDepthBuffer_Injected(System.IntPtr,UnityEngine.RenderBuffer&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetAllPairAdjustmentRecords_Injected(UnityEngine.Bindings.BlittableArrayWrapper&)
+- UnityEngine.TextCore.Text.TextLib::GetInstance_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextLib::GenerateTextInternal_Injected(System.IntPtr,UnityEngine.TextCore.NativeTextGenerationSettings&,System.IntPtr,UnityEngine.TextCore.Text.NativeTextInfo&)
+- UnityEngine.TextGenerator::get_characterCount_Injected(System.IntPtr)
+- UnityEngine.Texture2D::get_isReadable_Injected(System.IntPtr)
+- UnityEngine.TextCore.LowLevel.FontEngine::TryGetGlyphWithUnicodeValue_Internal(System.UInt32,UnityEngine.TextCore.LowLevel.GlyphLoadFlags,UnityEngine.TextCore.LowLevel.GlyphMarshallingStruct&)
+- UnityEngine.TextCore.Text.TextSelectionService::NextCodePointIndex(System.IntPtr,System.Int32)
+- UnityEngine.Cubemap::Internal_CreateImpl(UnityEngine.Cubemap,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,UnityEngine.Experimental.Rendering.TextureCreationFla
+- UnityEngine.Texture2DArray::get_isReadable_Injected(System.IntPtr)
+- UnityEngine.TouchScreenKeyboard::set_text_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetAllMarkToMarkAdjustmentRecords_Injected(UnityEngine.Bindings.BlittableArrayWrapper&)
+- UnityEngine.TextGenerator::get_lineCount_Injected(System.IntPtr)
+- UnityEngine.TextGenerator::GetLinesInternal_Injected(System.IntPtr,System.Object)
+- UnityEngine.TextRenderingModule.dll
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(34) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::SetCurrentToken - "This i
+- UnityEngine.Sprite::GetSecondaryTextures_Injected(System.IntPtr,UnityEngine.SecondarySpriteTexture[])
+- UnityEngine.Texture::get_wrapMode_Injected(System.IntPtr)
+- UnityEngine.Texture2D::ReinitializeWithTextureFormatImpl_Injected(System.IntPtr,System.Int32,System.Int32,UnityEngine.TextureFormat,System.Boolean)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetLigatureSubstitutionRecordsFromMarshallingArray(UnityEngine.TextCore.LowLevel.LigatureSubstitutionRecord[])
+- UnityEngine.TextCore.LowLevel.FontEngine::GetMarkToMarkAdjustmentRecordsFromMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.FontAsset::UpdateFallbacks_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetLineNumber(System.IntPtr,System.Int32)
+- UnityEngine.TextCore.Text.TextSelectionService::SelectToStartOfParagraph(System.IntPtr,System.Int32&)
+- UnityEngine.MaterialPropertyBlock::GetTextureImpl_Injected(System.IntPtr,System.Int32)
+- UnityEngine.Material::SetTextureImpl_Injected(System.IntPtr,System.Int32,System.IntPtr)
+- UnityEngine.CubemapArray::Internal_CreateImpl(UnityEngine.CubemapArray,System.Int32,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.TextureColorSpace,UnityEngine.Experimental.Rende
+- UnityEngine.GUIStyle::Internal_GetTextRectOffset_Injected(System.IntPtr,UnityEngine.Rect&,UnityEngine.GUIContent,UnityEngine.Vector2&,UnityEngine.Vector2&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetAllMarkToBaseAdjustmentRecords_Injected(UnityEngine.Bindings.BlittableArrayWrapper&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetLastCharacterIndexOnLine(System.IntPtr,System.Int32)
+- Context
+- UnityEngine.Graphics::Internal_DrawMesh_Injected(System.IntPtr,System.Int32,UnityEngine.Matrix4x4&,System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.IntP
+- UnityEngine.RenderTexture::SetShadowSamplingMode_Injected(System.IntPtr,UnityEngine.Rendering.ShadowSamplingMode)
+- UnityEngine.TextCore.LowLevel.FontEngine::IsColorFontFace()
+- UnityEngine.TextCore.LowLevel.FontEngine::GetVariantGlyphIndex(System.UInt32,System.UInt32)
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulateMarkToMarkAdjustmentRecordMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.RenderTexture::set_width_Injected(System.IntPtr,System.Int32)
+- UnityEngine.RenderTexture::get_height_Injected(System.IntPtr)
+- UnityEngine.RenderTexture::set_height_Injected(System.IntPtr,System.Int32)
+- UnityEngine.SystemInfo::Supports3DRenderTextures()
+- UnityEngine.TextCore.LowLevel.FontEngine::PopulatePairAdjustmentRecordMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32&)
+- UnityEngine.TextCore.Text.TextGenerationInfo::Destroy(System.IntPtr)
+- UnityEngine.CanvasRenderer::SetSecondaryTexture_Injected(System.IntPtr,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&,System.IntPtr)
+- UnityEngine.SystemInfo::GetMaxRenderTextureSize()
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::IsCrunchFormat(UnityEngine.TextureFormat)
+- UnityEngine.TextCore.LowLevel.FontEngine::LoadFontFace_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.LowLevel.FontEngine::GetPairAdjustmentRecordsFromMarshallingArray_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextSettings::DestroyNativeObject(System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::SelectCurrentWord(System.IntPtr,System.Int32,System.Int32&,System.Int32&)
+- unique_lock::unlock: not locked
+- UnityEngine.MaterialPropertyBlock::SetTextureImpl_Injected(System.IntPtr,System.Int32,System.IntPtr)
+- UnityEngine.Texture2D::ReadPixelsImpl_Injected(System.IntPtr,UnityEngine.Rect&,System.Int32,System.Int32,System.Boolean)
+- UnityEngine.RenderTexture::ReleaseTemporary_Injected(System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::LineDownCharacterPosition(System.IntPtr,System.Int32)
+- UnityEngine.TextGenerator::GetCharactersInternal_Injected(System.IntPtr,System.Object)
+- UnityEngine.Texture::GetDataHeight_Injected(System.IntPtr)
+- UnityEngine.Texture3D::get_isReadable_Injected(System.IntPtr)
+- UnityEngine.RenderTexture::SetColorFormat_Injected(System.IntPtr,UnityEngine.Experimental.Rendering.GraphicsFormat)
+- UnityEngine.Experimental.Rendering.GraphicsFormatUtility::GetGraphicsFormat_Native_RenderTextureFormat(UnityEngine.RenderTextureFormat,System.Boolean)
+- UnityEngine.TextCore.Text.TextSettings::CreateNativeObject_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+- UnityEngine.TextCore.Text.TextLib::FindIntersectingLink_Injected(UnityEngine.Vector2&,System.IntPtr)
+- UnityEngine.TextCore.Text.TextSelectionService::SelectToNextParagraph(System.IntPtr,System.Int32&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetHighlightRectangles_Injected(System.IntPtr,System.Int32,System.Int32,UnityEngine.Bindings.BlittableArrayWrapper&)
+- UnityEngine.TextGenerator::get_rectExtents_Injected(System.IntPtr,UnityEngine.Rect&)
+- System.Runtime.Remoting.Contexts
+- System.Text
+- UnityEngine.Texture::set_wrapMode_Injected(System.IntPtr,UnityEngine.TextureWrapMode)
+- UnityEngine.RenderTexture::SetActive_Injected(System.IntPtr)
+- UnityEngine.RenderTexture::GetTemporary_Internal_Injected(UnityEngine.RenderTextureDescriptor&)
+- UnityEngine.SystemInfo::SupportsCubemapArrayTextures()
+- UnityEngine.GUIUtility::get_textFieldInput()
+- UnityEngine.TextCore.LowLevel.FontEngine::TryGetGlyphWithIndexValue_Internal(System.UInt32,UnityEngine.TextCore.LowLevel.GlyphLoadFlags,UnityEngine.TextCore.LowLevel.GlyphMarshallingStruct&)
+- UnityEngine.TextCore.LowLevel.FontEngine::TryGetSystemFontReference_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.TextCore.LowLevel.FontReference&)
+- UnityEngine.TextCore.Text.TextLib::MeasureText_Injected(System.IntPtr,UnityEngine.TextCore.NativeTextGenerationSettings&,System.IntPtr,UnityEngine.Vector2&)
+- UnityEngine.TextCore.Text.TextSelectionService::GetCharacterHeightFromIndex(System.IntPtr,System.Int32)
+- D:/unity/6000.2.6f2/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(41) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::DuplicateToken - "This ic
+- ::friend
+- N12_GLOBAL__N_116itanium_demangle20MemberLikeFriendNameE
+- .text
+
+## Serialized object string fields
+- Read errors (object parser): 33,432
+- String-like serialized fields: 276758
+- GameObject path_id=1 | m_Name=Theme | owner/name=Theme
+- GameObject path_id=2 | m_Name=Click | owner/name=Click
+- GameObject path_id=3 | m_Name=Button | owner/name=Button
+- GameObject path_id=4 | m_Name=Image | owner/name=Image
+- GameObject path_id=5 | m_Name=EventSystem | owner/name=EventSystem
+- GameObject path_id=6 | m_Name=IAP Manager | owner/name=IAP Manager
+- GameObject path_id=7 | m_Name=Main Camera | owner/name=Main Camera
+- GameObject path_id=8 | m_Name=ATF Manager | owner/name=ATF Manager
+- GameObject path_id=9 | m_Name=Canvas | owner/name=Canvas
+- GameObject path_id=10 | m_Name=Sounds | owner/name=Sounds
+- GameObject path_id=11 | m_Name=Ad Manager | owner/name=Ad Manager
+- GameObject path_id=14 | m_Name=Accept btn | owner/name=Accept btn
+- GameObject path_id=15 | m_Name=GDPR Popup | owner/name=GDPR Popup
+- GameObject path_id=17 | m_Name=Policy Btn | owner/name=Policy Btn
+- GameObject path_id=18 | m_Name=Do not accept btn | owner/name=Do not accept btn
+- GameObject path_id=19 | m_Name=Image | owner/name=Image
+- GameObject path_id=20 | m_Name=Content | owner/name=Content
+- GameObject path_id=21 | m_Name=Trang | owner/name=Trang
+- GameObject path_id=22 | m_Name=Fill | owner/name=Fill
+- GameObject path_id=23 | m_Name=GDPR | owner/name=GDPR
+- GameObject path_id=24 | m_Name=LevelLeader | owner/name=LevelLeader
+- GameObject path_id=1 | m_Name=Character | owner/name=Character
+- GameObject path_id=2 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=3 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=4 | m_Name=Image | owner/name=Image
+- GameObject path_id=5 | m_Name=A2 Infomation | owner/name=A2 Infomation
+- GameObject path_id=6 | m_Name=Atf btn | owner/name=Atf btn
+- GameObject path_id=7 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=8 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=9 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=10 | m_Name=Scroll View | owner/name=Scroll View
+- GameObject path_id=11 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=12 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=13 | m_Name=ClickNext | owner/name=ClickNext
+- GameObject path_id=14 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=15 | m_Name=Equiped | owner/name=Equiped
+- GameObject path_id=16 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=17 | m_Name=Glow img | owner/name=Glow img
+- GameObject path_id=18 | m_Name=Button (1) | owner/name=Button (1)
+- GameObject path_id=19 | m_Name=Viewport | owner/name=Viewport
+- GameObject path_id=20 | m_Name=Skill Upped 6 | owner/name=Skill Upped 6
+- GameObject path_id=22 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=23 | m_Name=Image | owner/name=Image
+- GameObject path_id=24 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=25 | m_Name=Info 4 | owner/name=Info 4
+- GameObject path_id=27 | m_Name=Image | owner/name=Image
+- GameObject path_id=28 | m_Name=sang (1) | owner/name=sang (1)
+- GameObject path_id=29 | m_Name=Image | owner/name=Image
+- GameObject path_id=30 | m_Name=Button 6 | owner/name=Button 6
+- GameObject path_id=31 | m_Name=ATF Process | owner/name=ATF Process
+- GameObject path_id=32 | m_Name=Dm | owner/name=Dm
+- GameObject path_id=33 | m_Name=Image | owner/name=Image
+- GameObject path_id=34 | m_Name=ATF Img | owner/name=ATF Img
+- GameObject path_id=35 | m_Name=sang | owner/name=sang
+- GameObject path_id=36 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=37 | m_Name=Info 4 | owner/name=Info 4
+- GameObject path_id=38 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=39 | m_Name=Setting board | owner/name=Setting board
+- GameObject path_id=40 | m_Name=Button 8 | owner/name=Button 8
+- GameObject path_id=41 | m_Name=Button 10 | owner/name=Button 10
+- GameObject path_id=42 | m_Name=Button 2 | owner/name=Button 2
+- GameObject path_id=43 | m_Name=Button info | owner/name=Button info
+- GameObject path_id=44 | m_Name=Bonus | owner/name=Bonus
+- GameObject path_id=45 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=46 | m_Name=Close | owner/name=Close
+- GameObject path_id=47 | m_Name=Home Img | owner/name=Home Img
+- GameObject path_id=48 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=49 | m_Name=Button 1 | owner/name=Button 1
+- GameObject path_id=50 | m_Name=Level Panel | owner/name=Level Panel
+- GameObject path_id=51 | m_Name=Panel Dash | owner/name=Panel Dash
+- GameObject path_id=52 | m_Name=DarkBack | owner/name=DarkBack
+- GameObject path_id=53 | m_Name=Toast | owner/name=Toast
+- GameObject path_id=54 | m_Name=Glow img | owner/name=Glow img
+- GameObject path_id=55 | m_Name=Board vien | owner/name=Board vien
+- GameObject path_id=56 | m_Name=Info 4 | owner/name=Info 4
+- GameObject path_id=57 | m_Name=Rate Us | owner/name=Rate Us
+- GameObject path_id=58 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
+- GameObject path_id=59 | m_Name=Yes | owner/name=Yes
+- GameObject path_id=60 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=61 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=62 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=63 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=64 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=65 | m_Name=Name | owner/name=Name
+- GameObject path_id=66 | m_Name=Main Image (1) | owner/name=Main Image (1)
+- GameObject path_id=67 | m_Name=Vang | owner/name=Vang
+- GameObject path_id=68 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=69 | m_Name=sang | owner/name=sang
+- GameObject path_id=70 | m_Name=Main Image | owner/name=Main Image
+- GameObject path_id=71 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=72 | m_Name=Star btn | owner/name=Star btn
+- GameObject path_id=73 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=74 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=75 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=76 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=77 | m_Name=Button 7 | owner/name=Button 7
+- GameObject path_id=78 | m_Name=Close | owner/name=Close
+- GameObject path_id=80 | m_Name=Text (1) | owner/name=Text (1)
+- GameObject path_id=81 | m_Name=Image | owner/name=Image
+- GameObject path_id=83 | m_Name=Image | owner/name=Image
+- GameObject path_id=84 | m_Name=Skill point img | owner/name=Skill point img
+- GameObject path_id=85 | m_Name=Lock | owner/name=Lock
+- GameObject path_id=86 | m_Name=Button 3 | owner/name=Button 3
+- GameObject path_id=87 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=88 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=89 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=90 | m_Name=sang | owner/name=sang
+- GameObject path_id=91 | m_Name=Skill Upped 7 | owner/name=Skill Upped 7
+- GameObject path_id=92 | m_Name=Bang Info | owner/name=Bang Info
+- GameObject path_id=93 | m_Name=Item 11 | owner/name=Item 11
+- GameObject path_id=94 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=95 | m_Name=Glow img | owner/name=Glow img
+- GameObject path_id=96 | m_Name=Button info | owner/name=Button info
+- GameObject path_id=97 | m_Name=Skill Tree | owner/name=Skill Tree
+- GameObject path_id=98 | m_Name=Setting | owner/name=Setting
+- GameObject path_id=99 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=100 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=101 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
+- GameObject path_id=102 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=103 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=104 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=105 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=106 | m_Name=No | owner/name=No
+- GameObject path_id=107 | m_Name=Target | owner/name=Target
+- GameObject path_id=108 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=109 | m_Name=Skill Tree Node | owner/name=Skill Tree Node
+- GameObject path_id=110 | m_Name=Found NOT | owner/name=Found NOT
+- GameObject path_id=111 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=112 | m_Name=Text (2) | owner/name=Text (2)
+- GameObject path_id=113 | m_Name=Home Btn | owner/name=Home Btn
+- GameObject path_id=114 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=115 | m_Name=Info 9 | owner/name=Info 9
+- GameObject path_id=116 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=117 | m_Name=Button (1) | owner/name=Button (1)
+- GameObject path_id=118 | m_Name=Image (1) | owner/name=Image (1)
+- GameObject path_id=119 | m_Name=Arashi (4) | owner/name=Arashi (4)
+- GameObject path_id=120 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=121 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=122 | m_Name=Rong Vang | owner/name=Rong Vang
+- GameObject path_id=123 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=124 | m_Name=Skill Upped 6 | owner/name=Skill Upped 6
+- GameObject path_id=125 | m_Name=Gold | owner/name=Gold
+- GameObject path_id=126 | m_Name=Viewport | owner/name=Viewport
+- GameObject path_id=127 | m_Name=10 do | owner/name=10 do
+- GameObject path_id=128 | m_Name=Gach Chan | owner/name=Gach Chan
+- GameObject path_id=129 | m_Name=May | owner/name=May
+- GameObject path_id=130 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=131 | m_Name=Name (4) | owner/name=Name (4)
+- GameObject path_id=132 | m_Name=Info 10 | owner/name=Info 10
+- GameObject path_id=133 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=134 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=135 | m_Name=ATF Name | owner/name=ATF Name
+- GameObject path_id=136 | m_Name=Item 4 | owner/name=Item 4
+- GameObject path_id=138 | m_Name=Text (2) | owner/name=Text (2)
+- GameObject path_id=139 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=140 | m_Name=Btn Phai | owner/name=Btn Phai
+- GameObject path_id=141 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=142 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=143 | m_Name=Image | owner/name=Image
+- GameObject path_id=144 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=145 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=146 | m_Name=Item 12 | owner/name=Item 12
+- GameObject path_id=147 | m_Name=Level Panel | owner/name=Level Panel
+- GameObject path_id=148 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=149 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=150 | m_Name=Xanh | owner/name=Xanh
+- GameObject path_id=151 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=152 | m_Name=Image | owner/name=Image
+- GameObject path_id=153 | m_Name=Home Btn (1) | owner/name=Home Btn (1)
+- GameObject path_id=154 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=155 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=156 | m_Name=Image | owner/name=Image
+- GameObject path_id=157 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=158 | m_Name=Button 5 | owner/name=Button 5
+- GameObject path_id=159 | m_Name=Info txt | owner/name=Info txt
+- GameObject path_id=160 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=161 | m_Name=Info text (4) | owner/name=Info text (4)
+- GameObject path_id=162 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=163 | m_Name=Info 7 | owner/name=Info 7
+- GameObject path_id=164 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=165 | m_Name=Skill Upped 7 | owner/name=Skill Upped 7
+- GameObject path_id=166 | m_Name=Den | owner/name=Den
+- GameObject path_id=167 | m_Name=Button | owner/name=Button
+- GameObject path_id=168 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=169 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=170 | m_Name=Rong shadow | owner/name=Rong shadow
+- GameObject path_id=171 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=172 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=173 | m_Name=Info 1 | owner/name=Info 1
+- GameObject path_id=174 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=175 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=176 | m_Name=2 do | owner/name=2 do
+- GameObject path_id=177 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=178 | m_Name=Main | owner/name=Main
+- GameObject path_id=179 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=180 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=181 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=182 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
+- GameObject path_id=183 | m_Name=Down | owner/name=Down
+- GameObject path_id=184 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=185 | m_Name=Vang | owner/name=Vang
+- GameObject path_id=186 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=187 | m_Name=Info text | owner/name=Info text
+- GameObject path_id=188 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=189 | m_Name=Music | owner/name=Music
+- GameObject path_id=190 | m_Name=Button | owner/name=Button
+- GameObject path_id=191 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=192 | m_Name=Button 1 | owner/name=Button 1
+- GameObject path_id=193 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=194 | m_Name=Map 1 | owner/name=Map 1
+- GameObject path_id=195 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=196 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=197 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=198 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=199 | m_Name=Text (2) | owner/name=Text (2)
+- GameObject path_id=200 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=201 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=202 | m_Name=Vang | owner/name=Vang
+- GameObject path_id=203 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=204 | m_Name=Button (6) | owner/name=Button (6)
+- GameObject path_id=205 | m_Name=Image | owner/name=Image
+- GameObject path_id=206 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=207 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=208 | m_Name=A5 | owner/name=A5
+- GameObject path_id=209 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=210 | m_Name=Button (6) | owner/name=Button (6)
+- GameObject path_id=211 | m_Name=Gia kc | owner/name=Gia kc
+- GameObject path_id=212 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=213 | m_Name=5 do | owner/name=5 do
+- GameObject path_id=214 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=215 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=216 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=217 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=218 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=219 | m_Name=Back ground | owner/name=Back ground
+- GameObject path_id=220 | m_Name=Toggle Panel | owner/name=Toggle Panel
+- GameObject path_id=221 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=222 | m_Name=Button (3) | owner/name=Button (3)
+- GameObject path_id=223 | m_Name=sang | owner/name=sang
+- GameObject path_id=224 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=225 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=226 | m_Name=Image | owner/name=Image
+- GameObject path_id=227 | m_Name=Gach Chan (5) | owner/name=Gach Chan (5)
+- GameObject path_id=228 | m_Name=Equip img | owner/name=Equip img
+- GameObject path_id=229 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=230 | m_Name=Remove ads btn | owner/name=Remove ads btn
+- GameObject path_id=231 | m_Name=Image | owner/name=Image
+- GameObject path_id=232 | m_Name=Image | owner/name=Image
+- GameObject path_id=233 | m_Name=Info 9 | owner/name=Info 9
+- GameObject path_id=234 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=235 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=237 | m_Name=Button 8 | owner/name=Button 8
+- GameObject path_id=238 | m_Name=Shadow (4) | owner/name=Shadow (4)
+- GameObject path_id=239 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=241 | m_Name=Name (4) | owner/name=Name (4)
+- GameObject path_id=242 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=243 | m_Name=Skill Tree | owner/name=Skill Tree
+- GameObject path_id=244 | m_Name=Image | owner/name=Image
+- GameObject path_id=245 | m_Name=Skill Upped 9 | owner/name=Skill Upped 9
+- GameObject path_id=246 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
+- GameObject path_id=247 | m_Name=Button 1 | owner/name=Button 1
+- GameObject path_id=248 | m_Name=BG | owner/name=BG
+- GameObject path_id=249 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=250 | m_Name=Store | owner/name=Store
+- GameObject path_id=251 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=253 | m_Name=Button (2) | owner/name=Button (2)
+- GameObject path_id=254 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=255 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=256 | m_Name=Name | owner/name=Name
+- GameObject path_id=257 | m_Name=Den | owner/name=Den
+- GameObject path_id=258 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=259 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=260 | m_Name=Name | owner/name=Name
+- GameObject path_id=261 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=262 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=263 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=264 | m_Name=A6 | owner/name=A6
+- GameObject path_id=265 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=266 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=267 | m_Name=A4 | owner/name=A4
+- GameObject path_id=268 | m_Name=Image | owner/name=Image
+- GameObject path_id=269 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=270 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=271 | m_Name=Name | owner/name=Name
+- GameObject path_id=272 | m_Name=Gia kc | owner/name=Gia kc
+- GameObject path_id=273 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=274 | m_Name=Rong shadow | owner/name=Rong shadow
+- GameObject path_id=275 | m_Name=Equiped | owner/name=Equiped
+- GameObject path_id=276 | m_Name=Rong Vang | owner/name=Rong Vang
+- GameObject path_id=277 | m_Name=Equip img | owner/name=Equip img
+- GameObject path_id=278 | m_Name=Button 9 | owner/name=Button 9
+- GameObject path_id=279 | m_Name=Item 5 | owner/name=Item 5
+- GameObject path_id=280 | m_Name=Panel Trai | owner/name=Panel Trai
+- GameObject path_id=281 | m_Name=Image | owner/name=Image
+- GameObject path_id=282 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=283 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=284 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=285 | m_Name=A7 Infomation | owner/name=A7 Infomation
+- GameObject path_id=286 | m_Name=Top | owner/name=Top
+- GameObject path_id=287 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=288 | m_Name=Image | owner/name=Image
+- GameObject path_id=289 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=290 | m_Name=Dm | owner/name=Dm
+- GameObject path_id=291 | m_Name=B5 | owner/name=B5
+- GameObject path_id=292 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=293 | m_Name=ClickPlay | owner/name=ClickPlay
+- GameObject path_id=294 | m_Name=Equiped | owner/name=Equiped
+- GameObject path_id=295 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=296 | m_Name=ClickBuy | owner/name=ClickBuy
+- GameObject path_id=297 | m_Name=Skill Upped 7 | owner/name=Skill Upped 7
+- GameObject path_id=298 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=299 | m_Name=Image back | owner/name=Image back
+- GameObject path_id=300 | m_Name=Name | owner/name=Name
+- GameObject path_id=301 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=302 | m_Name=Image | owner/name=Image
+- GameObject path_id=303 | m_Name=Image nhay | owner/name=Image nhay
+- GameObject path_id=304 | m_Name=SkillPoint | owner/name=SkillPoint
+- GameObject path_id=305 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=306 | m_Name=Name | owner/name=Name
+- GameObject path_id=307 | m_Name=Setting board | owner/name=Setting board
+- GameObject path_id=308 | m_Name=Button (7) | owner/name=Button (7)
+- GameObject path_id=309 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=310 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=311 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=312 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=313 | m_Name=Skill Tree Node | owner/name=Skill Tree Node
+- GameObject path_id=314 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=315 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=316 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=317 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
+- GameObject path_id=318 | m_Name=Skill Tree Node | owner/name=Skill Tree Node
+- GameObject path_id=319 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=320 | m_Name=Info 2 | owner/name=Info 2
+- GameObject path_id=321 | m_Name=Info 3 | owner/name=Info 3
+- GameObject path_id=322 | m_Name=Challence | owner/name=Challence
+- GameObject path_id=323 | m_Name=Button (3) | owner/name=Button (3)
+- GameObject path_id=324 | m_Name=Item 9 | owner/name=Item 9
+- GameObject path_id=325 | m_Name=Scroll View | owner/name=Scroll View
+- GameObject path_id=326 | m_Name=Button 8 | owner/name=Button 8
+- GameObject path_id=327 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=328 | m_Name=Item 8 | owner/name=Item 8
+- GameObject path_id=329 | m_Name=Sound Tracks | owner/name=Sound Tracks
+- GameObject path_id=330 | m_Name=Text (2) | owner/name=Text (2)
+- GameObject path_id=331 | m_Name=All Map | owner/name=All Map
+- GameObject path_id=332 | m_Name=ATF btn | owner/name=ATF btn
+- GameObject path_id=333 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=334 | m_Name=Resource Panel | owner/name=Resource Panel
+- GameObject path_id=336 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=337 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=338 | m_Name=Image | owner/name=Image
+- GameObject path_id=339 | m_Name=Skill Upped 8 | owner/name=Skill Upped 8
+- GameObject path_id=340 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=341 | m_Name=Bang Info | owner/name=Bang Info
+- GameObject path_id=342 | m_Name=Skill Upped 8 | owner/name=Skill Upped 8
+- GameObject path_id=343 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=344 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=345 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=346 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
+- GameObject path_id=347 | m_Name=Image | owner/name=Image
+- GameObject path_id=348 | m_Name=Info text (1) | owner/name=Info text (1)
+- GameObject path_id=349 | m_Name=EventSystem | owner/name=EventSystem
+- GameObject path_id=350 | m_Name=Text (2) | owner/name=Text (2)
+- GameObject path_id=351 | m_Name=Glow img | owner/name=Glow img
+- GameObject path_id=352 | m_Name=Skill Upped 2 | owner/name=Skill Upped 2
+- GameObject path_id=353 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=354 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=355 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=356 | m_Name=Star Toggle | owner/name=Star Toggle
+- GameObject path_id=357 | m_Name=Toggle Panel | owner/name=Toggle Panel
+- GameObject path_id=358 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=359 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=360 | m_Name=Info 8 | owner/name=Info 8
+- GameObject path_id=361 | m_Name=Button 9 | owner/name=Button 9
+- GameObject path_id=362 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=363 | m_Name=Image | owner/name=Image
+- GameObject path_id=364 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=365 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=366 | m_Name=Panel Att | owner/name=Panel Att
+- GameObject path_id=367 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=368 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=369 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=370 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
+- GameObject path_id=371 | m_Name=Vang | owner/name=Vang
+- GameObject path_id=372 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=373 | m_Name=ClickBack | owner/name=ClickBack
+- GameObject path_id=374 | m_Name=Gia kc | owner/name=Gia kc
+- GameObject path_id=375 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=376 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=377 | m_Name=Info | owner/name=Info
+- GameObject path_id=378 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=379 | m_Name=Dm | owner/name=Dm
+- GameObject path_id=380 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=381 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=382 | m_Name=Skill Upped 2 | owner/name=Skill Upped 2
+- GameObject path_id=383 | m_Name=ATF Process | owner/name=ATF Process
+- GameObject path_id=384 | m_Name=Info 6 | owner/name=Info 6
+- GameObject path_id=385 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=387 | m_Name=Board vien | owner/name=Board vien
+- GameObject path_id=388 | m_Name=Button 2 | owner/name=Button 2
+- GameObject path_id=389 | m_Name=SkillPoint | owner/name=SkillPoint
+- GameObject path_id=390 | m_Name=Button 1 | owner/name=Button 1
+- GameObject path_id=391 | m_Name=Star btn | owner/name=Star btn
+- GameObject path_id=392 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=393 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=394 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=395 | m_Name=Button (4) | owner/name=Button (4)
+- GameObject path_id=396 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=397 | m_Name=Button 2 | owner/name=Button 2
+- GameObject path_id=398 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=399 | m_Name=Gach Chan (4) | owner/name=Gach Chan (4)
+- GameObject path_id=400 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=401 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=402 | m_Name=Info text (1) | owner/name=Info text (1)
+- GameObject path_id=403 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=404 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=405 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=406 | m_Name=Reset | owner/name=Reset
+- GameObject path_id=407 | m_Name=Content | owner/name=Content
+- GameObject path_id=408 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=409 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=410 | m_Name=Info text (1) | owner/name=Info text (1)
+- GameObject path_id=411 | m_Name=Rong Vang | owner/name=Rong Vang
+- GameObject path_id=412 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=413 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=414 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=415 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=416 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=417 | m_Name=Xanh | owner/name=Xanh
+- GameObject path_id=418 | m_Name=Atf Toggle | owner/name=Atf Toggle
+- GameObject path_id=419 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=420 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=421 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=422 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=423 | m_Name=Btn Phai | owner/name=Btn Phai
+- GameObject path_id=424 | m_Name=Skill Upped 1 | owner/name=Skill Upped 1
+- GameObject path_id=425 | m_Name=sang | owner/name=sang
+- GameObject path_id=426 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=427 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=428 | m_Name=Button info | owner/name=Button info
+- GameObject path_id=429 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=430 | m_Name=ATF Process | owner/name=ATF Process
+- GameObject path_id=431 | m_Name=Button (3) | owner/name=Button (3)
+- GameObject path_id=432 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
+- GameObject path_id=433 | m_Name=Equip img | owner/name=Equip img
+- GameObject path_id=434 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=435 | m_Name=Info 10 | owner/name=Info 10
+- GameObject path_id=437 | m_Name=Shadow (4) | owner/name=Shadow (4)
+- GameObject path_id=438 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=439 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=440 | m_Name=PopUp | owner/name=PopUp
+- GameObject path_id=441 | m_Name=Button 6 | owner/name=Button 6
+- GameObject path_id=442 | m_Name=Board main | owner/name=Board main
+- GameObject path_id=443 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
+- GameObject path_id=444 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=445 | m_Name=Skill point img | owner/name=Skill point img
+- GameObject path_id=446 | m_Name=Atf btn | owner/name=Atf btn
+- GameObject path_id=447 | m_Name=Button (4) | owner/name=Button (4)
+- GameObject path_id=448 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=449 | m_Name=Equiped | owner/name=Equiped
+- GameObject path_id=450 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=451 | m_Name=ATF Img | owner/name=ATF Img
+- GameObject path_id=452 | m_Name=Info 2 | owner/name=Info 2
+- GameObject path_id=453 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=454 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=455 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=456 | m_Name=Item img | owner/name=Item img
+- GameObject path_id=457 | m_Name=Info text (1) | owner/name=Info text (1)
+- GameObject path_id=458 | m_Name=Info 10 | owner/name=Info 10
+- GameObject path_id=459 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=460 | m_Name=Board | owner/name=Board
+- GameObject path_id=461 | m_Name=Board Points (1) | owner/name=Board Points (1)
+- GameObject path_id=462 | m_Name=Image nhay | owner/name=Image nhay
+- GameObject path_id=463 | m_Name=Info text | owner/name=Info text
+- GameObject path_id=464 | m_Name=Button 9 | owner/name=Button 9
+- GameObject path_id=465 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=466 | m_Name=Info 3 | owner/name=Info 3
+- GameObject path_id=467 | m_Name=Info 3 | owner/name=Info 3
+- GameObject path_id=468 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=469 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=470 | m_Name=Equip Btn | owner/name=Equip Btn
+- GameObject path_id=471 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=472 | m_Name=Image | owner/name=Image
+- GameObject path_id=473 | m_Name=Image | owner/name=Image
+- GameObject path_id=474 | m_Name=Xanh | owner/name=Xanh
+- GameObject path_id=475 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=476 | m_Name=Button | owner/name=Button
+- GameObject path_id=477 | m_Name=ATF Img | owner/name=ATF Img
+- GameObject path_id=478 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
+- GameObject path_id=479 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=480 | m_Name=Skill Upped 5 | owner/name=Skill Upped 5
+- GameObject path_id=481 | m_Name=A6 Infomation | owner/name=A6 Infomation
+- GameObject path_id=482 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=483 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=484 | m_Name=Image (1) | owner/name=Image (1)
+- GameObject path_id=485 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=486 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=487 | m_Name=Star btn | owner/name=Star btn
+- GameObject path_id=488 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=489 | m_Name=Level Panel | owner/name=Level Panel
+- GameObject path_id=490 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=491 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=492 | m_Name=Text (1) | owner/name=Text (1)
+- GameObject path_id=493 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=494 | m_Name=Vien | owner/name=Vien
+- GameObject path_id=495 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=496 | m_Name=ATF Name | owner/name=ATF Name
+- GameObject path_id=497 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=498 | m_Name=Skill Upped 1 | owner/name=Skill Upped 1
+- GameObject path_id=499 | m_Name=Home Btn | owner/name=Home Btn
+- GameObject path_id=500 | m_Name=Map 2 | owner/name=Map 2
+- GameObject path_id=501 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=502 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=503 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=504 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=505 | m_Name=Info text (1) | owner/name=Info text (1)
+- GameObject path_id=506 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=507 | m_Name=Desellect All | owner/name=Desellect All
+- GameObject path_id=508 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=510 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=511 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=513 | m_Name=Button 4 | owner/name=Button 4
+- GameObject path_id=514 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
+- GameObject path_id=515 | m_Name=Image nhay | owner/name=Image nhay
+- GameObject path_id=516 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=517 | m_Name=Panel Khang | owner/name=Panel Khang
+- GameObject path_id=518 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=519 | m_Name=Theme | owner/name=Theme
+- GameObject path_id=520 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=521 | m_Name=B2 | owner/name=B2
+- GameObject path_id=522 | m_Name=Setting board | owner/name=Setting board
+- GameObject path_id=523 | m_Name=Text (1) | owner/name=Text (1)
+- GameObject path_id=524 | m_Name=B2 | owner/name=B2
+- GameObject path_id=525 | m_Name=B3 | owner/name=B3
+- GameObject path_id=526 | m_Name=Icon Sang | owner/name=Icon Sang
+- GameObject path_id=527 | m_Name=Board main | owner/name=Board main
+- GameObject path_id=528 | m_Name=Item img | owner/name=Item img
+- GameObject path_id=529 | m_Name=Main Image (1) | owner/name=Main Image (1)
+- GameObject path_id=530 | m_Name=ATF Name | owner/name=ATF Name
+- GameObject path_id=531 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=533 | m_Name=Antifact | owner/name=Antifact
+- GameObject path_id=534 | m_Name=Star Toggle | owner/name=Star Toggle
+- GameObject path_id=535 | m_Name=Info 9 | owner/name=Info 9
+- GameObject path_id=536 | m_Name=Btn Trai | owner/name=Btn Trai
+- GameObject path_id=537 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=538 | m_Name=Skill Upped 1 | owner/name=Skill Upped 1
+- GameObject path_id=539 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=540 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=541 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=542 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=543 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=544 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=545 | m_Name=Gach Chan (4) | owner/name=Gach Chan (4)
+- GameObject path_id=546 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=547 | m_Name=DarkBack | owner/name=DarkBack
+- GameObject path_id=548 | m_Name=A3 Infomation | owner/name=A3 Infomation
+- GameObject path_id=549 | m_Name=ATF Name | owner/name=ATF Name
+- GameObject path_id=551 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=552 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=553 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=554 | m_Name=Board Points (1) | owner/name=Board Points (1)
+- GameObject path_id=555 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=556 | m_Name=Skill Upped 10 | owner/name=Skill Upped 10
+- GameObject path_id=557 | m_Name=Vien | owner/name=Vien
+- GameObject path_id=558 | m_Name=Vang | owner/name=Vang
+- GameObject path_id=559 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=560 | m_Name=Level Boss | owner/name=Level Boss
+- GameObject path_id=561 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=562 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=563 | m_Name=Info 6 | owner/name=Info 6
+- GameObject path_id=564 | m_Name=Button (6) | owner/name=Button (6)
+- GameObject path_id=565 | m_Name=A2 | owner/name=A2
+- GameObject path_id=566 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=567 | m_Name=ClickNormal | owner/name=ClickNormal
+- GameObject path_id=568 | m_Name=Bui | owner/name=Bui
+- GameObject path_id=569 | m_Name=Skill Tree | owner/name=Skill Tree
+- GameObject path_id=570 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
+- GameObject path_id=571 | m_Name=Lock | owner/name=Lock
+- GameObject path_id=572 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=573 | m_Name=Level Boss | owner/name=Level Boss
+- GameObject path_id=574 | m_Name=Purchase BTN | owner/name=Purchase BTN
+- GameObject path_id=575 | m_Name=Skill Upped 2 | owner/name=Skill Upped 2
+- GameObject path_id=576 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=577 | m_Name=Info | owner/name=Info
+- GameObject path_id=580 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=581 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=582 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=583 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=584 | m_Name=Gia Vang | owner/name=Gia Vang
+- GameObject path_id=585 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=586 | m_Name=Info 5 | owner/name=Info 5
+- GameObject path_id=587 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=588 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=589 | m_Name=Button (2) | owner/name=Button (2)
+- GameObject path_id=590 | m_Name=Image | owner/name=Image
+- GameObject path_id=591 | m_Name=Button | owner/name=Button
+- GameObject path_id=592 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=593 | m_Name=Price | owner/name=Price
+- GameObject path_id=594 | m_Name=Content | owner/name=Content
+- GameObject path_id=595 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=596 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=597 | m_Name=Enter Btn | owner/name=Enter Btn
+- GameObject path_id=598 | m_Name=Btn Trai | owner/name=Btn Trai
+- GameObject path_id=599 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
+- GameObject path_id=600 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=601 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=602 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=603 | m_Name=Info 6 | owner/name=Info 6
+- GameObject path_id=604 | m_Name=DarkBack | owner/name=DarkBack
+- GameObject path_id=605 | m_Name=Equiped | owner/name=Equiped
+- GameObject path_id=606 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=607 | m_Name=Name (4) | owner/name=Name (4)
+- GameObject path_id=608 | m_Name=1 do | owner/name=1 do
+- GameObject path_id=609 | m_Name=Gold | owner/name=Gold
+- GameObject path_id=610 | m_Name=Button | owner/name=Button
+- GameObject path_id=611 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=612 | m_Name=Skill Tree Node | owner/name=Skill Tree Node
+- GameObject path_id=613 | m_Name=Text (1) | owner/name=Text (1)
+- GameObject path_id=614 | m_Name=Main Panel | owner/name=Main Panel
+- GameObject path_id=615 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=616 | m_Name=Level Panel | owner/name=Level Panel
+- GameObject path_id=617 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=618 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=620 | m_Name=Info 6 | owner/name=Info 6
+- GameObject path_id=621 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=622 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=623 | m_Name=Info 5 | owner/name=Info 5
+- GameObject path_id=624 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=625 | m_Name=Panel Mau | owner/name=Panel Mau
+- GameObject path_id=626 | m_Name=Info text (1) | owner/name=Info text (1)
+- GameObject path_id=627 | m_Name=Image | owner/name=Image
+- GameObject path_id=628 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=629 | m_Name=ATF Name | owner/name=ATF Name
+- GameObject path_id=630 | m_Name=DarkBack | owner/name=DarkBack
+- GameObject path_id=631 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=632 | m_Name=Info 1 | owner/name=Info 1
+- GameObject path_id=633 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=634 | m_Name=Home Img | owner/name=Home Img
+- GameObject path_id=635 | m_Name=Home Img | owner/name=Home Img
+- GameObject path_id=636 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=637 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=638 | m_Name=Button 7 | owner/name=Button 7
+- GameObject path_id=639 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=640 | m_Name=Scroll View | owner/name=Scroll View
+- GameObject path_id=641 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=642 | m_Name=B4 | owner/name=B4
+- GameObject path_id=643 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=644 | m_Name=B1 | owner/name=B1
+- GameObject path_id=645 | m_Name=Item img | owner/name=Item img
+- GameObject path_id=646 | m_Name=Button 5 | owner/name=Button 5
+- GameObject path_id=647 | m_Name=Board main | owner/name=Board main
+- GameObject path_id=648 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=649 | m_Name=Board vien | owner/name=Board vien
+- GameObject path_id=650 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=651 | m_Name=Skill Upped 7 | owner/name=Skill Upped 7
+- GameObject path_id=652 | m_Name=Equip img | owner/name=Equip img
+- GameObject path_id=653 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=654 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=655 | m_Name=Info text | owner/name=Info text
+- GameObject path_id=656 | m_Name=Item 3 | owner/name=Item 3
+- GameObject path_id=657 | m_Name=Dm | owner/name=Dm
+- GameObject path_id=658 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=659 | m_Name=Info | owner/name=Info
+- GameObject path_id=660 | m_Name=Vien | owner/name=Vien
+- GameObject path_id=661 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=662 | m_Name=Shadow (5) | owner/name=Shadow (5)
+- GameObject path_id=663 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=664 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=665 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=666 | m_Name=Skill Upped 9 | owner/name=Skill Upped 9
+- GameObject path_id=667 | m_Name=Button (2) | owner/name=Button (2)
+- GameObject path_id=668 | m_Name=Skill Upped 3 | owner/name=Skill Upped 3
+- GameObject path_id=669 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=670 | m_Name=Skill Upped 3 | owner/name=Skill Upped 3
+- GameObject path_id=671 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=672 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=673 | m_Name=Skill Tree Img | owner/name=Skill Tree Img
+- GameObject path_id=674 | m_Name=Info 2 | owner/name=Info 2
+- GameObject path_id=675 | m_Name=Home Img | owner/name=Home Img
+- GameObject path_id=677 | m_Name=Atf Toggle | owner/name=Atf Toggle
+- GameObject path_id=678 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
+- GameObject path_id=679 | m_Name=Image nhay | owner/name=Image nhay
+- GameObject path_id=680 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=681 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=682 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=683 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=684 | m_Name=Info txt | owner/name=Info txt
+- GameObject path_id=685 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=686 | m_Name=Label | owner/name=Label
+- GameObject path_id=687 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=688 | m_Name=Skill Upped 4 | owner/name=Skill Upped 4
+- GameObject path_id=689 | m_Name=ATF Img | owner/name=ATF Img
+- GameObject path_id=690 | m_Name=Button (3) | owner/name=Button (3)
+- GameObject path_id=691 | m_Name=Image | owner/name=Image
+- GameObject path_id=692 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=693 | m_Name=Button 5 | owner/name=Button 5
+- GameObject path_id=694 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=695 | m_Name=Equiped | owner/name=Equiped
+- GameObject path_id=696 | m_Name=Glow img | owner/name=Glow img
+- GameObject path_id=697 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=698 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=699 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=700 | m_Name=Button (7) | owner/name=Button (7)
+- GameObject path_id=701 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=702 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=703 | m_Name=Lock | owner/name=Lock
+- GameObject path_id=704 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=705 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=706 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=707 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=708 | m_Name=Skill Upped 6 | owner/name=Skill Upped 6
+- GameObject path_id=709 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=710 | m_Name=Board main | owner/name=Board main
+- GameObject path_id=711 | m_Name=Info 9 | owner/name=Info 9
+- GameObject path_id=712 | m_Name=Image | owner/name=Image
+- GameObject path_id=713 | m_Name=Credit | owner/name=Credit
+- GameObject path_id=714 | m_Name=Image back | owner/name=Image back
+- GameObject path_id=715 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=716 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=717 | m_Name=Glow img | owner/name=Glow img
+- GameObject path_id=718 | m_Name=Skill Upped 8 | owner/name=Skill Upped 8
+- GameObject path_id=719 | m_Name=Atf btn | owner/name=Atf btn
+- GameObject path_id=721 | m_Name=Button info | owner/name=Button info
+- GameObject path_id=722 | m_Name=B5 | owner/name=B5
+- GameObject path_id=723 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=724 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=725 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=726 | m_Name=Gold | owner/name=Gold
+- GameObject path_id=727 | m_Name=Shadow (4) | owner/name=Shadow (4)
+- GameObject path_id=728 | m_Name=Image back | owner/name=Image back
+- GameObject path_id=729 | m_Name=Skill Tree | owner/name=Skill Tree
+- GameObject path_id=730 | m_Name=Button 8 | owner/name=Button 8
+- GameObject path_id=731 | m_Name=Info txt | owner/name=Info txt
+- GameObject path_id=732 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=733 | m_Name=Button (4) | owner/name=Button (4)
+- GameObject path_id=734 | m_Name=Down  | owner/name=Down 
+- GameObject path_id=735 | m_Name=Button 3 | owner/name=Button 3
+- GameObject path_id=736 | m_Name=Name (4) | owner/name=Name (4)
+- GameObject path_id=737 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=738 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=739 | m_Name=Image | owner/name=Image
+- GameObject path_id=740 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=741 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=742 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=743 | m_Name=Image nhay | owner/name=Image nhay
+- GameObject path_id=744 | m_Name=Viewport | owner/name=Viewport
+- GameObject path_id=745 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=746 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=747 | m_Name=Bg | owner/name=Bg
+- GameObject path_id=748 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
+- GameObject path_id=749 | m_Name=Rong Vang | owner/name=Rong Vang
+- GameObject path_id=750 | m_Name=Button 10 | owner/name=Button 10
+- GameObject path_id=751 | m_Name=Shadow (4) | owner/name=Shadow (4)
+- GameObject path_id=753 | m_Name=A1 Infomation | owner/name=A1 Infomation
+- GameObject path_id=754 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=755 | m_Name=Button 6 | owner/name=Button 6
+- GameObject path_id=756 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=757 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=758 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=759 | m_Name=Button 2 | owner/name=Button 2
+- GameObject path_id=760 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=761 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=762 | m_Name=Star Toggle | owner/name=Star Toggle
+- GameObject path_id=763 | m_Name=Button info | owner/name=Button info
+- GameObject path_id=764 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=765 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=766 | m_Name=Info text (4) | owner/name=Info text (4)
+- GameObject path_id=767 | m_Name=Glow img | owner/name=Glow img
+- GameObject path_id=768 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=769 | m_Name=Viewport | owner/name=Viewport
+- GameObject path_id=770 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=771 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=772 | m_Name=Gia kc | owner/name=Gia kc
+- GameObject path_id=773 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=774 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=775 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=777 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=778 | m_Name=Image | owner/name=Image
+- GameObject path_id=779 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
+- GameObject path_id=780 | m_Name=Skill Upped 9 | owner/name=Skill Upped 9
+- GameObject path_id=781 | m_Name=Equip img | owner/name=Equip img
+- GameObject path_id=782 | m_Name=ATF Img | owner/name=ATF Img
+- GameObject path_id=783 | m_Name=SkillPoint | owner/name=SkillPoint
+- GameObject path_id=784 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=785 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=787 | m_Name=Close | owner/name=Close
+- GameObject path_id=788 | m_Name=Equiped | owner/name=Equiped
+- GameObject path_id=789 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=790 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=791 | m_Name=Gold | owner/name=Gold
+- GameObject path_id=792 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=793 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=794 | m_Name=sang | owner/name=sang
+- GameObject path_id=795 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=796 | m_Name=B1 | owner/name=B1
+- GameObject path_id=797 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=798 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=799 | m_Name=Button 9 | owner/name=Button 9
+- GameObject path_id=800 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=801 | m_Name=Glow | owner/name=Glow
+- GameObject path_id=802 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=803 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
+- GameObject path_id=804 | m_Name=Btn Trai | owner/name=Btn Trai
+- GameObject path_id=805 | m_Name=Info text (4) | owner/name=Info text (4)
+- GameObject path_id=806 | m_Name=A8 | owner/name=A8
+- GameObject path_id=807 | m_Name=Info 8 | owner/name=Info 8
+- GameObject path_id=808 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=809 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=810 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=811 | m_Name=Image | owner/name=Image
+- GameObject path_id=812 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=813 | m_Name=Level Boss | owner/name=Level Boss
+- GameObject path_id=814 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=815 | m_Name=Skill point img | owner/name=Skill point img
+- GameObject path_id=816 | m_Name=Rong shadow | owner/name=Rong shadow
+- GameObject path_id=817 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=818 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=819 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=820 | m_Name=Equiped | owner/name=Equiped
+- GameObject path_id=821 | m_Name=A3 | owner/name=A3
+- GameObject path_id=822 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=823 | m_Name=Vong Tron | owner/name=Vong Tron
+- GameObject path_id=824 | m_Name=Text (3) | owner/name=Text (3)
+- GameObject path_id=825 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=826 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=827 | m_Name=Image | owner/name=Image
+- GameObject path_id=828 | m_Name=Star Process | owner/name=Star Process
+- GameObject path_id=829 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=830 | m_Name=Equip img | owner/name=Equip img
+- GameObject path_id=831 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=832 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=833 | m_Name=A4 InfomatioN | owner/name=A4 InfomatioN
+- GameObject path_id=834 | m_Name=Skill Tree Img | owner/name=Skill Tree Img
+- GameObject path_id=835 | m_Name=Skill Tree (1) | owner/name=Skill Tree (1)
+- GameObject path_id=836 | m_Name=Button 3 | owner/name=Button 3
+- GameObject path_id=837 | m_Name=Item 6 | owner/name=Item 6
+- GameObject path_id=838 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=839 | m_Name=Skill Upped 2 | owner/name=Skill Upped 2
+- GameObject path_id=840 | m_Name=Gach Chan (2) | owner/name=Gach Chan (2)
+- GameObject path_id=841 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=842 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
+- GameObject path_id=843 | m_Name=Panel Trans | owner/name=Panel Trans
+- GameObject path_id=844 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=845 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=846 | m_Name=Content | owner/name=Content
+- GameObject path_id=848 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=849 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=851 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=852 | m_Name=Content | owner/name=Content
+- GameObject path_id=853 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=854 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=855 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=856 | m_Name=Gach Chan | owner/name=Gach Chan
+- GameObject path_id=857 | m_Name=Info text (4) | owner/name=Info text (4)
+- GameObject path_id=858 | m_Name=Button 4 | owner/name=Button 4
+- GameObject path_id=859 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=860 | m_Name=Disguise Panel | owner/name=Disguise Panel
+- GameObject path_id=861 | m_Name=Shop | owner/name=Shop
+- GameObject path_id=862 | m_Name=Button 10 | owner/name=Button 10
+- GameObject path_id=863 | m_Name=Star btn | owner/name=Star btn
+- GameObject path_id=864 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=865 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=866 | m_Name=Btn Trai | owner/name=Btn Trai
+- GameObject path_id=867 | m_Name=Shadow (2) | owner/name=Shadow (2)
+- GameObject path_id=868 | m_Name=Text (1) | owner/name=Text (1)
+- GameObject path_id=869 | m_Name=Watch Videos | owner/name=Watch Videos
+- GameObject path_id=870 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=871 | m_Name=Item 2 | owner/name=Item 2
+- GameObject path_id=872 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=873 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=874 | m_Name=Info 4 | owner/name=Info 4
+- GameObject path_id=875 | m_Name=A7 | owner/name=A7
+- GameObject path_id=876 | m_Name=Info text (2) | owner/name=Info text (2)
+- GameObject path_id=877 | m_Name=Panel Phai | owner/name=Panel Phai
+- GameObject path_id=878 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=879 | m_Name=Shadow (1) | owner/name=Shadow (1)
+- GameObject path_id=880 | m_Name=Info text (3) | owner/name=Info text (3)
+- GameObject path_id=881 | m_Name=Skill Upped 3 | owner/name=Skill Upped 3
+- GameObject path_id=882 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=883 | m_Name=Item img | owner/name=Item img
+- GameObject path_id=884 | m_Name=Skill point img (1) | owner/name=Skill point img (1)
+- GameObject path_id=885 | m_Name=Info 2 | owner/name=Info 2
+- GameObject path_id=886 | m_Name=Info txt | owner/name=Info txt
+- GameObject path_id=887 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=888 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=889 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=890 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=891 | m_Name=Glow equip img | owner/name=Glow equip img
+- GameObject path_id=892 | m_Name=Button (7) | owner/name=Button (7)
+- GameObject path_id=893 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=894 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=895 | m_Name=Gach Chan (4) | owner/name=Gach Chan (4)
+- GameObject path_id=896 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=898 | m_Name=Button (1) | owner/name=Button (1)
+- GameObject path_id=899 | m_Name=Skill point img (2) | owner/name=Skill point img (2)
+- GameObject path_id=900 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=901 | m_Name=Equip img | owner/name=Equip img
+- GameObject path_id=902 | m_Name=Setting | owner/name=Setting
+- GameObject path_id=903 | m_Name=Gia kc | owner/name=Gia kc
+- GameObject path_id=904 | m_Name=Text (1) | owner/name=Text (1)
+- GameObject path_id=905 | m_Name=Info text (4) | owner/name=Info text (4)
+- GameObject path_id=906 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=907 | m_Name=Info 7 | owner/name=Info 7
+- GameObject path_id=908 | m_Name=A5 Infomation | owner/name=A5 Infomation
+- GameObject path_id=909 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=910 | m_Name=Image | owner/name=Image
+- GameObject path_id=911 | m_Name=Bang Info | owner/name=Bang Info
+- GameObject path_id=912 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=913 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=914 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=915 | m_Name=Main Camera | owner/name=Main Camera
+- GameObject path_id=916 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=917 | m_Name=Board vien | owner/name=Board vien
+- GameObject path_id=918 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=920 | m_Name=Viewport | owner/name=Viewport
+- GameObject path_id=921 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=922 | m_Name=Skill point img (4) | owner/name=Skill point img (4)
+- GameObject path_id=923 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=924 | m_Name=Button 8 | owner/name=Button 8
+- GameObject path_id=925 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=926 | m_Name=Button (1) | owner/name=Button (1)
+- GameObject path_id=927 | m_Name=Skill point img (3) | owner/name=Skill point img (3)
+- GameObject path_id=928 | m_Name=Gach Chan | owner/name=Gach Chan
+- GameObject path_id=929 | m_Name=Skill point img | owner/name=Skill point img
+- GameObject path_id=930 | m_Name=Gach Chan (1) | owner/name=Gach Chan (1)
+- GameObject path_id=931 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=932 | m_Name=Item 7 | owner/name=Item 7
+- GameObject path_id=933 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=934 | m_Name=ClickFalseLevel | owner/name=ClickFalseLevel
+- GameObject path_id=935 | m_Name=Skill Tree Img | owner/name=Skill Tree Img
+- GameObject path_id=936 | m_Name=Den | owner/name=Den
+- GameObject path_id=937 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=938 | m_Name=Info text (1) | owner/name=Info text (1)
+- GameObject path_id=939 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=940 | m_Name=Star Toggle | owner/name=Star Toggle
+- GameObject path_id=941 | m_Name=ATF Img | owner/name=ATF Img
+- GameObject path_id=942 | m_Name=Name | owner/name=Name
+- GameObject path_id=943 | m_Name=Right | owner/name=Right
+- GameObject path_id=944 | m_Name=Left | owner/name=Left
+- GameObject path_id=945 | m_Name=Close | owner/name=Close
+- GameObject path_id=946 | m_Name=Shadow (3) | owner/name=Shadow (3)
+- GameObject path_id=947 | m_Name=Board Points | owner/name=Board Points
+- GameObject path_id=948 | m_Name=Close btn | owner/name=Close btn
+- GameObject path_id=949 | m_Name=ATF Toggle | owner/name=ATF Toggle
+- GameObject path_id=950 | m_Name=Glow img | owner/name=Glow img
+- GameObject path_id=951 | m_Name=Info txt | owner/name=Info txt
+- GameObject path_id=952 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=953 | m_Name=Story | owner/name=Story
+- GameObject path_id=955 | m_Name=Map 4 | owner/name=Map 4
+- GameObject path_id=956 | m_Name=ATF Name | owner/name=ATF Name
+- GameObject path_id=957 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=958 | m_Name=Info 10 | owner/name=Info 10
+- GameObject path_id=959 | m_Name=Ten | owner/name=Ten
+- GameObject path_id=960 | m_Name=Skill Upped 5 | owner/name=Skill Upped 5
+- GameObject path_id=961 | m_Name=Info | owner/name=Info
+- GameObject path_id=962 | m_Name=Name (1) | owner/name=Name (1)
+- GameObject path_id=963 | m_Name=Image | owner/name=Image
+- GameObject path_id=964 | m_Name=Gia kc | owner/name=Gia kc
+- GameObject path_id=965 | m_Name=Shop | owner/name=Shop
+- GameObject path_id=966 | m_Name=Star Process | owner/name=Star Process
+- GameObject path_id=967 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=968 | m_Name=Info text (1) | owner/name=Info text (1)
+- GameObject path_id=969 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=970 | m_Name=Text (3) | owner/name=Text (3)
+- GameObject path_id=971 | m_Name=Image | owner/name=Image
+- GameObject path_id=972 | m_Name=Item img | owner/name=Item img
+- GameObject path_id=973 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=974 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=975 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=976 | m_Name=Info 2 | owner/name=Info 2
+- GameObject path_id=977 | m_Name=Shadow | owner/name=Shadow
+- GameObject path_id=978 | m_Name=Skill Upped 9 | owner/name=Skill Upped 9
+- GameObject path_id=979 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=980 | m_Name=Gach Chan (3) | owner/name=Gach Chan (3)
+- GameObject path_id=981 | m_Name=Gach Chan (4) | owner/name=Gach Chan (4)
+- GameObject path_id=982 | m_Name=Equip img | owner/name=Equip img
+- GameObject path_id=983 | m_Name=Small Img | owner/name=Small Img
+- GameObject path_id=984 | m_Name=Artifact | owner/name=Artifact
+- GameObject path_id=985 | m_Name=Item img | owner/name=Item img
+- GameObject path_id=986 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=987 | m_Name=Image | owner/name=Image
+- GameObject path_id=988 | m_Name=Image | owner/name=Image
+- GameObject path_id=989 | m_Name=Bang Info | owner/name=Bang Info
+- GameObject path_id=990 | m_Name=Big Select | owner/name=Big Select
+- GameObject path_id=991 | m_Name=Name (2) | owner/name=Name (2)
+- GameObject path_id=992 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=993 | m_Name=ATF Process | owner/name=ATF Process
+- GameObject path_id=995 | m_Name=Top | owner/name=Top
+- GameObject path_id=996 | m_Name=Small Img Xam | owner/name=Small Img Xam
+- GameObject path_id=997 | m_Name=Skill Upped 5 | owner/name=Skill Upped 5
+- GameObject path_id=998 | m_Name=Big Img | owner/name=Big Img
+- GameObject path_id=999 | m_Name=Skill point Txt | owner/name=Skill point Txt
+- GameObject path_id=1000 | m_Name=Image | owner/name=Image
+- GameObject path_id=1001 | m_Name=Text (1) | owner/name=Text (1)
+- GameObject path_id=1003 | m_Name=Image | owner/name=Image
+- GameObject path_id=1004 | m_Name=Info text | owner/name=Info text
+- GameObject path_id=1005 | m_Name=Dark | owner/name=Dark
+- GameObject path_id=1006 | m_Name=Purchased | owner/name=Purchased
+- GameObject path_id=1007 | m_Name=Button (6) | owner/name=Button (6)
+- GameObject path_id=1008 | m_Name=Name (3) | owner/name=Name (3)
+- GameObject path_id=1009 | m_Name=Down (1) | owner/name=Down (1)
