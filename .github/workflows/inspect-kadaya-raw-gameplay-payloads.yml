@@ -1,0 +1,121 @@
+name: Inspect raw Kadaya gameplay component payloads
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-raw-gameplay-payload-scan.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Install UnityPy
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy
+      - name: Inspect raw custom MonoBehaviour payload bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import defaultdict, Counter
+          import re, UnityPy, struct
+
+          env=UnityPy.load(str(Path("assets/bin/Data")))
+          wanted={
+            "NinjaMovementScript","PlayerDash","SkillTree","SkillButton","HideObj",
+            "DisguiseManager","HUDText","HUDTextChild","StoryCanvas","ShopPanel",
+            "LevelLeader","CaiLo","CotTruyen","CotTruyenLeader","StarTreeDash",
+            "Skill","MainCanvas","UpgradeBtn"
+          }
+          rows=defaultdict(list)
+          counts=Counter()
+          read_errors=Counter()
+          printable_re=re.compile(rb"[\x20-\x7e]{4,}")
+          for obj in env.objects:
+              if getattr(obj.type,"name","")!="MonoBehaviour":
+                  continue
+              try:
+                  basic=obj.read(check_read=False)
+                  ptr=getattr(basic,"m_Script",None)
+                  if not ptr:
+                      continue
+                  script=ptr.read()
+                  name=str(getattr(script,"m_ClassName","") or "")
+                  if name not in wanted:
+                      continue
+                  counts[name]+=1
+                  if len(rows[name])>=8:
+                      continue
+                  raw=obj.get_raw_data()
+                  strings=[m.group().decode("ascii",errors="ignore")[:180] for m in printable_re.finditer(raw)]
+                  rec={
+                    "name":name,
+                    "asset_file":getattr(getattr(obj,"assets_file",None),"name","unknown"),
+                    "path_id":int(getattr(obj,"path_id",0)),
+                    "bytes":len(raw),
+                    "hex":raw[:224].hex(" "),
+                    "strings":strings[:30],
+                  }
+                  try:
+                      tree=obj.read_typetree(check_read=False)
+                      rec["tree_keys"]=list(tree.keys())[:80] if isinstance(tree,dict) else []
+                  except Exception as exc:
+                      rec["tree_error"]=type(exc).__name__
+                      rec["tree_keys"]=[]
+                  rows[name].append(rec)
+              except Exception as exc:
+                  read_errors[type(exc).__name__]+=1
+
+          lines=[
+            "# Kadaya raw gameplay component payload scan","",
+            "Read-only inspection of the original compiled Unity asset data. No runtime assets, scenes or maps were modified.",
+            f"- Unity objects scanned: {len(env.objects):,}",
+            "",
+            "## Matching component counts",
+          ]
+          lines += [f"- {name}: {counts[name]} instance(s)" for name in sorted(wanted) if counts[name]]
+          lines += ["","## Sample serialized component payloads"]
+          for name in sorted(rows):
+              lines += ["",f"### {name} — total instances {counts[name]}"]
+              for rec in rows[name]:
+                  lines.append(f"- Asset file: {rec['asset_file']}; path_id: {rec['path_id']}; raw bytes: {rec['bytes']}")
+                  lines.append("  Readable typetree keys: "+(", ".join(rec["tree_keys"]) if rec["tree_keys"] else "(none)")
+                  if rec.get("tree_error"):
+                      lines.append("  Typetree error: "+rec["tree_error"])
+                  lines.append("  First 224 bytes (hex): "+rec["hex"])
+                  if rec["strings"]:
+                      lines.append("  ASCII fragments: "+" | ".join(rec["strings"]))
+          lines += ["","## Parser errors"]+[f"- {k}: {v}" for k,v in read_errors.most_common()]
+          lines += [
+            "","## Next-step note",
+            "- If custom field data is present in raw serialized MonoBehaviour bytes, it may be possible to tune selected existing abilities without moving any scene objects, but the exact stream layout must be identified and verified first.",
+            "- A raw byte sequence is not patched merely because a similar number appears; any later patch must be validated by reopening the Unity container and comparing the changed field in the rebuilt APK.",
+            "- New ability logic still requires native-code analysis; this scan makes no changes."
+          ]
+          out=Path("analysis/kadaya-raw-gameplay-component-payloads.md")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text("\n".join(lines)+"\n",encoding="utf-8")
+          print(f"Wrote {out} ({out.stat().st_size:,} bytes)")
+          print("\n".join(lines[:130]))
+          PY
+      - name: Commit small payload report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-raw-gameplay-component-payloads.md
+          if git diff --cached --quiet; then
+            echo "Payload report unchanged."
+          else
+            git commit -m "Inspect serialized gameplay component payloads"
+            git push
+          fi
