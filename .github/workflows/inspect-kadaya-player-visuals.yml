@@ -1,0 +1,219 @@
+name: Locate Kadaya base player visuals
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful Unity recovery run ID
+        required: true
+        default: "39362669794"
+        type: string
+  push:
+    paths:
+      - "analysis/run-player-visual-scan.txt"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download recovered Unity project inside GitHub cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id || '39362669794' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trace Arashi renderer and texture references in b1
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          from collections import defaultdict, Counter
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects = [p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                      if p.parent.name == "ProjectSettings" and (p.parent.parent / "Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Unity project root not found.")
+          project = projects[0]
+          assets = project / "Assets"
+          scene = assets / "Scenes" / "b1.unity"
+          if not scene.exists():
+              raise SystemExit("Assets/Scenes/b1.unity not found.")
+          raw = scene.read_text(errors="ignore")
+          parts = re.split(r"(?m)^--- !u!(\d+) &(-?\d+)\s*$", raw)
+          records = {}
+          for i in range(1, len(parts), 3):
+              if i + 2 < len(parts):
+                  records[parts[i+1]] = (parts[i], parts[i+2])
+
+          names, components, comp_owner = {}, defaultdict(list), {}
+          for fid, (cid, body) in records.items():
+              if cid == "1":
+                  m = re.search(r"(?m)^  m_Name:\s*(.*)$", body)
+                  if m:
+                      names[fid] = m.group(1).strip().strip('"')
+                  for m in re.finditer(r"(?m)^  - component:\s*\{fileID:\s*(-?\d+)", body):
+                      components[fid].append(m.group(1))
+              m = re.search(r"(?m)^  m_GameObject:\s*\{fileID:\s*(-?\d+)", body)
+              if m:
+                  comp_owner[fid] = m.group(1)
+          for go, compids in components.items():
+              for cid in compids:
+                  comp_owner.setdefault(cid, go)
+
+          transform_by_go, go_by_transform, children = {}, {}, defaultdict(list)
+          for fid, (cid, body) in records.items():
+              if cid != "4":
+                  continue
+              gm = re.search(r"(?m)^  m_GameObject:\s*\{fileID:\s*(-?\d+)", body)
+              if gm:
+                  transform_by_go[gm.group(1)] = fid
+                  go_by_transform[fid] = gm.group(1)
+              for cm in re.finditer(r"(?m)^  - \{fileID:\s*(-?\d+)\s*\}", body):
+                  children[fid].append(cm.group(1))
+
+          guid_path = {}
+          for meta in assets.rglob("*.meta"):
+              try:
+                  meta_txt = meta.read_text(errors="ignore")
+              except OSError:
+                  continue
+              m = re.search(r"(?m)^guid:\s*([0-9a-fA-F]{32})\s*$", meta_txt)
+              if m:
+                  guid_path[m.group(1).lower()] = meta.with_suffix("")
+
+          material_textures = {}
+          for mat in assets.rglob("*.mat"):
+              try:
+                  mat_txt = mat.read_text(errors="ignore")
+              except OSError:
+                  continue
+              tex_guids = re.findall(r"(?m)^\s*m_Texture:\s*\{[^}]*guid:\s*([0-9a-fA-F]{32})", mat_txt)
+              material_textures[mat.resolve()] = [guid_path[g.lower()] for g in tex_guids if g.lower() in guid_path]
+
+          def rel(p):
+              try: return p.relative_to(project).as_posix()
+              except ValueError: return str(p)
+
+          roots = [(fid, name) for fid, name in names.items() if name.lower() in {"arashi", "ninjaplayer", "arashi root"}]
+          lines = [
+              "# Kadaya base player visual reference scan",
+              "",
+              "Read-only scan of the recovered gameplay scene. It does not change scenes, maps, levels or runtime assets.",
+              "",
+              f"- Scene: {scene.relative_to(project).as_posix()}",
+              f"- Scene objects: {len(records)}",
+              f"- Asset GUIDs indexed: {len(guid_path)}",
+              f"- Arashi/player-like GameObjects found: {len(roots)}",
+          ]
+
+          visited_transforms = set()
+          for goid, root_name in roots:
+              tfid = transform_by_go.get(goid)
+              lines += ["", f"## Player root: {root_name} (GameObject fileID {goid}, Transform {tfid})"]
+              if tfid is None:
+                  lines.append("No Transform component resolved.")
+                  continue
+              stack = [(tfid, 0)]
+              subtree_gos = []
+              while stack and len(subtree_gos) < 1000:
+                  current, depth = stack.pop()
+                  if current in visited_transforms:
+                      continue
+                  visited_transforms.add(current)
+                  go = go_by_transform.get(current)
+                  if go:
+                      subtree_gos.append((go, depth))
+                  for child in reversed(children.get(current, [])):
+                      stack.append((child, depth + 1))
+
+              lines += ["", "### Hierarchy (first 400 descendants)"]
+              for go, depth in subtree_gos[:400]:
+                  gname = names.get(go, "(unnamed)")
+                  comp_types = []
+                  for compid in components.get(go, []):
+                      item = records.get(compid)
+                      if item:
+                          comp_types.append(item[0])
+                  lines.append("  " * min(depth, 12) + f"- {gname} (fileID {go}; classIDs {','.join(comp_types)})")
+
+              lines += ["", "### Renderers, materials and textures"]
+              renderer_rows = []
+              for go, depth in subtree_gos:
+                  gname = names.get(go, "(unnamed)")
+                  for compid in components.get(go, []):
+                      item = records.get(compid)
+                      if not item or item[0] not in {"23", "137", "212"}:
+                          continue
+                      cid, body = item
+                      renderer_type = {"23": "MeshRenderer", "137": "SkinnedMeshRenderer", "212": "SpriteRenderer"}.get(cid, cid)
+                      refs = re.findall(r"(?m)^\s*(?:- |m_Sprite:\s*)?\{fileID:\s*-?\d+\s*,\s*guid:\s*([0-9a-fA-F]{32})", body)
+                      paths = [guid_path[g.lower()] for g in refs if g.lower() in guid_path]
+                      mats = [p for p in paths if p.suffix.lower() == ".mat"]
+                      other = [p for p in paths if p.suffix.lower() != ".mat"]
+                      for mat in mats:
+                          other.extend(material_textures.get(mat.resolve(), []))
+                      renderer_rows.append((depth, gname, renderer_type, [rel(p) for p in mats], list(dict.fromkeys(rel(p) for p in other)))
+              for depth, gname, rtype, mats, textures in renderer_rows[:250]:
+                  lines.append(f"- {gname} | {rtype} | materials: {', '.join(mats) or 'unresolved'} | textures/sprites: {', '.join(textures) or 'unresolved'}")
+              if not renderer_rows:
+                  lines.append("No renderer components found under this player root.")
+
+          # Report the character-related material and texture assets referenced anywhere in the scene.
+          lines += ["", "## Scene-wide visual assets that may correspond to character models"]
+          seen = set()
+          for fid, (cid, body) in records.items():
+              if cid not in {"23", "137", "212"}:
+                  continue
+              go = comp_owner.get(fid, "")
+              gname = names.get(go, "")
+              refs = re.findall(r"(?m)^\s*(?:- |m_Sprite:\s*)?\{fileID:\s*-?\d+\s*,\s*guid:\s*([0-9a-fA-F]{32})", body)
+              paths = [guid_path[g.lower()] for g in refs if g.lower() in guid_path]
+              mats = [p for p in paths if p.suffix.lower() == ".mat"]
+              texture_paths = []
+              for mat in mats:
+                  texture_paths.extend(material_textures.get(mat.resolve(), []))
+              if re.search(r"arashi|ninja|player|character|hero", gname, re.I) or any(re.search(r"arashi|ninja|character|hero|assassin", rel(p), re.I) for p in texture_paths):
+                  key = (gname, tuple(rel(p) for p in mats), tuple(rel(p) for p in texture_paths))
+                  if key in seen:
+                      continue
+                  seen.add(key)
+                  lines.append(f"- {gname or '(unnamed)'} | rendererClass {cid} | materials: {', '.join(rel(p) for p in mats)} | textures: {', '.join(rel(p) for p in texture_paths)}")
+
+          lines += ["", "## Script-source limitation",
+                    "This is an IL2CPP-based Android game. AssetRipper-generated C# files do not include the original method bodies, so visual assets can be patched separately but gameplay changes require either source code or a verified binary/runtime patch.",
+                    ""]
+          out = Path("analysis/kadaya-player-visual-references.md")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text("\n".join(lines), encoding="utf-8")
+          print(f"Wrote {out} ({out.stat().st_size:,} bytes)")
+          PY
+
+      - name: Commit small scan report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-player-visual-references.md
+          if git diff --cached --quiet; then
+            echo "Report unchanged."
+          else
+            git commit -m "Locate player renderer texture references"
+            git push
+          fi
