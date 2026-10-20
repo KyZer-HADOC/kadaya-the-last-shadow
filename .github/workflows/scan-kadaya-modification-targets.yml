@@ -1,0 +1,140 @@
+name: Find Kadaya modification targets
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Successful recovery workflow run ID"
+        required: true
+        default: "39362669794"
+        type: string
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download recovered project in cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Analyze modification candidates without changing scenes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects = [p.parent.parent for p in root.rglob("ProjectVersion.txt") if p.parent.name == "ProjectSettings" and (p.parent.parent / "Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Unity project root (Assets + ProjectSettings) not found.")
+          project = projects[0]
+          assets = project / "Assets"
+
+          if (assets / "Scenes").exists():
+              scene_files = sorted((p for p in (assets / "Scenes").rglob("*.unity") if p.is_file()), key=lambda p: p.as_posix())
+          else:
+              scene_files = sorted(assets.rglob("*.unity"), key=lambda p: p.as_posix())
+          cs_files = sorted(assets.rglob("*.cs"), key=lambda p: p.as_posix())
+          keywords = re.compile(r"player|arashi|select|character|hero|weapon|sword|attack|skill|abilit|story|cottruyen|dialog|chatstory|menu|manager|item|move|input|boss|enemy|save|language|text|load|level|map|shop|coin|gold|store|sound|setting|gamecontroller|atf|skin|equip|artifact|damage|health|checkpoint|ending", re.I)
+          relevant = [p for p in cs_files if keywords.search(p.stem)]
+          prefabs = sorted(assets.rglob("*.prefab"), key=lambda p: p.as_posix())
+          visuals = sorted([p for p in assets.rglob("*") if p.is_file() and p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".tga", ".psd"}], key=lambda p: p.as_posix())
+
+          def rel(p):
+              return p.relative_to(project).as_posix()
+
+          def fmt_size(p):
+              return f"{p.stat().st_size / (1024*1024):.2f} MiB" if p.stat().st_size >= 1024*1024 else f"{p.stat().st_size:,} bytes"
+
+          lines = [
+              "# Kadaya modification target scan",
+              "",
+              "Generated inside GitHub Actions from the recovered Unity project. This is an inventory only; no gameplay scenes or level layouts were edited.",
+              "",
+              f"- Detected Unity project: {project.name}",
+              f"- Unity scene files in project: {len(list(assets.rglob('*.unity')))}",
+              f"- Scenes in Assets/Scenes: {len(scene_files)}",
+              f"- Recovered C# files: {len(cs_files)}",
+              f"- Filename-selected script candidates: {len(relevant)}",
+              f"- Prefabs: {len(prefabs)}",
+              f"- Image/texture files by extension: {len(visuals)}",
+              "",
+              "## Existing gameplay scenes (preserve these unchanged)",
+          ]
+          for p in scene_files:
+              lines.append(f"- {rel(p)} ({fmt_size(p)})")
+
+          lines += ["", "## Likely player, character, weapons, skills, story, menu and progression scripts"]
+          for p in relevant[:500]:
+              try:
+                  data = p.read_text(errors="ignore")
+              except OSError:
+                  lines.append(f"- {rel(p)} — unable to read")
+                  continue
+              classes = re.findall(r"\b(?:class|struct|enum)\s+(\w+)", data)
+              methods = re.findall(r"(?m)^\s*(?:(?:public|private|protected|internal|static|virtual|override|sealed|async|extern|new|partial)\s+)+[\w<>,.?\[\]]+\s+(\w+)\s*\(", data)
+              methods = list(dict.fromkeys(methods))
+              method_preview = ", ".join(methods[:18]) if methods else "no method signatures recognized"
+              class_preview = ", ".join(list(dict.fromkeys(classes))[:8]) if classes else "class name not recognized"
+              lines.append(f"- {rel(p)} — class: {class_preview}; methods: {method_preview}; {fmt_size(p)}")
+
+          lines += ["", "## Prefabs whose names may relate to gameplay"]
+          prefab_kw = re.compile(r"player|character|arashi|weapon|sword|attack|skill|boss|enemy|hero|shadow|ninja|item|effect|particle|ragdoll|level", re.I)
+          selected_prefabs = [p for p in prefabs if prefab_kw.search(p.stem)]
+          for p in selected_prefabs[:250]:
+              lines.append(f"- {rel(p)} ({fmt_size(p)})")
+          if not selected_prefabs:
+              lines.append("- No filename matches.")
+
+          lines += ["", "## Visual assets with useful names"]
+          visual_kw = re.compile(r"player|character|arashi|weapon|sword|attack|skill|boss|enemy|hero|shadow|ninja|icon|logo|title|menu|story|dialog|button|bg|background|map|level|skin|select|store|item|main|portrait", re.I)
+          selected_visuals = [p for p in visuals if visual_kw.search(p.stem)]
+          for p in selected_visuals[:500]:
+              lines.append(f"- {rel(p)} ({fmt_size(p)})")
+          if not selected_visuals:
+              lines.append("- No filename matches.")
+
+          lines += [
+              "",
+              "## Important technical note",
+              "- This recovery was made from a compiled Android game package. AssetRipper can restore assets, scene data, component fields and script shells, but cannot guarantee original C# gameplay logic is recovered from IL2CPP native binaries.",
+              "- The intended changes are limited to the main character, weapons/abilities, game name/icon, story/dialogue and UI branding. Do not modify files under Assets/Scenes/ for this conversion; first locate referenced character/UI assets and scripts.",
+              "- This scan does not change or replace any original files.",
+              ""
+          ]
+          out = Path("analysis/kadaya-modification-targets.md")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text("\n".join(lines), encoding="utf-8")
+          print(f"Generated {out} ({out.stat().st_size:,} bytes)")
+          PY
+
+      - name: Commit small scan report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-modification-targets.md
+          if git diff --cached --quiet; then
+            echo "Report unchanged."
+          else
+            git commit -m "Add Kadaya modification target scan"
+            git push
+          fi
