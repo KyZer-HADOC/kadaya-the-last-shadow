@@ -1,0 +1,163 @@
+name: Analyze recovered Kadaya project in cloud
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Successful Recover Unity Project workflow run ID"
+        required: true
+        default: "39362669794"
+        type: string
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download recovery artifact inside GitHub cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create a small project inventory (no full project download to your PC)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter
+          import re
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          if not root.exists():
+              raise SystemExit(f"Artifact extraction folder not found: {root}")
+
+          # Find the Unity project root (Assets + ProjectSettings).
+          candidates = []
+          for version_file in root.rglob("ProjectVersion.txt"):
+              settings = version_file.parent
+              if settings.name == "ProjectSettings" and (settings.parent / "Assets").is_dir():
+                  candidates.append(settings.parent)
+          if candidates:
+              project = candidates[0]
+          else:
+              assets = [p for p in root.rglob("Assets") if p.is_dir() and (p.parent / "ProjectSettings").is_dir()]
+              project = assets[0].parent if assets else root
+
+          all_files = [p for p in project.rglob("*") if p.is_file()]
+          ext_counts = Counter((p.suffix.lower() or "[no extension]") for p in all_files)
+          ext_sizes = Counter()
+          for p in all_files:
+              try:
+                  ext_sizes[p.suffix.lower() or "[no extension]"] += p.stat().st_size
+              except OSError:
+                  pass
+
+          def rel(p):
+              try:
+                  return p.relative_to(project).as_posix()
+              except ValueError:
+                  return p.as_posix()
+
+          lines = [
+              "# Kadaya recovered Unity project — cloud inventory",
+              "",
+              "This is a small text report generated in GitHub Actions. The 1.77 GB recovered project was processed in GitHub cloud; it was not committed to this repository.",
+              "",
+              f"- Detected project root: {project}",
+              f"- Total files: {len(all_files):,}",
+              f"- Approx. uncompressed size: {sum(p.stat().st_size for p in all_files if p.exists()) / (1024**3):.2f} GiB",
+              "",
+              "## Top-level entries",
+          ]
+          for p in sorted(project.iterdir(), key=lambda x: (not x.is_dir(), x.name.lower())):
+              if p.is_dir():
+                  n = sum(1 for x in p.rglob("*") if x.is_file())
+                  lines.append(f"- {rel(p)}/ — {n:,} files")
+              else:
+                  lines.append(f"- {rel(p)} — {p.stat().st_size:,} bytes")
+
+          lines += ["", "## Unity version"]
+          version_file = project / "ProjectSettings" / "ProjectVersion.txt"
+          if version_file.exists():
+              lines.append("    " + version_file.read_text(errors="replace").strip()[:2000].replace("\n", "\n    "))
+          else:
+              lines.append("ProjectSettings/ProjectVersion.txt was not found at the detected root.")
+
+          lines += ["", "## File types (count / total size)"]
+          for ext, count in ext_counts.most_common(35):
+              lines.append(f"- {ext} — {count:,} files, {ext_sizes[ext] / (1024**2):.1f} MiB")
+
+          scenes = sorted([p for p in all_files if p.suffix.lower() == ".unity"], key=rel)
+          prefabs = sorted([p for p in all_files if p.suffix.lower() == ".prefab"], key=rel)
+          scripts = sorted([p for p in all_files if p.suffix.lower() == ".cs"], key=rel)
+          lines += ["", f"## Scenes (.unity): {len(scenes)}"]
+          lines += [f"- {rel(p)} — {p.stat().st_size:,} bytes" for p in scenes[:500]] or ["- No .unity scene files found."]
+          lines += ["", f"## Prefabs (.prefab): {len(prefabs)}"]
+          lines += [f"- {rel(p)} — {p.stat().st_size:,} bytes" for p in prefabs[:500]] or ["- No .prefab files found."]
+          lines += ["", f"## C# source files (.cs): {len(scripts)}"]
+          lines += [f"- {rel(p)}" for p in scripts[:300]] or ["- No .cs source files found."]
+
+          keyword = re.compile(r"(dialog|story|subtitle|locali[sz]|language|text|weapon|sword|player|character|hero|enemy|boss|level|stage|map|scene|ability|skill|attack|menu|ui|icon|logo|save|game.?manager)", re.I)
+          candidates = [p for p in all_files if keyword.search(p.name) and p.suffix.lower() not in {".meta", ".manifest"}]
+          candidates.sort(key=rel)
+          lines += ["", f"## Filenames relevant to character, UI, story, maps or abilities: {len(candidates)}"]
+          lines += [f"- {rel(p)} — {p.stat().st_size:,} bytes" for p in candidates[:700]] or ["- No matching filenames found."]
+
+          # Scene/prefab GameObject labels can help spot the current player and map setup.
+          lines += ["", "## GameObject names in scenes and prefabs (text assets only)"]
+          object_names = []
+          for p in scenes + prefabs:
+              try:
+                  if p.stat().st_size > 8 * 1024 * 1024:
+                      continue
+                  text = p.read_text(errors="ignore")
+              except OSError:
+                  continue
+              for m in re.finditer(r"m_Name:\s*([^\r\n]+)", text):
+                  val = m.group(1).strip().strip('"')
+                  if val and val not in {"GameObject", "Transform"}:
+                      object_names.append((rel(p), val))
+                      if len(object_names) >= 600:
+                          break
+              if len(object_names) >= 600:
+                  break
+          lines += [f"- {path}: {name}" for path, name in object_names] or ["- No readable names extracted from scene/prefab text."]
+          lines += ["", "## Notes", "- AssetRipper output is a recovered project, not the original authored Unity source. Native IL2CPP gameplay logic may not be recoverable as original C#.", "- This inventory intentionally omits file contents and large binary assets to keep the report small.", ""]
+
+          out = Path("analysis/kadaya-recovery-inventory.md")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text("\n".join(lines), encoding="utf-8")
+          print(f"Wrote {out} ({out.stat().st_size:,} bytes)")
+          PY
+
+      - name: Commit the small inventory report to the repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-recovery-inventory.md
+          if git diff --cached --quiet; then
+            echo "Inventory has not changed; nothing to commit."
+          else
+            git commit -m "Add recovered Unity project inventory"
+            git push
+          fi
+
+      - name: Show report summary
+        run: |
+          cat analysis/kadaya-recovery-inventory.md >> "$GITHUB_STEP_SUMMARY"
