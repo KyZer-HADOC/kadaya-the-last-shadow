@@ -1,0 +1,1 @@
+Trigger packaging of the small player texture preview files only.
