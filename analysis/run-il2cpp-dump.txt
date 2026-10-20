@@ -1,1 +1,1 @@
-Trigger cloud IL2CPP metadata/method mapping inspection. Do not modify game binaries, scenes, maps or levels.
+Rerun IL2CPP dump with a focused gameplay class/method-offset summary. Keep binary and all scenes/maps/levels unchanged.
