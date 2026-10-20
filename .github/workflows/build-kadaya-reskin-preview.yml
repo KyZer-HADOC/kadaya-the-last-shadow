@@ -19,8 +19,13 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Install asset and image tools
-        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy Pillow numpy
+      - name: Install asset, image and Sinhala-font tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check --quiet UnityPy Pillow numpy
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-core >/dev/null
 
       - name: Patch only player/weapon effect atlases, title and app icons
         shell: bash
@@ -173,6 +178,91 @@ jobs:
               draw.line((165, 397, 600, 397), fill=(222, 50, 65, 230), width=max(2, w//700))
               return img
 
+          def recolor_full_atlas(image):
+              """Translate blue/cyan/green asset tones into a restrained ash-black/crimson palette."""
+              arr = np.array(image.convert("RGBA"), dtype=np.uint8)
+              rgb = arr[:, :, :3].astype(np.float32)
+              alpha = arr[:, :, 3]
+              r, g, b = rgb[:, :, 0].copy(), rgb[:, :, 1].copy(), rgb[:, :, 2].copy()
+              lum = 0.2126*r + 0.7152*g + 0.0722*b
+              visible = alpha > 0
+
+              cool = visible & (b > r*1.12) & (b > g*1.02) & (b > 52)
+              rgb[cool, 0] = np.clip(lum[cool]*0.93 + 22, 0, 255)
+              rgb[cool, 1] = np.clip(lum[cool]*0.16 + 3, 0, 255)
+              rgb[cool, 2] = np.clip(lum[cool]*0.21 + 6, 0, 255)
+
+              green = visible & (g > r*1.12) & (g > b*1.10) & (g > 48) & (~cool)
+              rgb[green, 0] = np.clip(lum[green]*0.68 + 15, 0, 255)
+              rgb[green, 1] = np.clip(lum[green]*0.12 + 2, 0, 255)
+              rgb[green, 2] = np.clip(lum[green]*0.17 + 5, 0, 255)
+
+              # Dark cloth gets a subtle red undertone while highlights remain visible.
+              dark = visible & (lum < 50) & (~cool) & (~green)
+              rgb[dark, 0] = np.clip(r[dark]*0.65 + 8, 0, 255)
+              rgb[dark, 1] = np.clip(g[dark]*0.26 + 1, 0, 255)
+              rgb[dark, 2] = np.clip(b[dark]*0.32 + 4, 0, 255)
+
+              arr[:, :, :3] = np.clip(rgb, 0, 255).astype(np.uint8)
+              return Image.fromarray(arr, "RGBA")
+
+          def add_story_narrative(image):
+              """Reskin the existing story atlas and put Kadaya's opening prologue in its blank dialogue panel."""
+              img = recolor_full_atlas(image).convert("RGBA")
+              w, h = img.size
+              # The source atlas places an empty dialogue panel in the upper 36% and
+              # the existing snow/forest/burning-village storyboard art below it.
+              arr = np.array(img, dtype=np.uint8)
+              rgb = arr[:, :, :3].astype(np.float32)
+              alpha = arr[:, :, 3]
+              yy = np.arange(h)[:, None]
+              scenic = (yy >= int(h*0.36)) & (alpha > 0)
+              r, g, b = rgb[:, :, 0].copy(), rgb[:, :, 1].copy(), rgb[:, :, 2].copy()
+              lum = 0.2126*r + 0.7152*g + 0.0722*b
+              whites = scenic & (lum > 165)
+              # Keep snowy highlights as cold ash-grey so the level art remains readable.
+              rgb[whites, 0] = np.clip(lum[whites]*0.62 + 18, 0, 255)
+              rgb[whites, 1] = np.clip(lum[whites]*0.58 + 16, 0, 255)
+              rgb[whites, 2] = np.clip(lum[whites]*0.61 + 21, 0, 255)
+              arr[:, :, :3] = np.clip(rgb, 0, 255).astype(np.uint8)
+              img = Image.fromarray(arr, "RGBA")
+
+              draw = ImageDraw.Draw(img)
+              serif = "/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf"
+              sans = "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf"
+              sinhalese = "/usr/share/fonts/truetype/noto/NotoSansSinhala-Regular.ttf"
+              try:
+                  title = ImageFont.truetype(serif, max(46, int(w*0.034)))
+                  section = ImageFont.truetype(sans, max(26, int(w*0.016)))
+                  body = ImageFont.truetype(sans, max(24, int(w*0.017)))
+                  subtitle = ImageFont.truetype(sinhalese, max(25, int(w*0.015))) if Path(sinhalese).exists() else ImageFont.truetype(sans, max(24, int(w*0.016)))
+              except OSError:
+                  title = section = body = subtitle = ImageFont.load_default()
+
+              # Restrict the text to the pre-existing top dialogue card, not the playable maps.
+              panel = (28, 28, min(1745, w-25), min(720, h-30))
+              veil = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+              vd = ImageDraw.Draw(veil)
+              vd.rounded_rectangle(panel, radius=max(18, w//90), fill=(5, 5, 10, 142), outline=(148, 19, 39, 210), width=max(2, w//700))
+              veil = veil.filter(ImageFilter.GaussianBlur(max(1, w//1800)))
+              img = Image.alpha_composite(img, veil)
+              draw = ImageDraw.Draw(img)
+
+              x = int(w*0.07)
+              draw.text((x+3, int(h*0.035)+3), "KADAYA | THE AGE OF SHADOWS", font=title, fill=(110, 8, 23, 255), stroke_width=1, stroke_fill=(5, 4, 8, 255))
+              draw.text((x, int(h*0.032)), "KADAYA | THE AGE OF SHADOWS", font=title, fill=(245, 235, 229, 255), stroke_width=1, stroke_fill=(22, 6, 11, 245))
+              draw.line((x, int(h*0.105), int(w*0.73), int(h*0.105)), fill=(207, 34, 55, 245), width=max(3, w//520))
+              draw.text((x, int(h*0.125)), "THE FALL OF HOME", font=section, fill=(222, 42, 61, 255), stroke_width=1, stroke_fill=(8, 5, 9, 255))
+              draw.text((x, int(h*0.17)), "Raizen's shadows came at dusk. The village burned.", font=body, fill=(238, 230, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 240))
+              draw.text((x, int(h*0.213)), "Kadaya watched his home fall — and his friend, Krayoo, was taken.", font=body, fill=(238, 230, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 240))
+              draw.text((x, int(h*0.264)), "RAIZEN:  “If you want your friend back... survive.”", font=body, fill=(247, 203, 206, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              try:
+                  draw.text((x+26, int(h*0.304)), "ඔයා තාම දුර්වල වැඩියි.", font=subtitle, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              except Exception:
+                  draw.text((x+26, int(h*0.304)), "Oya thama durwala wadiy.", font=body, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              return img
+
+
           def make_icon(original_character_art, size):
               src = original_character_art.convert("RGBA")
               arr = np.array(src, dtype=np.uint8)
@@ -251,7 +341,15 @@ jobs:
           if not bundle_key:
               raise SystemExit(f"Outer data.unity3d bundle not identified. Loaded files: {list(env.files)[:12]}")
           bundle = env.files[bundle_key]
-          wanted = {"skeleton","skeleton2","title 2048","arashi main 03","ui1","play ui 01"}
+          required = {"skeleton","skeleton2","title 2048","arashi main 03","ui1","play ui 01"}
+          # Extend the same reskin across story, character-selection, shop and enemy art atlases.
+          optional = {
+              "story layout 01", "story layout 02", "main menu layout",
+              "layout character 01", "shop layout", "shoplayout 04",
+              "menu moi pro vai lon", "bien hinh 01",
+              "boss 1", "boss", "boss 2", "boss 3", "npc", "npc2", "samurai",
+          }
+          wanted = required | optional
           found = {}
           edits = []
           for obj in env.objects:
@@ -272,8 +370,11 @@ jobs:
                   continue
 
           missing = sorted(wanted - set(found))
-          if missing:
-              raise SystemExit("Missing required Texture2D objects in original bundle: " + ", ".join(missing))
+          missing_required = sorted(required - set(found))
+          if missing_required:
+              raise SystemExit("Missing required Texture2D objects in original bundle: " + ", ".join(missing_required))
+          optional_found = sorted(optional & set(found))
+          print("Optional UI/story/character atlases found: " + (", ".join(optional_found) or "none"))
 
           original_portrait = found["arashi main 03"]["original"].copy()
           icon_master = make_icon(original_portrait, 512)
@@ -282,10 +383,25 @@ jobs:
           processors = {
               "skeleton": colorize_ninja_atlas,
               "skeleton2": colorize_ninja_atlas,
+              "bien hinh 01": recolor_full_atlas,
               "title 2048": add_kadaya_title,
               "arashi main 03": reskin_character_art,
               "ui1": recolor_ui_blue_to_crimson,
               "play ui 01": recolor_ui_blue_to_crimson,
+              "story layout 01": recolor_full_atlas,
+              "story layout 02": add_story_narrative,
+              "main menu layout": recolor_full_atlas,
+              "layout character 01": recolor_full_atlas,
+              "shop layout": recolor_full_atlas,
+              "shoplayout 04": recolor_full_atlas,
+              "menu moi pro vai lon": recolor_full_atlas,
+              "boss 1": recolor_full_atlas,
+              "boss": recolor_full_atlas,
+              "boss 2": recolor_full_atlas,
+              "boss 3": recolor_full_atlas,
+              "npc": recolor_full_atlas,
+              "npc2": recolor_full_atlas,
+              "samurai": recolor_full_atlas,
           }
           original_hashes, modified_hashes = {}, {}
           for key, info in found.items():
