@@ -70,7 +70,7 @@ jobs:
               alpha = arr[:, :, 3]
               r, g, b = rgb[:, :, 0], rgb[:, :, 1], rgb[:, :, 2]
               lum = 0.2126*r + 0.7152*g + 0.0722*b
-              cool = (b > r*1.14) & (b > g*1.04) & (b > 55) & (alpha > 0)
+              cool = (b > r*1.10) & (b > 55) & (alpha > 0)
               dark = (lum < 55) & (alpha > 0)
               bright = (lum > 155) & (alpha > 0)
 
@@ -97,10 +97,10 @@ jobs:
               alpha = arr[:, :, 3]
               r, g, b = rgb[:, :, 0], rgb[:, :, 1], rgb[:, :, 2]
               lum = 0.2126*r + 0.7152*g + 0.0722*b
-              mask = (b > r*1.17) & (b > g*1.03) & (b > 65) & (alpha > 5)
-              rgb[mask, 0] = np.clip(lum[mask]*0.95 + 24, 0, 255)
-              rgb[mask, 1] = np.clip(lum[mask]*0.15 + 3, 0, 255)
-              rgb[mask, 2] = np.clip(lum[mask]*0.20 + 6, 0, 255)
+              mask = (b > r*1.10) & (b > 65) & (alpha > 5)
+              rgb[mask, 0] = np.clip(lum[mask]*0.72 + 15, 0, 255)
+              rgb[mask, 1] = np.clip(lum[mask]*0.13 + 3, 0, 255)
+              rgb[mask, 2] = np.clip(lum[mask]*0.17 + 6, 0, 255)
               highlight = mask & (lum > 185)
               rgb[highlight, 0] = np.clip(lum[highlight]*0.97 + 10, 0, 255)
               rgb[highlight, 1] = np.clip(lum[highlight]*0.82 + 8, 0, 255)
@@ -187,15 +187,15 @@ jobs:
               lum = 0.2126*r + 0.7152*g + 0.0722*b
               visible = alpha > 0
 
-              cool = visible & (b > r*1.12) & (b > g*1.02) & (b > 52)
-              rgb[cool, 0] = np.clip(lum[cool]*0.93 + 22, 0, 255)
-              rgb[cool, 1] = np.clip(lum[cool]*0.16 + 3, 0, 255)
-              rgb[cool, 2] = np.clip(lum[cool]*0.21 + 6, 0, 255)
+              cool = visible & (b > r*1.08) & (b > 52)
+              rgb[cool, 0] = np.clip(lum[cool]*0.47 + 12, 0, 255)
+              rgb[cool, 1] = np.clip(lum[cool]*0.08 + 3, 0, 255)
+              rgb[cool, 2] = np.clip(lum[cool]*0.13 + 6, 0, 255)
 
-              green = visible & (g > r*1.12) & (g > b*1.10) & (g > 48) & (~cool)
-              rgb[green, 0] = np.clip(lum[green]*0.68 + 15, 0, 255)
-              rgb[green, 1] = np.clip(lum[green]*0.12 + 2, 0, 255)
-              rgb[green, 2] = np.clip(lum[green]*0.17 + 5, 0, 255)
+              green = visible & (g > r*1.08) & (g > 48) & (~cool)
+              rgb[green, 0] = np.clip(lum[green]*0.42 + 12, 0, 255)
+              rgb[green, 1] = np.clip(lum[green]*0.08 + 4, 0, 255)
+              rgb[green, 2] = np.clip(lum[green]*0.11 + 7, 0, 255)
 
               # Dark cloth gets a subtle red undertone while highlights remain visible.
               dark = visible & (lum < 50) & (~cool) & (~green)
@@ -216,10 +216,10 @@ jobs:
               rgb = arr[:, :, :3].astype(np.float32)
               alpha = arr[:, :, 3]
               yy = np.arange(h)[:, None]
-              scenic = (yy >= int(h*0.36)) & (alpha > 0)
+              scenic = (yy >= int(h*0.30)) & (alpha > 0)
               r, g, b = rgb[:, :, 0].copy(), rgb[:, :, 1].copy(), rgb[:, :, 2].copy()
               lum = 0.2126*r + 0.7152*g + 0.0722*b
-              whites = scenic & (lum > 165)
+              whites = scenic & (lum > 180)
               # Keep snowy highlights as cold ash-grey so the level art remains readable.
               rgb[whites, 0] = np.clip(lum[whites]*0.62 + 18, 0, 255)
               rgb[whites, 1] = np.clip(lum[whites]*0.58 + 16, 0, 255)
@@ -232,15 +232,15 @@ jobs:
               sans = "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf"
               sinhalese = "/usr/share/fonts/truetype/noto/NotoSansSinhala-Regular.ttf"
               try:
-                  title = ImageFont.truetype(serif, max(46, int(w*0.034)))
-                  section = ImageFont.truetype(sans, max(26, int(w*0.016)))
-                  body = ImageFont.truetype(sans, max(24, int(w*0.017)))
-                  subtitle = ImageFont.truetype(sinhalese, max(25, int(w*0.015))) if Path(sinhalese).exists() else ImageFont.truetype(sans, max(24, int(w*0.016)))
+                  title = ImageFont.truetype(serif, max(42, int(w*0.028)))
+                  section = ImageFont.truetype(sans, max(24, int(w*0.014)))
+                  body = ImageFont.truetype(sans, max(22, int(w*0.015)))
+                  subtitle = ImageFont.truetype(sinhalese, max(22, int(w*0.012))) if Path(sinhalese).exists() else ImageFont.truetype(sans, max(22, int(w*0.013)))
               except OSError:
                   title = section = body = subtitle = ImageFont.load_default()
 
               # Restrict the text to the pre-existing top dialogue card, not the playable maps.
-              panel = (28, 28, min(1745, w-25), min(720, h-30))
+              panel = (28, 28, min(1745, w-25), min(int(h*0.30), h-30))
               veil = Image.new("RGBA", (w, h), (0, 0, 0, 0))
               vd = ImageDraw.Draw(veil)
               vd.rounded_rectangle(panel, radius=max(18, w//90), fill=(5, 5, 10, 142), outline=(148, 19, 39, 210), width=max(2, w//700))
@@ -251,15 +251,20 @@ jobs:
               x = int(w*0.07)
               draw.text((x+3, int(h*0.035)+3), "KADAYA | THE AGE OF SHADOWS", font=title, fill=(110, 8, 23, 255), stroke_width=1, stroke_fill=(5, 4, 8, 255))
               draw.text((x, int(h*0.032)), "KADAYA | THE AGE OF SHADOWS", font=title, fill=(245, 235, 229, 255), stroke_width=1, stroke_fill=(22, 6, 11, 245))
-              draw.line((x, int(h*0.105), int(w*0.73), int(h*0.105)), fill=(207, 34, 55, 245), width=max(3, w//520))
-              draw.text((x, int(h*0.125)), "THE FALL OF HOME", font=section, fill=(222, 42, 61, 255), stroke_width=1, stroke_fill=(8, 5, 9, 255))
-              draw.text((x, int(h*0.17)), "Raizen's shadows came at dusk. The village burned.", font=body, fill=(238, 230, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 240))
-              draw.text((x, int(h*0.213)), "Kadaya watched his home fall — and his friend, Krayoo, was taken.", font=body, fill=(238, 230, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 240))
-              draw.text((x, int(h*0.264)), "RAIZEN:  “If you want your friend back... survive.”", font=body, fill=(247, 203, 206, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              draw.line((x, int(h*0.082), int(w*0.73), int(h*0.082)), fill=(207, 34, 55, 245), width=max(3, w//520))
+              draw.text((x, int(h*0.094)), "THE FALL OF HOME", font=section, fill=(222, 42, 61, 255), stroke_width=1, stroke_fill=(8, 5, 9, 255))
+              draw.text((x, int(h*0.128)), "Raizen's shadows came at dusk. The village burned.", font=body, fill=(238, 230, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 240))
+              draw.text((x, int(h*0.158)), "Kadaya watched his home fall — and his friend, Krayoo, was taken.", font=body, fill=(238, 230, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 240))
+              draw.text((x, int(h*0.188)), "RAIZEN: “If you want your friend back... survive.”", font=body, fill=(247, 203, 206, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
               try:
-                  draw.text((x+26, int(h*0.304)), "ඔයා තාම දුර්වල වැඩියි.", font=subtitle, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+                  draw.text((x+26, int(h*0.215)), "ඔයා තාම දුර්වල වැඩියි.", font=subtitle, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
               except Exception:
-                  draw.text((x+26, int(h*0.304)), "Oya thama durwala wadiy.", font=body, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+                  draw.text((x+26, int(h*0.215)), "Oya thama durwala wadiy.", font=body, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              draw.text((x, int(h*0.241)), "KADAYA: “Krayoo... I will bring you home.”", font=body, fill=(239, 228, 225, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              try:
+                  draw.text((x+26, int(h*0.268)), "ක්‍රයෝ... මම ඔයාව ආපහු ගෙදර ගේනවා.", font=subtitle, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
+              except Exception:
+                  draw.text((x+26, int(h*0.268)), "Krayoo... mama oyawa apahu gedara genawa.", font=body, fill=(235, 223, 221, 255), stroke_width=1, stroke_fill=(7, 6, 9, 245))
               return img
 
 
