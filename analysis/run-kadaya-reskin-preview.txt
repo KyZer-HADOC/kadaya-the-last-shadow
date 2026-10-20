@@ -1,1 +1,1 @@
-Build the next Kadaya patch: rebrand existing in-game skill/weapon UI names and descriptions, story/tutorial TextMesh dialogue, character/effect/menu atlases and icon; preserve all gameplay mechanics and all map/level layouts.
+Create the next Kadaya patch with bilingual prologue and story dialogue card plus skill/weapon labels, recolored character/effect/visual atlases and branding. Preserve all existing playable levels and scene layouts.
