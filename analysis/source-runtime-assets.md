@@ -1,0 +1,1820 @@
+# Original Unity runtime asset inspection
+
+This report inspects the extracted game's runtime data inside GitHub Actions. It does not modify game files.
+
+- data.unity3d exists: True
+- data.unity3d size: 97,084,467 bytes
+
+## Input files under assets/bin/Data
+- assets/bin/Data/Managed/Metadata/global-metadata.dat — 8,556,800 bytes
+- assets/bin/Data/Managed/Resources/System.Data.dll-resources.dat — 93,718 bytes
+- assets/bin/Data/Managed/Resources/System.Drawing.dll-resources.dat — 25,453 bytes
+- assets/bin/Data/Managed/Resources/mscorlib.dll-resources.dat — 337,563 bytes
+- assets/bin/Data/Resources/unity default resources — 3,743,732 bytes
+- assets/bin/Data/RuntimeInitializeOnLoads.json — 3,997 bytes
+- assets/bin/Data/ScriptingAssemblies.json — 4,337 bytes
+- assets/bin/Data/boot.config — 168 bytes
+- assets/bin/Data/data.unity3d — 97,084,467 bytes
+- assets/bin/Data/sharedassets0.resource — 67,104 bytes
+- assets/bin/Data/sharedassets1.resource — 568,832 bytes
+- assets/bin/Data/sharedassets10.resource — 473,280 bytes
+- assets/bin/Data/sharedassets12.resource — 887,104 bytes
+- assets/bin/Data/sharedassets13.resource — 53,120 bytes
+- assets/bin/Data/sharedassets16.resource — 884,832 bytes
+- assets/bin/Data/sharedassets17.resource — 933,344 bytes
+- assets/bin/Data/sharedassets19.resource — 53,568 bytes
+- assets/bin/Data/sharedassets21.resource — 689,504 bytes
+- assets/bin/Data/sharedassets25.resource — 586,240 bytes
+- assets/bin/Data/sharedassets28.resource — 501,248 bytes
+- assets/bin/Data/sharedassets29.resource — 112,704 bytes
+- assets/bin/Data/sharedassets3.resource — 1,941,312 bytes
+- assets/bin/Data/sharedassets31.resource — 702,400 bytes
+- assets/bin/Data/sharedassets36.resource — 760,416 bytes
+- assets/bin/Data/sharedassets39.resource — 807,968 bytes
+- assets/bin/Data/sharedassets45.resource — 22,784 bytes
+- assets/bin/Data/sharedassets46.resource — 7,040 bytes
+- assets/bin/Data/sharedassets49.resource — 768,064 bytes
+- assets/bin/Data/sharedassets5.resource — 8,909,504 bytes
+- assets/bin/Data/sharedassets51.resource — 103,648 bytes
+- assets/bin/Data/sharedassets6.resource — 113,216 bytes
+- assets/bin/Data/sharedassets7.resource — 877,248 bytes
+- assets/bin/Data/sharedassets8.resource — 5,186,560 bytes
+- assets/bin/Data/sharedassets9.resource — 472,768 bytes
+- assets/bin/Data/unity_app_guid — 36 bytes
+
+## Parse result
+- UnityPy.load(assets/bin/Data) succeeded
+
+## Parsed object counts
+- GameObject: 278620
+- Transform: 265898
+- SpriteRenderer: 119830
+- MonoBehaviour: 36364
+- BoxCollider2D: 23249
+- ParticleSystem: 22002
+- ParticleSystemRenderer: 22002
+- RectTransform: 12722
+- CanvasRenderer: 12619
+- AudioSource: 6557
+- Animator: 4950
+- EdgeCollider2D: 4712
+- Rigidbody2D: 3094
+- CircleCollider2D: 2314
+- MonoScript: 1817
+- MeshRenderer: 1706
+- Sprite: 1662
+- TextMesh: 1150
+- TrailRenderer: 687
+- PolygonCollider2D: 681
+- MeshFilter: 557
+- BoxCollider: 432
+- Texture2D: 389
+- LineRenderer: 331
+- AudioClip: 314
+- AnimationClip: 233
+- Material: 221
+- Canvas: 98
+- CapsuleCollider2D: 92
+- PreloadData: 90
+- Camera: 89
+- AudioListener: 89
+- RenderSettings: 89
+- FlareLayer: 89
+- LightmapSettings: 89
+- NavMeshSettings: 89
+- Shader: 73
+- AnimatorController: 52
+- HingeJoint2D: 45
+- Mesh: 30
+- Font: 17
+- LightingSettings: 8
+- ComputeShader: 8
+- TextAsset: 3
+- Light: 2
+- PlayerSettings: 1
+- InputManager: 1
+- TagManager: 1
+- AudioManager: 1
+- ScriptMapper: 1
+- MonoManager: 1
+- GraphicsSettings: 1
+- TimeManager: 1
+- DelayedCallManager: 1
+- PhysicsManager: 1
+- BuildSettings: 1
+- QualitySettings: 1
+- ResourceManager: 1
+- NavMeshProjectSettings: 1
+- Physics2DSettings: 1
+- RuntimeInitializeOnLoadManager: 1
+- UnityConnectSettings: 1
+- StreamingManager: 1
+- VFXManager: 1
+- Unknown (655991488): 1
+- PhysicsMaterial2D: 1
+- Avatar: 1
+- PlatformEffector2D: 1
+- Animation: 1
+- SkinnedMeshRenderer: 1
+- CanvasGroup: 1
+- MeshCollider: 1
+
+## Named objects: AssetBundle (0 names)
+- No named objects found.
+
+## Named objects: Texture2D (389 names)
+- BPG | path_id=3 | file=globalgamemanagers.assets
+- UISprite | path_id=5 | file=sharedassets0.assets
+- Font Texture | path_id=6 | file=sharedassets0.assets
+- Font Texture | path_id=7 | file=sharedassets0.assets
+- vuong | path_id=8 | file=sharedassets0.assets
+- Font Texture | path_id=9 | file=sharedassets0.assets
+- title 2048 | path_id=10 | file=sharedassets0.assets
+- nut play | path_id=11 | file=sharedassets0.assets
+- Background | path_id=12 | file=sharedassets1.assets
+- UIMask | path_id=13 | file=sharedassets1.assets
+- bien hinh 01 | path_id=14 | file=sharedassets1.assets
+- PLAY UI 01 | path_id=15 | file=sharedassets1.assets
+- Font Texture | path_id=16 | file=sharedassets1.assets
+- Center_little_04 | path_id=17 | file=sharedassets1.assets
+- Font Texture | path_id=18 | file=sharedassets1.assets
+- Font Texture | path_id=19 | file=sharedassets1.assets
+- credit + artifact | path_id=20 | file=sharedassets1.assets
+- story layout 01 | path_id=21 | file=sharedassets1.assets
+- artifact layout | path_id=22 | file=sharedassets1.assets
+- Font Texture | path_id=23 | file=sharedassets1.assets
+- Font Texture | path_id=24 | file=sharedassets1.assets
+- ARASHI MAIN 03 | path_id=25 | file=sharedassets1.assets
+- Main Menu Layout | path_id=26 | file=sharedassets1.assets
+- shop layout | path_id=27 | file=sharedassets1.assets
+- Font Texture | path_id=28 | file=sharedassets1.assets
+- Font Texture | path_id=29 | file=sharedassets1.assets
+- passive 5 | path_id=30 | file=sharedassets1.assets
+- button | path_id=31 | file=sharedassets1.assets
+- story layout 02 | path_id=32 | file=sharedassets1.assets
+- shoplayout 04 | path_id=33 | file=sharedassets1.assets
+- layout character 01 | path_id=34 | file=sharedassets1.assets
+- Font Texture | path_id=35 | file=sharedassets1.assets
+- skill info | path_id=36 | file=sharedassets1.assets
+- flag_ribbon_faster.pos | path_id=37 | file=sharedassets1.assets
+- 02 bonus | path_id=5 | file=sharedassets3.assets
+- 02 | path_id=6 | file=sharedassets3.assets
+- 01 | path_id=7 | file=sharedassets3.assets
+- Font Texture | path_id=8 | file=sharedassets3.assets
+- Font Texture | path_id=9 | file=sharedassets3.assets
+- 04 | path_id=10 | file=sharedassets3.assets
+- Font Texture | path_id=11 | file=sharedassets3.assets
+- 03 | path_id=12 | file=sharedassets3.assets
+- 02 | path_id=2 | file=sharedassets4.assets
+- 01 | path_id=3 | file=sharedassets4.assets
+- menu moi pro vai lon | path_id=4 | file=sharedassets4.assets
+- Default-Particle | path_id=74 | file=sharedassets5.assets
+- Default-Checker | path_id=75 | file=sharedassets5.assets
+- Energy_light_arrow | path_id=76 | file=sharedassets5.assets
+- boom | path_id=77 | file=sharedassets5.assets
+- UI1 | path_id=78 | file=sharedassets5.assets
+- Center_radiation_01 | path_id=79 | file=sharedassets5.assets
+- New sprite | path_id=80 | file=sharedassets5.assets
+- vignette | path_id=81 | file=sharedassets5.assets
+- Moon_wind | path_id=82 | file=sharedassets5.assets
+- simpleSmoke3 | path_id=83 | file=sharedassets5.assets
+- Ice_Decal | path_id=84 | file=sharedassets5.assets
+- Stretch_Hit01 | path_id=85 | file=sharedassets5.assets
+- xich giua cay | path_id=86 | file=sharedassets5.assets
+- Fire2 | path_id=87 | file=sharedassets5.assets
+- shuriken | path_id=88 | file=sharedassets5.assets
+- thit vang ra 1 | path_id=89 | file=sharedassets5.assets
+- Coin Gold | path_id=90 | file=sharedassets5.assets
+- all artifact | path_id=91 | file=sharedassets5.assets
+- tutorial01 | path_id=92 | file=sharedassets5.assets
+- tuitien | path_id=93 | file=sharedassets5.assets
+- dayleo | path_id=94 | file=sharedassets5.assets
+- Stuff_waterfall_01 | path_id=95 | file=sharedassets5.assets
+- Heavy_Smoke | path_id=96 | file=sharedassets5.assets
+- Stamp_circle12 | path_id=97 | file=sharedassets5.assets
+- play ui 05 | path_id=98 | file=sharedassets5.assets
+- Asset co | path_id=99 | file=sharedassets5.assets
+- status 2 | path_id=100 | file=sharedassets5.assets
+- moc2 | path_id=101 | file=sharedassets5.assets
+- BOSS 1 | path_id=102 | file=sharedassets5.assets
+- skeleton2 | path_id=103 | file=sharedassets5.assets
+- Font Texture | path_id=104 | file=sharedassets5.assets
+- Twinkle | path_id=105 | file=sharedassets5.assets
+- uLiquid - Particle 6 TEX | path_id=106 | file=sharedassets5.assets
+- xuong phot ra 1 | path_id=107 | file=sharedassets5.assets
+- day leo | path_id=108 | file=sharedassets5.assets
+- samurai ghost_0 | path_id=109 | file=sharedassets5.assets
+- Electric_Splat_Hit | path_id=110 | file=sharedassets5.assets
+- uLiquid - Colored Blood TEX | path_id=111 | file=sharedassets5.assets
+- volumetric_smoke | path_id=112 | file=sharedassets5.assets
+- Key | path_id=113 | file=sharedassets5.assets
+- la1 | path_id=114 | file=sharedassets5.assets
+- NPC | path_id=115 | file=sharedassets5.assets
+- Soft_Smoke | path_id=116 | file=sharedassets5.assets
+- may moi | path_id=117 | file=sharedassets5.assets
+- Rock 1 | path_id=118 | file=sharedassets5.assets
+- Asset tuyet 1 | path_id=119 | file=sharedassets5.assets
+- Light_Smoke | path_id=120 | file=sharedassets5.assets
+- manhGo | path_id=121 | file=sharedassets5.assets
+- dust | path_id=122 | file=sharedassets5.assets
+- Kiem 1 | path_id=123 | file=sharedassets5.assets
+- BOSS | path_id=124 | file=sharedassets5.assets
+- simpleFlash | path_id=125 | file=sharedassets5.assets
+- ham pro 1 | path_id=126 | file=sharedassets5.assets
+- uLiquid - Particle 1 TEX | path_id=127 | file=sharedassets5.assets
+- simpleArrow | path_id=128 | file=sharedassets5.assets
+- test01 | path_id=129 | file=sharedassets5.assets
+- ice_Floor | path_id=130 | file=sharedassets5.assets
+- Fire_real | path_id=131 | file=sharedassets5.assets
+- ghost png 2 | path_id=132 | file=sharedassets5.assets
+- Stuff_splash_03 | path_id=133 | file=sharedassets5.assets
+- saliva 2 | path_id=134 | file=sharedassets5.assets
+- 4 | path_id=135 | file=sharedassets5.assets
+- Asset dh map thuong | path_id=136 | file=sharedassets5.assets
+- Flame_Explosion | path_id=137 | file=sharedassets5.assets
+- spark1 | path_id=138 | file=sharedassets5.assets
+- kiemmoi | path_id=139 | file=sharedassets5.assets
+- Light | path_id=140 | file=sharedassets5.assets
+- khung chat 2 | path_id=141 | file=sharedassets5.assets
+- rat nhieu mau nen moi | path_id=142 | file=sharedassets5.assets
+- riu | path_id=143 | file=sharedassets5.assets
+- umbrella | path_id=144 | file=sharedassets5.assets
+- Big_circle | path_id=145 | file=sharedassets5.assets
+- dau bay ra 1 | path_id=146 | file=sharedassets5.assets
+- Asset tuyet 7 | path_id=147 | file=sharedassets5.assets
+- SparkPB_ADD | path_id=148 | file=sharedassets5.assets
+- dau lau | path_id=149 | file=sharedassets5.assets
+- cua key | path_id=150 | file=sharedassets5.assets
+- Asset tuyet 6 | path_id=151 | file=sharedassets5.assets
+- chet bang | path_id=152 | file=sharedassets5.assets
+- Trajectory_Flame | path_id=153 | file=sharedassets5.assets
+- Bat Particles TEX | path_id=154 | file=sharedassets5.assets
+- Stone_Debris | path_id=155 | file=sharedassets5.assets
+- Light3 | path_id=156 | file=sharedassets5.assets
+- cay thong noel than dai 02 | path_id=157 | file=sharedassets5.assets
+- can gat | path_id=158 | file=sharedassets5.assets
+- Ring | path_id=159 | file=sharedassets5.assets
+- blue | path_id=160 | file=sharedassets5.assets
+- skeleton | path_id=161 | file=sharedassets5.assets
+- Spark | path_id=162 | file=sharedassets5.assets
+- Stuff_waterfall_02 | path_id=163 | file=sharedassets5.assets
+- TeleportParticles | path_id=164 | file=sharedassets5.assets
+- trap | path_id=165 | file=sharedassets5.assets
+- Blood_Splat | path_id=166 | file=sharedassets5.assets
+- splat | path_id=167 | file=sharedassets5.assets
+- choi xong bai layout | path_id=168 | file=sharedassets5.assets
+- checkpoint | path_id=169 | file=sharedassets5.assets
+- asset3 | path_id=170 | file=sharedassets5.assets
+- cay thong noel than dai 01 | path_id=171 | file=sharedassets5.assets
+- Stuff_splash_01 | path_id=172 | file=sharedassets5.assets
+- kim_cuong | path_id=173 | file=sharedassets5.assets
+- Smoke | path_id=174 | file=sharedassets5.assets
+- Asset tuyet 5 | path_id=175 | file=sharedassets5.assets
+- NPC2 | path_id=176 | file=sharedassets5.assets
+- Da Mau | path_id=177 | file=sharedassets5.assets
+- Floor | path_id=178 | file=sharedassets5.assets
+- Trajectory_Electro | path_id=179 | file=sharedassets5.assets
+- Energy_three | path_id=11 | file=sharedassets6.assets
+- mui ten | path_id=12 | file=sharedassets6.assets
+- falloffLightbeam | path_id=13 | file=sharedassets6.assets
+- la2 | path_id=14 | file=sharedassets6.assets
+- asset1.2 | path_id=15 | file=sharedassets6.assets
+- Stuff_dust_01 | path_id=16 | file=sharedassets6.assets
+- test fill | path_id=17 | file=sharedassets6.assets
+- asset1 | path_id=18 | file=sharedassets6.assets
+- vien dan 1 | path_id=19 | file=sharedassets6.assets
+- Stuff_smoke_02 | path_id=20 | file=sharedassets6.assets
+- Circle_ball | path_id=21 | file=sharedassets6.assets
+- smokyRing | path_id=22 | file=sharedassets6.assets
+- truc02 | path_id=23 | file=sharedassets6.assets
+- asset2 | path_id=24 | file=sharedassets6.assets
+- asset2.1 | path_id=25 | file=sharedassets6.assets
+- truc03 | path_id=26 | file=sharedassets6.assets
+- Stuff_smokeray | path_id=27 | file=sharedassets6.assets
+- Energy_trail_06 | path_id=28 | file=sharedassets6.assets
+- boss 2 | path_id=29 | file=sharedassets6.assets
+- gradient02 | path_id=30 | file=sharedassets6.assets
+- truc01 | path_id=31 | file=sharedassets6.assets
+- caythem | path_id=7 | file=sharedassets7.assets
+- Asset paralax 1b | path_id=8 | file=sharedassets7.assets
+- thap va phu kien treo | path_id=9 | file=sharedassets7.assets
+- smokeRay | path_id=10 | file=sharedassets7.assets
+- boss 3 | path_id=11 | file=sharedassets7.assets
+- thickFlash | path_id=12 | file=sharedassets7.assets
+- Asset paralax 1c | path_id=13 | file=sharedassets7.assets
+- tuong reu truot | path_id=14 | file=sharedassets7.assets
+- Fire | path_id=15 | file=sharedassets7.assets
+- asset2.2 | path_id=16 | file=sharedassets7.assets
+- Asset paralax 1a | path_id=17 | file=sharedassets7.assets
+- Stamp_pfireball01 | path_id=4 | file=sharedassets8.assets
+- Stamp_fire_stand88 | path_id=5 | file=sharedassets8.assets
+- congfinish | path_id=6 | file=sharedassets8.assets
+- cay tuyet | path_id=5 | file=sharedassets9.assets
+- Asset tuyet 3 | path_id=6 | file=sharedassets9.assets
+- tuong 01 | path_id=7 | file=sharedassets9.assets
+- Asset tuyet 2 | path_id=8 | file=sharedassets9.assets
+- soul | path_id=9 | file=sharedassets9.assets
+- cau 2 | path_id=10 | file=sharedassets9.assets
+- CrateTexture | path_id=11 | file=sharedassets9.assets
+- ritualPentagram | path_id=12 | file=sharedassets9.assets
+- ve dich new 2 | path_id=13 | file=sharedassets9.assets
+- Asset tuyet 1 them | path_id=14 | file=sharedassets9.assets
+- Asset paralax cucdat | path_id=15 | file=sharedassets9.assets
+- caibinh | path_id=16 | file=sharedassets9.assets
+- cam kiem 2 | path_id=17 | file=sharedassets9.assets
+- star | path_id=18 | file=sharedassets9.assets
+- FlyingPlatform | path_id=19 | file=sharedassets9.assets
+- Asset tuyet 4 | path_id=20 | file=sharedassets9.assets
+- xich | path_id=21 | file=sharedassets9.assets
+- anh dao 03 | path_id=4 | file=sharedassets10.assets
+- ham1 | path_id=5 | file=sharedassets10.assets
+- ve dich new 1 | path_id=6 | file=sharedassets10.assets
+- FeatherSequence TEX | path_id=7 | file=sharedassets10.assets
+- nha di vao dc  2 | path_id=8 | file=sharedassets10.assets
+- cay lop truoc 01 | path_id=9 | file=sharedassets10.assets
+- anh dao than dai 02 | path_id=10 | file=sharedassets10.assets
+- cautreo | path_id=11 | file=sharedassets10.assets
+- Crow TEX | path_id=12 | file=sharedassets10.assets
+- asset1.1 | path_id=13 | file=sharedassets10.assets
+- cayleo | path_id=14 | file=sharedassets10.assets
+- nha 2 | path_id=15 | file=sharedassets10.assets
+- anh dao 01 | path_id=16 | file=sharedassets10.assets
+- trap 2.1 | path_id=17 | file=sharedassets10.assets
+- test tieu canh 01 | path_id=18 | file=sharedassets10.assets
+- cua dap2 | path_id=3 | file=sharedassets11.assets
+- huong dan layout 2 | path_id=4 | file=sharedassets11.assets
+- huong dan layout | path_id=5 | file=sharedassets11.assets
+- cua dap | path_id=6 | file=sharedassets11.assets
+- tieucanh3 | path_id=7 | file=sharedassets11.assets
+- trap 2 | path_id=8 | file=sharedassets11.assets
+- nam cua dat | path_id=9 | file=sharedassets11.assets
+- tuong 02 | path_id=10 | file=sharedassets11.assets
+- cam khien new | path_id=11 | file=sharedassets11.assets
+- tieucanh31 | path_id=12 | file=sharedassets11.assets
+- nha 1 | path_id=7 | file=sharedassets12.assets
+- Banner2.pos | path_id=8 | file=sharedassets12.assets
+- ring 2 | path_id=9 | file=sharedassets12.assets
+- den ngoi | path_id=10 | file=sharedassets12.assets
+- Banner5.pos | path_id=11 | file=sharedassets12.assets
+- nui map 3.1 | path_id=12 | file=sharedassets12.assets
+- canh cay duong xi | path_id=13 | file=sharedassets12.assets
+- Light1 | path_id=14 | file=sharedassets12.assets
+- anh dao than dai 01 | path_id=15 | file=sharedassets12.assets
+- anh dao 02 | path_id=16 | file=sharedassets12.assets
+- sniper | path_id=17 | file=sharedassets12.assets
+- cuc ngoi len 04 | path_id=18 | file=sharedassets12.assets
+- lightshaft | path_id=19 | file=sharedassets12.assets
+- nui map 3 | path_id=20 | file=sharedassets12.assets
+- Lightning2 | path_id=5 | file=sharedassets13.assets
+- water_down | path_id=6 | file=sharedassets13.assets
+- tu dien | path_id=7 | file=sharedassets13.assets
+- trap07-cotdien | path_id=8 | file=sharedassets13.assets
+- cuc-mau | path_id=9 | file=sharedassets13.assets
+- tieu canh 05 | path_id=10 | file=sharedassets13.assets
+- water_top | path_id=11 | file=sharedassets13.assets
+- nha 3 | path_id=12 | file=sharedassets13.assets
+- fog | path_id=13 | file=sharedassets13.assets
+- nup lum | path_id=14 | file=sharedassets13.assets
+- bansung | path_id=15 | file=sharedassets13.assets
+- Trail | path_id=16 | file=sharedassets13.assets
+- caymoi | path_id=17 | file=sharedassets13.assets
+- nha be lien nhau | path_id=18 | file=sharedassets13.assets
+- ray_01 | path_id=19 | file=sharedassets13.assets
+- nha be lien nhau map tuyet | path_id=4 | file=sharedassets14.assets
+- camgiaokokhien | path_id=5 | file=sharedassets14.assets
+- ske crawler | path_id=6 | file=sharedassets14.assets
+- compassStar | path_id=7 | file=sharedassets14.assets
+- asset3.1 | path_id=8 | file=sharedassets14.assets
+- spikyFalloffLightbeam | path_id=6 | file=sharedassets15.assets
+- diahinh | path_id=7 | file=sharedassets15.assets
+- cua key new | path_id=8 | file=sharedassets15.assets
+- star | path_id=9 | file=sharedassets15.assets
+- trap lua | path_id=10 | file=sharedassets15.assets
+- nha trong suot 02 | path_id=11 | file=sharedassets15.assets
+- duong ray | path_id=2 | file=sharedassets16.assets
+- de | path_id=3 | file=sharedassets16.assets
+- ham pro 2 | path_id=2 | file=sharedassets17.assets
+- nut duoi dat | path_id=3 | file=sharedassets17.assets
+- trap01_beartrap | path_id=4 | file=sharedassets17.assets
+- cua action | path_id=5 | file=sharedassets17.assets
+- cuc da push | path_id=6 | file=sharedassets17.assets
+- cuc ngoi len 05 | path_id=7 | file=sharedassets17.assets
+- riu tren tran nha | path_id=2 | file=sharedassets18.assets
+- trap3 | path_id=2 | file=sharedassets19.assets
+- cuc den thung | path_id=3 | file=sharedassets19.assets
+- anh dao 04 | path_id=2 | file=sharedassets20.assets
+- om bom | path_id=3 | file=sharedassets20.assets
+- nha di vao dc 1 | path_id=4 | file=sharedassets20.assets
+- cho nem moc | path_id=2 | file=sharedassets21.assets
+- Bien bao | path_id=2 | file=sharedassets22.assets
+- flag2_3_slow_rope.pos | path_id=3 | file=sharedassets23.assets
+- platform tang hinh | path_id=2 | file=sharedassets24.assets
+- Circle_supersoftball | path_id=4 | file=sharedassets25.assets
+- cot phun lua | path_id=5 | file=sharedassets25.assets
+- Stamp_lighting22 | path_id=6 | file=sharedassets25.assets
+- co nhieu mau | path_id=2 | file=sharedassets26.assets
+- chem lien tuc | path_id=2 | file=sharedassets29.assets
+- cua key nho2 | path_id=3 | file=sharedassets29.assets
+- bancung | path_id=4 | file=sharedassets29.assets
+- chem lien tuc2 | path_id=5 | file=sharedassets29.assets
+- lac truc 1 | path_id=6 | file=sharedassets29.assets
+- cua key nho | path_id=7 | file=sharedassets29.assets
+- ham3 | path_id=4 | file=sharedassets30.assets
+- razorFlash | path_id=5 | file=sharedassets30.assets
+- dirtyFlash | path_id=6 | file=sharedassets30.assets
+- lightning_gun_bolt_008 | path_id=6 | file=sharedassets31.assets
+- lightning_gun_beam | path_id=7 | file=sharedassets31.assets
+- lightning_gun_bolt_003 | path_id=8 | file=sharedassets31.assets
+- lightning_gun_bolt_004 | path_id=9 | file=sharedassets31.assets
+- nem bom | path_id=10 | file=sharedassets31.assets
+- lightning_gun_bolt_001 | path_id=11 | file=sharedassets31.assets
+- lightning_gun_bolt_005 | path_id=12 | file=sharedassets31.assets
+- lightning_gun_bolt_006 | path_id=13 | file=sharedassets31.assets
+- lightning_gun_bolt_002 | path_id=14 | file=sharedassets31.assets
+- lightning_gun_bolt | path_id=15 | file=sharedassets31.assets
+- lightning_gun_flare_001 | path_id=16 | file=sharedassets31.assets
+- lightning_gun_bolt_007 | path_id=17 | file=sharedassets31.assets
+- trap rang cua | path_id=2 | file=sharedassets35.assets
+- HealthBar | path_id=4 | file=sharedassets36.assets
+- samurai | path_id=5 | file=sharedassets36.assets
+- Fog4 | path_id=6 | file=sharedassets36.assets
+- Stuff_waterfall_03 | path_id=5 | file=sharedassets37.assets
+- Stamp_flower54 | path_id=3 | file=sharedassets38.assets
+- chan trap 1 | path_id=2 | file=sharedassets45.assets
+- linhbanno | path_id=2 | file=sharedassets50.assets
+- linhquaytay | path_id=2 | file=sharedassets51.assets
+- black128 | path_id=3 | file=sharedassets52.assets
+- ske warrior | path_id=3 | file=sharedassets53.assets
+- butterfly-2 | path_id=8 | file=sharedassets55.assets
+- glitter-1 | path_id=9 | file=sharedassets55.assets
+- dragonfly-1 | path_id=10 | file=sharedassets55.assets
+- glow-stretched-1 | path_id=11 | file=sharedassets55.assets
+- particle-white | path_id=12 | file=sharedassets55.assets
+- latruc | path_id=3 | file=sharedassets60.assets
+- spark2 | path_id=3 | file=sharedassets65.assets
+- phu thuy | path_id=2 | file=sharedassets69.assets
+- phu thuy2 | path_id=3 | file=sharedassets69.assets
+- cuc gai to | path_id=2 | file=sharedassets74.assets
+- cai long | path_id=2 | file=sharedassets75.assets
+- lac truc 2 | path_id=2 | file=sharedassets81.assets
+- Co Tuyet | path_id=2 | file=sharedassets84.assets
+- bienhinh_david | path_id=9 | file=resources.assets
+- bienhinh_bingo | path_id=10 | file=resources.assets
+- T0 | path_id=11 | file=resources.assets
+- cloud_type_a | path_id=12 | file=resources.assets
+- bienhinh_tuongngoiia | path_id=13 | file=resources.assets
+- bienhinh_cuoingua | path_id=14 | file=resources.assets
+- bienhinh_binhruou | path_id=15 | file=resources.assets
+- bienhinh_assassin | path_id=16 | file=resources.assets
+- test mu 01 | path_id=17 | file=resources.assets
+- test 1 | path_id=18 | file=resources.assets
+- status 1 | path_id=19 | file=resources.assets
+- bienhinh_samurai | path_id=20 | file=resources.assets
+- EmojiOne | path_id=21 | file=resources.assets
+- Font Texture | path_id=22 | file=resources.assets
+- bienhinh_bingo2 | path_id=23 | file=resources.assets
+- LiberationSans SDF Atlas | path_id=24 | file=resources.assets
+- LiberationSans SDF Atlas | path_id=25 | file=resources.assets
+- Soft | path_id=10001 | file=unity default resources
+- Font Texture | path_id=10103 | file=unity default resources
+- EscToExit_back | path_id=10401 | file=unity default resources
+- EscToExit_Text | path_id=10402 | file=unity default resources
+- UnityWatermark-trial-big | path_id=10406 | file=unity default resources
+- UnityWatermark-trial | path_id=10407 | file=unity default resources
+- UnityWatermark-edu | path_id=10409 | file=unity default resources
+- UnityWatermark-dev | path_id=10410 | file=unity default resources
+- WarningSign | path_id=10411 | file=unity default resources
+- UnityWatermark-proto | path_id=10413 | file=unity default resources
+- box | path_id=11001 | file=unity default resources
+- button active | path_id=11002 | file=unity default resources
+- button hover | path_id=11003 | file=unity default resources
+- button on hover | path_id=11004 | file=unity default resources
+- button on | path_id=11005 | file=unity default resources
+- button | path_id=11006 | file=unity default resources
+- horizontal scrollbar thumb | path_id=11007 | file=unity default resources
+- horizontal scrollbar | path_id=11008 | file=unity default resources
+- horizontalslider | path_id=11009 | file=unity default resources
+- slider thumb active | path_id=11010 | file=unity default resources
+- slider thumb | path_id=11011 | file=unity default resources
+- slidert humb hover | path_id=11012 | file=unity default resources
+- toggle active | path_id=11013 | file=unity default resources
+- toggle hover | path_id=11014 | file=unity default resources
+- toggle on hover | path_id=11015 | file=unity default resources
+- toggle on | path_id=11016 | file=unity default resources
+- toggle on active | path_id=11017 | file=unity default resources
+- toggle | path_id=11018 | file=unity default resources
+- vertical scrollbar thumb | path_id=11019 | file=unity default resources
+- vertical scrollbar | path_id=11020 | file=unity default resources
+- verticalslider | path_id=11021 | file=unity default resources
+- window on | path_id=11022 | file=unity default resources
+- window | path_id=11023 | file=unity default resources
+- textfield | path_id=11024 | file=unity default resources
+- textfield on | path_id=11025 | file=unity default resources
+- textfield hover | path_id=11026 | file=unity default resources
+- UnitySplash-HolographicTrackingLoss | path_id=15000 | file=unity default resources
+
+## Named objects: Sprite (1662 names)
+- BPG | path_id=1804 | file=globalgamemanagers.assets
+- UISprite | path_id=17 | file=sharedassets0.assets
+- vuong | path_id=18 | file=sharedassets0.assets
+- title 2048_0 | path_id=19 | file=sharedassets0.assets
+- nut play_1 | path_id=20 | file=sharedassets0.assets
+- Background | path_id=56 | file=sharedassets1.assets
+- UIMask | path_id=57 | file=sharedassets1.assets
+- t9 | path_id=58 | file=sharedassets1.assets
+- a1 | path_id=59 | file=sharedassets1.assets
+- may | path_id=60 | file=sharedassets1.assets
+- bg | path_id=61 | file=sharedassets1.assets
+- a1 | path_id=62 | file=sharedassets1.assets
+- Back | path_id=63 | file=sharedassets1.assets
+- Purchase btn | path_id=64 | file=sharedassets1.assets
+- arashi | path_id=65 | file=sharedassets1.assets
+- skill info_0 | path_id=66 | file=sharedassets1.assets
+- t8 | path_id=67 | file=sharedassets1.assets
+- dep | path_id=68 | file=sharedassets1.assets
+- a2 | path_id=69 | file=sharedassets1.assets
+- ARASHI MAIN 03_1 | path_id=70 | file=sharedassets1.assets
+- store | path_id=71 | file=sharedassets1.assets
+- a2 | path_id=72 | file=sharedassets1.assets
+- Equip Btn | path_id=73 | file=sharedassets1.assets
+- Item xanh | path_id=74 | file=sharedassets1.assets
+- skill info_1 | path_id=75 | file=sharedassets1.assets
+- t11 | path_id=76 | file=sharedassets1.assets
+- btn trai | path_id=77 | file=sharedassets1.assets
+- a3 | path_id=78 | file=sharedassets1.assets
+- character | path_id=79 | file=sharedassets1.assets
+- a10 | path_id=80 | file=sharedassets1.assets
+- Unequip Btn | path_id=81 | file=sharedassets1.assets
+- khang | path_id=82 | file=sharedassets1.assets
+- t10 | path_id=83 | file=sharedassets1.assets
+- Dash | path_id=84 | file=sharedassets1.assets
+- btn phai | path_id=85 | file=sharedassets1.assets
+- a4 | path_id=86 | file=sharedassets1.assets
+- market | path_id=87 | file=sharedassets1.assets
+- a5 | path_id=88 | file=sharedassets1.assets
+- s1 | path_id=89 | file=sharedassets1.assets
+- Item Equip ko sang | path_id=90 | file=sharedassets1.assets
+- mau | path_id=91 | file=sharedassets1.assets
+- t0 | path_id=92 | file=sharedassets1.assets
+- Trans | path_id=93 | file=sharedassets1.assets
+- close | path_id=94 | file=sharedassets1.assets
+- shadow | path_id=95 | file=sharedassets1.assets
+- challenges | path_id=96 | file=sharedassets1.assets
+- upgrade vang | path_id=97 | file=sharedassets1.assets
+- s2 | path_id=98 | file=sharedassets1.assets
+- Item Select | path_id=99 | file=sharedassets1.assets
+- trans | path_id=100 | file=sharedassets1.assets
+- t5 | path_id=101 | file=sharedassets1.assets
+- Attack | path_id=102 | file=sharedassets1.assets
+- anh sang xanh | path_id=103 | file=sharedassets1.assets
+- a5 | path_id=104 | file=sharedassets1.assets
+- free dm | path_id=105 | file=sharedassets1.assets
+- bg | path_id=106 | file=sharedassets1.assets
+- s4 | path_id=107 | file=sharedassets1.assets
+- Item equip Sang | path_id=108 | file=sharedassets1.assets
+- att 2 | path_id=109 | file=sharedassets1.assets
+- t2 | path_id=110 | file=sharedassets1.assets
+- lvl d 3 | path_id=111 | file=sharedassets1.assets
+- music on | path_id=112 | file=sharedassets1.assets
+- b2 | path_id=113 | file=sharedassets1.assets
+- s3 | path_id=114 | file=sharedassets1.assets
+- Equip btn | path_id=115 | file=sharedassets1.assets
+- dash 2 | path_id=116 | file=sharedassets1.assets
+- t3 | path_id=117 | file=sharedassets1.assets
+- lvl d 2 | path_id=118 | file=sharedassets1.assets
+- music off | path_id=119 | file=sharedassets1.assets
+- not Available | path_id=120 | file=sharedassets1.assets
+- b1 | path_id=121 | file=sharedassets1.assets
+- Purchase gray btn | path_id=122 | file=sharedassets1.assets
+- trans 2 | path_id=123 | file=sharedassets1.assets
+- t6 | path_id=124 | file=sharedassets1.assets
+- lvl d 1 | path_id=125 | file=sharedassets1.assets
+- Rate us | path_id=126 | file=sharedassets1.assets
+- b5 | path_id=127 | file=sharedassets1.assets
+- BlueGlow | path_id=128 | file=sharedassets1.assets
+- mau 2 | path_id=129 | file=sharedassets1.assets
+- t7 | path_id=130 | file=sharedassets1.assets
+- lvl d 0 | path_id=131 | file=sharedassets1.assets
+- setting | path_id=132 | file=sharedassets1.assets
+- b10 | path_id=133 | file=sharedassets1.assets
+- diamond 1 | path_id=134 | file=sharedassets1.assets
+- khang 2 | path_id=135 | file=sharedassets1.assets
+- lvl lock | path_id=136 | file=sharedassets1.assets
+- info | path_id=137 | file=sharedassets1.assets
+- upgrade xam | path_id=138 | file=sharedassets1.assets
+- diamond 2 | path_id=139 | file=sharedassets1.assets
+- t1 | path_id=140 | file=sharedassets1.assets
+- Reset | path_id=141 | file=sharedassets1.assets
+- c1 | path_id=142 | file=sharedassets1.assets
+- diamond 5 | path_id=143 | file=sharedassets1.assets
+- t4 | path_id=144 | file=sharedassets1.assets
+- ads setting | path_id=145 | file=sharedassets1.assets
+- c2 | path_id=146 | file=sharedassets1.assets
+- policy btn | path_id=147 | file=sharedassets1.assets
+- c5 | path_id=148 | file=sharedassets1.assets
+- Yes | path_id=149 | file=sharedassets1.assets
+- c10 | path_id=150 | file=sharedassets1.assets
+- Enter | path_id=151 | file=sharedassets1.assets
+- No | path_id=152 | file=sharedassets1.assets
+- e5 | path_id=153 | file=sharedassets1.assets
+- icon gold | path_id=154 | file=sharedassets1.assets
+- att | path_id=155 | file=sharedassets1.assets
+- home | path_id=156 | file=sharedassets1.assets
+- gold | path_id=157 | file=sharedassets1.assets
+- select | path_id=158 | file=sharedassets1.assets
+- icon dm | path_id=159 | file=sharedassets1.assets
+- dash | path_id=160 | file=sharedassets1.assets
+- lvl boss lock | path_id=161 | file=sharedassets1.assets
+- dm | path_id=162 | file=sharedassets1.assets
+- d3 | path_id=163 | file=sharedassets1.assets
+- vang | path_id=164 | file=sharedassets1.assets
+- lvl boss sang | path_id=165 | file=sharedassets1.assets
+- artifact label | path_id=166 | file=sharedassets1.assets
+- skill point | path_id=167 | file=sharedassets1.assets
+- d1 | path_id=168 | file=sharedassets1.assets
+- Vien 2 | path_id=169 | file=sharedassets1.assets
+- sellect 02 | path_id=170 | file=sharedassets1.assets
+- togle | path_id=171 | file=sharedassets1.assets
+- xanh | path_id=172 | file=sharedassets1.assets
+- d5 | path_id=173 | file=sharedassets1.assets
+- Bg | path_id=174 | file=sharedassets1.assets
+- skill point | path_id=175 | file=sharedassets1.assets
+- atf | path_id=176 | file=sharedassets1.assets
+- panel phai | path_id=177 | file=sharedassets1.assets
+- bang nho | path_id=178 | file=sharedassets1.assets
+- d10 | path_id=179 | file=sharedassets1.assets
+- Disguise btn | path_id=180 | file=sharedassets1.assets
+- shadow 01 | path_id=181 | file=sharedassets1.assets
+- all | path_id=182 | file=sharedassets1.assets
+- a2 s | path_id=183 | file=sharedassets1.assets
+- bang to | path_id=184 | file=sharedassets1.assets
+- d4 | path_id=185 | file=sharedassets1.assets
+- Resources btn | path_id=186 | file=sharedassets1.assets
+- shadow 02 | path_id=187 | file=sharedassets1.assets
+- sha d | path_id=188 | file=sharedassets1.assets
+- a1 s | path_id=189 | file=sharedassets1.assets
+- e10 | path_id=190 | file=sharedassets1.assets
+- a5 s | path_id=191 | file=sharedassets1.assets
+- xanh fade | path_id=192 | file=sharedassets1.assets
+- bar | path_id=193 | file=sharedassets1.assets
+- tron | path_id=194 | file=sharedassets1.assets
+- e8 | path_id=195 | file=sharedassets1.assets
+- Disguise btn xam | path_id=196 | file=sharedassets1.assets
+- a3 s | path_id=197 | file=sharedassets1.assets
+- top | path_id=198 | file=sharedassets1.assets
+- Resources btn xam | path_id=199 | file=sharedassets1.assets
+- rong vang | path_id=200 | file=sharedassets1.assets
+- sha boss | path_id=201 | file=sharedassets1.assets
+- a4 s | path_id=202 | file=sharedassets1.assets
+- Artifact | path_id=203 | file=sharedassets1.assets
+- a1 x | path_id=204 | file=sharedassets1.assets
+- star | path_id=205 | file=sharedassets1.assets
+- Tam Giac | path_id=206 | file=sharedassets1.assets
+- a2 x | path_id=207 | file=sharedassets1.assets
+- rong vang bong | path_id=208 | file=sharedassets1.assets
+- k1 | path_id=209 | file=sharedassets1.assets
+- a10 x | path_id=210 | file=sharedassets1.assets
+- No Ads Purchased | path_id=211 | file=sharedassets1.assets
+- panel trai | path_id=212 | file=sharedassets1.assets
+- a5 x | path_id=213 | file=sharedassets1.assets
+- Purchase | path_id=214 | file=sharedassets1.assets
+- bg | path_id=215 | file=sharedassets1.assets
+- e2 | path_id=216 | file=sharedassets1.assets
+- Equipped | path_id=217 | file=sharedassets1.assets
+- skill bar | path_id=218 | file=sharedassets1.assets
+- atf 01 | path_id=219 | file=sharedassets1.assets
+- atf not found | path_id=220 | file=sharedassets1.assets
+- e1 | path_id=221 | file=sharedassets1.assets
+- b2 x | path_id=222 | file=sharedassets1.assets
+- Remove ads | path_id=223 | file=sharedassets1.assets
+- arashi 2 | path_id=224 | file=sharedassets1.assets
+- Found | path_id=225 | file=sharedassets1.assets
+- b1 x | path_id=226 | file=sharedassets1.assets
+- remove ads 2 | path_id=227 | file=sharedassets1.assets
+- b5 x | path_id=228 | file=sharedassets1.assets
+- diamond 10 | path_id=229 | file=sharedassets1.assets
+- a6 | path_id=230 | file=sharedassets1.assets
+- b10 x | path_id=231 | file=sharedassets1.assets
+- atf7 | path_id=232 | file=sharedassets1.assets
+- a8 | path_id=233 | file=sharedassets1.assets
+- e10 x | path_id=234 | file=sharedassets1.assets
+- e4 | path_id=235 | file=sharedassets1.assets
+- dai 2 | path_id=236 | file=sharedassets1.assets
+- a6 s | path_id=237 | file=sharedassets1.assets
+- e3 | path_id=238 | file=sharedassets1.assets
+- a8 s | path_id=239 | file=sharedassets1.assets
+- c1 x | path_id=240 | file=sharedassets1.assets
+- c2 x | path_id=241 | file=sharedassets1.assets
+- c5 x | path_id=242 | file=sharedassets1.assets
+- k3 | path_id=243 | file=sharedassets1.assets
+- c10 x | path_id=244 | file=sharedassets1.assets
+- e9 x | path_id=245 | file=sharedassets1.assets
+- e9 | path_id=246 | file=sharedassets1.assets
+- e7 | path_id=247 | file=sharedassets1.assets
+- d3 x | path_id=248 | file=sharedassets1.assets
+- d1 x | path_id=249 | file=sharedassets1.assets
+- d5 x | path_id=250 | file=sharedassets1.assets
+- d10 x | path_id=251 | file=sharedassets1.assets
+- d4 x | path_id=252 | file=sharedassets1.assets
+- e6 | path_id=253 | file=sharedassets1.assets
+- 2d | path_id=25 | file=sharedassets3.assets
+- 2b | path_id=26 | file=sharedassets3.assets
+- 1a | path_id=27 | file=sharedassets3.assets
+- 6a | path_id=28 | file=sharedassets3.assets
+- 3a | path_id=29 | file=sharedassets3.assets
+- 6d | path_id=30 | file=sharedassets3.assets
+- 2c | path_id=31 | file=sharedassets3.assets
+- 2a | path_id=32 | file=sharedassets3.assets
+- 6b | path_id=33 | file=sharedassets3.assets
+- 3c | path_id=34 | file=sharedassets3.assets
+- 7a | path_id=35 | file=sharedassets3.assets
+- 4 | path_id=36 | file=sharedassets3.assets
+- 6c | path_id=37 | file=sharedassets3.assets
+- 5 | path_id=38 | file=sharedassets3.assets
+- 7b | path_id=39 | file=sharedassets3.assets
+- 8 | path_id=40 | file=sharedassets3.assets
+- 3b | path_id=41 | file=sharedassets3.assets
+- 3d | path_id=42 | file=sharedassets3.assets
+- 1b | path_id=43 | file=sharedassets3.assets
+- 01_1 | path_id=7 | file=sharedassets4.assets
+- 02_0 | path_id=8 | file=sharedassets4.assets
+- 02_1 | path_id=9 | file=sharedassets4.assets
+- 01_0 | path_id=10 | file=sharedassets4.assets
+- main | path_id=11 | file=sharedassets4.assets
+- 02_3 | path_id=12 | file=sharedassets4.assets
+- 02_4 | path_id=13 | file=sharedassets4.assets
+- 02_2 | path_id=14 | file=sharedassets4.assets
+- 02_5 | path_id=15 | file=sharedassets4.assets
+- item vang | path_id=529 | file=sharedassets5.assets
+- xich giua cay_0 | path_id=530 | file=sharedassets5.assets
+- shuriken | path_id=531 | file=sharedassets5.assets
+- Jump | path_id=532 | file=sharedassets5.assets
+- tuitien | path_id=533 | file=sharedassets5.assets
+- Bang 1 | path_id=534 | file=sharedassets5.assets
+- co dai 1 | path_id=535 | file=sharedassets5.assets
+- 1 | path_id=536 | file=sharedassets5.assets
+- moc2_0 | path_id=537 | file=sharedassets5.assets
+- banchan_phai01 | path_id=538 | file=sharedassets5.assets
+- banchan_trai_skill01 | path_id=539 | file=sharedassets5.assets
+- trc | path_id=540 | file=sharedassets5.assets
+- Key | path_id=541 | file=sharedassets5.assets
+- ao choang | path_id=542 | file=sharedassets5.assets
+- may 1 | path_id=543 | file=sharedassets5.assets
+- ham tren | path_id=544 | file=sharedassets5.assets
+- test01_0 | path_id=545 | file=sharedassets5.assets
+- 1 | path_id=546 | file=sharedassets5.assets
+- riu_0 | path_id=547 | file=sharedassets5.assets
+- body | path_id=548 | file=sharedassets5.assets
+- Asset tuyet 7_0 | path_id=549 | file=sharedassets5.assets
+- nt | path_id=550 | file=sharedassets5.assets
+- Layer_1 | path_id=551 | file=sharedassets5.assets
+- Asset tuyet 6_0 | path_id=552 | file=sharedassets5.assets
+- cay thong noel than dai 02_0 | path_id=553 | file=sharedassets5.assets
+- 1 | path_id=554 | file=sharedassets5.assets
+- banchan_phai01 | path_id=555 | file=sharedassets5.assets
+- star vang | path_id=556 | file=sharedassets5.assets
+- body | path_id=557 | file=sharedassets5.assets
+- cay thong noel than dai 01_0 | path_id=558 | file=sharedassets5.assets
+- kim_cuong_0 | path_id=559 | file=sharedassets5.assets
+- body02 | path_id=560 | file=sharedassets5.assets
+- boom do 1 | path_id=561 | file=sharedassets5.assets
+- xich giua cay_1 | path_id=562 | file=sharedassets5.assets
+- Key | path_id=563 | file=sharedassets5.assets
+- 1 do | path_id=564 | file=sharedassets5.assets
+- banchan_trai01 | path_id=565 | file=sharedassets5.assets
+- bantay_phai03 | path_id=566 | file=sharedassets5.assets
+- sau | path_id=567 | file=sharedassets5.assets
+- samurai ghost_Pivot | path_id=568 | file=sharedassets5.assets
+- ao choang 2 | path_id=569 | file=sharedassets5.assets
+- 5 | path_id=570 | file=sharedassets5.assets
+- kiemmoi_1 | path_id=571 | file=sharedassets5.assets
+- khung chat 2_1 | path_id=572 | file=sharedassets5.assets
+- o-01 | path_id=573 | file=sharedassets5.assets
+- Asset tuyet 7_1 | path_id=574 | file=sharedassets5.assets
+- bang | path_id=575 | file=sharedassets5.assets
+- Layer_2 | path_id=576 | file=sharedassets5.assets
+- cay thong noel than dai 02_1 | path_id=577 | file=sharedassets5.assets
+- 2 | path_id=578 | file=sharedassets5.assets
+- banchan_phai02 | path_id=579 | file=sharedassets5.assets
+- star xam | path_id=580 | file=sharedassets5.assets
+- coc | path_id=581 | file=sharedassets5.assets
+- cay thong noel than dai 01_1 | path_id=582 | file=sharedassets5.assets
+- chan_phai01 | path_id=583 | file=sharedassets5.assets
+- cucdasau2 | path_id=584 | file=sharedassets5.assets
+- Moc | path_id=585 | file=sharedassets5.assets
+- Bang 2 | path_id=586 | file=sharedassets5.assets
+- banchan_phai02 | path_id=587 | file=sharedassets5.assets
+- bantay_phai04 | path_id=588 | file=sharedassets5.assets
+- ban tay phai | path_id=589 | file=sharedassets5.assets
+- ham duoi | path_id=590 | file=sharedassets5.assets
+- 7 | path_id=591 | file=sharedassets5.assets
+- khung chat 2_2 | path_id=592 | file=sharedassets5.assets
+- o-01b | path_id=593 | file=sharedassets5.assets
+- buy dm | path_id=594 | file=sharedassets5.assets
+- cua__trai | path_id=595 | file=sharedassets5.assets
+- body | path_id=596 | file=sharedassets5.assets
+- banchan_trai01 | path_id=597 | file=sharedassets5.assets
+- bang | path_id=598 | file=sharedassets5.assets
+- da1 | path_id=599 | file=sharedassets5.assets
+- chan_trai01 | path_id=600 | file=sharedassets5.assets
+- a3 | path_id=601 | file=sharedassets5.assets
+- 2 do | path_id=602 | file=sharedassets5.assets
+- 4 | path_id=603 | file=sharedassets5.assets
+- body02 | path_id=604 | file=sharedassets5.assets
+- bantayphai05 | path_id=605 | file=sharedassets5.assets
+- dayleoxanh6 | path_id=606 | file=sharedassets5.assets
+- ban tay trai | path_id=607 | file=sharedassets5.assets
+- 2 | path_id=608 | file=sharedassets5.assets
+- kiemmoi_3 | path_id=609 | file=sharedassets5.assets
+- o-02 | path_id=610 | file=sharedassets5.assets
+- resume | path_id=611 | file=sharedassets5.assets
+- cua_phai | path_id=612 | file=sharedassets5.assets
+- can_gat | path_id=613 | file=sharedassets5.assets
+- banchan_trai02 | path_id=614 | file=sharedassets5.assets
+- trap_12 | path_id=615 | file=sharedassets5.assets
+- stage complete | path_id=616 | file=sharedassets5.assets
+- da2 | path_id=617 | file=sharedassets5.assets
+- head02 | path_id=618 | file=sharedassets5.assets
+- xich giua cay_4 | path_id=619 | file=sharedassets5.assets
+- dayleo_4 | path_id=620 | file=sharedassets5.assets
+- 5 do | path_id=621 | file=sharedassets5.assets
+- co dai 2 | path_id=622 | file=sharedassets5.assets
+- chan_phai01 | path_id=623 | file=sharedassets5.assets
+- body_duoi | path_id=624 | file=sharedassets5.assets
+- dayleoxanh7 | path_id=625 | file=sharedassets5.assets
+- banchan_phai01 | path_id=626 | file=sharedassets5.assets
+- 3 | path_id=627 | file=sharedassets5.assets
+- kiemmoi_4 | path_id=628 | file=sharedassets5.assets
+- o-02b | path_id=629 | file=sharedassets5.assets
+- dangsau | path_id=630 | file=sharedassets5.assets
+- banchanphai03 | path_id=631 | file=sharedassets5.assets
+- dang_truoc_den | path_id=632 | file=sharedassets5.assets
+- long | path_id=633 | file=sharedassets5.assets
+- cucdasau4 | path_id=634 | file=sharedassets5.assets
+- boom do 2 | path_id=635 | file=sharedassets5.assets
+- dau lau | path_id=636 | file=sharedassets5.assets
+- co dai 3 | path_id=637 | file=sharedassets5.assets
+- chan_trai01 | path_id=638 | file=sharedassets5.assets
+- body_tren | path_id=639 | file=sharedassets5.assets
+- dayleoxanh4 | path_id=640 | file=sharedassets5.assets
+- banchan_trai01 | path_id=641 | file=sharedassets5.assets
+- cot 1 | path_id=642 | file=sharedassets5.assets
+- 6 | path_id=643 | file=sharedassets5.assets
+- nenrung1 | path_id=644 | file=sharedassets5.assets
+- o-03 | path_id=645 | file=sharedassets5.assets
+- hide | path_id=646 | file=sharedassets5.assets
+- bantay_phai01 | path_id=647 | file=sharedassets5.assets
+- trap_15 | path_id=648 | file=sharedassets5.assets
+- Complete | path_id=649 | file=sharedassets5.assets
+- dot | path_id=650 | file=sharedassets5.assets
+- long tren vai | path_id=651 | file=sharedassets5.assets
+- bui co dep 5 | path_id=652 | file=sharedassets5.assets
+- Snow | path_id=653 | file=sharedassets5.assets
+- dayleo_13 | path_id=654 | file=sharedassets5.assets
+- death | path_id=655 | file=sharedassets5.assets
+- dui_phai02 | path_id=656 | file=sharedassets5.assets
+- bodytren02 | path_id=657 | file=sharedassets5.assets
+- dayleoxanh5 | path_id=658 | file=sharedassets5.assets
+- banchan_phai02 | path_id=659 | file=sharedassets5.assets
+- 8 | path_id=660 | file=sharedassets5.assets
+- o-04 | path_id=661 | file=sharedassets5.assets
+- restart | path_id=662 | file=sharedassets5.assets
+- shadow01 | path_id=663 | file=sharedassets5.assets
+- bantay_phai02 | path_id=664 | file=sharedassets5.assets
+- line01 | path_id=665 | file=sharedassets5.assets
+- mong02 | path_id=666 | file=sharedassets5.assets
+- cucdasau5 | path_id=667 | file=sharedassets5.assets
+- vang | path_id=668 | file=sharedassets5.assets
+- dui_trai02 | path_id=669 | file=sharedassets5.assets
+- bodytren03 | path_id=670 | file=sharedassets5.assets
+- banchan_trai02 | path_id=671 | file=sharedassets5.assets
+- day den 2 | path_id=672 | file=sharedassets5.assets
+- 4 | path_id=673 | file=sharedassets5.assets
+- d | path_id=674 | file=sharedassets5.assets
+- bantay_trai01 | path_id=675 | file=sharedassets5.assets
+- line02 | path_id=676 | file=sharedassets5.assets
+- vai_trai01 | path_id=677 | file=sharedassets5.assets
+- cucdasau6 | path_id=678 | file=sharedassets5.assets
+- dm | path_id=679 | file=sharedassets5.assets
+- head02 | path_id=680 | file=sharedassets5.assets
+- bodytren04 | path_id=681 | file=sharedassets5.assets
+- dui_phai02 | path_id=682 | file=sharedassets5.assets
+- tuong | path_id=683 | file=sharedassets5.assets
+- c | path_id=684 | file=sharedassets5.assets
+- music on | path_id=685 | file=sharedassets5.assets
+- bantay_trai02 | path_id=686 | file=sharedassets5.assets
+- line03 | path_id=687 | file=sharedassets5.assets
+- tran den | path_id=688 | file=sharedassets5.assets
+- weapon | path_id=689 | file=sharedassets5.assets
+- chat | path_id=690 | file=sharedassets5.assets
+- item ads | path_id=691 | file=sharedassets5.assets
+- mong02 | path_id=692 | file=sharedassets5.assets
+- chan_phai | path_id=693 | file=sharedassets5.assets
+- dui_trai02 | path_id=694 | file=sharedassets5.assets
+- cua ham | path_id=695 | file=sharedassets5.assets
+- music off | path_id=696 | file=sharedassets5.assets
+- bantaytrai_03 | path_id=697 | file=sharedassets5.assets
+- sang1 | path_id=698 | file=sharedassets5.assets
+- Thanh Mau | path_id=699 | file=sharedassets5.assets
+- item kc | path_id=700 | file=sharedassets5.assets
+- tayphai | path_id=701 | file=sharedassets5.assets
+- dui_phai | path_id=702 | file=sharedassets5.assets
+- tay phai | path_id=703 | file=sharedassets5.assets
+- baokiem | path_id=704 | file=sharedassets5.assets
+- sang2 | path_id=705 | file=sharedassets5.assets
+- fill | path_id=706 | file=sharedassets5.assets
+- 10 do | path_id=707 | file=sharedassets5.assets
+- taytrai | path_id=708 | file=sharedassets5.assets
+- dui_phai02 | path_id=709 | file=sharedassets5.assets
+- tay trai | path_id=710 | file=sharedassets5.assets
+- den sang 2 | path_id=711 | file=sharedassets5.assets
+- chan_phai02 | path_id=712 | file=sharedassets5.assets
+- sang3 | path_id=713 | file=sharedassets5.assets
+- back | path_id=714 | file=sharedassets5.assets
+- vai_phai01 | path_id=715 | file=sharedassets5.assets
+- dui_trai | path_id=716 | file=sharedassets5.assets
+- vai_phai01 | path_id=717 | file=sharedassets5.assets
+- chan_trai02 | path_id=718 | file=sharedassets5.assets
+- tron1 | path_id=719 | file=sharedassets5.assets
+- vien | path_id=720 | file=sharedassets5.assets
+- vai_trai01 | path_id=721 | file=sharedassets5.assets
+- dui_trai02 | path_id=722 | file=sharedassets5.assets
+- weapon 2 | path_id=723 | file=sharedassets5.assets
+- tam go 3 | path_id=724 | file=sharedassets5.assets
+- chan_trai01 | path_id=725 | file=sharedassets5.assets
+- tron2 | path_id=726 | file=sharedassets5.assets
+- codai2 | path_id=727 | file=sharedassets5.assets
+- xanh | path_id=728 | file=sharedassets5.assets
+- weapon nem ra 7 | path_id=729 | file=sharedassets5.assets
+- effect_phi02 | path_id=730 | file=sharedassets5.assets
+- chuoikiem | path_id=731 | file=sharedassets5.assets
+- tron3 | path_id=732 | file=sharedassets5.assets
+- m3 | path_id=733 | file=sharedassets5.assets
+- Right | path_id=734 | file=sharedassets5.assets
+- kiem02 | path_id=735 | file=sharedassets5.assets
+- head_02 | path_id=736 | file=sharedassets5.assets
+- effect00 | path_id=737 | file=sharedassets5.assets
+- xam | path_id=738 | file=sharedassets5.assets
+- weapon | path_id=739 | file=sharedassets5.assets
+- kiem01 | path_id=740 | file=sharedassets5.assets
+- effect01 | path_id=741 | file=sharedassets5.assets
+- Ninja face | path_id=742 | file=sharedassets5.assets
+- weapon nem ra 1 | path_id=743 | file=sharedassets5.assets
+- kiemchem03 | path_id=744 | file=sharedassets5.assets
+- effect02 | path_id=745 | file=sharedassets5.assets
+- weapon nem ra 2 | path_id=746 | file=sharedassets5.assets
+- kiemchem04 | path_id=747 | file=sharedassets5.assets
+
+## Named objects: TextAsset (3 names)
+- BillingMode | path_id=30 | file=resources.assets
+- LineBreaking Leading Characters | path_id=31 | file=resources.assets
+- LineBreaking Following Characters | path_id=32 | file=resources.assets
+
+## Named objects: AnimationClip (233 names)
+- Story | path_id=13 | file=sharedassets3.assets
+- CotTruyen2AnimationEnding | path_id=5 | file=sharedassets4.assets
+- BlackScene | path_id=195 | file=sharedassets5.assets
+- BlackSceneFadeIn | path_id=196 | file=sharedassets5.assets
+- BoomDo | path_id=197 | file=sharedassets5.assets
+- Finish Anim 1 | path_id=198 | file=sharedassets5.assets
+- Finish defau | path_id=199 | file=sharedassets5.assets
+- HudText | path_id=200 | file=sharedassets5.assets
+- HudText2 | path_id=201 | file=sharedassets5.assets
+- cucmau | path_id=202 | file=sharedassets5.assets
+- dashGhost | path_id=203 | file=sharedassets5.assets
+- bay | path_id=204 | file=sharedassets5.assets
+- chet | path_id=205 | file=sharedassets5.assets
+- danh gan - 175% | path_id=206 | file=sharedassets5.assets
+- danh xa 2 - 100% | path_id=207 | file=sharedassets5.assets
+- day minh ra | path_id=208 | file=sharedassets5.assets
+- idle bay | path_id=209 | file=sharedassets5.assets
+- idle | path_id=210 | file=sharedassets5.assets
+- sang phai | path_id=211 | file=sharedassets5.assets
+- sang trai | path_id=212 | file=sharedassets5.assets
+- active | path_id=213 | file=sharedassets5.assets
+- chua active | path_id=214 | file=sharedassets5.assets
+- idle | path_id=215 | file=sharedassets5.assets
+- dong | path_id=216 | file=sharedassets5.assets
+- mo luon | path_id=217 | file=sharedassets5.assets
+- idle 1 | path_id=218 | file=sharedassets5.assets
+- walk | path_id=219 | file=sharedassets5.assets
+- animation | path_id=220 | file=sharedassets5.assets
+- close | path_id=221 | file=sharedassets5.assets
+- open Dash | path_id=222 | file=sharedassets5.assets
+- open | path_id=223 | file=sharedassets5.assets
+- Bay Fi | path_id=224 | file=sharedassets5.assets
+- Dash new | path_id=225 | file=sharedassets5.assets
+- Nga ra Sau | path_id=226 | file=sharedassets5.assets
+- bam_tuong | path_id=227 | file=sharedassets5.assets
+- bamtuong_phi | path_id=228 | file=sharedassets5.assets
+- bi block | path_id=229 | file=sharedassets5.assets
+- bi huc vao dit | path_id=230 | file=sharedassets5.assets
+- chem 3 | path_id=231 | file=sharedassets5.assets
+- chem 4 | path_id=232 | file=sharedassets5.assets
+- chem 5 | path_id=233 | file=sharedassets5.assets
+- dam vao mom | path_id=234 | file=sharedassets5.assets
+- dap cua rat manh | path_id=235 | file=sharedassets5.assets
+- di bo_idle new | path_id=236 | file=sharedassets5.assets
+- di bo_walk | path_id=237 | file=sharedassets5.assets
+- die_01 | path_id=238 | file=sharedassets5.assets
+- die_02 | path_id=239 | file=sharedassets5.assets
+- die_03 | path_id=240 | file=sharedassets5.assets
+- die_04 | path_id=241 | file=sharedassets5.assets
+- die_05 | path_id=242 | file=sharedassets5.assets
+- die_06 | path_id=243 | file=sharedassets5.assets
+- die_07 | path_id=244 | file=sharedassets5.assets
+- die_08 | path_id=245 | file=sharedassets5.assets
+- die_09 duoi nuoc | path_id=246 | file=sharedassets5.assets
+- die_10 duoi nuoc 2 cut | path_id=247 | file=sharedassets5.assets
+- die_Bang | path_id=248 | file=sharedassets5.assets
+- double jump4 | path_id=249 | file=sharedassets5.assets
+- down test | path_id=250 | file=sharedassets5.assets
+- down | path_id=251 | file=sharedassets5.assets
+- idle4 | path_id=252 | file=sharedassets5.assets
+- idle_phi2 | path_id=253 | file=sharedassets5.assets
+- lon | path_id=254 | file=sharedassets5.assets
+- moc bay dang bay thang | path_id=255 | file=sharedassets5.assets
+- moc bay den noi 3 | path_id=256 | file=sharedassets5.assets
+- moc bay nem ra thang dung | path_id=257 | file=sharedassets5.assets
+- ngoi ia chem | path_id=258 | file=sharedassets5.assets
+- ngoi ia idle | path_id=259 | file=sharedassets5.assets
+- ngoi ia phi | path_id=260 | file=sharedassets5.assets
+- phi_down | path_id=261 | file=sharedassets5.assets
+- phi_run new 01 | path_id=262 | file=sharedassets5.assets
+- phi_up | path_id=263 | file=sharedassets5.assets
+- pro_attack02 fix | path_id=264 | file=sharedassets5.assets
+- push_idle | path_id=265 | file=sharedassets5.assets
+- push_run | path_id=266 | file=sharedassets5.assets
+- que chan 02 | path_id=267 | file=sharedassets5.assets
+- que chan idle | path_id=268 | file=sharedassets5.assets
+- que chan phi dung 1 cho | path_id=269 | file=sharedassets5.assets
+- que chan vua di vua ban | path_id=270 | file=sharedassets5.assets
+- quy_bat dau quy | path_id=271 | file=sharedassets5.assets
+- quy_dung day | path_id=272 | file=sharedassets5.assets
+- quy_idle quy | path_id=273 | file=sharedassets5.assets
+- run 1 tay new 03 | path_id=274 | file=sharedassets5.assets
+- stun | path_id=275 | file=sharedassets5.assets
+- swim_idle | path_id=276 | file=sharedassets5.assets
+- swim_run | path_id=277 | file=sharedassets5.assets
+- up | path_id=278 | file=sharedassets5.assets
+- yeu_idle | path_id=279 | file=sharedassets5.assets
+- yeu_walk | path_id=280 | file=sharedassets5.assets
+- BoomXanh | path_id=32 | file=sharedassets6.assets
+- ban cung len troi | path_id=33 | file=sharedassets6.assets
+- ban cung pro3 | path_id=34 | file=sharedassets6.assets
+- chet | path_id=35 | file=sharedassets6.assets
+- idle | path_id=36 | file=sharedassets6.assets
+- nem bay gau ra | path_id=37 | file=sharedassets6.assets
+- nhay lui gan pro - 200% | path_id=38 | file=sharedassets6.assets
+- nhay lui xa pro - 350% | path_id=39 | file=sharedassets6.assets
+- walk | path_id=40 | file=sharedassets6.assets
+- attack ban xa | path_id=19 | file=sharedassets7.assets
+- attack gan2 | path_id=20 | file=sharedassets7.assets
+- chet | path_id=21 | file=sharedassets7.assets
+- idle | path_id=22 | file=sharedassets7.assets
+- khien end | path_id=23 | file=sharedassets7.assets
+- khien ready | path_id=24 | file=sharedassets7.assets
+- khien walk | path_id=25 | file=sharedassets7.assets
+- phun doc bat dau | path_id=26 | file=sharedassets7.assets
+- phun doc channel | path_id=27 | file=sharedassets7.assets
+- walk3 | path_id=28 | file=sharedassets7.assets
+- bat ra | path_id=22 | file=sharedassets9.assets
+- attack3 - 155% | path_id=23 | file=sharedassets9.assets
+- chet | path_id=24 | file=sharedassets9.assets
+- idle | path_id=25 | file=sharedassets9.assets
+- stun2 | path_id=26 | file=sharedassets9.assets
+- walk | path_id=27 | file=sharedassets9.assets
+- Ham1 | path_id=21 | file=sharedassets10.assets
+- Ham2 | path_id=22 | file=sharedassets10.assets
+- CrowSoar | path_id=23 | file=sharedassets10.assets
+- CrowFlap | path_id=24 | file=sharedassets10.assets
+- CrowIdle | path_id=25 | file=sharedassets10.assets
+- attack | path_id=13 | file=sharedassets11.assets
+- chet | path_id=14 | file=sharedassets11.assets
+- idle2 | path_id=15 | file=sharedassets11.assets
+- stun | path_id=16 | file=sharedassets11.assets
+- walk2 | path_id=17 | file=sharedassets11.assets
+- dong | path_id=18 | file=sharedassets11.assets
+- mo 01 | path_id=19 | file=sharedassets11.assets
+- chet | path_id=24 | file=sharedassets12.assets
+- attack | path_id=25 | file=sharedassets12.assets
+- idle | path_id=26 | file=sharedassets12.assets
+- chet-idle | path_id=27 | file=sharedassets12.assets
+- TrapSet | path_id=23 | file=sharedassets13.assets
+- attack | path_id=24 | file=sharedassets13.assets
+- chet | path_id=25 | file=sharedassets13.assets
+- idle | path_id=26 | file=sharedassets13.assets
+- stun | path_id=27 | file=sharedassets13.assets
+- walk | path_id=28 | file=sharedassets13.assets
+- idle | path_id=29 | file=sharedassets13.assets
+- Trap1 Idle | path_id=10 | file=sharedassets14.assets
+- Trap1 action | path_id=11 | file=sharedassets14.assets
+- chet | path_id=12 | file=sharedassets14.assets
+- run | path_id=13 | file=sharedassets14.assets
+- walk3 | path_id=14 | file=sharedassets14.assets
+- Close | path_id=15 | file=sharedassets14.assets
+- Open | path_id=16 | file=sharedassets14.assets
+- idle closed | path_id=12 | file=sharedassets15.assets
+- idle open 1 | path_id=13 | file=sharedassets15.assets
+- idle open 2 | path_id=14 | file=sharedassets15.assets
+- idle open 3 | path_id=15 | file=sharedassets15.assets
+- open 1 | path_id=16 | file=sharedassets15.assets
+- open 2 | path_id=17 | file=sharedassets15.assets
+- open 3 | path_id=18 | file=sharedassets15.assets
+- idle | path_id=9 | file=sharedassets17.assets
+- rung rung | path_id=10 | file=sharedassets17.assets
+- active | path_id=11 | file=sharedassets17.assets
+- inactive | path_id=12 | file=sharedassets17.assets
+- beartrap_idle | path_id=13 | file=sharedassets17.assets
+- beartrap_active | path_id=14 | file=sharedassets17.assets
+- beartrap_hold | path_id=15 | file=sharedassets17.assets
+- beartrap_break | path_id=16 | file=sharedassets17.assets
+- attack2 - 50% | path_id=3 | file=sharedassets18.assets
+- Trap8 | path_id=5 | file=sharedassets20.assets
+- Trap8Idle | path_id=6 | file=sharedassets20.assets
+- chet - 200% | path_id=7 | file=sharedassets20.assets
+- idle | path_id=8 | file=sharedassets20.assets
+- run5 | path_id=9 | file=sharedassets20.assets
+- stun | path_id=10 | file=sharedassets20.assets
+- tu sat - 150% ver 2 | path_id=11 | file=sharedassets20.assets
+- walk | path_id=12 | file=sharedassets20.assets
+- idle | path_id=3 | file=sharedassets21.assets
+- ban ra | path_id=3 | file=sharedassets24.assets
+- gop vao | path_id=4 | file=sharedassets24.assets
+- idle active | path_id=5 | file=sharedassets24.assets
+- idle inactive | path_id=6 | file=sharedassets24.assets
+- attack | path_id=8 | file=sharedassets29.assets
+- chet | path_id=9 | file=sharedassets29.assets
+- idle | path_id=10 | file=sharedassets29.assets
+- stun | path_id=11 | file=sharedassets29.assets
+- walk | path_id=12 | file=sharedassets29.assets
+- attack | path_id=13 | file=sharedassets29.assets
+- chet2 | path_id=14 | file=sharedassets29.assets
+- idle2 | path_id=15 | file=sharedassets29.assets
+- lon | path_id=16 | file=sharedassets29.assets
+- lon2 | path_id=17 | file=sharedassets29.assets
+- stun | path_id=18 | file=sharedassets29.assets
+- walk3 | path_id=19 | file=sharedassets29.assets
+- walk4 | path_id=20 | file=sharedassets29.assets
+- idle close | path_id=21 | file=sharedassets29.assets
+- idle open | path_id=22 | file=sharedassets29.assets
+- open | path_id=23 | file=sharedassets29.assets
+- chet | path_id=19 | file=sharedassets31.assets
+- chet2 | path_id=20 | file=sharedassets31.assets
+- idle chet 2 | path_id=21 | file=sharedassets31.assets
+- idle chet | path_id=22 | file=sharedassets31.assets
+- idle | path_id=23 | file=sharedassets31.assets
+- nem | path_id=24 | file=sharedassets31.assets
+- cat kiem | path_id=7 | file=sharedassets36.assets
+- chem | path_id=8 | file=sharedassets36.assets
+- die 2 | path_id=9 | file=sharedassets36.assets
+- gio chan | path_id=10 | file=sharedassets36.assets
+- gio kiem giat set | path_id=11 | file=sharedassets36.assets
+- gio kiem idle | path_id=12 | file=sharedassets36.assets
+- idle | path_id=13 | file=sharedassets36.assets
+- kick | path_id=14 | file=sharedassets36.assets
+- stun | path_id=15 | file=sharedassets36.assets
+- tu chuong | path_id=16 | file=sharedassets36.assets
+- walk pivot | path_id=17 | file=sharedassets36.assets
+- xuat hien2 | path_id=18 | file=sharedassets36.assets
+- Trap7 | path_id=3 | file=sharedassets45.assets
+- chet | path_id=2 | file=sharedassets49.assets
+- idle | path_id=3 | file=sharedassets49.assets
+- stun | path_id=4 | file=sharedassets49.assets
+- xuong bt_lao ra | path_id=5 | file=sharedassets49.assets
+- xuong bt_walk | path_id=6 | file=sharedassets49.assets
+- attack6 | path_id=3 | file=sharedassets50.assets
+- chet | path_id=4 | file=sharedassets50.assets
+- idle | path_id=5 | file=sharedassets50.assets
+- stun | path_id=6 | file=sharedassets50.assets
+- walk | path_id=7 | file=sharedassets50.assets
+- chet | path_id=3 | file=sharedassets51.assets
+- walk3 | path_id=4 | file=sharedassets51.assets
+- walk6 | path_id=5 | file=sharedassets51.assets
+- attack 0- Bo | path_id=4 | file=sharedassets53.assets
+- attack 1- Xien | path_id=5 | file=sharedassets53.assets
+- chet | path_id=6 | file=sharedassets53.assets
+- choc len | path_id=7 | file=sharedassets53.assets
+- idle duoi dat | path_id=8 | file=sharedassets53.assets
+- idle4 | path_id=9 | file=sharedassets53.assets
+- stun | path_id=10 | file=sharedassets53.assets
+- walk | path_id=11 | file=sharedassets53.assets
+- walk3 | path_id=12 | file=sharedassets53.assets
+- ban ra new | path_id=4 | file=sharedassets69.assets
+- bay bay | path_id=5 | file=sharedassets69.assets
+- die | path_id=6 | file=sharedassets69.assets
+- idle bay | path_id=7 | file=sharedassets69.assets
+
+## Named objects: AnimatorController (52 names)
+- CotTruyen 1 | path_id=21 | file=sharedassets3.assets
+- CotTruyen 2 ending | path_id=6 | file=sharedassets4.assets
+- Black Scene lv1 | path_id=513 | file=sharedassets5.assets
+- BoomDo | path_id=514 | file=sharedassets5.assets
+- CoinHud | path_id=515 | file=sharedassets5.assets
+- CoinHudOut | path_id=516 | file=sharedassets5.assets
+- CucMau | path_id=517 | file=sharedassets5.assets
+- Finish | path_id=518 | file=sharedassets5.assets
+- d1 | path_id=519 | file=sharedassets5.assets
+- Boss 1 Origin | path_id=520 | file=sharedassets5.assets
+- Can Gat | path_id=521 | file=sharedassets5.assets
+- Check Point | path_id=522 | file=sharedassets5.assets
+- Cua Key | path_id=523 | file=sharedassets5.assets
+- NPC | path_id=524 | file=sharedassets5.assets
+- Umbrela | path_id=525 | file=sharedassets5.assets
+- Ninja Arashi | path_id=526 | file=sharedassets5.assets
+- Ragdoll Arashi | path_id=527 | file=sharedassets5.assets
+- BoomXanh | path_id=47 | file=sharedassets6.assets
+- Boss 2 origin | path_id=48 | file=sharedassets6.assets
+- Boss 3 origin | path_id=41 | file=sharedassets7.assets
+- Linh Kiem Origin | path_id=29 | file=sharedassets9.assets
+- HamMo | path_id=30 | file=sharedassets10.assets
+- Linh KG2 Origin 1 | path_id=20 | file=sharedassets11.assets
+- Cua Dap | path_id=21 | file=sharedassets11.assets
+- sniper.json Controller | path_id=31 | file=sharedassets12.assets
+- Trap Set | path_id=31 | file=sharedassets13.assets
+- Linh KG2 Origin 2 | path_id=32 | file=sharedassets13.assets
+- trap07-cotdien.json Controller | path_id=33 | file=sharedassets13.assets
+- Trap 1 | path_id=17 | file=sharedassets14.assets
+- Linh Gac Ko Khien 2 Origin | path_id=18 | file=sharedassets14.assets
+- Faded | path_id=19 | file=sharedassets14.assets
+- Cua Key 1 | path_id=19 | file=sharedassets15.assets
+- Cua Action | path_id=18 | file=sharedassets17.assets
+- Rock Pushable | path_id=19 | file=sharedassets17.assets
+- trap01_beartrap.json Controller | path_id=20 | file=sharedassets17.assets
+- Riu | path_id=4 | file=sharedassets18.assets
+- Trap 8 | path_id=13 | file=sharedassets20.assets
+- Om Bom Origin | path_id=14 | file=sharedassets20.assets
+- Spine | path_id=5 | file=sharedassets21.assets
+- da | path_id=7 | file=sharedassets24.assets
+- Linh KG2 Origin 3 | path_id=28 | file=sharedassets29.assets
+- Linh KG2 Origin 3 | path_id=29 | file=sharedassets29.assets
+- Cua Key 2 | path_id=30 | file=sharedassets29.assets
+- Linh | path_id=27 | file=sharedassets31.assets
+- Samurai | path_id=20 | file=sharedassets36.assets
+- Trap 7 | path_id=5 | file=sharedassets45.assets
+- Faded nhanh | path_id=6 | file=sharedassets45.assets
+- Nhay Origin | path_id=17 | file=sharedassets49.assets
+- Linh KG2 Origin 4 | path_id=8 | file=sharedassets50.assets
+- Linh Quay Tay | path_id=11 | file=sharedassets51.assets
+- Linh xuong Origin 3 | path_id=13 | file=sharedassets53.assets
+- PhuThuyold | path_id=8 | file=sharedassets69.assets
+
+## Named objects: GameObject (278620 names)
+- Theme | path_id=1 | file=level0
+- Click | path_id=2 | file=level0
+- Button | path_id=3 | file=level0
+- Image | path_id=4 | file=level0
+- EventSystem | path_id=5 | file=level0
+- IAP Manager | path_id=6 | file=level0
+- Main Camera | path_id=7 | file=level0
+- ATF Manager | path_id=8 | file=level0
+- Canvas | path_id=9 | file=level0
+- Sounds | path_id=10 | file=level0
+- Ad Manager | path_id=11 | file=level0
+- Text | path_id=12 | file=level0
+- Text | path_id=13 | file=level0
+- Accept btn | path_id=14 | file=level0
+- GDPR Popup | path_id=15 | file=level0
+- Text | path_id=16 | file=level0
+- Policy Btn | path_id=17 | file=level0
+- Do not accept btn | path_id=18 | file=level0
+- Image | path_id=19 | file=level0
+- Content | path_id=20 | file=level0
+- Trang | path_id=21 | file=level0
+- Fill | path_id=22 | file=level0
+- GDPR | path_id=23 | file=level0
+- LevelLeader | path_id=24 | file=level0
+- Character | path_id=1 | file=level1
+- Info text (3) | path_id=2 | file=level1
+- Info text (2) | path_id=3 | file=level1
+- Image | path_id=4 | file=level1
+- A2 Infomation | path_id=5 | file=level1
+- Atf btn | path_id=6 | file=level1
+- Shadow (3) | path_id=7 | file=level1
+- Shadow (2) | path_id=8 | file=level1
+- Big Img | path_id=9 | file=level1
+- Scroll View | path_id=10 | file=level1
+- Purchased | path_id=11 | file=level1
+- Name (2) | path_id=12 | file=level1
+- ClickNext | path_id=13 | file=level1
+- Small Img Xam | path_id=14 | file=level1
+- Equiped | path_id=15 | file=level1
+- Dark | path_id=16 | file=level1
+- Glow img | path_id=17 | file=level1
+- Button (1) | path_id=18 | file=level1
+- Viewport | path_id=19 | file=level1
+- Skill Upped 6 | path_id=20 | file=level1
+- Text | path_id=21 | file=level1
+- Shadow (1) | path_id=22 | file=level1
+- Image | path_id=23 | file=level1
+- Bg | path_id=24 | file=level1
+- Info 4 | path_id=25 | file=level1
+- Text | path_id=26 | file=level1
+- Image | path_id=27 | file=level1
+- sang (1) | path_id=28 | file=level1
+- Image | path_id=29 | file=level1
+- Button 6 | path_id=30 | file=level1
+- ATF Process | path_id=31 | file=level1
+- Dm | path_id=32 | file=level1
+- Image | path_id=33 | file=level1
+- ATF Img | path_id=34 | file=level1
+- sang | path_id=35 | file=level1
+- Name (3) | path_id=36 | file=level1
+- Info 4 | path_id=37 | file=level1
+- Big Select | path_id=38 | file=level1
+- Setting board | path_id=39 | file=level1
+- Button 8 | path_id=40 | file=level1
+- Button 10 | path_id=41 | file=level1
+- Button 2 | path_id=42 | file=level1
+- Button info | path_id=43 | file=level1
+- Bonus | path_id=44 | file=level1
+- Dark | path_id=45 | file=level1
+- Close | path_id=46 | file=level1
+- Home Img | path_id=47 | file=level1
+- Big Img | path_id=48 | file=level1
+- Button 1 | path_id=49 | file=level1
+- Level Panel | path_id=50 | file=level1
+- Panel Dash | path_id=51 | file=level1
+- DarkBack | path_id=52 | file=level1
+- Toast | path_id=53 | file=level1
+- Glow img | path_id=54 | file=level1
+- Board vien | path_id=55 | file=level1
+- Info 4 | path_id=56 | file=level1
+- Rate Us | path_id=57 | file=level1
+- Skill point img (1) | path_id=58 | file=level1
+- Yes | path_id=59 | file=level1
+- Big Img | path_id=60 | file=level1
+- Dark | path_id=61 | file=level1
+- Name (3) | path_id=62 | file=level1
+- Name (1) | path_id=63 | file=level1
+- Name (3) | path_id=64 | file=level1
+- Name | path_id=65 | file=level1
+- Main Image (1) | path_id=66 | file=level1
+- Vang | path_id=67 | file=level1
+- Small Img | path_id=68 | file=level1
+- sang | path_id=69 | file=level1
+- Main Image | path_id=70 | file=level1
+- Skill point img (3) | path_id=71 | file=level1
+- Star btn | path_id=72 | file=level1
+- Skill point img (3) | path_id=73 | file=level1
+- Skill point img (2) | path_id=74 | file=level1
+- Skill point Txt | path_id=75 | file=level1
+- Gia Vang | path_id=76 | file=level1
+- Button 7 | path_id=77 | file=level1
+- Close | path_id=78 | file=level1
+- Text | path_id=79 | file=level1
+- Text (1) | path_id=80 | file=level1
+- Image | path_id=81 | file=level1
+- Text | path_id=82 | file=level1
+- Image | path_id=83 | file=level1
+- Skill point img | path_id=84 | file=level1
+- Lock | path_id=85 | file=level1
+- Button 3 | path_id=86 | file=level1
+- Dark | path_id=87 | file=level1
+- Skill point img (2) | path_id=88 | file=level1
+- Shadow | path_id=89 | file=level1
+- sang | path_id=90 | file=level1
+- Skill Upped 7 | path_id=91 | file=level1
+- Bang Info | path_id=92 | file=level1
+- Item 11 | path_id=93 | file=level1
+- Info text (3) | path_id=94 | file=level1
+- Glow img | path_id=95 | file=level1
+- Button info | path_id=96 | file=level1
+- Skill Tree | path_id=97 | file=level1
+- Setting | path_id=98 | file=level1
+- Small Img Xam | path_id=99 | file=level1
+- Small Img | path_id=100 | file=level1
+- Skill Upped 10 | path_id=101 | file=level1
+- Small Img | path_id=102 | file=level1
+- Small Img Xam | path_id=103 | file=level1
+- Shadow | path_id=104 | file=level1
+- Info text (3) | path_id=105 | file=level1
+- No | path_id=106 | file=level1
+- Target | path_id=107 | file=level1
+- Dark | path_id=108 | file=level1
+- Skill Tree Node | path_id=109 | file=level1
+- Found NOT | path_id=110 | file=level1
+- Bg | path_id=111 | file=level1
+- Text (2) | path_id=112 | file=level1
+- Home Btn | path_id=113 | file=level1
+- Big Select | path_id=114 | file=level1
+- Info 9 | path_id=115 | file=level1
+- Ten | path_id=116 | file=level1
+- Button (1) | path_id=117 | file=level1
+- Image (1) | path_id=118 | file=level1
+- Arashi (4) | path_id=119 | file=level1
+- Glow equip img | path_id=120 | file=level1
+- Gia Vang | path_id=121 | file=level1
+- Rong Vang | path_id=122 | file=level1
+- Big Select | path_id=123 | file=level1
+- Skill Upped 6 | path_id=124 | file=level1
+- Gold | path_id=125 | file=level1
+- Viewport | path_id=126 | file=level1
+- 10 do | path_id=127 | file=level1
+- Gach Chan | path_id=128 | file=level1
+- May | path_id=129 | file=level1
+- Skill point Txt | path_id=130 | file=level1
+- Name (4) | path_id=131 | file=level1
+- Info 10 | path_id=132 | file=level1
+- Gach Chan (3) | path_id=133 | file=level1
+- Gach Chan (1) | path_id=134 | file=level1
+- ATF Name | path_id=135 | file=level1
+- Item 4 | path_id=136 | file=level1
+- Text | path_id=137 | file=level1
+- Text (2) | path_id=138 | file=level1
+- Dark | path_id=139 | file=level1
+- Btn Phai | path_id=140 | file=level1
+- Dark | path_id=141 | file=level1
+- Dark | path_id=142 | file=level1
+- Image | path_id=143 | file=level1
+- Glow equip img | path_id=144 | file=level1
+- Big Select | path_id=145 | file=level1
+- Item 12 | path_id=146 | file=level1
+- Level Panel | path_id=147 | file=level1
+- Name (2) | path_id=148 | file=level1
+- Small Img Xam | path_id=149 | file=level1
+- Xanh | path_id=150 | file=level1
+- Skill point Txt | path_id=151 | file=level1
+- Image | path_id=152 | file=level1
+- Home Btn (1) | path_id=153 | file=level1
+- Info text (2) | path_id=154 | file=level1
+- Big Select | path_id=155 | file=level1
+- Image | path_id=156 | file=level1
+- Small Img Xam | path_id=157 | file=level1
+- Button 5 | path_id=158 | file=level1
+- Info txt | path_id=159 | file=level1
+- Dark | path_id=160 | file=level1
+- Info text (4) | path_id=161 | file=level1
+- Shadow | path_id=162 | file=level1
+- Info 7 | path_id=163 | file=level1
+- Gach Chan (1) | path_id=164 | file=level1
+- Skill Upped 7 | path_id=165 | file=level1
+- Den | path_id=166 | file=level1
+- Button | path_id=167 | file=level1
+- Gia Vang | path_id=168 | file=level1
+- Purchased | path_id=169 | file=level1
+- Rong shadow | path_id=170 | file=level1
+- Glow equip img | path_id=171 | file=level1
+- Shadow | path_id=172 | file=level1
+- Info 1 | path_id=173 | file=level1
+- Big Img | path_id=174 | file=level1
+- Gach Chan (1) | path_id=175 | file=level1
+- 2 do | path_id=176 | file=level1
+- Big Img | path_id=177 | file=level1
+- Main | path_id=178 | file=level1
+- Ten | path_id=179 | file=level1
+- Big Img | path_id=180 | file=level1
+- Small Img Xam | path_id=181 | file=level1
+- Skill point img (1) | path_id=182 | file=level1
+- Down | path_id=183 | file=level1
+- Dark | path_id=184 | file=level1
+- Vang | path_id=185 | file=level1
+- Small Img Xam | path_id=186 | file=level1
+- Info text | path_id=187 | file=level1
+- Big Img | path_id=188 | file=level1
+- Music | path_id=189 | file=level1
+- Button | path_id=190 | file=level1
+- Big Img | path_id=191 | file=level1
+- Button 1 | path_id=192 | file=level1
+- Skill point Txt | path_id=193 | file=level1
+- Map 1 | path_id=194 | file=level1
+- Ten | path_id=195 | file=level1
+- Gach Chan (2) | path_id=196 | file=level1
+- Big Select | path_id=197 | file=level1
+- Big Img | path_id=198 | file=level1
+- Text (2) | path_id=199 | file=level1
+- Gach Chan (1) | path_id=200 | file=level1
+- Skill point Txt | path_id=201 | file=level1
+- Vang | path_id=202 | file=level1
+- Skill point Txt | path_id=203 | file=level1
+- Button (6) | path_id=204 | file=level1
+- Image | path_id=205 | file=level1
+- Big Img | path_id=206 | file=level1
+- Small Img Xam | path_id=207 | file=level1
+- A5 | path_id=208 | file=level1
+- Small Img Xam | path_id=209 | file=level1
+- Button (6) | path_id=210 | file=level1
+- Gia kc | path_id=211 | file=level1
+- Gach Chan (2) | path_id=212 | file=level1
+- 5 do | path_id=213 | file=level1
+- Shadow (3) | path_id=214 | file=level1
+- Bg | path_id=215 | file=level1
+- Dark | path_id=216 | file=level1
+- Big Img | path_id=217 | file=level1
+- Purchased | path_id=218 | file=level1
+- Back ground | path_id=219 | file=level1
+- Toggle Panel | path_id=220 | file=level1
+- Small Img Xam | path_id=221 | file=level1
+- Button (3) | path_id=222 | file=level1
+- sang | path_id=223 | file=level1
+- Skill point Txt | path_id=224 | file=level1
+- Info text (3) | path_id=225 | file=level1
+- Image | path_id=226 | file=level1
+- Gach Chan (5) | path_id=227 | file=level1
+- Equip img | path_id=228 | file=level1
+- Skill point Txt | path_id=229 | file=level1
+- Remove ads btn | path_id=230 | file=level1
+- Image | path_id=231 | file=level1
+- Image | path_id=232 | file=level1
+- Info 9 | path_id=233 | file=level1
+- Gia Vang | path_id=234 | file=level1
+- Dark | path_id=235 | file=level1
+- Text | path_id=236 | file=level1
+- Button 8 | path_id=237 | file=level1
+- Shadow (4) | path_id=238 | file=level1
+- Small Img | path_id=239 | file=level1
+- Text | path_id=240 | file=level1
+- Name (4) | path_id=241 | file=level1
+- Small Img | path_id=242 | file=level1
+- Skill Tree | path_id=243 | file=level1
+- Image | path_id=244 | file=level1
+- Skill Upped 9 | path_id=245 | file=level1
+- Skill point img (1) | path_id=246 | file=level1
+- Button 1 | path_id=247 | file=level1
+- BG | path_id=248 | file=level1
+- Big Select | path_id=249 | file=level1
+- Store | path_id=250 | file=level1
+- Small Img Xam | path_id=251 | file=level1
+- Text | path_id=252 | file=level1
+- Button (2) | path_id=253 | file=level1
+- Gia Vang | path_id=254 | file=level1
+- Skill point Txt | path_id=255 | file=level1
+- Name | path_id=256 | file=level1
+- Den | path_id=257 | file=level1
+- Small Img Xam | path_id=258 | file=level1
+- Gach Chan (3) | path_id=259 | file=level1
+- Name | path_id=260 | file=level1
+- Shadow | path_id=261 | file=level1
+- Big Img | path_id=262 | file=level1
+- Small Img | path_id=263 | file=level1
+- A6 | path_id=264 | file=level1
+- Gach Chan (2) | path_id=265 | file=level1
+- Skill point Txt | path_id=266 | file=level1
+- A4 | path_id=267 | file=level1
+- Image | path_id=268 | file=level1
+- Big Select | path_id=269 | file=level1
+- Gia Vang | path_id=270 | file=level1
+- Name | path_id=271 | file=level1
+- Gia kc | path_id=272 | file=level1
+- Small Img Xam | path_id=273 | file=level1
+- Rong shadow | path_id=274 | file=level1
+- Equiped | path_id=275 | file=level1
+- Rong Vang | path_id=276 | file=level1
+- Equip img | path_id=277 | file=level1
+- Button 9 | path_id=278 | file=level1
+- Item 5 | path_id=279 | file=level1
+- Panel Trai | path_id=280 | file=level1
+- Image | path_id=281 | file=level1
+- Dark | path_id=282 | file=level1
+- Skill point Txt | path_id=283 | file=level1
+- Big Select | path_id=284 | file=level1
+- A7 Infomation | path_id=285 | file=level1
+- Top | path_id=286 | file=level1
+- Big Img | path_id=287 | file=level1
+- Image | path_id=288 | file=level1
+- Big Img | path_id=289 | file=level1
+- Dm | path_id=290 | file=level1
+- B5 | path_id=291 | file=level1
+- Shadow (3) | path_id=292 | file=level1
+- ClickPlay | path_id=293 | file=level1
+- Equiped | path_id=294 | file=level1
+- Small Img | path_id=295 | file=level1
+- ClickBuy | path_id=296 | file=level1
+- Skill Upped 7 | path_id=297 | file=level1
+- Purchased | path_id=298 | file=level1
+- Image back | path_id=299 | file=level1
+- Name | path_id=300 | file=level1
+- Shadow | path_id=301 | file=level1
+- Image | path_id=302 | file=level1
+- Image nhay | path_id=303 | file=level1
+- SkillPoint | path_id=304 | file=level1
+- Small Img | path_id=305 | file=level1
+- Name | path_id=306 | file=level1
+- Setting board | path_id=307 | file=level1
+- Button (7) | path_id=308 | file=level1
+- Dark | path_id=309 | file=level1
+- Gach Chan (2) | path_id=310 | file=level1
+- Glow equip img | path_id=311 | file=level1
+- Skill point img (3) | path_id=312 | file=level1
+- Skill Tree Node | path_id=313 | file=level1
+- Glow equip img | path_id=314 | file=level1
+- Skill point img (2) | path_id=315 | file=level1
+- Shadow (2) | path_id=316 | file=level1
+- Skill point img (4) | path_id=317 | file=level1
+- Skill Tree Node | path_id=318 | file=level1
+- Skill point Txt | path_id=319 | file=level1
+- Info 2 | path_id=320 | file=level1
+- Info 3 | path_id=321 | file=level1
+- Challence | path_id=322 | file=level1
+- Button (3) | path_id=323 | file=level1
+- Item 9 | path_id=324 | file=level1
+- Scroll View | path_id=325 | file=level1
+- Button 8 | path_id=326 | file=level1
+- Dark | path_id=327 | file=level1
+- Item 8 | path_id=328 | file=level1
+- Sound Tracks | path_id=329 | file=level1
+- Text (2) | path_id=330 | file=level1
+- All Map | path_id=331 | file=level1
+- ATF btn | path_id=332 | file=level1
+- Small Img Xam | path_id=333 | file=level1
+- Resource Panel | path_id=334 | file=level1
+- Text | path_id=335 | file=level1
+- Dark | path_id=336 | file=level1
+- Ten | path_id=337 | file=level1
+- Image | path_id=338 | file=level1
+- Skill Upped 8 | path_id=339 | file=level1
+- Small Img | path_id=340 | file=level1
+- Bang Info | path_id=341 | file=level1
+- Skill Upped 8 | path_id=342 | file=level1
+- Ten | path_id=343 | file=level1
+- Name (1) | path_id=344 | file=level1
+- Ten | path_id=345 | file=level1
+- Skill point img (4) | path_id=346 | file=level1
+- Image | path_id=347 | file=level1
+- Info text (1) | path_id=348 | file=level1
+- EventSystem | path_id=349 | file=level1
+- Text (2) | path_id=350 | file=level1
+- Glow img | path_id=351 | file=level1
+- Skill Upped 2 | path_id=352 | file=level1
+- Big Img | path_id=353 | file=level1
+- Small Img | path_id=354 | file=level1
+- Skill point Txt | path_id=355 | file=level1
+- Star Toggle | path_id=356 | file=level1
+- Toggle Panel | path_id=357 | file=level1
+- Name (2) | path_id=358 | file=level1
+- Name (3) | path_id=359 | file=level1
+- Info 8 | path_id=360 | file=level1
+- Button 9 | path_id=361 | file=level1
+- Small Img | path_id=362 | file=level1
+- Image | path_id=363 | file=level1
+- Big Img | path_id=364 | file=level1
+- Big Img | path_id=365 | file=level1
+- Panel Att | path_id=366 | file=level1
+- Info text (3) | path_id=367 | file=level1
+- Name (3) | path_id=368 | file=level1
+- Dark | path_id=369 | file=level1
+- Skill Upped 10 | path_id=370 | file=level1
+- Vang | path_id=371 | file=level1
+- Small Img Xam | path_id=372 | file=level1
+- ClickBack | path_id=373 | file=level1
+- Gia kc | path_id=374 | file=level1
+- Small Img | path_id=375 | file=level1
+- Shadow (1) | path_id=376 | file=level1
+- Info | path_id=377 | file=level1
+- Info text (3) | path_id=378 | file=level1
+- Dm | path_id=379 | file=level1
+- Gach Chan (3) | path_id=380 | file=level1
+- Small Img Xam | path_id=381 | file=level1
+- Skill Upped 2 | path_id=382 | file=level1
+- ATF Process | path_id=383 | file=level1
+- Info 6 | path_id=384 | file=level1
+- Skill point Txt | path_id=385 | file=level1
+- Text | path_id=386 | file=level1
+- Board vien | path_id=387 | file=level1
+- Button 2 | path_id=388 | file=level1
+- SkillPoint | path_id=389 | file=level1
+- Button 1 | path_id=390 | file=level1
+- Star btn | path_id=391 | file=level1
+- Shadow (1) | path_id=392 | file=level1
+- Dark | path_id=393 | file=level1
+- Small Img Xam | path_id=394 | file=level1
+- Button (4) | path_id=395 | file=level1
+- Dark | path_id=396 | file=level1
+- Button 2 | path_id=397 | file=level1
+- Dark | path_id=398 | file=level1
+- Gach Chan (4) | path_id=399 | file=level1
+- Shadow (2) | path_id=400 | file=level1
+- Small Img | path_id=401 | file=level1
+- Info text (1) | path_id=402 | file=level1
+- Bg | path_id=403 | file=level1
+- Big Img | path_id=404 | file=level1
+- Small Img Xam | path_id=405 | file=level1
+- Reset | path_id=406 | file=level1
+- Content | path_id=407 | file=level1
+- Shadow (2) | path_id=408 | file=level1
+- Skill point img (3) | path_id=409 | file=level1
+- Info text (1) | path_id=410 | file=level1
+- Rong Vang | path_id=411 | file=level1
+- Name (1) | path_id=412 | file=level1
+- Small Img Xam | path_id=413 | file=level1
+- Small Img | path_id=414 | file=level1
+- Shadow (2) | path_id=415 | file=level1
+- Small Img | path_id=416 | file=level1
+- Xanh | path_id=417 | file=level1
+- Atf Toggle | path_id=418 | file=level1
+- Dark | path_id=419 | file=level1
+- Shadow (2) | path_id=420 | file=level1
+- Name (2) | path_id=421 | file=level1
+- Big Img | path_id=422 | file=level1
+- Btn Phai | path_id=423 | file=level1
+- Skill Upped 1 | path_id=424 | file=level1
+- sang | path_id=425 | file=level1
+- Info text (2) | path_id=426 | file=level1
+
+## Named objects: MonoBehaviour (0 names)
+- No named objects found.
+
+## Named objects: Font (17 names)
+- GothamLight | path_id=14 | file=sharedassets0.assets
+- GothamBold | path_id=15 | file=sharedassets0.assets
+- GothamBook | path_id=16 | file=sharedassets0.assets
+- CharlemagneStd-Bold | path_id=48 | file=sharedassets1.assets
+- SitkaZ | path_id=49 | file=sharedassets1.assets
+- Sitka | path_id=50 | file=sharedassets1.assets
+- SitkaB | path_id=51 | file=sharedassets1.assets
+- constan | path_id=52 | file=sharedassets1.assets
+- impact | path_id=53 | file=sharedassets1.assets
+- Vnhltfap | path_id=54 | file=sharedassets1.assets
+- SitkaI | path_id=55 | file=sharedassets1.assets
+- DigitalStripBB_Ital | path_id=22 | file=sharedassets3.assets
+- DigitalStripBB_BoldItal | path_id=23 | file=sharedassets3.assets
+- DigitalStripBB_Reg | path_id=24 | file=sharedassets3.assets
+- Sickamore | path_id=528 | file=sharedassets5.assets
+- LiberationSans | path_id=33 | file=resources.assets
+- LegacyRuntime | path_id=10102 | file=unity default resources
+
+## Read errors
+- PlayerSettings path_id=1: ValueError: Expected to read 968 bytes, but only read 964 bytes
+- MonoBehaviour path_id=73: ValueError: Expected to read 52 bytes, but only read 32 bytes
+- MonoBehaviour path_id=74: ValueError: Expected to read 412 bytes, but only read 32 bytes
+- MonoBehaviour path_id=75: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=76: ValueError: Expected to read 476 bytes, but only read 32 bytes
+- MonoBehaviour path_id=77: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=78: ValueError: Expected to read 100 bytes, but only read 32 bytes
+- MonoBehaviour path_id=80: ValueError: Expected to read 296 bytes, but only read 32 bytes
+- MonoBehaviour path_id=81: ValueError: Expected to read 56 bytes, but only read 32 bytes
+- MonoBehaviour path_id=82: ValueError: Expected to read 44 bytes, but only read 32 bytes
+- MonoBehaviour path_id=83: ValueError: Expected to read 80 bytes, but only read 32 bytes
+- MonoBehaviour path_id=84: ValueError: Expected to read 40 bytes, but only read 32 bytes
+- MonoBehaviour path_id=85: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=86: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=87: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=88: ValueError: Expected to read 156 bytes, but only read 32 bytes
+- MonoBehaviour path_id=89: ValueError: Expected to read 432 bytes, but only read 32 bytes
+- MonoBehaviour path_id=90: ValueError: Expected to read 152 bytes, but only read 32 bytes
+- MonoBehaviour path_id=91: ValueError: Expected to read 428 bytes, but only read 32 bytes
+- MonoBehaviour path_id=92: ValueError: Expected to read 428 bytes, but only read 32 bytes
+- MonoBehaviour path_id=93: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=94: ValueError: Expected to read 48 bytes, but only read 32 bytes
+- MonoBehaviour path_id=95: ValueError: Expected to read 376 bytes, but only read 32 bytes
+- MonoBehaviour path_id=96: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=97: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=98: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=99: ValueError: Expected to read 164 bytes, but only read 32 bytes
+- MonoBehaviour path_id=100: ValueError: Expected to read 44 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5985: ValueError: Expected to read 52 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5986: ValueError: Expected to read 180 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5987: ValueError: Expected to read 184 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5988: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5989: ValueError: Expected to read 424 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5990: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5991: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5992: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5993: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5994: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5995: ValueError: Expected to read 128 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5996: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5997: ValueError: Expected to read 176 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5998: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=5999: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6000: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6001: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6002: ValueError: Expected to read 416 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6003: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6004: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6005: ValueError: Expected to read 36 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6006: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6007: ValueError: Expected to read 156 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6008: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6009: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6010: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6011: ValueError: Expected to read 156 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6012: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6013: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6014: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6015: ValueError: Expected to read 96 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6016: ValueError: Expected to read 416 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6017: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6018: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6019: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6020: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6021: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6022: ValueError: Expected to read 156 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6023: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6024: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6025: ValueError: Expected to read 96 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6026: ValueError: Expected to read 416 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6027: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6028: ValueError: Expected to read 96 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6029: ValueError: Expected to read 416 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6030: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6031: ValueError: Expected to read 96 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6032: ValueError: Expected to read 416 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6033: ValueError: Expected to read 136 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6034: ValueError: Expected to read 64 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6035: ValueError: Expected to read 524 bytes, but only read 32 bytes
+- MonoBehaviour path_id=6036: ValueError: Expected to read 136 bytes, but only read 32 bytes
+
+## Patch feasibility notes
+- If the named Texture2D/Sprite entries correspond to the images exported by AssetRipper, a small runtime asset patch may be possible without downloading the 1.77 GB recovered project.
+- This pass is read-only. No original bytes were modified, and no APK was rebuilt.
