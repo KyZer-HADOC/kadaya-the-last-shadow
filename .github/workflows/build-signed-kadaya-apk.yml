@@ -147,12 +147,27 @@ jobs:
           shutil.copy2(replacement_bundle, target_bundle)
 
           icon_count = 0
+          icon_log = []
           for source in (patch / "icons").rglob("app_icon*.png"):
               rel = source.relative_to(patch / "icons")
+              # Apktool normalizes legacy -v4 resource qualifiers (e.g. mipmap-hdpi-v4 -> mipmap-hdpi).
+              first = rel.parts[0]
+              if first.endswith("-v4"):
+                  rel = Path(first[:-3], *rel.parts[1:])
               dest = decoded / "res" / rel
+              if not dest.parent.is_dir():
+                  # Fall back to the matching density directory if Apktool normalized qualifiers further.
+                  density = source.parent.name.replace("-v4", "")
+                  candidate = decoded / "res" / density / source.name
+                  if candidate.parent.is_dir():
+                      dest = candidate
               if dest.parent.is_dir():
                   shutil.copy2(source, dest)
                   icon_count += 1
+                  icon_log.append(str(dest.relative_to(decoded)))
+              else:
+                  icon_log.append("NOT FOUND: " + str(rel))
+          print("Launcher icon targets: " + "; ".join(icon_log))
           if icon_count < 6:
               raise SystemExit(f"Only {icon_count} launcher-icon files were replaced; expected density variants.")
 
