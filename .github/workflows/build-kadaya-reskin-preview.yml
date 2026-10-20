@@ -457,12 +457,12 @@ jobs:
               return replacement.upper() if original.isupper() else replacement
 
           generic_names = [
-              (r"\\barashi\\b", "Kadaya"),
-              (r"\\bdosu\\b", "Raizen"),
-              (r"\\byasha\\b", "the Crimson Archer"),
-              (r"\\bkanashi\\b", "the Crimson Swordmaster"),
-              (r"\\bkido\\b", "the Dread Knight"),
-              (r"\\braven\\b", "the Wanderer"),
+              (r"\barashi\b", "Kadaya"),
+              (r"\bdosu\b", "Raizen"),
+              (r"\byasha\b", "the Crimson Archer"),
+              (r"\bkanashi\b", "the Crimson Swordmaster"),
+              (r"\bkido\b", "the Dread Knight"),
+              (r"\braven\b", "the Wanderer"),
               (r"\\byour son\\b", "your friend Krayoo"),
           ]
           dialogue_changes = []
@@ -547,8 +547,37 @@ jobs:
           for key in wanted:
               if check[key]["sha256"] == original_hashes[key]:
                   raise SystemExit(f"Validation failed: {key} did not change in the saved bundle.")
+
+          # Verify the actual serialized story/tutorial words, not just the overlaid story artwork.
+          reopened_texts = []
+          textmesh_read_errors = 0
+          for obj in env2.objects:
+              if getattr(obj.type, "name", "") != "TextMesh":
+                  continue
+              try:
+                  reopened = obj.read()
+                  value = getattr(reopened, "m_Text", None)
+                  if isinstance(value, str) and value.strip():
+                      reopened_texts.append(value)
+              except Exception:
+                  textmesh_read_errors += 1
+          expected_dialogue_fragments = [
+              "Stay sharp, Kadaya.",
+              "Raizen's first guard stands here",
+              "KADAYA, MOVE!",
+              "Trust me. I'll help you find Raizen and bring Krayoo home.",
+          ]
+          missing_dialogue = [
+              phrase for phrase in expected_dialogue_fragments
+              if not any(phrase.casefold() in text.casefold() for text in reopened_texts)
+          ]
+          if dialogue_changes and missing_dialogue:
+              raise SystemExit("Serialized dialogue patch failed after bundle reopen: " + "; ".join(missing_dialogue))
+          if len(dialogue_changes) < 8:
+              raise SystemExit(f"Expected multiple in-game dialogue changes but found only {len(dialogue_changes)}.")
           print(f"Validated patched bundle size: {new_bundle.stat().st_size:,} bytes")
           print(f"Validated {len(check)} modified Texture2D assets after reopening.")
+          print(f"Validated serialized dialogue: {len(dialogue_changes)} objects changed; {len(reopened_texts)} readable TextMesh values reopened; {textmesh_read_errors} read errors.")
 
           # Build density-correct Android launcher icons; no APK files are modified in this step.
           icon_records = []
@@ -578,8 +607,10 @@ jobs:
               "unity_version": next((str(v) for v in [getattr(next(iter(env.objects),None),"assets_file",None)] if v), "see project settings"),
               "textures_patched": {key:{"source_file":found[key]["file"],"size":list(found[key]["original"].size),"original_sha256":original_hashes[key],"modified_sha256":modified_hashes[key]} for key in sorted(wanted)},
               "textures_validated_after_reopen": check,
+              "serialized_dialogue_objects_changed": len(dialogue_changes),
+              "serialized_dialogue_unique_rewrites": json.loads((preview / "kadaya-story-dialogue-changes.json").read_text(encoding="utf-8"))["unique_dialogue_rewrites"],
               "icons": icon_records,
-              "note": "This is a data bundle + launcher icon patch, not yet a complete signed APK. No scene, map or level files were changed."
+              "note": "This is a data bundle + launcher icon patch, not yet a complete signed APK. Serialized story/tutorial text and selected artwork/UI atlases were changed; playable scene transforms, colliders, maps and level layouts were not edited."
           }
           (output/"patch-report.json").write_text(json.dumps(report,indent=2),encoding="utf-8")
           (output/"README-PATCH.txt").write_text(
