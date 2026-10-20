@@ -1,0 +1,1 @@
+Trigger read-only disassembly of existing Dash, concealment, projectile and movement methods to plan further Kadaya mechanics without touching maps or levels.
