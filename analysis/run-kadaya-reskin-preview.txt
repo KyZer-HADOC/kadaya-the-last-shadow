@@ -1,1 +1,1 @@
-Build expanded Kadaya patch with actual serialized story/tutorial TextMesh dialogue rewrites and color-graded character/weapon/menu/story/boss atlases. Preserve all existing playable scene transforms, colliders, maps and level layouts.
+Build the next Kadaya patch: rebrand existing in-game skill/weapon UI names and descriptions, story/tutorial TextMesh dialogue, character/effect/menu atlases and icon; preserve all gameplay mechanics and all map/level layouts.
