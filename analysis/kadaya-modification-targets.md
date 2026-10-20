@@ -1,0 +1,483 @@
+# Kadaya modification target scan
+
+Generated inside GitHub Actions from the recovered Unity project. This is an inventory only; no gameplay scenes or level layouts were edited.
+
+- Detected Unity project: ExportedProject
+- Unity scene files in project: 89
+- Scenes in Assets/Scenes: 89
+- Recovered C# files: 1779
+- Filename-selected script candidates: 343
+- Prefabs: 33
+- Image/texture files by extension: 330
+
+## Existing gameplay scenes (preserve these unchanged)
+- Assets/Scenes/CotTruyen.unity (83,760 bytes)
+- Assets/Scenes/CotTruyen2Ending.unity (64,684 bytes)
+- Assets/Scenes/First.unity (45,408 bytes)
+- Assets/Scenes/LevelLeader.unity (13,723 bytes)
+- Assets/Scenes/Select.unity (3.30 MiB)
+- Assets/Scenes/b1.unity (13.82 MiB)
+- Assets/Scenes/b10.unity (22.64 MiB)
+- Assets/Scenes/b11.unity (17.92 MiB)
+- Assets/Scenes/b12.unity (19.16 MiB)
+- Assets/Scenes/b13.unity (16.64 MiB)
+- Assets/Scenes/b14.unity (24.63 MiB)
+- Assets/Scenes/b15.unity (19.37 MiB)
+- Assets/Scenes/b16.unity (24.15 MiB)
+- Assets/Scenes/b17.unity (19.24 MiB)
+- Assets/Scenes/b18.unity (19.14 MiB)
+- Assets/Scenes/b19.unity (23.80 MiB)
+- Assets/Scenes/b2.unity (12.87 MiB)
+- Assets/Scenes/b20.unity (18.87 MiB)
+- Assets/Scenes/b21.unity (17.97 MiB)
+- Assets/Scenes/b22.unity (18.19 MiB)
+- Assets/Scenes/b23.unity (20.01 MiB)
+- Assets/Scenes/b24.unity (18.21 MiB)
+- Assets/Scenes/b25.unity (18.99 MiB)
+- Assets/Scenes/b26.unity (16.87 MiB)
+- Assets/Scenes/b27.unity (18.06 MiB)
+- Assets/Scenes/b28.unity (22.77 MiB)
+- Assets/Scenes/b29.unity (17.07 MiB)
+- Assets/Scenes/b3.unity (12.98 MiB)
+- Assets/Scenes/b30.unity (19.71 MiB)
+- Assets/Scenes/b31.unity (17.47 MiB)
+- Assets/Scenes/b32.unity (19.84 MiB)
+- Assets/Scenes/b33.unity (19.40 MiB)
+- Assets/Scenes/b34.unity (20.22 MiB)
+- Assets/Scenes/b35.unity (17.34 MiB)
+- Assets/Scenes/b36.unity (21.76 MiB)
+- Assets/Scenes/b37.unity (20.37 MiB)
+- Assets/Scenes/b38.unity (19.67 MiB)
+- Assets/Scenes/b39.unity (17.83 MiB)
+- Assets/Scenes/b4.unity (14.32 MiB)
+- Assets/Scenes/b40.unity (18.29 MiB)
+- Assets/Scenes/b41.unity (17.96 MiB)
+- Assets/Scenes/b42.unity (20.42 MiB)
+- Assets/Scenes/b43.unity (20.37 MiB)
+- Assets/Scenes/b44.unity (21.75 MiB)
+- Assets/Scenes/b45.unity (18.17 MiB)
+- Assets/Scenes/b46.unity (19.54 MiB)
+- Assets/Scenes/b47.unity (19.48 MiB)
+- Assets/Scenes/b48.unity (18.93 MiB)
+- Assets/Scenes/b49.unity (21.65 MiB)
+- Assets/Scenes/b5.unity (16.12 MiB)
+- Assets/Scenes/b50.unity (18.41 MiB)
+- Assets/Scenes/b51.unity (19.05 MiB)
+- Assets/Scenes/b52.unity (17.41 MiB)
+- Assets/Scenes/b53.unity (18.37 MiB)
+- Assets/Scenes/b54.unity (18.18 MiB)
+- Assets/Scenes/b55.unity (20.99 MiB)
+- Assets/Scenes/b56.unity (19.86 MiB)
+- Assets/Scenes/b57.unity (22.00 MiB)
+- Assets/Scenes/b58.unity (17.90 MiB)
+- Assets/Scenes/b59.unity (19.51 MiB)
+- Assets/Scenes/b6.unity (16.68 MiB)
+- Assets/Scenes/b60.unity (19.94 MiB)
+- Assets/Scenes/b61.unity (16.60 MiB)
+- Assets/Scenes/b62.unity (16.56 MiB)
+- Assets/Scenes/b63.unity (18.48 MiB)
+- Assets/Scenes/b64.unity (17.52 MiB)
+- Assets/Scenes/b65.unity (16.18 MiB)
+- Assets/Scenes/b66.unity (20.36 MiB)
+- Assets/Scenes/b67.unity (18.32 MiB)
+- Assets/Scenes/b68.unity (29.55 MiB)
+- Assets/Scenes/b69.unity (17.92 MiB)
+- Assets/Scenes/b7.unity (22.54 MiB)
+- Assets/Scenes/b70.unity (24.99 MiB)
+- Assets/Scenes/b71.unity (20.89 MiB)
+- Assets/Scenes/b72.unity (16.50 MiB)
+- Assets/Scenes/b73.unity (36.10 MiB)
+- Assets/Scenes/b74.unity (17.24 MiB)
+- Assets/Scenes/b75.unity (18.33 MiB)
+- Assets/Scenes/b76.unity (22.52 MiB)
+- Assets/Scenes/b77.unity (19.70 MiB)
+- Assets/Scenes/b78.unity (21.73 MiB)
+- Assets/Scenes/b79.unity (19.67 MiB)
+- Assets/Scenes/b8.unity (19.35 MiB)
+- Assets/Scenes/b80.unity (23.00 MiB)
+- Assets/Scenes/b9.unity (16.79 MiB)
+- Assets/Scenes/boss1.unity (12.49 MiB)
+- Assets/Scenes/boss2.unity (12.73 MiB)
+- Assets/Scenes/boss3.unity (12.50 MiB)
+- Assets/Scenes/boss4.unity (14.10 MiB)
+
+## Likely player, character, weapons, skills, story, menu and progression scripts
+- Assets/Plugins/Assembly-CSharp-firstpass/Damager.cs — class: Damager; methods: no method signatures recognized; 2,639 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/EnemyHealth.cs — class: EnemyHealth; methods: no method signatures recognized; 2,643 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/HealthBar.cs — class: HealthBar; methods: no method signatures recognized; 2,641 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/HealthBarEventHandler.cs — class: HealthBarEventHandler; methods: no method signatures recognized; 2,653 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/HealthbarRoot.cs — class: HealthbarRoot; methods: no method signatures recognized; 2,645 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/MoveSample.cs — class: MoveSample; methods: no method signatures recognized; 2,642 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/Movement.cs — class: Movement; methods: no method signatures recognized; 2,640 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/Reload.cs — class: Reload; methods: no method signatures recognized; 2,638 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/XWeaponTrailDemo.cs — class: XWeaponTrailDemo; methods: no method signatures recognized; 2,648 bytes
+- Assets/Plugins/Assembly-CSharp-firstpass/XftWeapon/XWeaponTrail.cs — class: XWeaponTrail; methods: no method signatures recognized; 2,713 bytes
+- Assets/Scripts/Assembly-CSharp/AnimateTiledTextureOnTrail.cs — class: AnimateTiledTextureOnTrail; methods: no method signatures recognized; 2,658 bytes
+- Assets/Scripts/Assembly-CSharp/ArtifactPanel.cs — class: ArtifactPanel; methods: no method signatures recognized; 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/ArtifactPanelEquipBtn.cs — class: ArtifactPanelEquipBtn; methods: no method signatures recognized; 2,653 bytes
+- Assets/Scripts/Assembly-CSharp/ArtifactPanelItem.cs — class: ArtifactPanelItem; methods: no method signatures recognized; 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/ArtifactPanelPurchaseBtn.cs — class: ArtifactPanelPurchaseBtn; methods: no method signatures recognized; 2,656 bytes
+- Assets/Scripts/Assembly-CSharp/Atf.cs — class: Atf; methods: no method signatures recognized; 2,635 bytes
+- Assets/Scripts/Assembly-CSharp/AtfManager.cs — class: AtfManager; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/AudioEnemy.cs — class: AudioEnemy; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/AudioPlayer.cs — class: AudioPlayer; methods: no method signatures recognized; 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/Boss1.cs — class: Boss1; methods: no method signatures recognized; 2,637 bytes
+- Assets/Scripts/Assembly-CSharp/Boss1Animation.cs — class: Boss1Animation; methods: no method signatures recognized; 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/Boss2.cs — class: Boss2; methods: no method signatures recognized; 2,637 bytes
+- Assets/Scripts/Assembly-CSharp/Boss2Animation.cs — class: Boss2Animation; methods: no method signatures recognized; 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/Boss2BomXanh.cs — class: Boss2BomXanh; methods: no method signatures recognized; 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/Boss2MuiTenUp.cs — class: Boss2MuiTenUp; methods: no method signatures recognized; 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/Boss3.cs — class: Boss3; methods: no method signatures recognized; 2,637 bytes
+- Assets/Scripts/Assembly-CSharp/Boss3Animation.cs — class: Boss3Animation; methods: no method signatures recognized; 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/Boss3Bom.cs — class: Boss3Bom; methods: no method signatures recognized; 2,640 bytes
+- Assets/Scripts/Assembly-CSharp/Boss4.cs — class: Boss4; methods: no method signatures recognized; 2,637 bytes
+- Assets/Scripts/Assembly-CSharp/BossDragon.cs — class: BossDragon; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/ChatStory.cs — class: ChatStory; methods: no method signatures recognized; 2,641 bytes
+- Assets/Scripts/Assembly-CSharp/CheckPointBoss.cs — class: CheckPointBoss; methods: no method signatures recognized; 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/Checkpoint.cs — class: Checkpoint; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/IPostMover.cs — class: IPostMover; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/IPreMover.cs — class: IPreMover; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/MoveInColliderBoundaries.cs — class: MoveInColliderBoundaries; methods: no method signatures recognized; 2,748 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Platformer/PlayerInput.cs — class: PlayerInput; methods: no method signatures recognized; 2,746 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/Platformer/PlayerInputBot.cs — class: PlayerInputBot; methods: no method signatures recognized; 2,749 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyAttack.cs — class: EnemyAttack; methods: no method signatures recognized; 2,750 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyFSM.cs — class: EnemyFSM; methods: no method signatures recognized; 2,747 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyPatrol.cs — class: EnemyPatrol; methods: no method signatures recognized; 2,750 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemySight.cs — class: EnemySight; methods: no method signatures recognized; 2,749 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/EnemyWander.cs — class: EnemyWander; methods: no method signatures recognized; 2,750 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/ObjectMove.cs — class: ObjectMove; methods: no method signatures recognized; 2,749 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerFire.cs — class: PlayerFire; methods: no method signatures recognized; 2,749 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerHealth.cs — class: PlayerHealth; methods: no method signatures recognized; 2,751 bytes
+- Assets/Scripts/Assembly-CSharp/Com/LuisPedroFonseca/ProCamera2D/TopDownShooter/PlayerInput.cs — class: PlayerInput; methods: no method signatures recognized; 2,750 bytes
+- Assets/Scripts/Assembly-CSharp/CongBoss.cs — class: CongBoss; methods: no method signatures recognized; 2,640 bytes
+- Assets/Scripts/Assembly-CSharp/CotTruyen.cs — class: CotTruyen; methods: no method signatures recognized; 2,641 bytes
+- Assets/Scripts/Assembly-CSharp/CotTruyen2Ending.cs — class: CotTruyen2Ending; methods: no method signatures recognized; 2,648 bytes
+- Assets/Scripts/Assembly-CSharp/CotTruyenEnd.cs — class: CotTruyenEnd; methods: no method signatures recognized; 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/CotTruyenLeader.cs — class: CotTruyenLeader; methods: no method signatures recognized; 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/DisguiseManager.cs — class: DisguiseManager; methods: no method signatures recognized; 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/DungeonCharacterAnimator.cs — class: DungeonCharacterAnimator; methods: no method signatures recognized; 2,656 bytes
+- Assets/Scripts/Assembly-CSharp/EffectSettings.cs — class: EffectSettings; methods: no method signatures recognized; 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/EnemyOnGround.cs — class: EnemyOnGround; methods: no method signatures recognized; 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyA.cs — class: Enemy_FlyA; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyBoss.cs — class: Enemy_FlyBoss; methods: no method signatures recognized; 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/Enemy_FlyingA.cs — class: Enemy_FlyingA; methods: no method signatures recognized; 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/FiTieuGolden.cs — class: FiTieuGolden; methods: no method signatures recognized; 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/FlockChildSound.cs — class: FlockChildSound; methods: no method signatures recognized; 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/LevelPlayImplementation.cs — class: LevelPlayImplementation; methods: no method signatures recognized; 2,738 bytes
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/MobileAdsManager.cs — class: MobileAdsManager; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Assembly-CSharp/Gley/MobileAds/Internal/PlatformSettings.cs — class: PlatformSettings; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Assembly-CSharp/HUDText.cs — class: HUDText; methods: no method signatures recognized; 2,639 bytes
+- Assets/Scripts/Assembly-CSharp/HUDTextChild.cs — class: HUDTextChild; methods: no method signatures recognized; 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/HurtSound.cs — class: HurtSound; methods: no method signatures recognized; 2,641 bytes
+- Assets/Scripts/Assembly-CSharp/IAPManager.cs — class: IAPManager; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/ItemBtn.cs — class: ItemBtn; methods: no method signatures recognized; 2,639 bytes
+- Assets/Scripts/Assembly-CSharp/ItemScript.cs — class: ItemScript; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/LazyLoad.cs — class: LazyLoad; methods: no method signatures recognized; 2,640 bytes
+- Assets/Scripts/Assembly-CSharp/LevelBtn.cs — class: LevelBtn; methods: no method signatures recognized; 2,640 bytes
+- Assets/Scripts/Assembly-CSharp/LevelButton.cs — class: LevelButton; methods: no method signatures recognized; 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/LevelChoiseCanvas.cs — class: LevelChoiseCanvas; methods: no method signatures recognized; 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/LevelLeader.cs — class: LevelLeader; methods: no method signatures recognized; 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/LevelSelectButton.cs — class: LevelSelectButton; methods: no method signatures recognized; 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/LivesManager.cs — class: LivesManager; methods: no method signatures recognized; 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/LoadNow.cs — class: LoadNow; methods: no method signatures recognized; 2,639 bytes
+- Assets/Scripts/Assembly-CSharp/MainSlideLevels.cs — class: MainSlideLevels; methods: no method signatures recognized; 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/MapManager.cs — class: MapManager; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/MoveOnGround.cs — class: MoveOnGround; methods: no method signatures recognized; 2,644 bytes
+- Assets/Scripts/Assembly-CSharp/MovingPlatform.cs — class: MovingPlatform; methods: no method signatures recognized; 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/NinjaMovementScript.cs — class: NinjaMovementScript; methods: no method signatures recognized; 2,651 bytes
+- Assets/Scripts/Assembly-CSharp/NinjaPlatformRoot.cs — class: NinjaPlatformRoot; methods: no method signatures recognized; 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/OrochiBoss.cs — class: OrochiBoss; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/ParticleManager.cs — class: ParticleManager; methods: no method signatures recognized; 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/PlayerDash.cs — class: PlayerDash; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/RestorePurchases.cs — class: RestorePurchases; methods: no method signatures recognized; 2,648 bytes
+- Assets/Scripts/Assembly-CSharp/ShipMover.cs — class: ShipMover; methods: no method signatures recognized; 2,641 bytes
+- Assets/Scripts/Assembly-CSharp/ShopCanvas.cs — class: ShopCanvas; methods: no method signatures recognized; 2,642 bytes
+- Assets/Scripts/Assembly-CSharp/ShopPanel.cs — class: ShopPanel; methods: no method signatures recognized; 2,641 bytes
+- Assets/Scripts/Assembly-CSharp/ShowStarAndAtf.cs — class: ShowStarAndAtf; methods: no method signatures recognized; 2,646 bytes
+- Assets/Scripts/Assembly-CSharp/SkillButton.cs — class: SkillButton; methods: no method signatures recognized; 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/SkillTree.cs — class: SkillTree; methods: no method signatures recognized; 2,641 bytes
+- Assets/Scripts/Assembly-CSharp/StoryCanvas.cs — class: StoryCanvas; methods: no method signatures recognized; 2,643 bytes
+- Assets/Scripts/Assembly-CSharp/TriggerAvtiveBoss.cs — class: TriggerAvtiveBoss; methods: no method signatures recognized; 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/UVTextureAnimator.cs — class: UVTextureAnimator; methods: no method signatures recognized; 2,649 bytes
+- Assets/Scripts/Assembly-CSharp/UnityStandardAssets/CrossPlatformInput/CrossPlatformInputManager.cs — class: CrossPlatformInputManager; methods: no method signatures recognized; 2,755 bytes
+- Assets/Scripts/Assembly-CSharp/UnityStandardAssets/CrossPlatformInput/PlatformSpecific/MobileInput.cs — class: MobileInput; methods: no method signatures recognized; 2,758 bytes
+- Assets/Scripts/Assembly-CSharp/UnityStandardAssets/CrossPlatformInput/PlatformSpecific/StandaloneInput.cs — class: StandaloneInput; methods: no method signatures recognized; 2,762 bytes
+- Assets/Scripts/Assembly-CSharp/UnityStandardAssets/CrossPlatformInput/VirtualInput.cs — class: VirtualInput; methods: no method signatures recognized; 2,742 bytes
+- Assets/Scripts/Assembly-CSharp/_2DC_ArrowSelection.cs — class: _2DC_ArrowSelection; methods: no method signatures recognized; 2,651 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_AL_GoldFX.cs — class: _2dxFX_AL_GoldFX; methods: no method signatures recognized; 2,648 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_AL_GoldenFX.cs — class: _2dxFX_AL_GoldenFX; methods: no method signatures recognized; 2,650 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_AL_JellyAutoMove.cs — class: _2dxFX_AL_JellyAutoMove; methods: no method signatures recognized; 2,655 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_GoldFX.cs — class: _2dxFX_GoldFX; methods: no method signatures recognized; 2,645 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_GoldenFX.cs — class: _2dxFX_GoldenFX; methods: no method signatures recognized; 2,647 bytes
+- Assets/Scripts/Assembly-CSharp/_2dxFX_JellyAutoMove.cs — class: _2dxFX_JellyAutoMove; methods: no method signatures recognized; 2,652 bytes
+- Assets/Scripts/Assembly-CSharp/guiMenu.cs — class: guiMenu; methods: no method signatures recognized; 2,639 bytes
+- Assets/Scripts/Assembly-CSharp/jumpboss.cs — class: jumpboss; methods: no method signatures recognized; 2,640 bytes
+- Assets/Scripts/DOTween/DG/Tweening/Core/DOTweenSettings.cs — class: DOTweenSettings; methods: no method signatures recognized; 2,723 bytes
+- Assets/Scripts/DOTweenPro/DG/Tweening/DOTweenVisualManager.cs — class: DOTweenVisualManager; methods: no method signatures recognized; 2,723 bytes
+- Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogItem.cs — class: DebugLogItem; methods: no method signatures recognized; 2,722 bytes
+- Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs — class: DebugLogManager; methods: no method signatures recognized; 2,725 bytes
+- Assets/Scripts/Unity.Burst/Unity/Burst/Editor/BurstLoader.cs — class: BurstLoader; methods: no method signatures recognized; 2,721 bytes
+- Assets/Scripts/Unity.LevelPlay/IUnityLevelPlayBanner.cs — class: IUnityLevelPlayBanner; methods: no method signatures recognized; 2,653 bytes
+- Assets/Scripts/Unity.LevelPlay/IUnityLevelPlayInterstitial.cs — class: IUnityLevelPlayInterstitial; methods: no method signatures recognized; 2,659 bytes
+- Assets/Scripts/Unity.LevelPlay/IUnityLevelPlayRewardedVideo.cs — class: IUnityLevelPlayRewardedVideo; methods: no method signatures recognized; 2,660 bytes
+- Assets/Scripts/Unity.LevelPlay/IUnityLevelPlayRewardedVideoManual.cs — class: IUnityLevelPlayRewardedVideoManual; methods: no method signatures recognized; 2,666 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceBannerLevelPlayAndroid.cs — class: IronSourceBannerLevelPlayAndroid; methods: no method signatures recognized; 2,664 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceInterstitialLevelPlayAndroid.cs — class: IronSourceInterstitialLevelPlayAndroid; methods: no method signatures recognized; 2,670 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceMediationSettings.cs — class: IronSourceMediationSettings; methods: no method signatures recognized; 2,659 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceRewardedVideoLevelPlayAndroid.cs — class: IronSourceRewardedVideoLevelPlayAndroid; methods: no method signatures recognized; 2,671 bytes
+- Assets/Scripts/Unity.LevelPlay/IronSourceRewardedVideoLevelPlayManualAndroid.cs — class: IronSourceRewardedVideoLevelPlayManualAndroid; methods: no method signatures recognized; 2,677 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/AndroidLevelPlayAdSize.cs — class: AndroidLevelPlayAdSize; methods: no method signatures recognized; 2,738 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/EditorLevelPlayAdSize.cs — class: EditorLevelPlayAdSize; methods: no method signatures recognized; 2,737 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/EditorLevelPlaySdk.cs — class: EditorLevelPlaySdk; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IPlatformBannerAd.cs — class: IPlatformBannerAd; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IPlatformInterstitialAd.cs — class: IPlatformInterstitialAd; methods: no method signatures recognized; 2,739 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IPlatformLevelPlayAdSize.cs — class: IPlatformLevelPlayAdSize; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IPlatformRewardedAd.cs — class: IPlatformRewardedAd; methods: no method signatures recognized; 2,735 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IUnityLevelPlayImpressionDataListener.cs — class: IUnityLevelPlayImpressionDataListener; methods: no method signatures recognized; 2,753 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/IUnityLevelPlayInitListener.cs — class: IUnityLevelPlayInitListener; methods: no method signatures recognized; 2,743 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/LevelPlayImpressionData.cs — class: LevelPlayImpressionData; methods: no method signatures recognized; 2,739 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/LevelPlayLogger.cs — class: LevelPlayLogger; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/LevelPlaySegment.cs — class: LevelPlaySegment; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/UnityLevelPlayImpressionDataListener.cs — class: UnityLevelPlayImpressionDataListener; methods: no method signatures recognized; 2,752 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/UnityLevelPlayInitListener.cs — class: UnityLevelPlayInitListener; methods: no method signatures recognized; 2,742 bytes
+- Assets/Scripts/Unity.LevelPlay/Unity/Services/LevelPlay/UnsupportedLevelPlayAdSize.cs — class: UnsupportedLevelPlayAdSize; methods: no method signatures recognized; 2,742 bytes
+- Assets/Scripts/Unity.LevelPlay/UnsupportedPlatformAgent.cs — class: UnsupportedPlatformAgent; methods: no method signatures recognized; 2,656 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/AndroidLevelPlaySdk.cs — class: AndroidLevelPlaySdk; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/ILevelPlayBannerAd.cs — class: ILevelPlayBannerAd; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/ILevelPlayInterstitialAd.cs — class: ILevelPlayInterstitialAd; methods: no method signatures recognized; 2,737 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/ILevelPlayRewardedAd.cs — class: ILevelPlayRewardedAd; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlay.cs — class: LevelPlay; methods: no method signatures recognized; 2,722 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayAdDisplayInfoError.cs — class: LevelPlayAdDisplayInfoError; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayAdError.cs — class: LevelPlayAdError; methods: no method signatures recognized; 2,729 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayAdInfo.cs — class: LevelPlayAdInfo; methods: no method signatures recognized; 2,728 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayAdSize.cs — class: LevelPlayAdSize; methods: no method signatures recognized; 2,728 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayBannerAd.cs — class: LevelPlayBannerAd; methods: no method signatures recognized; 2,730 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayBannerPosition.cs — class: LevelPlayBannerPosition; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayConfiguration.cs — class: LevelPlayConfiguration; methods: no method signatures recognized; 2,735 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayInitError.cs — class: LevelPlayInitError; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayInterstitialAd.cs — class: LevelPlayInterstitialAd; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayReward.cs — class: LevelPlayReward; methods: no method signatures recognized; 2,728 bytes
+- Assets/Scripts/Unity.LevelPlay/com/unity3d/mediation/LevelPlayRewardedAd.cs — class: LevelPlayRewardedAd; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/Unity.Multiplayer.Center.Common/Unity/Multiplayer/Center/Common/SelectedSolutionsData.cs — class: SelectedSolutionsData; methods: no method signatures recognized; 2,744 bytes
+- Assets/Scripts/Unity.Purchasing.AppleMacosStub/UnityEngine/Purchasing/OSXStoreBindings.cs — class: OSXStoreBindings; methods: no method signatures recognized; 2,730 bytes
+- Assets/Scripts/Unity.Purchasing.AppleStub/UnityEngine/Purchasing/iOSStoreBindings.cs — class: iOSStoreBindings; methods: no method signatures recognized; 2,730 bytes
+- Assets/Scripts/Unity.Purchasing.Codeless/UnityEngine/Purchasing/CodelessIAPStoreListener.cs — class: CodelessIAPStoreListener; methods: no method signatures recognized; 2,738 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/AppleReceiptExtensions.cs — class: AppleReceiptExtensions; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/AppleStoreImpl.cs — class: AppleStoreImpl; methods: no method signatures recognized; 2,728 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/DialogRequest.cs — class: DialogRequest; methods: no method signatures recognized; 2,727 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/FakeStore.cs — class: FakeStore; methods: no method signatures recognized; 2,723 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/FakeStoreCartValidator.cs — class: FakeStoreCartValidator; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStore.cs — class: GooglePlayStore; methods: no method signatures recognized; 2,729 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStoreChangeSubscriptionService.cs — class: GooglePlayStoreChangeSubscriptionService; methods: no method signatures recognized; 2,754 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStoreCheckEntitlementService.cs — class: GooglePlayStoreCheckEntitlementService; methods: no method signatures recognized; 2,752 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStoreConnectionService.cs — class: GooglePlayStoreConnectionService; methods: no method signatures recognized; 2,746 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStoreFetchProductsService.cs — class: GooglePlayStoreFetchProductsService; methods: no method signatures recognized; 2,749 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStoreFetchPurchasesService.cs — class: GooglePlayStoreFetchPurchasesService; methods: no method signatures recognized; 2,750 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStoreFinishTransactionService.cs — class: GooglePlayStoreFinishTransactionService; methods: no method signatures recognized; 2,753 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStorePurchaseService.cs — class: GooglePlayStorePurchaseService; methods: no method signatures recognized; 2,744 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/GooglePlayStoreService.cs — class: GooglePlayStoreService; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/IGooglePlayStoreChangeSubscriptionService.cs — class: IGooglePlayStoreChangeSubscriptionService; methods: no method signatures recognized; 2,755 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/IGooglePlayStoreConnectionService.cs — class: IGooglePlayStoreConnectionService; methods: no method signatures recognized; 2,747 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/IGooglePlayStoreFetchProductsService.cs — class: IGooglePlayStoreFetchProductsService; methods: no method signatures recognized; 2,750 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/IGooglePlayStoreFetchPurchasesService.cs — class: IGooglePlayStoreFetchPurchasesService; methods: no method signatures recognized; 2,751 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/IGooglePlayStoreFinishTransactionService.cs — class: IGooglePlayStoreFinishTransactionService; methods: no method signatures recognized; 2,754 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/IGooglePlayStorePurchaseService.cs — class: IGooglePlayStorePurchaseService; methods: no method signatures recognized; 2,745 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/INativeStoreProvider.cs — class: INativeStoreProvider; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/IStoreInternal.cs — class: IStoreInternal; methods: no method signatures recognized; 2,728 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/Interfaces/IGooglePlayStoreCheckEntitlementService.cs — class: IGooglePlayStoreCheckEntitlementService; methods: no method signatures recognized; 2,764 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/JsonStore.cs — class: JsonStore; methods: no method signatures recognized; 2,723 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/MetricizedAppleStoreImpl.cs — class: MetricizedAppleStoreImpl; methods: no method signatures recognized; 2,738 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/MetricizedGooglePlayStoreService.cs — class: MetricizedGooglePlayStoreService; methods: no method signatures recognized; 2,746 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/MetricizedJsonStore.cs — class: MetricizedJsonStore; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/NativeStoreProvider.cs — class: NativeStoreProvider; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/StoreFactory.cs — class: StoreFactory; methods: no method signatures recognized; 2,726 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/StoreManagerFactoryInjector.cs — class: StoreManagerFactoryInjector; methods: no method signatures recognized; 2,741 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/StoreServiceDependencyFactoryInjector.cs — class: StoreServiceDependencyFactoryInjector; methods: no method signatures recognized; 2,751 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/StoreServiceFactory.cs — class: StoreServiceFactory; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/SubscriptionManager.cs — class: SubscriptionManager; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/UIFakeStore.cs — class: UIFakeStore; methods: no method signatures recognized; 2,725 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/UIFakeStoreDropdown.cs — class: UIFakeStoreDropdown; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Unity.Purchasing.Stores/UnityEngine/Purchasing/UIFakeStoreWindow.cs — class: UIFakeStoreWindow; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.Purchasing/Purchasing/Extension/InternalStore.cs — class: InternalStore; methods: no method signatures recognized; 2,725 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/AppleAppStore.cs — class: AppleAppStore; methods: no method signatures recognized; 2,727 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/AppleAppStoreCartValidator.cs — class: AppleAppStoreCartValidator; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/CartItem.cs — class: CartItem; methods: no method signatures recognized; 2,722 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/DefaultStoreHelper.cs — class: DefaultStoreHelper; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/ExtensibleStoreService.cs — class: ExtensibleStoreService; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Extension/IInternalStore.cs — class: IInternalStore; methods: no method signatures recognized; 2,738 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Extension/IStore.cs — class: IStore; methods: no method signatures recognized; 2,730 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Extension/IStoreConfiguration.cs — class: IStoreConfiguration; methods: no method signatures recognized; 2,743 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Extension/IStoreProductsCallback.cs — class: IStoreProductsCallback; methods: no method signatures recognized; 2,746 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Extension/Store.cs — class: Store; methods: no method signatures recognized; 2,729 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/FakeAppStore.cs — class: FakeAppStore; methods: no method signatures recognized; 2,726 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/GoogleIapSettings.cs — class: GoogleIapSettings; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/GooglePlayRestoreTransactionUseCase.cs — class: GooglePlayRestoreTransactionUseCase; methods: no method signatures recognized; 2,749 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/GooglePlayStoreConnectionUseCase.cs — class: GooglePlayStoreConnectionUseCase; methods: no method signatures recognized; 2,746 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/GooglePlayStoreExtendedPurchaseService.cs — class: GooglePlayStoreExtendedPurchaseService; methods: no method signatures recognized; 2,752 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/GooglePlayStoreExtendedService.cs — class: GooglePlayStoreExtendedService; methods: no method signatures recognized; 2,744 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/GooglePlayStoreSetObfuscatedIdUseCase.cs — class: GooglePlayStoreSetObfuscatedIdUseCase; methods: no method signatures recognized; 2,751 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IAndroidJavaStore.cs — class: IAndroidJavaStore; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IAppleStoreCallbacks.cs — class: IAppleStoreCallbacks; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IAppleStoreExtendedProductService.cs — class: IAppleStoreExtendedProductService; methods: no method signatures recognized; 2,747 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IAppleStoreExtendedPurchaseService.cs — class: IAppleStoreExtendedPurchaseService; methods: no method signatures recognized; 2,748 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IAppleStoreExtendedService.cs — class: IAppleStoreExtendedService; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IDetailedStoreListener.cs — class: IDetailedStoreListener; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IGooglePlayStore.cs — class: IGooglePlayStore; methods: no method signatures recognized; 2,730 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IGooglePlayStoreConnectionUseCase.cs — class: IGooglePlayStoreConnectionUseCase; methods: no method signatures recognized; 2,747 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IGooglePlayStoreExtendedPurchaseService.cs — class: IGooglePlayStoreExtendedPurchaseService; methods: no method signatures recognized; 2,753 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IGooglePlayStoreExtendedService.cs — class: IGooglePlayStoreExtendedService; methods: no method signatures recognized; 2,745 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IGooglePlayStoreExtensions.cs — class: IGooglePlayStoreExtensions; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IGooglePlayStoreSetObfuscatedIdUseCase.cs — class: IGooglePlayStoreSetObfuscatedIdUseCase; methods: no method signatures recognized; 2,752 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/INativeAppleStore.cs — class: INativeAppleStore; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/INativeStore.cs — class: INativeStore; methods: no method signatures recognized; 2,726 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IProductServiceFactoryManager.cs — class: IProductServiceFactoryManager; methods: no method signatures recognized; 2,743 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IProductServiceFactoryManagerInjectionPoint.cs — class: IProductServiceFactoryManagerInjectionPoint; methods: no method signatures recognized; 2,757 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IPurchaseServiceFactoryManager.cs — class: IPurchaseServiceFactoryManager; methods: no method signatures recognized; 2,744 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IPurchaseServiceFactoryManagerInjectionPoint.cs — class: IPurchaseServiceFactoryManagerInjectionPoint; methods: no method signatures recognized; 2,758 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreCheckEntitlementCallback.cs — class: IStoreCheckEntitlementCallback; methods: no method signatures recognized; 2,744 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreConnectCallback.cs — class: IStoreConnectCallback; methods: no method signatures recognized; 2,735 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreConnectUseCase.cs — class: IStoreConnectUseCase; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreConnectionStateService.cs — class: IStoreConnectionStateService; methods: no method signatures recognized; 2,742 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreController.cs — class: IStoreController; methods: no method signatures recognized; 2,730 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreExtension.cs — class: IStoreExtension; methods: no method signatures recognized; 2,729 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreFactory.cs — class: IStoreFactory; methods: no method signatures recognized; 2,727 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreListener.cs — class: IStoreListener; methods: no method signatures recognized; 2,728 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreManager.cs — class: IStoreManager; methods: no method signatures recognized; 2,727 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreManagerFactoryInjectionPoint.cs — class: IStoreManagerFactoryInjectionPoint; methods: no method signatures recognized; 2,748 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStorePurchaseCallback.cs — class: IStorePurchaseCallback; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStorePurchaseConfirmCallback.cs — class: IStorePurchaseConfirmCallback; methods: no method signatures recognized; 2,743 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStorePurchaseFetchCallback.cs — class: IStorePurchaseFetchCallback; methods: no method signatures recognized; 2,741 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreService.cs — class: IStoreService; methods: no method signatures recognized; 2,727 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreServiceExtension.cs — class: IStoreServiceExtension; methods: no method signatures recognized; 2,736 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreServiceFactory.cs — class: IStoreServiceFactory; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreServiceFactoryManager.cs — class: IStoreServiceFactoryManager; methods: no method signatures recognized; 2,741 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreServiceFactoryManagerInjectionPoint.cs — class: IStoreServiceFactoryManagerInjectionPoint; methods: no method signatures recognized; 2,755 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IStoreWrapper.cs — class: IStoreWrapper; methods: no method signatures recognized; 2,727 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IapSettings.cs — class: IapSettings; methods: no method signatures recognized; 2,725 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/IapSettingsConsts.cs — class: IapSettingsConsts; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Interfaces/IGooglePlayStoreService.cs — class: IGooglePlayStoreService; methods: no method signatures recognized; 2,748 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Interfaces/IRestoreTransactionsUseCase.cs — class: IRestoreTransactionsUseCase; methods: no method signatures recognized; 2,752 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/InvalidCartItemException.cs — class: InvalidCartItemException; methods: no method signatures recognized; 2,738 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/ListExtension.cs — class: ListExtension; methods: no method signatures recognized; 2,727 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/MacAppStore.cs — class: MacAppStore; methods: no method signatures recognized; 2,725 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Models/AndroidJavaObjectExtensions.cs — class: AndroidJavaObjectExtensions; methods: no method signatures recognized; 2,748 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/PendingOrder.cs — class: PendingOrder; methods: no method signatures recognized; 2,726 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/ProductServiceFactoryManager.cs — class: ProductServiceFactoryManager; methods: no method signatures recognized; 2,742 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/PurchaseServiceFactoryManager.cs — class: PurchaseServiceFactoryManager; methods: no method signatures recognized; 2,743 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/PurchasingManager.cs — class: PurchasingManager; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/SelectedAndroidStoreHelper.cs — class: SelectedAndroidStoreHelper; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Services/AppleStoreExtendedProductService.cs — class: AppleStoreExtendedProductService; methods: no method signatures recognized; 2,755 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Services/AppleStoreExtendedPurchaseService.cs — class: AppleStoreExtendedPurchaseService; methods: no method signatures recognized; 2,756 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/Services/AppleStoreExtendedService.cs — class: AppleStoreExtendedService; methods: no method signatures recognized; 2,748 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreCartValidator.cs — class: StoreCartValidator; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreConfiguration.cs — class: StoreConfiguration; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreConnectUseCase.cs — class: StoreConnectUseCase; methods: no method signatures recognized; 2,733 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreConnectUseCaseFactory.cs — class: StoreConnectUseCaseFactory; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreConnectionFailureDescription.cs — class: StoreConnectionFailureDescription; methods: no method signatures recognized; 2,747 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreConnectionStateService.cs — class: StoreConnectionStateService; methods: no method signatures recognized; 2,741 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreController.cs — class: StoreController; methods: no method signatures recognized; 2,729 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreException.cs — class: StoreException; methods: no method signatures recognized; 2,728 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreManager.cs — class: StoreManager; methods: no method signatures recognized; 2,726 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreService.cs — class: StoreService; methods: no method signatures recognized; 2,726 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreServiceContainer.cs — class: StoreServiceContainer; methods: no method signatures recognized; 2,735 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreServiceDependencyInjector.cs — class: StoreServiceDependencyInjector; methods: no method signatures recognized; 2,744 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreServiceFactoryManager.cs — class: StoreServiceFactoryManager; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreServiceProvider.cs — class: StoreServiceProvider; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreSpecificIds.cs — class: StoreSpecificIds; methods: no method signatures recognized; 2,730 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/StoreWrapper.cs — class: StoreWrapper; methods: no method signatures recognized; 2,726 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/AppleRestoreTransactionsUseCase.cs — class: AppleRestoreTransactionsUseCase; methods: no method signatures recognized; 2,754 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/FetchStorePromotionOrderUseCase.cs — class: FetchStorePromotionOrderUseCase; methods: no method signatures recognized; 2,754 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/FetchStorePromotionVisibilityUseCase.cs — class: FetchStorePromotionVisibilityUseCase; methods: no method signatures recognized; 2,759 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/Interfaces/IFetchStorePromotionOrderUseCase.cs — class: IFetchStorePromotionOrderUseCase; methods: no method signatures recognized; 2,766 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/Interfaces/IFetchStorePromotionVisibilityUseCase.cs — class: IFetchStorePromotionVisibilityUseCase; methods: no method signatures recognized; 2,771 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/Interfaces/ISetStorePromotionOrderUseCase.cs — class: ISetStorePromotionOrderUseCase; methods: no method signatures recognized; 2,764 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/Interfaces/ISetStorePromotionVisibilityUseCase.cs — class: ISetStorePromotionVisibilityUseCase; methods: no method signatures recognized; 2,769 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/SetStorePromotionOrderUseCase.cs — class: SetStorePromotionOrderUseCase; methods: no method signatures recognized; 2,752 bytes
+- Assets/Scripts/Unity.Purchasing/UnityEngine/Purchasing/UseCases/SetStorePromotionVisibilityUseCase.cs — class: SetStorePromotionVisibilityUseCase; methods: no method signatures recognized; 2,757 bytes
+- Assets/Scripts/Unity.Services.Analytics/Unity/Services/Analytics/ConsentManager.cs — class: ConsentManager; methods: no method signatures recognized; 2,730 bytes
+- Assets/Scripts/Unity.Services.Analytics/Unity/Services/Analytics/Internal/IdentityManager.cs — class: IdentityManager; methods: no method signatures recognized; 2,740 bytes
+- Assets/Scripts/Unity.Services.Analytics/Unity/Services/Analytics/Internal/SessionManager.cs — class: SessionManager; methods: no method signatures recognized; 2,739 bytes
+- Assets/Scripts/Unity.Services.Core.Configuration/Unity/Services/Core/Configuration/IConfigurationLoader.cs — class: IConfigurationLoader; methods: no method signatures recognized; 2,745 bytes
+- Assets/Scripts/Unity.Services.Core.Configuration/Unity/Services/Core/Configuration/MemoryConfigurationLoader.cs — class: MemoryConfigurationLoader; methods: no method signatures recognized; 2,750 bytes
+- Assets/Scripts/Unity.Services.Core.Configuration/Unity/Services/Core/Configuration/StreamingAssetsConfigurationLoader.cs — class: StreamingAssetsConfigurationLoader; methods: no method signatures recognized; 2,759 bytes
+- Assets/Scripts/Unity.Services.Core.Internal/Unity/Services/Authentication/Internal/IPlayerId.cs — class: IPlayerId; methods: no method signatures recognized; 2,739 bytes
+- Assets/Scripts/Unity.Services.Core.Internal/Unity/Services/Core/Networking/Internal/HttpRequestExtensions.cs — class: HttpRequestExtensions; methods: no method signatures recognized; 2,752 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/CharacterElement.cs — class: CharacterElement; methods: no method signatures recognized; 2,713 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/ITextPreprocessor.cs — class: ITextPreprocessor; methods: no method signatures recognized; 2,714 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/MaterialReferenceManager.cs — class: MaterialReferenceManager; methods: no method signatures recognized; 2,721 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/SpriteAssetUtilities/TexturePacker_JsonArray.cs — class: TexturePacker_JsonArray; methods: no method signatures recognized; 2,741 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_Character.cs — class: TMP_Character; methods: no method signatures recognized; 2,710 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_CharacterInfo.cs — class: TMP_CharacterInfo; methods: no method signatures recognized; 2,714 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_InputField.cs — class: TMP_InputField; methods: no method signatures recognized; 2,711 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_InputValidator.cs — class: TMP_InputValidator; methods: no method signatures recognized; 2,715 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_MaterialManager.cs — class: TMP_MaterialManager; methods: no method signatures recognized; 2,716 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_ResourceManager.cs — class: TMP_ResourceManager; methods: no method signatures recognized; 2,716 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_SelectionCaret.cs — class: TMP_SelectionCaret; methods: no method signatures recognized; 2,715 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_Settings.cs — class: TMP_Settings; methods: no method signatures recognized; 2,709 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_SpriteCharacter.cs — class: TMP_SpriteCharacter; methods: no method signatures recognized; 2,716 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_Text.cs — class: TMP_Text; methods: no method signatures recognized; 2,705 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextElement.cs — class: TMP_TextElement; methods: no method signatures recognized; 2,712 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextElement_Legacy.cs — class: TMP_TextElement_Legacy; methods: no method signatures recognized; 2,719 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextInfo.cs — class: TMP_TextInfo; methods: no method signatures recognized; 2,709 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextParsingUtilities.cs — class: TMP_TextParsingUtilities; methods: no method signatures recognized; 2,721 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_TextUtilities.cs — class: TMP_TextUtilities; methods: no method signatures recognized; 2,714 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMP_UpdateManager.cs — class: TMP_UpdateManager; methods: no method signatures recognized; 2,714 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TMPro_EventManager.cs — class: TMPro_EventManager; methods: no method signatures recognized; 2,715 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TextContainer.cs — class: TextContainer; methods: no method signatures recognized; 2,710 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TextMeshPro.cs — class: TextMeshPro; methods: no method signatures recognized; 2,708 bytes
+- Assets/Scripts/Unity.TextMeshPro/TMPro/TextMeshProUGUI.cs — class: TextMeshProUGUI; methods: no method signatures recognized; 2,712 bytes
+- Assets/Scripts/Unity.Timeline/UnityEngine/Timeline/TrackAssetExtensions.cs — class: TrackAssetExtensions; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/BaseInput.cs — class: BaseInput; methods: no method signatures recognized; 2,725 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/BaseInputModule.cs — class: BaseInputModule; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/PointerInputModule.cs — class: PointerInputModule; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/RaycasterManager.cs — class: RaycasterManager; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/StandaloneInputModule.cs — class: StandaloneInputModule; methods: no method signatures recognized; 2,737 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/TouchInputModule.cs — class: TouchInputModule; methods: no method signatures recognized; 2,732 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/UI/InputField.cs — class: InputField; methods: no method signatures recognized; 2,716 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Selectable.cs — class: Selectable; methods: no method signatures recognized; 2,716 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Text.cs — class: Text; methods: no method signatures recognized; 2,710 bytes
+- Assets/Scripts/UnityEngine.UI/UnityEngine/UIElements/UIToolkitInteroperabilityBridge.cs — class: UIToolkitInteroperabilityBridge; methods: no method signatures recognized; 2,745 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/GUISkin.cs — class: GUISkin; methods: no method signatures recognized; 2,710 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/TextCore/Text/TextColorGradient.cs — class: TextColorGradient; methods: no method signatures recognized; 2,734 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/TextCore/Text/TextSettings.cs — class: TextSettings; methods: no method signatures recognized; 2,729 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/TextCore/Text/TextStyleSheet.cs — class: TextStyleSheet; methods: no method signatures recognized; 2,731 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/UIElements/InputSystem/InputSystemEventSystem.cs — class: InputSystemEventSystem; methods: no method signatures recognized; 2,748 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/UIElements/PanelInputConfiguration.cs — class: PanelInputConfiguration; methods: no method signatures recognized; 2,737 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/UIElements/PanelSettings.cs — class: PanelSettings; methods: no method signatures recognized; 2,727 bytes
+- Assets/Scripts/UnityEngine/UnityEngine/UIElements/PanelTextSettings.cs — class: PanelTextSettings; methods: no method signatures recognized; 2,731 bytes
+
+## Prefabs whose names may relate to gameplay
+- Assets/GameObject/Boss 2 Rain Collider.prefab (17,000 bytes)
+- Assets/GameObject/Boss 2 Ten Up.prefab (4,873 bytes)
+- Assets/GameObject/Boss 2 Ten.prefab (4,823 bytes)
+- Assets/GameObject/Boss 2 bom 1.prefab (62,534 bytes)
+- Assets/GameObject/LevelLeader.prefab (1,313 bytes)
+- Assets/GameObject/NinjaPlatformROOT.prefab (1,319 bytes)
+- Assets/GameObject/Ragdoll 1.prefab (218,549 bytes)
+- Assets/GameObject/Ragdoll 2.prefab (218,528 bytes)
+- Assets/GameObject/Ragdoll Exp.prefab (440,400 bytes)
+- Assets/Resources/particle/BVParticle.prefab (108,422 bytes)
+
+## Visual assets with useful names
+- Assets/Texture2D/ARASHI MAIN 03.png (224,557 bytes)
+- Assets/Texture2D/Asset dh map thuong.png (1.09 MiB)
+- Assets/Texture2D/BOSS 1.png (43,903 bytes)
+- Assets/Texture2D/BOSS.png (1.15 MiB)
+- Assets/Texture2D/Main Menu Layout.png (2.49 MiB)
+- Assets/Texture2D/boss 2.png (40,868 bytes)
+- Assets/Texture2D/boss 3.png (119,250 bytes)
+- Assets/Texture2D/button.png (57,522 bytes)
+- Assets/Texture2D/layout character 01.png (1.61 MiB)
+- Assets/Texture2D/menu moi pro vai lon.png (745,148 bytes)
+- Assets/Texture2D/nha be lien nhau map tuyet.png (234,983 bytes)
+- Assets/Texture2D/nui map 3.1.png (580,507 bytes)
+- Assets/Texture2D/nui map 3.png (695,042 bytes)
+- Assets/Texture2D/skill info.png (12,086 bytes)
+- Assets/Texture2D/story layout 01.png (355,262 bytes)
+- Assets/Texture2D/story layout 02.png (3.02 MiB)
+- Assets/Texture2D/title 2048.png (2.31 MiB)
+
+## Important technical note
+- This recovery was made from a compiled Android game package. AssetRipper can restore assets, scene data, component fields and script shells, but cannot guarantee original C# gameplay logic is recovered from IL2CPP native binaries.
+- The intended changes are limited to the main character, weapons/abilities, game name/icon, story/dialogue and UI branding. Do not modify files under Assets/Scenes/ for this conversion; first locate referenced character/UI assets and scripts.
+- This scan does not change or replace any original files.
