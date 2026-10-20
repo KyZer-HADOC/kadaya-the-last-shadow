@@ -1,0 +1,113 @@
+name: Inspect original Unity runtime assets in cloud
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-runtime-asset-inspection.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout extracted Android game files
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install Unity asset inspection library
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy
+
+      - name: Inspect Unity runtime data without changing files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter, defaultdict
+          import UnityPy, traceback
+
+          data = Path("assets/bin/Data")
+          if not data.is_dir():
+              raise SystemExit("assets/bin/Data not found in repository checkout.")
+          target = data / "data.unity3d"
+          lines = [
+              "# Original Unity runtime asset inspection",
+              "",
+              "This report inspects the extracted game's runtime data inside GitHub Actions. It does not modify game files.",
+              "",
+              f"- data.unity3d exists: {target.exists()}",
+              f"- data.unity3d size: {target.stat().st_size:,} bytes" if target.exists() else "- data.unity3d missing",
+              "",
+              "## Input files under assets/bin/Data",
+          ]
+          for p in sorted(data.rglob("*")):
+              if p.is_file():
+                  lines.append(f"- {p.as_posix()} — {p.stat().st_size:,} bytes")
+
+          env = None
+          attempts = []
+          for input_path in (str(data), str(target)):
+              try:
+                  env = UnityPy.load(input_path)
+                  attempts.append(f"UnityPy.load({input_path}) succeeded")
+                  break
+              except Exception as exc:
+                  attempts.append(f"UnityPy.load({input_path}) failed: {type(exc).__name__}: {exc}")
+          lines += ["", "## Parse result"] + [f"- {x}" for x in attempts]
+          if env is None:
+              lines += ["", "UnityPy could not parse the runtime data with the current library/version."]
+          else:
+              counts = Counter()
+              names = defaultdict(list)
+              failures = []
+              for obj in env.objects:
+                  kind = getattr(obj.type, "name", str(obj.type))
+                  counts[kind] += 1
+                  try:
+                      data_obj = obj.read()
+                      name = getattr(data_obj, "m_Name", None)
+                      if name:
+                          names[kind].append((str(name), int(getattr(obj, "path_id", 0)), getattr(obj, "assets_file", None).name if getattr(obj, "assets_file", None) else "unknown"))
+                      if kind in {"Texture2D", "Sprite", "TextAsset", "AnimationClip", "AnimatorController", "GameObject", "MonoBehaviour"}:
+                          # Keep an entry even for unnamed objects, useful for counts.
+                          pass
+                  except Exception as exc:
+                      failures.append(f"{kind} path_id={getattr(obj, 'path_id', '?')}: {type(exc).__name__}: {exc}")
+
+              lines += ["", "## Parsed object counts"]
+              lines += [f"- {kind}: {count}" for kind, count in counts.most_common()]
+              for kind in ["AssetBundle", "Texture2D", "Sprite", "TextAsset", "AnimationClip", "AnimatorController", "GameObject", "MonoBehaviour", "Font"]:
+                  vals = names.get(kind, [])
+                  lines += ["", f"## Named objects: {kind} ({len(vals)} names)"]
+                  lines += [f"- {name} | path_id={pid} | file={file_name}" for name, pid, file_name in vals[:450]] or ["- No named objects found."]
+              lines += ["", "## Read errors"]
+              lines += [f"- {x}" for x in failures[:80]] or ["- No object read errors reported."]
+
+              # Save a tiny summary for follow-up scripted patching.
+              lines += ["", "## Patch feasibility notes",
+                        "- If the named Texture2D/Sprite entries correspond to the images exported by AssetRipper, a small runtime asset patch may be possible without downloading the 1.77 GB recovered project.",
+                        "- This pass is read-only. No original bytes were modified, and no APK was rebuilt."]
+          out = Path("analysis/source-runtime-assets.md")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          print(f"Wrote {out}, {out.stat().st_size:,} bytes")
+          PY
+
+      - name: Commit inspection report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/source-runtime-assets.md
+          if git diff --cached --quiet; then
+            echo "No report changes."
+          else
+            git commit -m "Inspect original Unity runtime assets"
+            git push
+          fi
