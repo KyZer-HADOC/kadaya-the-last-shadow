@@ -1,0 +1,144 @@
+game_object,component_file_id,sprite_guid,sprite_asset,texture_images,status
+TransFormer,4840,,,,sprite reference GUID missing
+FiPos,4961,,,,sprite reference GUID missing
+bodytren03,4964,1e6facea587fd4546a24254515c9149c,Assets/Sprite/bodytren03.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+chan_phai,4965,7cb86ee575b3ae04895d4f003822cefc,Assets/Sprite/chan_phai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+kiemchem03,4967,6e5dc19e0337cbe45af19daad07fd493,Assets/Sprite/kiemchem03.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+o-03,4968,0e626ac5d69430b458feca87e8995a1f,Assets/Sprite/o-03.asset,Assets/Texture2D/umbrella.png,texture source resolved
+vai_trai02,4969,82a17d2e681c74e44bd238819b4697fb,Assets/Sprite/vai_trai02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+tay_trai,4970,56190dd0f002edc4d83254755a2733eb,Assets/Sprite/tay_trai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+banchan_trai_skill01,4972,616aacec60a31234b963834f193a0305,Assets/Sprite/banchan_trai_skill01.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+o-01,4982,e04e24f866564104db54b747fa493cca,Assets/Sprite/o-01.asset,Assets/Texture2D/umbrella.png,texture source resolved
+bantaytrai_03,4990,95ac5d6c9ded7f04a9edaa0d031f83b0,Assets/Sprite/bantaytrai_03.asset,Assets/Texture2D/skeleton.png,texture source resolved
+o-02,4991,8e9d07990a2fc4b48883805d7447269f,Assets/Sprite/o-02.asset,Assets/Texture2D/umbrella.png,texture source resolved
+effect_phi02,4992,430c78dbd71123e4e9171ace5afb2636,Assets/Sprite/effect_phi02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+effect_phi01,4993,9e343bd4b03e12f4498cddba4a41b6a9,Assets/Sprite/effect_phi01.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bantay_phai02,4995,681f04e8acef1a443a3c63af9a374f7f,Assets/Sprite/bantay_phai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+banchan_phai02,4996,7c8dfe5e5413e9c4a9eb624c1e6d9fd8,Assets/Sprite/banchan_phai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+o-04,4997,251f40e58d3358a478106fb3328c0503,Assets/Sprite/o-04.asset,Assets/Texture2D/umbrella.png,texture source resolved
+banchan_phai02,4999,7c8dfe5e5413e9c4a9eb624c1e6d9fd8,Assets/Sprite/banchan_phai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bantay_phai03,5009,522a89d41b7f0784db70771a0f7b338f,Assets/Sprite/bantay_phai03.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+effect_phi02,5010,430c78dbd71123e4e9171ace5afb2636,Assets/Sprite/effect_phi02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+effect02,5011,8d8cd2198c3d5d747ab2614cbc8544eb,Assets/Sprite/effect02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+T3,5012,1f875f9fc7119b14e8940ef297b29b5e,Assets/Sprite/t3.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+T5,5014,e7a43dbec2ce7754e90ee2902d63546c,Assets/Sprite/t5.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+T11,5015,170ea2f4fa5a1974fa4bb8e6d21fc404,Assets/Sprite/t11.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+baokiem,5016,2464f7ccf8462a545889fd1b6853336f,Assets/Sprite/baokiem.asset,Assets/Texture2D/skeleton.png,texture source resolved
+non,5018,,,,sprite reference GUID missing
+effect04,5019,496af21de3d5f4e4e9486de4663f9729,Assets/Sprite/effect04.asset,Assets/Texture2D/skeleton.png,texture source resolved
+effect01,5020,5df5c5a4f4010fc40a886d61f1fdc9bc,Assets/Sprite/effect01.asset,Assets/Texture2D/skeleton.png,texture source resolved
+kiemchem,5028,c92a1754beb009c46afd9ef950bcbd4d,Assets/Sprite/kiemchem.asset,Assets/Texture2D/skeleton.png,texture source resolved
+T6,5029,04c15f910738fc046ba0d60e71511bce,Assets/Sprite/t6.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+T0 bu,5030,caefbe07b7e5e574f88d0795b7f03fcb,Assets/Sprite/t0.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+body_duoi,5031,962a648f31f66e046873fe8d5d455bff,Assets/Sprite/body_duoi.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+T0,5032,b7924fb5564969f47a0841b0c0128bdf,Assets/Resources/mask/T0.asset,Assets/Resources/mask/T0.png,texture source resolved
+kiem_block02,5033,825516b27f9625a4783e9fa1351045cb,Assets/Sprite/kiem_block02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+toc,5034,a2b707388967c814b8859084fcd274dd,Assets/Sprite/toc.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+neck,5037,c90f79b6fa2c73846a045b960090f2d8,Assets/Sprite/neck.asset,Assets/Texture2D/skeleton.png,texture source resolved
+tay_phai,5038,a0b665457ffe4f945bea5448cd07b8e5,Assets/Sprite/tay_phai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+dui_trai,5042,89638e3451935ab4780310955da7f44c,Assets/Sprite/dui_trai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+chan_trai01,5043,a0031c91001d1ae46be3abe2d59a9088,Assets/Sprite/chan_trai01_1.asset,Assets/Texture2D/skeleton.png,texture source resolved
+vai_phai,5044,78cad223ea0ceac4e861c78a23000f7a,Assets/Sprite/vai_phai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+effect_phi01,5047,9e343bd4b03e12f4498cddba4a41b6a9,Assets/Sprite/effect_phi01.asset,Assets/Texture2D/skeleton.png,texture source resolved
+tay_trai,5049,56190dd0f002edc4d83254755a2733eb,Assets/Sprite/tay_trai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+chan_trai02,5065,974c5447b745c32478667283b3688e7a,Assets/Sprite/chan_trai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+banchan_trai01,5068,aee876494bf93e848ba87fa685be6b55,Assets/Sprite/banchan_trai01_0.asset,Assets/Texture2D/skeleton.png,texture source resolved
+chan_trai02,5069,974c5447b745c32478667283b3688e7a,Assets/Sprite/chan_trai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bodytren04,5071,251ecd16269395543bd41527ccade89d,Assets/Sprite/bodytren04.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+T2,5072,a7c15f16d14e98a459e91bb45a72a84b,Assets/Sprite/t2.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+bantayphai05,5073,bb66cd0a858bd4f4194522fb7f0db7d6,Assets/Sprite/bantayphai05.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+dui_phai02,5074,4fbd6db788d57e5479092fb129146c6b,Assets/Sprite/dui_phai02_1.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+T4,5076,3fb77150df088da469919c3466ea2d71,Assets/Sprite/t4.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+effect03,5078,74c3b1177c3502543a3f35e71d142091,Assets/Sprite/effect03.asset,Assets/Texture2D/skeleton.png,texture source resolved
+non,5079,bd1d6e0cd69728f41ab7ec4cb3006d7e,Assets/Sprite/non.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+dui_trai02,5080,35c655ce42484884e9e55b859c7a0787,Assets/Sprite/dui_trai02_1.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+T9,5081,848532282f7ce0148a46c545511d6357,Assets/Sprite/t9.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+effect00,5084,f0901caaa4ae3a64fa44c5fd4ae56330,Assets/Sprite/effect00.asset,Assets/Texture2D/skeleton.png,texture source resolved
+banchan_phai01,5085,816a5c8ee7c0ade4d8d77476b15f8f18,Assets/Sprite/banchan_phai01_0.asset,Assets/Texture2D/skeleton.png,texture source resolved
+kiem01,5086,0b32d4449ee640e439db5875dcd8f373,Assets/Sprite/kiem01.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+banchan_trai_skill01,5087,616aacec60a31234b963834f193a0305,Assets/Sprite/banchan_trai_skill01.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+kiemchem,5088,c92a1754beb009c46afd9ef950bcbd4d,Assets/Sprite/kiemchem.asset,Assets/Texture2D/skeleton.png,texture source resolved
+banchan_phai01,5089,816a5c8ee7c0ade4d8d77476b15f8f18,Assets/Sprite/banchan_phai01_0.asset,Assets/Texture2D/skeleton.png,texture source resolved
+neck,5095,c90f79b6fa2c73846a045b960090f2d8,Assets/Sprite/neck.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bantay_phai01,5096,340c9fa11b2fff740b6289fd2bf60a65,Assets/Sprite/bantay_phai01.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bantay_phai04,5097,0735072e90e29d34bbb4988eee6c7d04,Assets/Sprite/bantay_phai04.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+dui_phai02,5100,4fbd6db788d57e5479092fb129146c6b,Assets/Sprite/dui_phai02_1.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+kiem_block,5106,5b54c95d7375bdb448f0db46bc8e0dc8,Assets/Sprite/kiem_block.asset,Assets/Texture2D/skeleton.png,texture source resolved
+T10,5107,26263228b639df742a4acc8b89edb4db,Assets/Sprite/t10.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+tay_phai02,5108,cc456ed552efbd04096270c8f354d829,Assets/Sprite/tay_phai02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+chuoikiem,5109,f8f37737147536943bf0833642715e1f,Assets/Sprite/chuoikiem.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bodytren04,5110,251ecd16269395543bd41527ccade89d,Assets/Sprite/bodytren04.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+vai_trai,5111,8d424a31aacdd1f49b2c0330df09820d,Assets/Sprite/vai_trai.asset,Assets/Texture2D/skeleton.png,texture source resolved
+T1,5117,6c12e7cd51c46d34bb28649f5a23aab3,Assets/Sprite/t1.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+non,5119,,,,sprite reference GUID missing
+bantay_phai04,5120,0735072e90e29d34bbb4988eee6c7d04,Assets/Sprite/bantay_phai04.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+effect04,5121,496af21de3d5f4e4e9486de4663f9729,Assets/Sprite/effect04.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bodytren02,5122,fa6570b959a2e4a45ad146df309e1a53,Assets/Sprite/bodytren02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+banchan_trai02,5123,1a5fe976da1e85340aa4147ae78fb629,Assets/Sprite/banchan_trai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bodytren02,5129,fa6570b959a2e4a45ad146df309e1a53,Assets/Sprite/bodytren02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+kiem_block,5132,5b54c95d7375bdb448f0db46bc8e0dc8,Assets/Sprite/kiem_block.asset,Assets/Texture2D/skeleton.png,texture source resolved
+kiemchem07,5134,dd58f68401870ea4395d039510cac9d3,Assets/Sprite/kiemchem07.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+banchanphai03,5142,47f0ea7f3b175cd4fa2568955bf0ec48,Assets/Sprite/banchanphai03.asset,Assets/Texture2D/skeleton.png,texture source resolved
+o-01b,5152,615692d70176d424780027fb3d178f63,Assets/Sprite/o-01b.asset,Assets/Texture2D/umbrella.png,texture source resolved
+head,5153,e699a5ce601ac484ea9a5664219ccc44,Assets/Sprite/head.asset,Assets/Texture2D/skeleton.png,texture source resolved
+body_tren,5155,80c611c863665a248b51dfa6f9931ca0,Assets/Sprite/body_tren.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+chuoikiem,5156,f8f37737147536943bf0833642715e1f,Assets/Sprite/chuoikiem.asset,Assets/Texture2D/skeleton.png,texture source resolved
+o-02b,5157,4a1194250122ef540b95b7cd3b179c35,Assets/Sprite/o-02b.asset,Assets/Texture2D/umbrella.png,texture source resolved
+kiemchem04,5158,52067e14530ed2c4e9d47b13ce08be7f,Assets/Sprite/kiemchem04.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+bantay_trai01,5159,0d9438ab09afbe6478c2fded9fb2ad4f,Assets/Sprite/bantay_trai01.asset,Assets/Texture2D/skeleton.png,texture source resolved
+vai_phai,5169,78cad223ea0ceac4e861c78a23000f7a,Assets/Sprite/vai_phai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+T7,5170,632ef6315d3229c4aa1a7430629bb996,Assets/Sprite/t7.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+body_tren,5171,80c611c863665a248b51dfa6f9931ca0,Assets/Sprite/body_tren.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+bantay_trai02,5173,37f5b19c7bae33d4f86c18379e778b1a,Assets/Sprite/bantay_trai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+toc,5175,a2b707388967c814b8859084fcd274dd,Assets/Sprite/toc.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+banchan_trai01,5176,aee876494bf93e848ba87fa685be6b55,Assets/Sprite/banchan_trai01_0.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bantaytrai_03,5177,95ac5d6c9ded7f04a9edaa0d031f83b0,Assets/Sprite/bantaytrai_03.asset,Assets/Texture2D/skeleton.png,texture source resolved
+non,5178,bd1d6e0cd69728f41ab7ec4cb3006d7e,Assets/Sprite/non.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+bantay_phai02,5181,681f04e8acef1a443a3c63af9a374f7f,Assets/Sprite/bantay_phai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+banchan_trai02,5183,1a5fe976da1e85340aa4147ae78fb629,Assets/Sprite/banchan_trai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+body,5184,41130a1b8e06b7c49b67ebee61ba4ea4,Assets/Sprite/body.asset,Assets/Texture2D/umbrella.png,texture source resolved
+effect03,5185,74c3b1177c3502543a3f35e71d142091,Assets/Sprite/effect03.asset,Assets/Texture2D/skeleton.png,texture source resolved
+Moc,5186,c39f2a0f9dd7cfc4db497bc87893df6f,Assets/Sprite/moc2_0.asset,Assets/Texture2D/moc2.png,texture source resolved
+bantayphai05,5189,bb66cd0a858bd4f4194522fb7f0db7d6,Assets/Sprite/bantayphai05.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+kiemchem04,5195,52067e14530ed2c4e9d47b13ce08be7f,Assets/Sprite/kiemchem04.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+dui_phai,5197,06dc494df9a4d064ebd251888cbb4525,Assets/Sprite/dui_phai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+dui_trai02,5199,35c655ce42484884e9e55b859c7a0787,Assets/Sprite/dui_trai02_1.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+ong_tho,5201,b8592abd98f913f4ab5f3e65ca43ec4b,Assets/Sprite/ong_tho.asset,Assets/Texture2D/skeleton.png,texture source resolved
+T8,5202,e05d2d9aab49ce34aac6c1a07d058081,Assets/Sprite/t8.asset,Assets/Texture2D/bien hinh 01.png,texture source resolved
+non,5203,bd1d6e0cd69728f41ab7ec4cb3006d7e,Assets/Sprite/non.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+chan_phai02,5213,06774f80ee96c844380e46cb87c4dc7f,Assets/Sprite/chan_phai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+banchanphai03,5222,47f0ea7f3b175cd4fa2568955bf0ec48,Assets/Sprite/banchanphai03.asset,Assets/Texture2D/skeleton.png,texture source resolved
+body_duoi,5223,962a648f31f66e046873fe8d5d455bff,Assets/Sprite/body_duoi.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+vai_trai,5224,8d424a31aacdd1f49b2c0330df09820d,Assets/Sprite/vai_trai.asset,Assets/Texture2D/skeleton.png,texture source resolved
+kiemchem02,5226,e07bfc57134131142a15f851e5f2d567,Assets/Sprite/kiemchem02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+effect02,5229,8d8cd2198c3d5d747ab2614cbc8544eb,Assets/Sprite/effect02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bantay_phai03,5230,522a89d41b7f0784db70771a0f7b338f,Assets/Sprite/bantay_phai03.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+o-05,5231,920ab3e15562eed4d9fb039c4a17c5e8,Assets/Sprite/test01_0.asset,Assets/Texture2D/test01.png,texture source resolved
+ong_tho,5232,b8592abd98f913f4ab5f3e65ca43ec4b,Assets/Sprite/ong_tho.asset,Assets/Texture2D/skeleton.png,texture source resolved
+kiem_block02,5235,825516b27f9625a4783e9fa1351045cb,Assets/Sprite/kiem_block02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bantay_trai01,5244,0d9438ab09afbe6478c2fded9fb2ad4f,Assets/Sprite/bantay_trai01.asset,Assets/Texture2D/skeleton.png,texture source resolved
+bantay_trai02,5245,37f5b19c7bae33d4f86c18379e778b1a,Assets/Sprite/bantay_trai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+kiemchem02,5246,e07bfc57134131142a15f851e5f2d567,Assets/Sprite/kiemchem02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+tay_phai,5247,a0b665457ffe4f945bea5448cd07b8e5,Assets/Sprite/tay_phai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+head,5248,e699a5ce601ac484ea9a5664219ccc44,Assets/Sprite/head.asset,Assets/Texture2D/skeleton.png,texture source resolved
+chan_phai,5249,7cb86ee575b3ae04895d4f003822cefc,Assets/Sprite/chan_phai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+dui_phai,5250,06dc494df9a4d064ebd251888cbb4525,Assets/Sprite/dui_phai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+bantay_phai01,5251,340c9fa11b2fff740b6289fd2bf60a65,Assets/Sprite/bantay_phai01.asset,Assets/Texture2D/skeleton.png,texture source resolved
+thoitieu,5253,9b2e6d8a924f4bf4a96c97b689c7a22e,Assets/Sprite/thoitieu.asset,Assets/Texture2D/skeleton.png,texture source resolved
+baokiem,5262,2464f7ccf8462a545889fd1b6853336f,Assets/Sprite/baokiem.asset,Assets/Texture2D/skeleton.png,texture source resolved
+kiem01,5263,0b32d4449ee640e439db5875dcd8f373,Assets/Sprite/kiem01.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+bodytren03,5264,1e6facea587fd4546a24254515c9149c,Assets/Sprite/bodytren03.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+chan_trai01,5265,a0031c91001d1ae46be3abe2d59a9088,Assets/Sprite/chan_trai01_1.asset,Assets/Texture2D/skeleton.png,texture source resolved
+tay_phai02,5266,cc456ed552efbd04096270c8f354d829,Assets/Sprite/tay_phai02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+head_02,5268,4d239f46aeead3445a2d3e0da2df782f,Assets/Sprite/head_02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+kiemchem07,5269,dd58f68401870ea4395d039510cac9d3,Assets/Sprite/kiemchem07.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+dui_trai,5270,89638e3451935ab4780310955da7f44c,Assets/Sprite/dui_trai.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+kiemchem05,5275,2a61b6d37abcc7c40883949f02436814,Assets/Sprite/kiemchem05.asset,Assets/Texture2D/skeleton.png,texture source resolved
+kiemchem05,5276,2a61b6d37abcc7c40883949f02436814,Assets/Sprite/kiemchem05.asset,Assets/Texture2D/skeleton.png,texture source resolved
+chan_phai02,5284,06774f80ee96c844380e46cb87c4dc7f,Assets/Sprite/chan_phai02.asset,Assets/Texture2D/skeleton.png,texture source resolved
+head_02,5285,4d239f46aeead3445a2d3e0da2df782f,Assets/Sprite/head_02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+kiemchem03,5291,6e5dc19e0337cbe45af19daad07fd493,Assets/Sprite/kiemchem03.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+effect01,5302,5df5c5a4f4010fc40a886d61f1fdc9bc,Assets/Sprite/effect01.asset,Assets/Texture2D/skeleton.png,texture source resolved
+vai_trai02,5303,82a17d2e681c74e44bd238819b4697fb,Assets/Sprite/vai_trai02.asset,Assets/Texture2D/skeleton2.png,texture source resolved
+thoitieu,5311,9b2e6d8a924f4bf4a96c97b689c7a22e,Assets/Sprite/thoitieu.asset,Assets/Texture2D/skeleton.png,texture source resolved
+effect00,5320,f0901caaa4ae3a64fa44c5fd4ae56330,Assets/Sprite/effect00.asset,Assets/Texture2D/skeleton.png,texture source resolved

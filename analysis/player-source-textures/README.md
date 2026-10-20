@@ -1,0 +1,102 @@
+# Actual Kadaya player source-texture inspection
+
+Read-only cloud scan: no gameplay scene, map or level was edited.
+
+- Scene inspected: Assets/Scenes/b1.unity
+- SpriteRenderer components found inside player hierarchy: 143
+- Sprite assets resolved: 80
+- Direct texture images resolved: 7
+- Project Unity version: m_EditorVersion: 6000.2.6f2
+
+## Player rig sprite-part files
+- Assets/Resources/mask/T0.asset
+- Assets/Sprite/banchan_phai01_0.asset
+- Assets/Sprite/banchan_phai02.asset
+- Assets/Sprite/banchan_trai01_0.asset
+- Assets/Sprite/banchan_trai02.asset
+- Assets/Sprite/banchan_trai_skill01.asset
+- Assets/Sprite/banchanphai03.asset
+- Assets/Sprite/bantay_phai01.asset
+- Assets/Sprite/bantay_phai02.asset
+- Assets/Sprite/bantay_phai03.asset
+- Assets/Sprite/bantay_phai04.asset
+- Assets/Sprite/bantay_trai01.asset
+- Assets/Sprite/bantay_trai02.asset
+- Assets/Sprite/bantayphai05.asset
+- Assets/Sprite/bantaytrai_03.asset
+- Assets/Sprite/baokiem.asset
+- Assets/Sprite/body.asset
+- Assets/Sprite/body_duoi.asset
+- Assets/Sprite/body_tren.asset
+- Assets/Sprite/bodytren02.asset
+- Assets/Sprite/bodytren03.asset
+- Assets/Sprite/bodytren04.asset
+- Assets/Sprite/chan_phai.asset
+- Assets/Sprite/chan_phai02.asset
+- Assets/Sprite/chan_trai01_1.asset
+- Assets/Sprite/chan_trai02.asset
+- Assets/Sprite/chuoikiem.asset
+- Assets/Sprite/dui_phai.asset
+- Assets/Sprite/dui_phai02_1.asset
+- Assets/Sprite/dui_trai.asset
+- Assets/Sprite/dui_trai02_1.asset
+- Assets/Sprite/effect00.asset
+- Assets/Sprite/effect01.asset
+- Assets/Sprite/effect02.asset
+- Assets/Sprite/effect03.asset
+- Assets/Sprite/effect04.asset
+- Assets/Sprite/effect_phi01.asset
+- Assets/Sprite/effect_phi02.asset
+- Assets/Sprite/head.asset
+- Assets/Sprite/head_02.asset
+- Assets/Sprite/kiem01.asset
+- Assets/Sprite/kiem_block.asset
+- Assets/Sprite/kiem_block02.asset
+- Assets/Sprite/kiemchem.asset
+- Assets/Sprite/kiemchem02.asset
+- Assets/Sprite/kiemchem03.asset
+- Assets/Sprite/kiemchem04.asset
+- Assets/Sprite/kiemchem05.asset
+- Assets/Sprite/kiemchem07.asset
+- Assets/Sprite/moc2_0.asset
+- Assets/Sprite/neck.asset
+- Assets/Sprite/non.asset
+- Assets/Sprite/o-01.asset
+- Assets/Sprite/o-01b.asset
+- Assets/Sprite/o-02.asset
+- Assets/Sprite/o-02b.asset
+- Assets/Sprite/o-03.asset
+- Assets/Sprite/o-04.asset
+- Assets/Sprite/ong_tho.asset
+- Assets/Sprite/t0.asset
+- Assets/Sprite/t1.asset
+- Assets/Sprite/t10.asset
+- Assets/Sprite/t11.asset
+- Assets/Sprite/t2.asset
+- Assets/Sprite/t3.asset
+- Assets/Sprite/t4.asset
+- Assets/Sprite/t5.asset
+- Assets/Sprite/t6.asset
+- Assets/Sprite/t7.asset
+- Assets/Sprite/t8.asset
+- Assets/Sprite/t9.asset
+- Assets/Sprite/tay_phai.asset
+- Assets/Sprite/tay_phai02.asset
+- Assets/Sprite/tay_trai.asset
+- Assets/Sprite/test01_0.asset
+- Assets/Sprite/thoitieu.asset
+- Assets/Sprite/toc.asset
+- Assets/Sprite/vai_phai.asset
+- Assets/Sprite/vai_trai.asset
+- Assets/Sprite/vai_trai02.asset
+
+## Source texture images
+- Assets/Resources/mask/T0.png (80,980 bytes)
+- Assets/Texture2D/bien hinh 01.png (1,085,870 bytes)
+- Assets/Texture2D/moc2.png (2,855 bytes)
+- Assets/Texture2D/skeleton.png (276,874 bytes)
+- Assets/Texture2D/skeleton2.png (143,772 bytes)
+- Assets/Texture2D/test01.png (17,592 bytes)
+- Assets/Texture2D/umbrella.png (37,296 bytes)
+
+The CSV lists the source .asset file for each SpriteRenderer part and any direct image GUID reference found inside the Sprite asset. No project asset has been modified.
