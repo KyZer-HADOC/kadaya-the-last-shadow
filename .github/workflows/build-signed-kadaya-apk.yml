@@ -6,7 +6,7 @@ on:
       reskin_run_id:
         description: "Successful visual reskin workflow run ID"
         required: true
-        default: "39451554485"
+        default: "39452918403"
         type: string
   push:
     paths:
@@ -50,7 +50,7 @@ jobs:
           name: kadaya-reskin-visual-patch
           path: ${{ runner.temp }}/kadaya-visual-patch
           repository: ${{ github.repository }}
-          run-id: ${{ inputs.reskin_run_id || '39451554485' }}
+          run-id: ${{ inputs.reskin_run_id || '39452918403' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download and verify official Apktool 3.0.3
@@ -272,8 +272,8 @@ jobs:
           cat > kadaya-final-build/README.txt <<'EOF'
           KADAYA | THE AGE OF SHADOWS — visual test build
 
-          This is a signed Kadaya visual test build with a reskinned character/weapon/effect atlases, Kadaya title and launcher icon.
-          Existing ability/weapon UI labels and descriptions were rebranded (e.g. Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, Sword of Tatsuma to Kadaya's Shadow Blade) and story/tutorial dialogue was updated for Kadaya, Raizen and Krayoo.
+          This is a signed Kadaya visual test build with a reskinned character/weapon/effect atlas, Kadaya title and launcher icon, two bilingual story-card artworks, rewritten in-game tutorial/story TextMesh strings, and rebranded ability/weapon UI labels.
+          Existing ability/weapon UI labels were rebranded (e.g. Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, Sword of Tatsuma to Kadaya's Shadow Blade), while the underlying mechanics remain from the source game.
           Existing playable map/level scenes, transforms, colliders and level layouts were not edited.
           This build uses a temporary test signing key generated during CI; it cannot update an installation signed with the original developer's key.
           If the original game is installed, back up progress before uninstalling it to try this test build.
