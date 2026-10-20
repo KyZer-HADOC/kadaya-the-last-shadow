@@ -690,15 +690,17 @@ jobs:
               "unique_dialogue_rewrites": dialogue_summary,
           }, ensure_ascii=False, indent=2), encoding="utf-8")
 
-          # Tune the existing Dash ability in its serialized component data.
+          # Tune existing serialized movement fields in NinjaMovementScript.
           # Unity's stripped custom MonoBehaviour stream begins after the 32-byte base header.
-          # The two bools at bytes 64-65 are followed by two alignment bytes:
-          # maxVelocity=68, dashSpeedUp=72, dashSpeedDown=76, dashSpeed=80, dashTime=92.
-          # This modifies only existing numeric fields. It creates no new methods or abilities.
+          # Field offsets verified against dump.cs and multiple raw serialized objects:
+          # dashSpeed=80, dashTime=92, JumpForce=124.
+          # This modifies existing values only; it creates no new methods or abilities.
           dash_tuning_changes = []
           dash_tuning_expected = {}
-          dash_components_seen = 0
-          dash_components_skipped = 0
+          jump_tuning_changes = []
+          jump_tuning_expected = {}
+          player_components_seen = 0
+          player_components_skipped = 0
           for obj in env.objects:
               if getattr(obj.type, "name", "") != "MonoBehaviour":
                   continue
@@ -711,26 +713,31 @@ jobs:
                   if str(getattr(script_data, "m_ClassName", "") or "") != "NinjaMovementScript":
                       continue
 
-                  dash_components_seen += 1
+                  player_components_seen += 1
                   raw = obj.get_raw_data()
-                  if len(raw) < 104:
-                      dash_components_skipped += 1
+                  if len(raw) < 128:
+                      player_components_skipped += 1
                       continue
 
                   old_speed = struct.unpack_from("<f", raw, 80)[0]
                   old_duration = struct.unpack_from("<f", raw, 92)[0]
-                  # Require sensible known game values; never patch if the layout/value signature differs.
+                  old_jump_force = struct.unpack_from("<f", raw, 124)[0]
+                  # Require each value to fall in known, sensible ranges before patching.
                   if (not math.isfinite(old_speed) or not math.isfinite(old_duration)
+                      or not math.isfinite(old_jump_force)
                       or not (15.0 <= old_speed <= 60.0)
-                      or not (0.15 <= old_duration <= 0.8)):
-                      dash_components_skipped += 1
+                      or not (0.15 <= old_duration <= 0.8)
+                      or not (10.0 <= old_jump_force <= 35.0)):
+                      player_components_skipped += 1
                       continue
 
                   new_speed = round(old_speed * 1.20, 5)
                   new_duration = round(old_duration * 1.10, 5)
+                  new_jump_force = round(old_jump_force * 1.10, 5)
                   mutable = bytearray(raw)
                   struct.pack_into("<f", mutable, 80, new_speed)
                   struct.pack_into("<f", mutable, 92, new_duration)
+                  struct.pack_into("<f", mutable, 124, new_jump_force)
                   obj.set_raw_data(bytes(mutable))
 
                   asset_file = getattr(getattr(obj, "assets_file", None), "name", "unknown")
@@ -750,31 +757,53 @@ jobs:
                       "old_dash_time_seconds": old_duration,
                       "new_dash_time_seconds": new_duration,
                   })
+                  jump_tuning_expected[key] = {
+                      "old_jump_force": old_jump_force,
+                      "new_jump_force": new_jump_force,
+                  }
+                  jump_tuning_changes.append({
+                      "file": asset_file,
+                      "path_id": path_id,
+                      "old_jump_force": old_jump_force,
+                      "new_jump_force": new_jump_force,
+                  })
               except Exception:
-                  dash_components_skipped += 1
+                  player_components_skipped += 1
                   continue
 
-          if len(dash_tuning_changes) < 20:
+          if len(dash_tuning_changes) < 20 or len(jump_tuning_changes) < 20:
               raise SystemExit(
-                  f"Dash parameter patch refused: expected at least 20 recognized player components; "
-                  f"found {len(dash_tuning_changes)} of {dash_components_seen}."
+                  "Movement parameter patch refused: expected at least 20 recognized player components; "
+                  f"Dash tuned {len(dash_tuning_changes)}, Jump tuned {len(jump_tuning_changes)}, "
+                  f"seen {player_components_seen}."
               )
           dash_summary = {
-              "player_components_seen": dash_components_seen,
+              "player_components_seen": player_components_seen,
               "player_components_tuned": len(dash_tuning_changes),
-              "player_components_skipped": dash_components_skipped,
+              "player_components_skipped": player_components_skipped,
               "dash_speed_multiplier": 1.20,
               "dash_duration_multiplier": 1.10,
               "details": dash_tuning_changes,
               "note": "Existing Dash is faster and lasts slightly longer. No new native ability logic is added."
           }
+          jump_summary = {
+              "player_components_seen": player_components_seen,
+              "player_components_tuned": len(jump_tuning_changes),
+              "player_components_skipped": player_components_skipped,
+              "jump_force_multiplier": 1.10,
+              "details": jump_tuning_changes,
+              "note": "Existing jump force increased by 10%; no scene geometry or level layout was changed."
+          }
           (preview / "kadaya-shadow-dash-tuning.json").write_text(
               json.dumps(dash_summary, ensure_ascii=False, indent=2), encoding="utf-8"
           )
+          (preview / "kadaya-shadow-leap-tuning.json").write_text(
+              json.dumps(jump_summary, ensure_ascii=False, indent=2), encoding="utf-8"
+          )
           print(
-              f"Tuned existing Shadow Dash parameters on {len(dash_tuning_changes)} "
-              f"NinjaMovementScript components: speed +20%, duration +10%; "
-              f"seen {dash_components_seen}, skipped {dash_components_skipped}."
+              f"Tuned existing movement parameters on {len(dash_tuning_changes)} "
+              f"NinjaMovementScript components: Dash speed +20%, Dash duration +10%, "
+              f"Jump force +10%; seen {player_components_seen}, skipped {player_components_skipped}."
           )
 
           # Make the bundle visible as changed so UnityPy repacks the parent container.
@@ -812,8 +841,8 @@ jobs:
               if check[key]["sha256"] == original_hashes[key]:
                   raise SystemExit(f"Validation failed: {key} did not change in the saved bundle.")
 
-          # Validate existing Dash values after the Unity bundle has been saved and reopened.
-          reopened_dash = {}
+          # Validate the tuned existing movement fields after the Unity bundle has been saved and reopened.
+          reopened_movement = {}
           for obj in env2.objects:
               if getattr(obj.type, "name", "") != "MonoBehaviour":
                   continue
@@ -826,36 +855,46 @@ jobs:
                   if str(getattr(script_data, "m_ClassName", "") or "") != "NinjaMovementScript":
                       continue
                   raw = obj.get_raw_data()
-                  if len(raw) < 104:
+                  if len(raw) < 128:
                       continue
                   key = (
                       getattr(getattr(obj, "assets_file", None), "name", "unknown"),
                       int(getattr(obj, "path_id", 0)),
                   )
-                  reopened_dash[key] = {
+                  reopened_movement[key] = {
                       "dash_speed": struct.unpack_from("<f", raw, 80)[0],
                       "dash_time": struct.unpack_from("<f", raw, 92)[0],
+                      "jump_force": struct.unpack_from("<f", raw, 124)[0],
                   }
               except Exception:
                   continue
 
-          dash_validation_failures = []
+          movement_validation_failures = []
           for key, expected in dash_tuning_expected.items():
-              got = reopened_dash.get(key)
+              got = reopened_movement.get(key)
               if got is None:
-                  dash_validation_failures.append(f"{key}: component missing after reopen")
+                  movement_validation_failures.append(f"{key}: component missing after reopen")
                   continue
               if abs(got["dash_speed"] - expected["new_speed"]) > 0.002:
-                  dash_validation_failures.append(f"{key}: dash speed not preserved")
+                  movement_validation_failures.append(f"{key}: dash speed not preserved")
               if abs(got["dash_time"] - expected["new_duration"]) > 0.002:
-                  dash_validation_failures.append(f"{key}: dash duration not preserved")
-          if dash_validation_failures:
-              raise SystemExit("Shadow Dash parameter validation failed: " + "; ".join(dash_validation_failures[:12]))
-          if len(dash_tuning_expected) != len(reopened_dash.keys() & dash_tuning_expected.keys()):
-              raise SystemExit("Not every tuned Shadow Dash component was found after bundle reopen.")
+                  movement_validation_failures.append(f"{key}: dash duration not preserved")
+          for key, expected in jump_tuning_expected.items():
+              got = reopened_movement.get(key)
+              if got is None:
+                  movement_validation_failures.append(f"{key}: movement component missing after reopen")
+                  continue
+              if abs(got["jump_force"] - expected["new_jump_force"]) > 0.002:
+                  movement_validation_failures.append(f"{key}: jump force not preserved")
+          if movement_validation_failures:
+              raise SystemExit("Movement parameter validation failed: " + "; ".join(movement_validation_failures[:12]))
+          if len(dash_tuning_expected) != len(reopened_movement.keys() & dash_tuning_expected.keys()):
+              raise SystemExit("Not every tuned Dash component was found after bundle reopen.")
+          if len(jump_tuning_expected) != len(reopened_movement.keys() & jump_tuning_expected.keys()):
+              raise SystemExit("Not every tuned Jump component was found after bundle reopen.")
           print(
-              f"Validated Shadow Dash parameters after reopen: "
-              f"{len(dash_tuning_expected)} component(s), speed +20%, duration +10%."
+              f"Validated movement parameters after reopen: {len(dash_tuning_expected)} components; "
+              f"Dash speed +20%, Dash duration +10%, Jump force +10%."
           )
 
           # Verify the actual serialized story/tutorial words, not just the overlaid story artwork.
@@ -964,8 +1003,10 @@ jobs:
               "serialized_ui_text_unique_rewrites": json.loads((preview / "kadaya-ui-label-changes.json").read_text(encoding="utf-8"))["unique_rewrites"],
               "existing_shadow_dash_components_tuned": len(dash_tuning_changes),
               "shadow_dash_parameters": json.loads((preview / "kadaya-shadow-dash-tuning.json").read_text(encoding="utf-8")),
+              "existing_shadow_leap_components_tuned": len(jump_tuning_changes),
+              "shadow_leap_parameters": json.loads((preview / "kadaya-shadow-leap-tuning.json").read_text(encoding="utf-8")),
               "icons": icon_records,
-              "note": "This data bundle + launcher icon patch rebrands visual/story/UI assets and tunes existing Dash parameters (+20% speed, +10% duration). It does not add new native ability code. Playable scene transforms, colliders, maps and level layouts were not edited."
+              "note": "This data bundle + launcher icon patch rebrands visual/story/UI assets and tunes existing Dash (+20% speed, +10% duration) and Jump (+10% force) parameters. It does not add new native ability code. Playable scene transforms, colliders, maps and level layouts were not edited."
           }
           (output/"patch-report.json").write_text(json.dumps(report,indent=2),encoding="utf-8")
           (output/"README-PATCH.txt").write_text(
