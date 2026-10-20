@@ -463,7 +463,7 @@ jobs:
               (r"\bkanashi\b", "the Crimson Swordmaster"),
               (r"\bkido\b", "the Dread Knight"),
               (r"\braven\b", "the Wanderer"),
-              (r"\\byour son\\b", "your friend Krayoo"),
+              (r"\byour son\b", "your friend Krayoo"),
           ]
           dialogue_changes = []
           dialogue_seen = 0
