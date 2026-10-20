@@ -1,1 +1,1 @@
-Trigger a cloud rebuild of the extracted APK using the validated Kadaya visual patch. Preserve maps and level scenes.
+Rerun signed Kadaya APK build after fixing Android SDK setup. Preserve scenes, maps, levels.
