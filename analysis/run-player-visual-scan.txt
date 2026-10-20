@@ -1,1 +1,1 @@
-Trigger read-only scan of the player renderer, material, and texture references. Existing scenes, maps, and levels must remain unchanged.
+Rerun player renderer/material/texture scan after workflow syntax fix. Do not modify scenes, maps, levels, or gameplay data.
