@@ -1,0 +1,113 @@
+name: Build small Kadaya asset previews in cloud
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Successful recovery workflow run ID"
+        required: true
+        default: "39362669794"
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  previews:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Download the recovered Unity project in GitHub cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install image tooling
+        run: python3 -m pip install --disable-pip-version-check --quiet Pillow
+
+      - name: Create compressed contact sheets and asset index
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps, ImageDraw, ImageFont
+          import csv, math
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects = [p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                      if p.parent.name == "ProjectSettings" and (p.parent.parent / "Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Recovered Unity project root not found.")
+          assets = projects[0] / "Assets"
+          candidates = sorted(
+              [p for p in assets.rglob("*") if p.is_file() and p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".tga"}],
+              key=lambda p: p.as_posix().lower()
+          )
+          out = Path("preview-output")
+          out.mkdir(exist_ok=True)
+          records, thumbs = [], []
+          for p in candidates:
+              try:
+                  with Image.open(p) as img:
+                      width, height = img.size
+                      img = img.convert("RGBA")
+                      records.append([p.relative_to(projects[0]).as_posix(), width, height, p.stat().st_size])
+                      # Thumbnail on a dark neutral backing so transparent sprites remain visible.
+                      thumb = ImageOps.contain(img, (190, 112), method=Image.Resampling.LANCZOS)
+                      cell = Image.new("RGB", (220, 158), (26, 26, 31))
+                      xx = (220 - thumb.width) // 2
+                      yy = 4 + (112 - thumb.height) // 2
+                      bg = Image.new("RGBA", thumb.size, (34, 34, 40, 255))
+                      bg.alpha_composite(thumb, (0, 0))
+                      cell.paste(bg.convert("RGB"), (xx, yy))
+                      draw = ImageDraw.Draw(cell)
+                      label = p.name
+                      if len(label) > 30:
+                          label = label[:27] + "..."
+                      draw.text((5, 120), label, fill=(245, 245, 245))
+                      draw.text((5, 140), f"{width}x{height} | {p.stat().st_size//1024} KB", fill=(170, 175, 185))
+                      thumbs.append((p.relative_to(projects[0]).as_posix(), cell))
+              except Exception as e:
+                  records.append([p.relative_to(projects[0]).as_posix(), "", "", p.stat().st_size])
+          with (out / "texture-index.csv").open("w", newline="", encoding="utf-8") as f:
+              w = csv.writer(f)
+              w.writerow(["path", "width", "height", "size_bytes"])
+              w.writerows(records)
+
+          columns, per_sheet = 5, 40
+          for sheet_num, start in enumerate(range(0, len(thumbs), per_sheet), start=1):
+              group = thumbs[start:start+per_sheet]
+              rows = math.ceil(len(group) / columns)
+              sheet = Image.new("RGB", (columns*220, rows*158), (14, 14, 18))
+              draw = ImageDraw.Draw(sheet)
+              for i, (path, thumb) in enumerate(group):
+                  x, y = (i % columns)*220, (i // columns)*158
+                  sheet.paste(thumb, (x, y))
+              name = f"asset-contact-sheet-{sheet_num:02d}.jpg"
+              sheet.save(out / name, quality=78, optimize=True)
+          # Small README tells users what these previews are without including the Unity project itself.
+          (out / "README.txt").write_text(
+              f"Generated previews for {len(thumbs)} images from the recovered Unity project.\n"
+              "Only compressed contact sheets and a CSV index are included; the 1.77 GB project is not in this artifact.\n"
+              "No assets or scenes were modified.\n",
+              encoding="utf-8"
+          )
+          print(f"Created {len(thumbs)} thumbnails from {len(candidates)} image files.")
+          for p in sorted(out.iterdir()):
+              print(f"{p.name}: {p.stat().st_size:,} bytes")
+          PY
+
+      - name: Upload small preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kadaya-asset-previews
+          path: preview-output/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
