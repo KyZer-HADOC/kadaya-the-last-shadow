@@ -1,1 +1,1 @@
-Create the next Kadaya patch with bilingual prologue and story dialogue card plus skill/weapon labels, recolored character/effect/visual atlases and branding. Preserve all existing playable levels and scene layouts.
+Build next Kadaya patch with a validated existing Shadow Dash gameplay tune (+20% speed, +10% duration), visual reskin, ability/weapon labels and bilingual story dialogue. Preserve original playable maps and level layouts.
