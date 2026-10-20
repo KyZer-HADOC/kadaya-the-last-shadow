@@ -1,0 +1,390 @@
+name: Build Kadaya visual reskin patch in cloud
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-kadaya-reskin-preview.txt"
+
+permissions:
+  contents: read
+
+jobs:
+  reskin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout game files
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install asset and image tools
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy Pillow numpy
+
+      - name: Patch only player/weapon effect atlases, title and app icons
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageDraw, ImageFont, ImageFilter
+          import numpy as np
+          import UnityPy, shutil, json, hashlib, re, os
+
+          source_data = Path("assets/bin/Data")
+          original_bundle = source_data / "data.unity3d"
+          if not original_bundle.is_file():
+              raise SystemExit("Original assets/bin/Data/data.unity3d not found.")
+
+          work_data = Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "kadaya-data-work"
+          patched_data = Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "kadaya-patched-data"
+          validation_data = Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "kadaya-validation-data"
+          output = Path("kadaya-reskin-output")
+          preview = output / "preview"
+          icons_out = output / "icons"
+          for p in (work_data, patched_data, validation_data, preview, icons_out):
+              if p.exists():
+                  shutil.rmtree(p)
+              p.mkdir(parents=True, exist_ok=True)
+
+          # Keep the resource sidecars beside the bundle so streamed Texture2D images resolve.
+          shutil.copy2(original_bundle, work_data / "data.unity3d")
+          for src in source_data.rglob("*"):
+              if src.is_file() and src.name != "data.unity3d":
+                  dest = work_data / src.relative_to(source_data)
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, dest)
+
+          def file_hash(img):
+              return hashlib.sha256(img.convert("RGBA").tobytes()).hexdigest()
+
+          def colorize_ninja_atlas(image):
+              arr = np.array(image.convert("RGBA"), dtype=np.uint8)
+              rgb = arr[:, :, :3].astype(np.float32)
+              alpha = arr[:, :, 3]
+              r, g, b = rgb[:, :, 0], rgb[:, :, 1], rgb[:, :, 2]
+              lum = 0.2126*r + 0.7152*g + 0.0722*b
+              cool = (b > r*1.14) & (b > g*1.04) & (b > 55) & (alpha > 0)
+              dark = (lum < 55) & (alpha > 0)
+              bright = (lum > 155) & (alpha > 0)
+
+              # Turn the original cyan/blue combat trails into crimson shadow-energy.
+              rgb[cool, 0] = np.clip(lum[cool]*0.96 + 20, 0, 255)
+              rgb[cool, 1] = np.clip(lum[cool]*0.14 + 3, 0, 255)
+              rgb[cool, 2] = np.clip(lum[cool]*0.19 + 5, 0, 255)
+
+              # Tint nearly-black cloth/limbs toward ash-black with a subtle blood-red undertone.
+              rgb[dark, 0] = np.clip(r[dark]*0.70 + lum[dark]*0.28 + 10, 0, 255)
+              rgb[dark, 1] = np.clip(g[dark]*0.24 + 2, 0, 255)
+              rgb[dark, 2] = np.clip(b[dark]*0.30 + 4, 0, 255)
+
+              # Keep bright edges readable as cold ash/silver rather than making the atlas muddy.
+              rgb[bright, 0] = np.clip(lum[bright]*0.94 + 10, 0, 255)
+              rgb[bright, 1] = np.clip(lum[bright]*0.87 + 7, 0, 255)
+              rgb[bright, 2] = np.clip(lum[bright]*0.88 + 8, 0, 255)
+              arr[:, :, :3] = np.clip(rgb, 0, 255).astype(np.uint8)
+              return Image.fromarray(arr, "RGBA")
+
+          def recolor_ui_blue_to_crimson(image):
+              arr = np.array(image.convert("RGBA"), dtype=np.uint8)
+              rgb = arr[:, :, :3].astype(np.float32)
+              alpha = arr[:, :, 3]
+              r, g, b = rgb[:, :, 0], rgb[:, :, 1], rgb[:, :, 2]
+              lum = 0.2126*r + 0.7152*g + 0.0722*b
+              mask = (b > r*1.17) & (b > g*1.03) & (b > 65) & (alpha > 5)
+              rgb[mask, 0] = np.clip(lum[mask]*0.95 + 24, 0, 255)
+              rgb[mask, 1] = np.clip(lum[mask]*0.15 + 3, 0, 255)
+              rgb[mask, 2] = np.clip(lum[mask]*0.20 + 6, 0, 255)
+              highlight = mask & (lum > 185)
+              rgb[highlight, 0] = np.clip(lum[highlight]*0.97 + 10, 0, 255)
+              rgb[highlight, 1] = np.clip(lum[highlight]*0.82 + 8, 0, 255)
+              rgb[highlight, 2] = np.clip(lum[highlight]*0.83 + 9, 0, 255)
+              arr[:, :, :3] = np.clip(rgb, 0, 255).astype(np.uint8)
+              return Image.fromarray(arr, "RGBA")
+
+          def reskin_character_art(image):
+              arr = np.array(image.convert("RGBA"), dtype=np.uint8)
+              rgb = arr[:, :, :3].astype(np.float32)
+              alpha = arr[:, :, 3]
+              # This artwork has a flat blue-grey studio background. Replace that background
+              # with a black-crimson fog while leaving the character silhouette in place.
+              sample = arr[240:700, 20:180, :3].reshape(-1, 3)
+              bg = np.median(sample, axis=0)
+              distance = np.sqrt(((rgb - bg) ** 2).sum(axis=2))
+              bg_mask = (distance < 24) & (alpha > 0)
+              h, w = alpha.shape
+              yy, xx = np.mgrid[0:h, 0:w]
+              glow = np.exp(-(((xx-w*0.47)/(w*0.28))**2 + ((yy-h*0.56)/(h*0.33))**2))
+              redfog = np.zeros_like(rgb)
+              redfog[:, :, 0] = 5 + glow*35
+              redfog[:, :, 1] = 4 + glow*3
+              redfog[:, :, 2] = 10 + glow*11
+              rgb[bg_mask] = redfog[bg_mask]
+
+              fg = (~bg_mask) & (alpha > 0)
+              r, g, b = rgb[:, :, 0].copy(), rgb[:, :, 1].copy(), rgb[:, :, 2].copy()
+              lum = 0.2126*r + 0.7152*g + 0.0722*b
+              cool = fg & (b > r*1.10) & (b > g*1.04)
+              rgb[cool, 0] = np.clip(lum[cool]*0.97 + 14, 0, 255)
+              rgb[cool, 1] = np.clip(lum[cool]*0.18 + 3, 0, 255)
+              rgb[cool, 2] = np.clip(lum[cool]*0.22 + 5, 0, 255)
+              dark = fg & (lum < 75)
+              rgb[dark, 0] = np.clip(r[dark]*0.78 + 10, 0, 255)
+              rgb[dark, 1] = np.clip(g[dark]*0.30 + 1, 0, 255)
+              rgb[dark, 2] = np.clip(b[dark]*0.35 + 4, 0, 255)
+              bright = fg & (lum > 155)
+              rgb[bright, 0] = np.clip(lum[bright]*0.95 + 8, 0, 255)
+              rgb[bright, 1] = np.clip(lum[bright]*0.82 + 8, 0, 255)
+              rgb[bright, 2] = np.clip(lum[bright]*0.84 + 10, 0, 255)
+              arr[:, :, :3] = np.clip(rgb, 0, 255).astype(np.uint8)
+              return Image.fromarray(arr, "RGBA")
+
+          def add_kadaya_title(image):
+              img = image.convert("RGBA").copy()
+              w, h = img.size
+              # Soft panel fades into the existing dark sky and covers the old title lettering only.
+              mask = Image.new("L", (w, h), 0)
+              md = ImageDraw.Draw(mask)
+              md.rounded_rectangle((100, 50, min(790,w-20), min(470,h-20)), radius=42, fill=178)
+              mask = mask.filter(ImageFilter.GaussianBlur(38))
+              overlay = Image.new("RGBA", (w, h), (6, 5, 12, 0))
+              overlay.putalpha(mask)
+              img = Image.alpha_composite(img, overlay)
+              draw = ImageDraw.Draw(img)
+              font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf"
+              small_path = "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf"
+              try:
+                  font_big = ImageFont.truetype(font_path, max(72, int(w*0.057)))
+                  font_mid = ImageFont.truetype(small_path, max(28, int(w*0.022)))
+                  font_low = ImageFont.truetype(font_path, max(45, int(w*0.038)))
+              except OSError:
+                  font_big = ImageFont.load_default()
+                  font_mid = ImageFont.load_default()
+                  font_low = ImageFont.load_default()
+
+              # Crimson shadow offsets give the title contrast over the smoky background.
+              title_xy = (145, 106)
+              draw.text((title_xy[0]+5,title_xy[1]+6), "KADAYA", font=font_big, fill=(110, 8, 27, 220), stroke_width=2, stroke_fill=(110,8,27,220))
+              draw.text(title_xy, "KADAYA", font=font_big, fill=(239, 231, 222, 255), stroke_width=1, stroke_fill=(25, 8, 14, 240))
+              draw.line((155, 247, 680, 247), fill=(176, 27, 47, 245), width=max(4, w//420))
+              draw.text((166, 263), "THE AGE OF", font=font_mid, fill=(216, 207, 204, 255), stroke_width=1, stroke_fill=(10,6,12,220))
+              draw.text((158, 306), "SHADOWS", font=font_low, fill=(190, 31, 51, 255), stroke_width=2, stroke_fill=(12,5,10,235))
+              draw.line((165, 397, 600, 397), fill=(222, 50, 65, 230), width=max(2, w//700))
+              return img
+
+          def make_icon(original_character_art, size):
+              src = original_character_art.convert("RGBA")
+              arr = np.array(src, dtype=np.uint8)
+              rgb = arr[:, :, :3].astype(np.float32)
+              h, w = arr.shape[:2]
+              sample = arr[240:700, 20:180, :3].reshape(-1,3)
+              bg = np.median(sample, axis=0)
+              distance = np.sqrt(((rgb-bg)**2).sum(axis=2))
+              # Crop the standing ninja and its sword; skip the top ribbon.
+              x1, y1, x2, y2 = 175, 170, min(735,w), h
+              crop = arr[y1:y2, x1:x2].copy()
+              dist_crop = distance[y1:y2, x1:x2]
+              alpha = np.clip((dist_crop-11)*12, 0, 255).astype(np.uint8)
+              # Remove small isolated flat-background flecks, but preserve anti-aliased edges.
+              crop[:, :, 3] = np.minimum(crop[:, :, 3], alpha)
+              crgb = crop[:, :, :3].astype(np.float32)
+              lum = 0.2126*crgb[:,:,0] + 0.7152*crgb[:,:,1] + 0.0722*crgb[:,:,2]
+              cool = (crgb[:,:,2] > crgb[:,:,0]*1.1) & (crgb[:,:,2] > crgb[:,:,1]*1.03) & (crop[:,:,3] > 0)
+              crgb[cool,0] = np.clip(lum[cool]*0.97+20,0,255)
+              crgb[cool,1] = np.clip(lum[cool]*0.15+2,0,255)
+              crgb[cool,2] = np.clip(lum[cool]*0.18+5,0,255)
+              crop[:,:,:3] = np.clip(crgb,0,255).astype(np.uint8)
+              character = Image.fromarray(crop, "RGBA")
+
+              # Icon background: ash black with a crimson halo and a restrained red blade arc.
+              s = max(512, size)
+              yy,xx = np.mgrid[0:s,0:s]
+              rad = np.sqrt(((xx-s*0.5)/(s*0.65))**2 + ((yy-s*0.46)/(s*0.65))**2)
+              halo = np.clip(1-rad,0,1)
+              bg_arr = np.zeros((s,s,4),dtype=np.uint8)
+              bg_arr[:,:,0] = (4+halo*31).astype(np.uint8)
+              bg_arr[:,:,1] = (4+halo*2).astype(np.uint8)
+              bg_arr[:,:,2] = (9+halo*10).astype(np.uint8)
+              bg_arr[:,:,3] = 255
+              canvas = Image.fromarray(bg_arr,"RGBA")
+              glow = Image.new("RGBA",(s,s),(0,0,0,0))
+              gd = ImageDraw.Draw(glow)
+              gd.ellipse((s*.12,s*.08,s*.88,s*.91), outline=(132,12,34,120), width=max(2,s//80))
+              gd.arc((s*.06,s*.04,s*.94,s*.97), start=206, end=330, fill=(227,34,52,165), width=max(2,s//95))
+              glow = glow.filter(ImageFilter.GaussianBlur(max(1,s//150)))
+              canvas = Image.alpha_composite(canvas, glow)
+
+              max_h = int(s*0.79)
+              scale = min(max_h/character.height, s*0.67/character.width)
+              nw, nh = max(1,int(character.width*scale)), max(1,int(character.height*scale))
+              character = character.resize((nw,nh), Image.Resampling.LANCZOS)
+              # A subtle red outer silhouette gives the player separation from the icon background.
+              cmask = character.getchannel("A")
+              halo_img = Image.new("RGBA", character.size, (155, 12, 34, 0))
+              halo_img.putalpha(cmask.filter(ImageFilter.GaussianBlur(max(1,s//120))))
+              x, y = (s-nw)//2, int(s*0.08)+(max_h-nh)//2
+              canvas.alpha_composite(halo_img,(x,y))
+              canvas.alpha_composite(character,(x,y))
+              cd = ImageDraw.Draw(canvas)
+              # Tiny monogram badge stays clear of the player's silhouette.
+              badge_r = int(s*0.09)
+              cx,cy=int(s*.83),int(s*.82)
+              cd.ellipse((cx-badge_r,cy-badge_r,cx+badge_r,cy+badge_r), fill=(8,6,12,235), outline=(196,24,47,255), width=max(2,s//100))
+              try:
+                  kfont = ImageFont.truetype(font_path, int(s*.1))
+              except Exception:
+                  kfont = ImageFont.load_default()
+              box = cd.textbbox((0,0),"K",font=kfont,stroke_width=0)
+              cd.text((cx-(box[2]-box[0])/2,cy-(box[3]-box[1])/2-box[1]),"K",font=kfont,fill=(239,224,217,255))
+              return canvas.resize((size,size), Image.Resampling.LANCZOS)
+
+          # Generate the game icon from the original portrait before editing the in-game copy.
+          portrait_obj = None
+          original_portrait = None
+          try:
+              env = UnityPy.load(str(work_data))
+          except Exception as exc:
+              raise SystemExit(f"UnityPy could not load the original Data folder: {type(exc).__name__}: {exc}")
+
+          bundle_key = next((k for k in env.files if Path(str(k)).name.lower() == "data.unity3d"), None)
+          if not bundle_key:
+              raise SystemExit(f"Outer data.unity3d bundle not identified. Loaded files: {list(env.files)[:12]}")
+          bundle = env.files[bundle_key]
+          wanted = {"skeleton","skeleton2","title 2048","arashi main 03","ui1","play ui 01"}
+          found = {}
+          edits = []
+          for obj in env.objects:
+              if getattr(obj.type,"name","") != "Texture2D":
+                  continue
+              try:
+                  data = obj.read()
+                  name = str(getattr(data,"m_Name","") or "")
+                  key = name.lower()
+                  if key not in wanted or key in found:
+                      continue
+                  original = data.image
+                  if original is None:
+                      continue
+                  original = original.convert("RGBA")
+                  found[key] = {"obj":obj,"data":data,"original":original.copy(),"file":getattr(obj.assets_file,"name","unknown")}
+              except Exception:
+                  continue
+
+          missing = sorted(wanted - set(found))
+          if missing:
+              raise SystemExit("Missing required Texture2D objects in original bundle: " + ", ".join(missing))
+
+          original_portrait = found["arashi main 03"]["original"].copy()
+          icon_master = make_icon(original_portrait, 512)
+          icon_master.save(preview / "Kadaya-Icon-512.png")
+
+          processors = {
+              "skeleton": colorize_ninja_atlas,
+              "skeleton2": colorize_ninja_atlas,
+              "title 2048": add_kadaya_title,
+              "arashi main 03": reskin_character_art,
+              "ui1": recolor_ui_blue_to_crimson,
+              "play ui 01": recolor_ui_blue_to_crimson,
+          }
+          original_hashes, modified_hashes = {}, {}
+          for key, info in found.items():
+              orig = info["original"]
+              new = processors[key](orig)
+              if new.size != orig.size:
+                  raise SystemExit(f"Texture size changed unexpectedly for {key}: {orig.size} -> {new.size}")
+              data = info["data"]
+              data.image = new
+              data.save()
+              original_hashes[key] = file_hash(orig)
+              modified_hashes[key] = file_hash(new)
+              new.save(preview / (key.replace(" ","_") + "-kadaya.png"))
+              print(f"Patched texture {data.m_Name}: {orig.size[0]}x{orig.size[1]} in {info['file']}")
+
+          # Make the bundle visible as changed so UnityPy repacks the parent container.
+          marker = getattr(bundle, "mark_changed", None)
+          if callable(marker):
+              marker()
+          patched_data.mkdir(parents=True, exist_ok=True)
+          env.save(pack="lz4", out_path=str(patched_data))
+          new_bundle = patched_data / "data.unity3d"
+          if not new_bundle.is_file() or new_bundle.stat().st_size < 1024*1024:
+              produced = [(str(p),p.stat().st_size) for p in patched_data.rglob("*") if p.is_file()]
+              raise SystemExit(f"UnityPy didn't produce a plausible patched data.unity3d. Files: {produced}")
+
+          # Validate the serialized bundle can be reopened, and that each target image changed.
+          shutil.copytree(work_data, validation_data, dirs_exist_ok=True)
+          shutil.copy2(new_bundle, validation_data / "data.unity3d")
+          env2 = UnityPy.load(str(validation_data))
+          check = {}
+          for obj in env2.objects:
+              if getattr(obj.type,"name","") != "Texture2D":
+                  continue
+              try:
+                  d = obj.read()
+                  key = str(getattr(d,"m_Name","") or "").lower()
+                  if key in wanted and key not in check:
+                      img = d.image.convert("RGBA")
+                      check[key] = {"size":list(img.size),"sha256":file_hash(img)}
+                      img.save(preview / (key.replace(" ","_") + "-reopened.png"))
+              except Exception:
+                  continue
+          missing_verify = sorted(wanted - set(check))
+          if missing_verify:
+              raise SystemExit("Patched bundle reopened but target textures were not readable: " + ", ".join(missing_verify))
+          for key in wanted:
+              if check[key]["sha256"] == original_hashes[key]:
+                  raise SystemExit(f"Validation failed: {key} did not change in the saved bundle.")
+          print(f"Validated patched bundle size: {new_bundle.stat().st_size:,} bytes")
+          print(f"Validated {len(check)} modified Texture2D assets after reopening.")
+
+          # Build density-correct Android launcher icons; no APK files are modified in this step.
+          icon_records = []
+          for path in sorted(Path("res").rglob("app_icon*.png")):
+              try:
+                  with Image.open(path) as old:
+                      size = old.size[0]
+                      if old.size[0] != old.size[1]:
+                          continue
+                      icon = icon_master.resize((size,size), Image.Resampling.LANCZOS)
+                      dest = icons_out / path.relative_to(Path("res"))
+                      dest.parent.mkdir(parents=True, exist_ok=True)
+                      icon.save(dest, optimize=True)
+                      icon_records.append({"path":str(Path("res")/path.relative_to(Path("res"))),"size":size,"bytes":dest.stat().st_size})
+              except Exception:
+                  continue
+          if not icon_records:
+              raise SystemExit("No res/**/app_icon*.png launcher icons found to replace.")
+
+          # Export only the changed bundle and the small app-icon replacements.
+          patch_bundle = output / "assets/bin/Data/data.unity3d"
+          patch_bundle.parent.mkdir(parents=True, exist_ok=True)
+          shutil.copy2(new_bundle, patch_bundle)
+          report = {
+              "source_bundle_bytes": original_bundle.stat().st_size,
+              "patched_bundle_bytes": new_bundle.stat().st_size,
+              "unity_version": next((str(v) for v in [getattr(next(iter(env.objects),None),"assets_file",None)] if v), "see project settings"),
+              "textures_patched": {key:{"source_file":found[key]["file"],"size":list(found[key]["original"].size),"original_sha256":original_hashes[key],"modified_sha256":modified_hashes[key]} for key in sorted(wanted)},
+              "textures_validated_after_reopen": check,
+              "icons": icon_records,
+              "note": "This is a data bundle + launcher icon patch, not yet a complete signed APK. No scene, map or level files were changed."
+          }
+          (output/"patch-report.json").write_text(json.dumps(report,indent=2),encoding="utf-8")
+          (output/"README-PATCH.txt").write_text(
+              "KADAYA | THE AGE OF SHADOWS — visual reskin patch\n\n"
+              "Contains a repacked Unity data.unity3d and replacements for the Android launcher app_icon.png files.\n"
+              "The patch tints the player/weapon effect atlases to ash-black/crimson, rebrands the title texture, applies red-dark character artwork, and recolors blue HUD accents.\n"
+              "The original Unity scenes, maps, and levels are not edited.\n\n"
+              "This is not a complete APK yet. Keep a backup of the original files. Apply only to a copy of the matching game build.\n",
+              encoding="utf-8")
+          print(f"Exported patch bundle + {len(icon_records)} icon sizes.")
+          PY
+
+      - name: Upload validated Kadaya reskin patch
+        uses: actions/upload-artifact@v4
+        with:
+          name: kadaya-reskin-visual-patch
+          path: kadaya-reskin-output/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
