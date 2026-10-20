@@ -1,0 +1,78 @@
+name: Inspect Kadaya ability-description strings
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-ability-description-scan.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Install UnityPy
+        run: python3 -m pip install --disable-pip-version-check --quiet UnityPy
+      - name: Find UI description strings and test serialization boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter
+          import re, UnityPy
+          env=UnityPy.load(str(Path("assets/bin/Data")))
+          rows=[]
+          errors=Counter()
+          relevant=re.compile(r"increase|decrease|speed|swim|dash|attack|health|skill|ability|weapon|sword|kunai|shuriken|hide|disguise|damage|power|upgrade|unlock|jump|throw|roll|stealth|shadow|energy|gold|coin|purchase|equip|critical|artifact|guardian|master|friend|storm|shelter|continue|retry|pause|resume|level|play|start|shop|story|press|tap|left|right",re.I)
+          for obj in env.objects:
+              if getattr(obj.type,"name","")!="MonoBehaviour": continue
+              try:
+                  basic=obj.read(check_read=False)
+                  ptr=getattr(basic,"m_Script",None)
+                  if not ptr: continue
+                  script=ptr.read()
+                  cls=str(getattr(script,"m_ClassName","") or "")
+                  if cls not in {"Text","TextMesh"}: continue
+                  raw=obj.get_raw_data()
+                  for m in re.finditer(rb"[\x20-\x7e]{4,}",raw):
+                      b=m.group()
+                      s=b.decode("ascii",errors="ignore").strip()
+                      if not s or len(s)>180 or not re.search(r"[A-Za-z]{3,}",s) or not relevant.search(s): continue
+                      offset=m.start()
+                      before=raw[offset-4:offset] if offset>=4 else b""
+                      prefix=int.from_bytes(before,"little") if len(before)==4 else -1
+                      rows.append((cls,getattr(getattr(obj,"assets_file",None),"name","unknown"),int(obj.path_id),s,offset,prefix,len(b),before.hex()))
+              except Exception as e: errors[type(e).__name__]+=1
+          rows=list(dict.fromkeys(rows))
+          lines=["# Kadaya ability-description string inspection","",
+            "Read-only inspection; no source or runtime files were changed.",
+            f"- Objects processed: {len(env.objects):,}",f"- Matching UI strings: {len(rows):,}","","## Matching strings"]
+          for cls,file_name,pid,s,offset,prefix,n,hexp in rows[:1800]:
+              lines.append(f"- {cls} | {file_name} path_id={pid} | {s} | offset={offset} | preceding_int={prefix} | byte_count={n} | preceding_hex={hexp}")
+          lines += ["","## Read issues"]+[f"- {name}: {count}" for name,count in errors.most_common()]
+          out=Path("analysis/kadaya-ability-description-strings.md")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text("\n".join(lines)+"\n",encoding="utf-8")
+          print("\n".join(lines[:180]))
+          print(f"Report created: {out}")
+          PY
+      - name: Commit report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-ability-description-strings.md
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Inspect ability description strings"
+            git push
+          fi
