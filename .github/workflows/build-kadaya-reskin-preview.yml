@@ -422,6 +422,97 @@ jobs:
               new.save(preview / (key.replace(" ","_") + "-kadaya.png"))
               print(f"Patched texture {data.m_Name}: {orig.size[0]}x{orig.size[1]} in {info['file']}")
 
+          # Replace the serialized story/tutorial dialogue while leaving transforms, colliders,
+          # scene object order, camera positions, geometry, and all playable level layouts untouched.
+          def normalize_text(value):
+              return " ".join(str(value).split()).casefold()
+
+          dialogue_map = {
+              "good luck, arashi.": "Stay sharp, Kadaya.",
+              "here stands the first guardian, kanashi the sword master.": "Raizen's first guard stands here: the Crimson Swordmaster.",
+              "dosu's tower is sealed by a magical bond between his guardians.": "Raizen's Shadow Fortress is sealed by a bond between its guardians.",
+              "in order to gain access to it, you must defeat all the guardians.": "Defeat every guardian to reach Raizen's Shadow Fortress.",
+              "i will catch you up. hurry up and jump arashi!": "KADAYA, MOVE! JUMP NOW — KRAYOO NEEDS YOU!",
+              "your best stragety is timing your dodge roll and disguise carefully. good luck.": "Time your Shadow Dash and concealment carefully. Use the shadows to survive.",
+              "it would be a great disadvantage for you if you fight him from a distance.": "Raizen's archer is deadly at range. Close the gap before he strikes.",
+              "your opponent this time is yasha the bow master.": "Your opponent is Raizen's Crimson Archer.",
+              "he's extremely agile and always manages to escape his enemies.": "The archer is swift and deadly. Stay close and strike quickly.",
+              "you are just a pawn in this game arashi": "You are only a pawn in Raizen's game, Kadaya.",
+              "just a puppet, nothing more... hahahaha": "Krayoo is mine now. You will never find him... Hahahaha.",
+              "stay calm and don't let his combat pace affect you.": "Stay calm. Do not let Raizen's pace break your focus.",
+              "this is the last guardian, kido the terror.": "This is Raizen's last guardian — the Dread Knight.",
+              "defeat him and then you can break the seal of the portal that leads to dosu's tower.": "Defeat him to break the seal and open the path to Raizen's Shadow Fortress.",
+              "i was sent to rescue you. you can call me raven.": "I came to help you. Call me the Wanderer.",
+              "you must have hundred questions now. but our time is running out.": "I know you have questions, Kadaya, but our time is running out.",
+              "let's not waste any moment anymore. this artifact will restore your power.": "No time to waste. This Shadow Relic will restore your power.",
+              "you need to trust me. i am your last hope if you want to find dosu and your son.": "Trust me. I'll help you find Raizen and bring Krayoo home.",
+              "stay alive, arashi.": "Stay alive, Kadaya.",
+              "the cold will hurt you badly. try to find shelters like what we are staying in now.": "The Ash Storm will hurt you badly. Take shelter whenever you can.",
+              "the storm is raging outside.": "The Ash Storm is raging outside.",
+              "it looks like dosu knows that you have been awaken.": "Raizen knows that you have awakened.",
+          }
+
+          def case_aware_replacement(match, replacement):
+              original = match.group(0)
+              return replacement.upper() if original.isupper() else replacement
+
+          generic_names = [
+              (r"\\barashi\\b", "Kadaya"),
+              (r"\\bdosu\\b", "Raizen"),
+              (r"\\byasha\\b", "the Crimson Archer"),
+              (r"\\bkanashi\\b", "the Crimson Swordmaster"),
+              (r"\\bkido\\b", "the Dread Knight"),
+              (r"\\braven\\b", "the Wanderer"),
+              (r"\\byour son\\b", "your friend Krayoo"),
+          ]
+          dialogue_changes = []
+          dialogue_seen = 0
+          for obj in env.objects:
+              if getattr(obj.type, "name", "") != "TextMesh":
+                  continue
+              try:
+                  data = obj.read()
+                  old = getattr(data, "m_Text", None)
+                  if not isinstance(old, str) or not old.strip():
+                      continue
+                  dialogue_seen += 1
+                  new = dialogue_map.get(normalize_text(old))
+                  if new is None:
+                      new = old
+                      for pattern, replacement_name in generic_names:
+                          new = re.sub(pattern,
+                                       lambda match, replacement_name=replacement_name: case_aware_replacement(match, replacement_name),
+                                       new, flags=re.IGNORECASE)
+                  if new != old:
+                      data.m_Text = new
+                      data.save()
+                      dialogue_changes.append({
+                          "file": getattr(getattr(obj, "assets_file", None), "name", "unknown"),
+                          "path_id": int(getattr(obj, "path_id", 0)),
+                          "old": old[:240],
+                          "new": new[:300],
+                      })
+              except Exception:
+                  # A few TextMesh records use stripped/unsupported type metadata; leave them unchanged.
+                  continue
+
+          if dialogue_changes:
+              print(f"Rewrote {len(dialogue_changes)} serialized story/tutorial dialogue instances from {dialogue_seen} TextMesh objects.")
+          else:
+              print(f"No serialized TextMesh dialogue changes were written. TextMesh objects examined: {dialogue_seen}.")
+
+          dialogue_summary = []
+          seen_summaries = set()
+          for item in dialogue_changes:
+              key = (item["old"], item["new"])
+              if key not in seen_summaries:
+                  seen_summaries.add(key)
+                  dialogue_summary.append({"old": item["old"], "new": item["new"]})
+          (preview / "kadaya-story-dialogue-changes.json").write_text(json.dumps({
+              "objects_changed": len(dialogue_changes),
+              "unique_dialogue_rewrites": dialogue_summary,
+          }, ensure_ascii=False, indent=2), encoding="utf-8")
+
           # Make the bundle visible as changed so UnityPy repacks the parent container.
           marker = getattr(bundle, "mark_changed", None)
           if callable(marker):
