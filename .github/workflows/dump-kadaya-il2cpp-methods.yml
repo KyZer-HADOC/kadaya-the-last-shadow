@@ -58,7 +58,7 @@ jobs:
           tail -n 100 "$RUNNER_TEMP/il2cppdumper.log"
           find "$RUNNER_TEMP/kadaya-il2cpp-out" -maxdepth 3 -type f -printf '%p %s bytes\n' | head -n 100
 
-      - name: Extract player and ability method map
+      - name: Extract gameplay classes and native method offsets
         shell: bash
         run: |
           set -euo pipefail
@@ -69,67 +69,103 @@ jobs:
           tmp=Path(os.environ["RUNNER_TEMP"])
           outdir=tmp/"kadaya-il2cpp-out"
           report=[
-            "# Kadaya IL2CPP method map","",
-            "Generated in GitHub Actions cloud from extracted Android game binaries.",
-            "This report does not edit the APK or any map/level files.",
+            "# Kadaya IL2CPP gameplay method map","",
+            "Generated in GitHub Actions cloud from Android libil2cpp.so and global-metadata.dat.",
+            "This is analysis only. It does not edit the APK or any scene/map/level layout.",
             "Dumper exit code: "+(tmp/"il2cppdumper.exitcode").read_text().strip(),""
           ]
           log=tmp/"il2cppdumper.log"
           if log.exists():
-              report += ["## Dumper log (last 60 lines)"]
-              report += log.read_text(errors="replace").splitlines()[-60:]
-          report += ["","## Output files"]
-          all_files=sorted(p for p in outdir.rglob("*") if p.is_file())
-          report += [f"- {p.relative_to(outdir).as_posix()} — {p.stat().st_size:,} bytes" for p in all_files[:100]] or ["- No files produced."]
-          dump_files=list(outdir.rglob("dump.cs"))
-          script_json=list(outdir.rglob("script.json"))
-          terms=re.compile(r"PlayerDash|DisguiseManager|HideObj|SkillButton|SkillTree|HUDText|CotTruyenLeader|StoryCanvas|ShopPanel|LevelLeader|PlayerController|PlayerMove|Attack|Weapon|Shuriken|Sword|Dash|Skill|Boss|Enemy|GameManager",re.I)
-          found=[]
-          for path in dump_files:
-              lines=path.read_text(errors="replace").splitlines()
-              for i,line in enumerate(lines):
-                  if terms.search(line):
-                      snippet=lines[max(0,i-3):min(len(lines),i+18)]
-                      block="\n".join(snippet)
-                      if not any(x in block for x in ("class ","struct ","// RVA:","// Offset:","public ","private ","protected ")):
-                          continue
-                      found.append((path.name,i+1,snippet))
-          report += ["","## Matching class and method declarations"]
-          seen=set()
-          for name,line_no,snippet in found[:260]:
-              key=(name,line_no)
-              if key in seen: continue
-              seen.add(key)
-              report += ["",f"### {name}, line {line_no}"]+snippet
-          if not found:
-              report.append("No dump.cs declarations found or the dumper did not produce dump.cs.")
-          for p in script_json[:3]:
+              loglines=log.read_text(errors="replace").splitlines()
+              report += ["## Dumper summary"]+loglines[-28:]
+
+          dumps=list(outdir.rglob("dump.cs"))
+          terms=re.compile(r"arashi|player|cailo|skill|dash|hide|disguise|attack|weapon|sword|shuriken|kunai|boss|enemy|game.?manager|level|story|shop|item|gold|coin|artifact|health|hud|audio.?player|cottruyen|leader|checkpoint|ability|move|control|damage|hit|throw|jump|roll",re.I)
+          class_header=re.compile(r"^\s*(?:(?:public|internal|private|protected)\s+)?(?:(?:abstract|sealed|static|partial|readonly|unsafe|new)\s+)*(class|struct|interface|enum)\s+([A-Za-z_][\w.+<>?,\[\]]*).*?TypeDefIndex:\s*(\d+)",re.I)
+          target_classes=[]
+          for dump in dumps:
+              lines=dump.read_text(errors="replace").splitlines()
+              current_namespace=""
+              headers=[]
+              for idx,line in enumerate(lines):
+                  ns=re.match(r"^\s*// Namespace:\s*(.*)$",line)
+                  if ns:
+                      current_namespace=ns.group(1).strip()
+                  m=class_header.match(line)
+                  if m:
+                      headers.append({"line":idx,"line_no":idx+1,"kind":m.group(1),"name":m.group(2),
+                                      "type_index":int(m.group(3)),"namespace":current_namespace,"dump":dump.name})
+              for k,rec in enumerate(headers):
+                  finish=headers[k+1]["line"] if k+1<len(headers) else len(lines)
+                  rec["block"]=lines[rec["line"]:finish]
+                  if rec["type_index"]>=3000 and terms.search(rec["name"]+" "+rec["namespace"]):
+                      target_classes.append(rec)
+
+          report += ["","## Game-specific class catalog (TypeDefIndex 3000+)",f"- Classes matching gameplay/name terms: {len(target_classes)}"]
+          for rec in target_classes[:600]:
+              report.append(f"- {rec['namespace'] or '(global namespace)'}.{rec['name']} — TypeDefIndex {rec['type_index']} — dump.cs line {rec['line_no']}")
+
+          report += ["","## Fields and native method offsets for likely gameplay classes"]
+          for rec in target_classes[:220]:
+              fields=[]
+              methods=[]
+              block=rec["block"]
+              for i,line in enumerate(block):
+                  stripped=line.strip()
+                  if "// RVA:" in stripped:
+                      signature=""
+                      for nextline in block[i+1:i+7]:
+                          st=nextline.strip()
+                          if st and not st.startswith("//") and not st.startswith("["):
+                              signature=st
+                              break
+                      methods.append((stripped,signature))
+                  elif "// 0x" in stripped and (";" in stripped or "{" in stripped) and not stripped.startswith("// RVA:"):
+                      if len(fields)<30:
+                          fields.append(stripped)
+              if not fields and not methods:
+                  continue
+              report += ["",f"### {rec['name']} (TypeDefIndex {rec['type_index']})"]
+              report.append(f"Namespace: {rec['namespace'] or '(global)'}; dump.cs line {rec['line_no']}")
+              if fields:
+                  report.append("Fields:")
+                  report += ["- "+x for x in fields[:24]]
+              if methods:
+                  report.append("Methods (native RVA / file offset and signature):")
+                  for rva,sig in methods[:70]:
+                      report.append("- "+rva+" | "+sig)
+          if not target_classes:
+              report.append("- No matching game-specific classes found in dump.cs.")
+
+          report += ["","## Exact method names from script.json"]
+          scripts=list(outdir.rglob("script.json"))
+          json_hits=[]
+          for path in scripts[:3]:
               try:
-                  data=json.loads(p.read_text(errors="replace"))
-                  hits=[]
-                  def walk(x, loc="$"):
-                      if isinstance(x,dict):
-                          for k,v in x.items(): walk(v,loc+"."+str(k))
-                      elif isinstance(x,list):
-                          for i,v in enumerate(x): walk(v,loc+"["+str(i)+"]")
-                      elif isinstance(x,str) and terms.search(x):
-                          hits.append((loc,x[:200]))
-                  walk(data)
-                  report += ["","## Names from script.json",f"- File: {p.name}; matches: {len(hits)}"]
-                  report += [f"- {loc}: {val}" for loc,val in hits[:250]]
+                  data=json.loads(path.read_text(errors="replace"))
               except Exception as exc:
-                  report.append(f"Could not parse {p.name}: {exc}")
+                  report.append(f"- Could not parse {path.name}: {exc}")
+                  continue
+              methods=data.get("ScriptMethod",[]) if isinstance(data,dict) else []
+              for m in methods:
+                  if not isinstance(m,dict): continue
+                  name=str(m.get("Name",""))
+                  sig=str(m.get("Signature",""))
+                  if terms.search(name) or re.search(r"PlayerDash|DisguiseManager|HideObj|SkillButton|SkillTree|CotTruyenLeader|StoryCanvas|ShopPanel|LevelLeader",sig,re.I):
+                      json_hits.append((name,sig))
+          report.append(f"- Matching script methods: {len(json_hits)}")
+          report += [f"- {name}: {sig}" for name,sig in json_hits[:600]]
           report += [
-            "","## What this can support",
-            "- This method map may recover class names, fields, method names and native offsets from the IL2CPP binary.",
-            "- It does not recreate original C# method bodies by itself. Native ARM64 method logic requires additional disassembly/reverse analysis or a carefully validated binary patch.",
-            "- Existing playable scene/level layouts remain unchanged."
+            "","## Next-step limits",
+            "- Il2CppDumper recovered the method map and offsets (metadata version 31), but it does not restore original C# method bodies.",
+            "- The listed RVA/file offsets identify native ARM64 code locations for a next reverse-engineering pass; offsets alone are not a safe gameplay patch.",
+            "- The original playable scene files, transforms, colliders, maps and level layouts remain unchanged."
           ]
           target=Path("analysis/kadaya-il2cpp-method-map.md")
           target.parent.mkdir(parents=True,exist_ok=True)
           target.write_text("\n".join(report)+"\n",encoding="utf-8")
-          print(f"Report created: {target} ({target.stat().st_size:,} bytes)")
-          print("\n".join(report[:100]))
+          print(f"Report written: {target} ({target.stat().st_size:,} bytes)")
+          print("\n".join(report[:180]))
           PY
 
       - name: Commit the compact method map
