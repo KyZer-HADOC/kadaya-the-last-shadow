@@ -1,1 +1,1 @@
-Build expanded Kadaya reskin: story prologue panel, in-game character/weapon/effect atlases, enemy/boss art, character-select and shop UI. Never modify playable map/level layouts.
+Rebuild expanded reskin with balanced dark-crimson grading, story/dialogue panel fully inside its frame, and unchanged game maps/levels.
