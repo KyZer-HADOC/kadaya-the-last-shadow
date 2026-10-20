@@ -1,1 +1,1 @@
-Rerun runtime scan after installing UnityPy. Read only.
+Rerun focused search for user-facing serialized story/dialogue and ability UI text, excluding object-name noise.
