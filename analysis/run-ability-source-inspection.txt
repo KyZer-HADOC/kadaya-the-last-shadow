@@ -1,0 +1,1 @@
+Trigger read-only inspection of recovered ability scripts and serialized component values to determine whether safe parameter tuning is possible.
