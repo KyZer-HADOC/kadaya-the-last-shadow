@@ -121,7 +121,7 @@ jobs:
                               break
                       methods.append((stripped,signature))
                   elif "// 0x" in stripped and (";" in stripped or "{" in stripped) and not stripped.startswith("// RVA:"):
-                      if len(fields)<30:
+                      if len(fields)<120:
                           fields.append(stripped)
               if not fields and not methods:
                   continue
