@@ -1,0 +1,1 @@
+Trigger mapping of original player SpriteRenderer parts to runtime Texture2D atlases in cloud. Read-only; keep all scenes, maps and levels unchanged.
