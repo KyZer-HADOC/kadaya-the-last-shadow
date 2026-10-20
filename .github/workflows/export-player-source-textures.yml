@@ -1,0 +1,232 @@
+name: Export actual player source textures
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful Unity recovery workflow run ID
+        required: true
+        default: "39362669794"
+        type: string
+  push:
+    paths:
+      - "analysis/run-player-source-textures.txt"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download recovered Unity project in cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id || '39362669794' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install small image preview dependency
+        run: python3 -m pip install --disable-pip-version-check --quiet Pillow
+
+      - name: Trace player SpriteRenderer references to their actual texture images
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import defaultdict
+          from PIL import Image, ImageDraw
+          import re, csv, math, shutil
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects = [p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                      if p.parent.name == "ProjectSettings" and (p.parent.parent / "Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Recovered Unity project root not found.")
+          project = projects[0]
+          assets = project / "Assets"
+          scene = assets / "Scenes/b1.unity"
+          if not scene.exists():
+              raise SystemExit("Assets/Scenes/b1.unity not found.")
+
+          guid_to_path = {}
+          for meta in assets.rglob("*.meta"):
+              try:
+                  txt = meta.read_text(errors="ignore")
+              except OSError:
+                  continue
+              m = re.search(r"(?m)^guid:\s*([0-9a-fA-F]{32})\s*$", txt)
+              if m:
+                  guid_to_path[m.group(1).lower()] = meta.with_suffix("")
+
+          raw = scene.read_text(errors="ignore")
+          parts = re.split(r"(?m)^--- !u!(\d+) &(-?\d+)\s*$", raw)
+          records = {}
+          for i in range(1, len(parts), 3):
+              if i+2 < len(parts):
+                  records[parts[i+1]] = (parts[i], parts[i+2])
+
+          go_names, go_components, transform_go, go_transform = {}, defaultdict(list), {}, {}
+          children, owner = defaultdict(list), {}
+          for fid, (cid, body) in records.items():
+              if cid == "1":
+                  m = re.search(r"(?m)^  m_Name:\s*(.*)$", body)
+                  if m:
+                      go_names[fid] = m.group(1).strip().strip('"')
+                  for x in re.finditer(r"(?m)^  - component:\s*\{fileID:\s*(-?\d+)", body):
+                      go_components[fid].append(x.group(1))
+              own = re.search(r"(?m)^  m_GameObject:\s*\{fileID:\s*(-?\d+)", body)
+              if own:
+                  owner[fid] = own.group(1)
+              if cid == "4":
+                  gm = re.search(r"(?m)^  m_GameObject:\s*\{fileID:\s*(-?\d+)", body)
+                  if gm:
+                      transform_go[fid] = gm.group(1)
+                      go_transform[gm.group(1)] = fid
+                  for cm in re.finditer(r"(?m)^  - \{fileID:\s*(-?\d+)\s*\}", body):
+                      children[fid].append(cm.group(1))
+          for go, comps in go_components.items():
+              for component in comps:
+                  owner.setdefault(component, go)
+
+          roots = [fid for fid, name in go_names.items() if name.lower() in {"ninjaplayer", "arashi"}]
+          todo = [go_transform[go] for go in roots if go in go_transform]
+          seen_transform, rig_go = set(), set()
+          while todo:
+              tf = todo.pop()
+              if tf in seen_transform:
+                  continue
+              seen_transform.add(tf)
+              go = transform_go.get(tf)
+              if go:
+                  rig_go.add(go)
+              todo.extend(children.get(tf, []))
+
+          rows = []
+          used_sprite_paths = set()
+          texture_paths = set()
+          for fid, (cid, body) in records.items():
+              if cid != "212":
+                  continue
+              go = owner.get(fid, "")
+              if go not in rig_go:
+                  continue
+              ref = re.search(r"(?m)^  m_Sprite:\s*\{[^}]*guid:\s*([0-9a-fA-F]{32})", body)
+              if not ref:
+                  rows.append([go_names.get(go, ""), fid, "", "", "", "sprite reference GUID missing"])
+                  continue
+              sprite_guid = ref.group(1).lower()
+              sprite_path = guid_to_path.get(sprite_guid)
+              if not sprite_path:
+                  rows.append([go_names.get(go, ""), fid, sprite_guid, "", "", "sprite path not resolved"])
+                  continue
+              used_sprite_paths.add(sprite_path)
+              referenced_textures = []
+              try:
+                  sprite_text = sprite_path.read_text(errors="ignore")
+              except Exception:
+                  sprite_text = ""
+              # Find all external GUID references in the Sprite .asset YAML; texture refs are usually Texture2D PNGs.
+              refs = list(dict.fromkeys(g.lower() for g in re.findall(r"\bguid:\s*([0-9a-fA-F]{32})", sprite_text)))
+              for guid in refs:
+                  target = guid_to_path.get(guid)
+                  if target and target.suffix.lower() in {".png", ".jpg", ".jpeg", ".tga", ".psd", ".webp"}:
+                      referenced_textures.append(target)
+                      texture_paths.add(target)
+              rows.append([go_names.get(go, ""), fid, sprite_guid, sprite_path.relative_to(project).as_posix(),
+                           "; ".join(p.relative_to(project).as_posix() for p in referenced_textures),
+                           "texture source resolved" if referenced_textures else "sprite found; texture GUID not resolved"])
+
+          out = Path("analysis/player-source-textures")
+          out.mkdir(parents=True, exist_ok=True)
+          with (out / "player-sprite-references.csv").open("w", newline="", encoding="utf-8") as f:
+              wr = csv.writer(f)
+              wr.writerow(["game_object", "component_file_id", "sprite_guid", "sprite_asset", "texture_images", "status"])
+              wr.writerows(rows)
+
+          preview_cells = []
+          for source in sorted(texture_paths, key=lambda p: p.as_posix().lower()):
+              try:
+                  with Image.open(source) as img:
+                      width, height = img.size
+                      im = img.convert("RGBA")
+                      im.thumbnail((500, 500), Image.Resampling.LANCZOS)
+                      cell = Image.new("RGBA", (540, 565), (25, 25, 31, 255))
+                      bg = Image.new("RGBA", im.size, (36, 36, 43, 255))
+                      bg.alpha_composite(im)
+                      cell.alpha_composite(bg, ((540-im.width)//2, 10+(500-im.height)//2))
+                      draw = ImageDraw.Draw(cell)
+                      label = source.name[:62]
+                      draw.text((10, 520), label, fill=(245,245,245,255))
+                      draw.text((10, 542), f"{width}x{height} | {source.stat().st_size//1024} KB", fill=(175,180,190,255))
+                      preview_cells.append((source, cell))
+                      dest = out / source.name
+                      shutil.copy2(source, dest)
+                      meta = Path(str(source) + ".meta")
+                      if meta.exists():
+                          shutil.copy2(meta, Path(str(dest) + ".meta"))
+              except Exception:
+                  continue
+
+          if preview_cells:
+              cols=2
+              rows_count=math.ceil(len(preview_cells)/cols)
+              sheet=Image.new("RGBA",(cols*540, rows_count*565),(12,12,16,255))
+              for idx,(_,cell) in enumerate(preview_cells):
+                  sheet.alpha_composite(cell,((idx%cols)*540,(idx//cols)*565))
+              sheet.convert("RGB").save(out / "player-source-textures.jpg", quality=80, optimize=True)
+
+          report=[
+              "# Actual Kadaya player source-texture inspection",
+              "",
+              "Read-only cloud scan: no gameplay scene, map or level was edited.",
+              "",
+              f"- Scene inspected: {scene.relative_to(project).as_posix()}",
+              f"- SpriteRenderer components found inside player hierarchy: {len(rows)}",
+              f"- Sprite assets resolved: {len(used_sprite_paths)}",
+              f"- Direct texture images resolved: {len(texture_paths)}",
+              f"- Project Unity version: {(project/'ProjectSettings/ProjectVersion.txt').read_text(errors='ignore').strip() if (project/'ProjectSettings/ProjectVersion.txt').exists() else 'unknown'}",
+              "",
+              "## Player rig sprite-part files",
+          ]
+          report += [f"- {p.relative_to(project).as_posix()}" for p in sorted(used_sprite_paths, key=lambda p:p.as_posix())]
+          report += ["", "## Source texture images"]
+          report += [f"- {p.relative_to(project).as_posix()} ({p.stat().st_size:,} bytes)" for p in sorted(texture_paths,key=lambda p:p.as_posix())] or ["- No direct texture references resolved; see CSV for unresolved Sprite files."]
+          report += ["", "The CSV lists the source .asset file for each SpriteRenderer part and any direct image GUID reference found inside the Sprite asset. No project asset has been modified."]
+          (out / "README.md").write_text("\n".join(report)+"\n", encoding="utf-8")
+          print("\n".join(report[:80]))
+          print(f"Wrote {out} with {len(rows)} player parts, {len(used_sprite_paths)} sprites, {len(texture_paths)} textures.")
+          PY
+
+      - name: Commit small source-texture mapping
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/player-source-textures
+          if git diff --cached --quiet; then
+            echo "Mapping unchanged."
+          else
+            git commit -m "Map actual player sprite parts to texture sources"
+            git push
+          fi
+
+      - name: Upload only the player texture previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: kadaya-actual-player-source-textures
+          path: analysis/player-source-textures/
+          if-no-files-found: warn
+          retention-days: 3
+          compression-level: 0
