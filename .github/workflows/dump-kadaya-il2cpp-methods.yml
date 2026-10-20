@@ -1,0 +1,147 @@
+name: Dump Kadaya IL2CPP method map in cloud
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-il2cpp-dump.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up .NET 6
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Download Il2CppDumper v6.7.46
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "https://github.com/Perfare/Il2CppDumper/releases/download/v6.7.46/Il2CppDumper-net6-v6.7.46.zip" -o "$RUNNER_TEMP/il2cppdumper.zip"
+          mkdir -p "$RUNNER_TEMP/il2cppdumper"
+          unzip -q "$RUNNER_TEMP/il2cppdumper.zip" -d "$RUNNER_TEMP/il2cppdumper"
+          find "$RUNNER_TEMP/il2cppdumper" -maxdepth 2 -type f | head -n 30
+
+      - name: Verify IL2CPP inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s "lib/arm64-v8a/libil2cpp.so"
+          test -s "assets/bin/Data/Managed/Metadata/global-metadata.dat"
+          stat -c 'libil2cpp bytes: %s' lib/arm64-v8a/libil2cpp.so
+          stat -c 'metadata bytes: %s' assets/bin/Data/Managed/Metadata/global-metadata.dat
+          od -An -tu4 -N8 assets/bin/Data/Managed/Metadata/global-metadata.dat
+
+      - name: Dump metadata and method offsets in cloud
+        shell: bash
+        run: |
+          set -euo pipefail
+          DUMPER="$(find "$RUNNER_TEMP/il2cppdumper" -maxdepth 2 -type f -name 'Il2CppDumper.dll' | head -n 1)"
+          test -n "$DUMPER"
+          mkdir -p "$RUNNER_TEMP/kadaya-il2cpp-out"
+          set +e
+          dotnet "$DUMPER" "$GITHUB_WORKSPACE/lib/arm64-v8a/libil2cpp.so" "$GITHUB_WORKSPACE/assets/bin/Data/Managed/Metadata/global-metadata.dat" "$RUNNER_TEMP/kadaya-il2cpp-out" > "$RUNNER_TEMP/il2cppdumper.log" 2>&1
+          RC=$?
+          set -e
+          echo "$RC" > "$RUNNER_TEMP/il2cppdumper.exitcode"
+          echo "Il2CppDumper exit code: $RC"
+          tail -n 100 "$RUNNER_TEMP/il2cppdumper.log"
+          find "$RUNNER_TEMP/kadaya-il2cpp-out" -maxdepth 3 -type f -printf '%p %s bytes\n' | head -n 100
+
+      - name: Extract player and ability method map
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, json, os
+
+          tmp=Path(os.environ["RUNNER_TEMP"])
+          outdir=tmp/"kadaya-il2cpp-out"
+          report=[
+            "# Kadaya IL2CPP method map","",
+            "Generated in GitHub Actions cloud from extracted Android game binaries.",
+            "This report does not edit the APK or any map/level files.",
+            "Dumper exit code: "+(tmp/"il2cppdumper.exitcode").read_text().strip(),""
+          ]
+          log=tmp/"il2cppdumper.log"
+          if log.exists():
+              report += ["## Dumper log (last 60 lines)"]
+              report += log.read_text(errors="replace").splitlines()[-60:]
+          report += ["","## Output files"]
+          all_files=sorted(p for p in outdir.rglob("*") if p.is_file())
+          report += [f"- {p.relative_to(outdir).as_posix()} — {p.stat().st_size:,} bytes" for p in all_files[:100]] or ["- No files produced."]
+          dump_files=list(outdir.rglob("dump.cs"))
+          script_json=list(outdir.rglob("script.json"))
+          terms=re.compile(r"PlayerDash|DisguiseManager|HideObj|SkillButton|SkillTree|HUDText|CotTruyenLeader|StoryCanvas|ShopPanel|LevelLeader|PlayerController|PlayerMove|Attack|Weapon|Shuriken|Sword|Dash|Skill|Boss|Enemy|GameManager",re.I)
+          found=[]
+          for path in dump_files:
+              lines=path.read_text(errors="replace").splitlines()
+              for i,line in enumerate(lines):
+                  if terms.search(line):
+                      snippet=lines[max(0,i-3):min(len(lines),i+18)]
+                      block="\n".join(snippet)
+                      if not any(x in block for x in ("class ","struct ","// RVA:","// Offset:","public ","private ","protected ")):
+                          continue
+                      found.append((path.name,i+1,snippet))
+          report += ["","## Matching class and method declarations"]
+          seen=set()
+          for name,line_no,snippet in found[:260]:
+              key=(name,line_no)
+              if key in seen: continue
+              seen.add(key)
+              report += ["",f"### {name}, line {line_no}"]+snippet
+          if not found:
+              report.append("No dump.cs declarations found or the dumper did not produce dump.cs.")
+          for p in script_json[:3]:
+              try:
+                  data=json.loads(p.read_text(errors="replace"))
+                  hits=[]
+                  def walk(x, loc="$"):
+                      if isinstance(x,dict):
+                          for k,v in x.items(): walk(v,loc+"."+str(k))
+                      elif isinstance(x,list):
+                          for i,v in enumerate(x): walk(v,loc+"["+str(i)+"]")
+                      elif isinstance(x,str) and terms.search(x):
+                          hits.append((loc,x[:200]))
+                  walk(data)
+                  report += ["","## Names from script.json",f"- File: {p.name}; matches: {len(hits)}"]
+                  report += [f"- {loc}: {val}" for loc,val in hits[:250]]
+              except Exception as exc:
+                  report.append(f"Could not parse {p.name}: {exc}")
+          report += [
+            "","## What this can support",
+            "- This method map may recover class names, fields, method names and native offsets from the IL2CPP binary.",
+            "- It does not recreate original C# method bodies by itself. Native ARM64 method logic requires additional disassembly/reverse analysis or a carefully validated binary patch.",
+            "- Existing playable scene/level layouts remain unchanged."
+          ]
+          target=Path("analysis/kadaya-il2cpp-method-map.md")
+          target.parent.mkdir(parents=True,exist_ok=True)
+          target.write_text("\n".join(report)+"\n",encoding="utf-8")
+          print(f"Report created: {target} ({target.stat().st_size:,} bytes)")
+          print("\n".join(report[:100]))
+          PY
+
+      - name: Commit the compact method map
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-il2cpp-method-map.md
+          if git diff --cached --quiet; then
+            echo "Method map unchanged."
+          else
+            git commit -m "Add Kadaya IL2CPP method map"
+            git push
+          fi
