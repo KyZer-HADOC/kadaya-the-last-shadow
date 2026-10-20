@@ -1,0 +1,85 @@
+name: Read recovered Kadaya gameplay script stubs
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful recovery workflow run ID
+        required: true
+        default: "39362669794"
+        type: string
+  push:
+    paths:
+      - "analysis/run-script-stub-read.txt"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Download recovered project in GitHub cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id || '39362669794' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Copy only small script stubs into a readable report
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects=[p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                    if p.parent.name=="ProjectSettings" and (p.parent.parent/"Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Recovered project root not found.")
+          project=projects[0]
+          names=["PlayerDash.cs","SkillTree.cs","SkillButton.cs","HideObj.cs",
+                 "DisguiseManager.cs","StoryCanvas.cs","CotTruyenLeader.cs","ShopPanel.cs",
+                 "LevelLeader.cs","HUDText.cs"]
+          lines=["# Recovered Kadaya gameplay script-stub contents","",
+                 "Read-only inspection of small C# files from the recovered IL2CPP Android build. No gameplay files were edited.",
+                 "The 1.77 GiB recovered project is not uploaded to the repository.",""]
+          for name in names:
+              files=list((project/"Assets").rglob(name))
+              lines += ["",f"## {name}"]
+              if not files:
+                  lines.append("Not found.")
+                  continue
+              for path in files[:2]:
+                  lines.append(f"File: {path.relative_to(project).as_posix()} ({path.stat().st_size} bytes)")
+                  try: body=path.read_text(errors="replace")
+                  except OSError as exc:
+                      lines.append(f"Read failed: {exc}")
+                      continue
+                  lines.append("SOURCE START")
+                  lines += body.splitlines()[:160]
+                  lines.append("SOURCE END")
+          out=Path("analysis/kadaya-script-stub-contents.md")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text("\n".join(lines)+"\n",encoding="utf-8")
+          print(f"Wrote {out} ({out.stat().st_size:,} bytes)")
+          PY
+      - name: Commit small report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-script-stub-contents.md
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Read recovered gameplay script stubs"
+            git push
+          fi
