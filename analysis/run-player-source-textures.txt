@@ -1,0 +1,1 @@
+Trigger source texture mapping for the existing Arashi player rig. Do not modify any scenes, maps, levels, or current runtime binaries.
