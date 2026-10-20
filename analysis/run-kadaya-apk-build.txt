@@ -1,1 +1,1 @@
-Rerun build after mapping icon density folders normalized by Apktool; keep scenes, maps, levels unchanged.
+Rerun APK build after allowing Apktool-normalized launcher icon path names. Preserve game scenes/maps/levels.
