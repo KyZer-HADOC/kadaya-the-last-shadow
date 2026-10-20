@@ -2,49 +2,27 @@ name: Prepare Kadaya hidden-statue gameplay patch
 
 on:
   workflow_dispatch:
-    inputs:
-      source_run_id:
-        description: "Successful Unity recovery workflow run ID"
-        required: false
-        default: "39362669794"
-        type: string
   push:
     paths:
       - "gameplay/HiddenStatues/BUILD-PATCH.txt"
 
 permissions:
-  actions: read
   contents: read
 
 jobs:
   package:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 10
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Download recovered Unity project inside GitHub cloud
-        uses: actions/download-artifact@v4
-        with:
-          name: kadaya-recovered-unity-project
-          path: ${{ runner.temp }}/kadaya-recovered-project
-          repository: ${{ github.repository }}
-          run-id: ${{ inputs.source_run_id || '39362669794' }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Verify project and package hidden-statue scripts
+      - name: Package the small Unity import bundle
         shell: bash
         run: |
           set -euo pipefail
-          PROJECT_VERSION="$(find "${RUNNER_TEMP}/kadaya-recovered-project" -path '*/ProjectSettings/ProjectVersion.txt' -print -quit)"
-          test -n "$PROJECT_VERSION" || { echo "Recovered Unity project not found in artifact."; exit 1; }
-          PROJECT_ROOT="$(dirname "$(dirname "$PROJECT_VERSION")")"
-          echo "Verified Unity project: $PROJECT_ROOT"
-          cat "$PROJECT_VERSION"
-
           PACKAGE="$RUNNER_TEMP/kadaya-hidden-statue-package"
           mkdir -p "$PACKAGE/Assets/Scripts/Kadaya/Gameplay/HiddenStatues"
           cp gameplay/HiddenStatues/KadayaHideState.cs gameplay/HiddenStatues/KadayaHideState.cs.meta "$PACKAGE/Assets/Scripts/Kadaya/Gameplay/HiddenStatues/"
@@ -52,9 +30,8 @@ jobs:
           cp gameplay/HiddenStatues/README.md "$PACKAGE/README.md"
           cat >> "$PACKAGE/README.md" <<'EOF'
 
-          Build verification:
-          This package was prepared against the recovered Unity project artifact in GitHub Actions.
-          Import the Assets folder into the project's Assets directory; then follow the setup steps above.
+          Unity target: 6000.2.6f2 (recovered project inventory).
+          Import the included Assets folder into the project's Assets directory.
           Existing Scenes/*.unity files are intentionally not changed by this patch.
           EOF
           (cd "$PACKAGE" && zip -qr "$RUNNER_TEMP/kadaya-hidden-statue-patch.zip" Assets README.md)
