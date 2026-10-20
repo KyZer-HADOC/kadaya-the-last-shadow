@@ -6,7 +6,7 @@ on:
       reskin_run_id:
         description: "Successful visual reskin workflow run ID"
         required: true
-        default: "39460413206"
+        default: "39462740455"
         type: string
   push:
     paths:
@@ -50,7 +50,7 @@ jobs:
           name: kadaya-reskin-visual-patch
           path: ${{ runner.temp }}/kadaya-visual-patch
           repository: ${{ github.repository }}
-          run-id: ${{ inputs.reskin_run_id || '39460413206' }}
+          run-id: ${{ inputs.reskin_run_id || '39462740455' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download and verify official Apktool 3.0.3
@@ -309,7 +309,7 @@ jobs:
 
           Package ID: com.kyzerhadoc.kadaya. This mod build is designed to install alongside the original app so the original game's installation and saved progress remain untouched.
           This signed build includes a reskinned character/weapon/effect atlas, Kadaya title and launcher icon, bilingual story-card artwork, updated in-game tutorial/story TextMesh strings, and rebranded ability/weapon UI labels.
-          The existing Shadow Dash has been tuned in serialized player components: dash speed +20% and dash duration +10%, with all 84 player components verified after the Unity bundle was reopened.
+          Existing movement was tuned in serialized player components: Dash speed +20%, Dash duration +10%, and Jump force +10%; all 84 player components were verified after the Unity bundle was reopened.
           Existing labels include Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, and Sword of Tatsuma to Kadaya's Shadow Blade. The labels still call the original abilities; genuinely new ability code is not added yet.
           Existing playable map/level scenes, transforms, colliders and level layouts were not edited.
           This APK uses a temporary test signing key. The recovered project did not contain editable C# gameplay source; no new native ability methods were added, only existing Dash parameters were tuned.
