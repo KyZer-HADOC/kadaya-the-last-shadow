@@ -1,1 +1,1 @@
-Trigger a read-only scan of the raw serialized player, dash, disguise and skill components. Do not modify any scenes, maps, level layouts or binaries.
+Rerun read-only raw gameplay component scan after fixing report syntax. Keep all scenes, maps and levels unchanged.
