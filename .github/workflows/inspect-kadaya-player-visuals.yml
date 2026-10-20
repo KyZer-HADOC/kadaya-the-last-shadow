@@ -168,7 +168,7 @@ jobs:
                       other = [p for p in paths if p.suffix.lower() != ".mat"]
                       for mat in mats:
                           other.extend(material_textures.get(mat.resolve(), []))
-                      renderer_rows.append((depth, gname, renderer_type, [rel(p) for p in mats], list(dict.fromkeys(rel(p) for p in other)))
+                      renderer_rows.append((depth, gname, renderer_type, [rel(p) for p in mats], list(dict.fromkeys(rel(p) for p in other))))
               for depth, gname, rtype, mats, textures in renderer_rows[:250]:
                   lines.append(f"- {gname} | {rtype} | materials: {', '.join(mats) or 'unresolved'} | textures/sprites: {', '.join(textures) or 'unresolved'}")
               if not renderer_rows:
