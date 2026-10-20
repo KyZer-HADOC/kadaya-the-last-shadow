@@ -1,0 +1,1 @@
+Trigger read-only component payload inspection. Do not change maps, levels, colliders or scene transforms.
