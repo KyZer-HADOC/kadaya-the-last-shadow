@@ -35,6 +35,9 @@ jobs:
           run-id: ${{ inputs.source_run_id || '39362669794' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install image reader
+        run: python3 -m pip install --disable-pip-version-check --quiet Pillow
+
       - name: Export only candidate images and Unity metadata
         shell: bash
         run: |
