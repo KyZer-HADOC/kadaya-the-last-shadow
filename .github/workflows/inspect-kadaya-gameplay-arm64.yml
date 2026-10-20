@@ -1,0 +1,99 @@
+name: Inspect Kadaya gameplay ARM64 methods
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/run-gameplay-arm64-inspection.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  disassemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Install ARM64 disassembler
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq binutils-aarch64-linux-gnu >/dev/null
+          aarch64-linux-gnu-objdump --version | head -n 1
+      - name: Inspect existing gameplay method code (read-only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s lib/arm64-v8a/libil2cpp.so
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess, re
+
+          binary=Path("lib/arm64-v8a/libil2cpp.so")
+          report=[
+            "# Kadaya gameplay native method inspection","",
+            "Read-only ARM64 disassembly from the original IL2CPP native library.",
+            "No game binary, scene, map or level file is modified by this workflow.",
+            f"- Binary bytes: {binary.stat().st_size:,}",
+            "",
+            "Addresses below are from the matching Il2CppDumper method map (metadata version 31). The disassembly is for analysis only; no machine-code patches have been applied.",
+          ]
+          methods=[
+            ("NinjaMovementScript.Button_Dash_press",0x15C7214,0x100),
+            ("NinjaMovementScript.Dash iterator entry",0x15CE810,0x100),
+            ("NinjaMovementScript.Button_Trans_press",0x15C72E4,0x100),
+            ("NinjaMovementScript.bienhinhxuoi",0x15CE5C8,0x180),
+            ("NinjaMovementScript.Button_Fi_press",0x15CE2B8,0x120),
+            ("NinjaMovementScript.Fi iterator MoveNext",0x15D1828,0x300),
+            ("NinjaMovementScript.Button_Chem_press",0x15CEC64,0x120),
+            ("NinjaMovementScript.Chem iterator MoveNext",0x15D0FCC,0x300),
+            ("NinjaMovementScript.PhiMoc",0x15CED24,0x180),
+            ("NinjaMovementScript.BayToPoint",0x15CEE24,0x220),
+            ("NinjaMovementScript.DauBonEmDay",0x15CE438,0x220),
+            ("NinjaMovementScript.DauBonEmDay2",0x15CE58C,0x180),
+            ("PlayerDash.ShowGhost",0x15D34A8,0x180),
+            ("NinjaMovementScript.ResetDashCoolDown",0x15CE9B0,0x100),
+          ]
+          for name,start,length in methods:
+              stop=start+length
+              p=subprocess.run([
+                "aarch64-linux-gnu-objdump","-d",
+                f"--start-address=0x{start:x}",
+                f"--stop-address=0x{stop:x}",
+                str(binary)
+              ],text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,check=False)
+              lines=p.stdout.splitlines()
+              instr=[line for line in lines if re.match(r"^\s*[0-9a-f]+:\s+[0-9a-f]{8}\s+",line)]
+              report += ["",f"## {name}",f"- RVA: 0x{start:x}; window: {length} bytes; objdump exit: {p.returncode}; instruction rows: {len(instr)}"]
+              if instr:
+                  report += ["ASM START"]+lines[:min(len(lines),170)]+["ASM END"]
+              else:
+                  report += ["- No decoded instructions in the requested RVA window; see output below.","TEXT START"]+lines[:20]+["TEXT END"]
+          report += [
+            "","## Interpretation boundary",
+            "- This can identify the native methods and helper calls associated with existing Dash, transformation/concealment, projectile and movement routines.",
+            "- New gameplay behavior is not implemented by inspecting disassembly alone. Any future native patch must be architecture-correct and validated with package integrity plus actual Android runtime testing.",
+            "- Existing maps, scene layouts, transforms and colliders remain untouched."
+          ]
+          out=Path("analysis/kadaya-gameplay-arm64-disassembly.md")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text("\n".join(report)+"\n",encoding="utf-8")
+          print(f"Report written: {out} ({out.stat().st_size:,} bytes)")
+          print("\n".join(report[:160]))
+          PY
+      - name: Commit compact disassembly report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-gameplay-arm64-disassembly.md
+          if git diff --cached --quiet; then
+            echo "Disassembly report unchanged."
+          else
+            git commit -m "Inspect existing gameplay ARM64 methods"
+            git push
+          fi
