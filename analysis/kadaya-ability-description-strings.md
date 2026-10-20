@@ -1,0 +1,278 @@
+# Kadaya ability-description string inspection
+
+Read-only inspection; no source or runtime files were changed.
+- Objects processed: 826,192
+- Matching UI strings: 269
+
+## Matching strings
+- Text | level1 path_id=5986 | Greatly increases swim speed. | offset=148 | preceding_int=29 | byte_count=29 | preceding_hex=1d000000
+- Text | level1 path_id=5987 | Reduces Disguise cooldown by 1 sec. | offset=148 | preceding_int=35 | byte_count=35 | preceding_hex=23000000
+- Text | level1 path_id=6063 | SPEEDY RECOVERY | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=6102 | Each successful melee hit increases | offset=148 | preceding_int=103 | byte_count=35 | preceding_hex=67000000
+- Text | level1 path_id=6102 | the next hit's damage within 1.5 seconds by 20%. Maximum of 3 hits. | offset=184 | preceding_int=175334771 | byte_count=67 | preceding_hex=7365730a
+- Text | level1 path_id=6150 | COIN OF LUCK | offset=148 | preceding_int=12 | byte_count=12 | preceding_hex=0c000000
+- Text | level1 path_id=6176 | Enemies drop gold when slain. | offset=148 | preceding_int=95 | byte_count=29 | preceding_hex=5f000000
+- Text | level1 path_id=6176 | Shuriken kill chance to drop: 8% | offset=211 | preceding_int=168633653 | byte_count=32 | preceding_hex=35250d0a
+- Text | level1 path_id=6183 | Reduces Dash cooldown | offset=148 | preceding_int=30 | byte_count=22 | preceding_hex=1e000000
+- Text | level1 path_id=6185 | Increases barrier duration by 1 sec. | offset=148 | preceding_int=36 | byte_count=36 | preceding_hex=24000000
+- Text | level1 path_id=6259 | Activating Disguise gains a temporarily barrier that lasts for 0.8 sec. | offset=148 | preceding_int=71 | byte_count=71 | preceding_hex=47000000
+- Text | level1 path_id=6315 | DOUBLE JUMP | offset=148 | preceding_int=11 | byte_count=11 | preceding_hex=0b000000
+- Text | level1 path_id=6398 | GOLDEN SEXY | offset=152 | preceding_int=172312660 | byte_count=11 | preceding_hex=5448450a
+- Text | level1 path_id=6401 | Increases Disguise duration by 0.5 sec. | offset=148 | preceding_int=39 | byte_count=39 | preceding_hex=27000000
+- Text | level1 path_id=6412 | AUGMENT: POWER ROLL | offset=148 | preceding_int=19 | byte_count=19 | preceding_hex=13000000
+- Text | level1 path_id=6420 | Shuriken has a chance to deal critical damage that instantly kills the enemy. | offset=148 | preceding_int=98 | byte_count=77 | preceding_hex=62000000
+- Text | level1 path_id=6430 | Enemies drop gold when slain. | offset=148 | preceding_int=96 | byte_count=29 | preceding_hex=60000000
+- Text | level1 path_id=6430 | Shuriken kill chance to drop: 10% | offset=211 | preceding_int=168633648 | byte_count=33 | preceding_hex=30250d0a
+- Text | level1 path_id=6460 | Arashi takes no fall damage. | offset=148 | preceding_int=28 | byte_count=28 | preceding_hex=1c000000
+- Text | level1 path_id=6469 | Enemies drop gold when slain. | offset=148 | preceding_int=95 | byte_count=29 | preceding_hex=5f000000
+- Text | level1 path_id=6469 | Shuriken kill chance to drop: 5% | offset=211 | preceding_int=168633648 | byte_count=32 | preceding_hex=30250d0a
+- Text | level1 path_id=6471 | CRITICAL STRIKE | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=6487 | Shuriken has a chance to deal critical damage that instantly kills the enemy. | offset=148 | preceding_int=98 | byte_count=77 | preceding_hex=62000000
+- Text | level1 path_id=6518 | SPEEDY RECOVERY | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=6522 | Shuriken has a chance to deal critical damage that instantly kills the enemy. | offset=148 | preceding_int=98 | byte_count=77 | preceding_hex=62000000
+- Text | level1 path_id=6529 | Arashi can jump twice in the air. | offset=148 | preceding_int=33 | byte_count=33 | preceding_hex=21000000
+- Text | level1 path_id=6604 | SWORD OF TATSUMA | offset=148 | preceding_int=16 | byte_count=16 | preceding_hex=10000000
+- Text | level1 path_id=6606 | - By default, using the attack button throws a single shuriken forward. If Arashi comes close enough to the target, he will execute a<color=#FFC01CFF> Melee Strike </color>instead. | offset=148 | preceding_int=262 | byte_count=180 | preceding_hex=06010000
+- Text | level1 path_id=6614 | SPEEDY RECOVERY | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=6656 | Artifacts are powerful items which provide Arashi with great benefits. | offset=148 | preceding_int=278 | byte_count=70 | preceding_hex=16010000
+- Text | level1 path_id=6656 | Artifacts are hidden across Story Mode. They can be found in very tricky locations. | offset=220 | preceding_int=168439411 | byte_count=83 | preceding_hex=732e0a0a
+- Text | level1 path_id=6656 | Each playthrough has a different artifact location setup. | offset=305 | preceding_int=168439411 | byte_count=57 | preceding_hex=732e0a0a
+- Text | level1 path_id=6656 | You can unlock artifacts immediately by purchasing | offset=364 | preceding_int=168439408 | byte_count=50 | preceding_hex=702e0a0a
+- Text | level1 path_id=6687 | SPEEDY RECOVERY | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=6697 | CRITICAL STRIKE | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=6698 | Increases maximum life by 1. | offset=148 | preceding_int=28 | byte_count=28 | preceding_hex=1c000000
+- Text | level1 path_id=6704 | Increases maximum life by 1. | offset=148 | preceding_int=28 | byte_count=28 | preceding_hex=1c000000
+- Text | level1 path_id=6706 | Increases barrier duration by 1 sec. | offset=148 | preceding_int=36 | byte_count=36 | preceding_hex=24000000
+- Text | level1 path_id=6740 | Shuriken has a chance to deal critical damage that instantly kills the enemy. | offset=148 | preceding_int=97 | byte_count=77 | preceding_hex=61000000
+- Text | level1 path_id=6773 | Increases Disguise duration by 0.5 sec. | offset=148 | preceding_int=39 | byte_count=39 | preceding_hex=27000000
+- Text | level1 path_id=6774 | Reveals artifact location. | offset=148 | preceding_int=27 | byte_count=27 | preceding_hex=1b000000
+- Text | level1 path_id=6831 | Reduces Disguise cooldown by 20%. | offset=148 | preceding_int=33 | byte_count=33 | preceding_hex=21000000
+- Text | level1 path_id=6880 | Enemies drop gold when slain. | offset=148 | preceding_int=96 | byte_count=29 | preceding_hex=60000000
+- Text | level1 path_id=6880 | Shuriken kill chance to drop: 15% | offset=211 | preceding_int=168633653 | byte_count=33 | preceding_hex=35250d0a
+- Text | level1 path_id=6924 | Increases Disguise duration by 0.5 sec. | offset=148 | preceding_int=39 | byte_count=39 | preceding_hex=27000000
+- Text | level1 path_id=6952 | Critical strike now works on bosses. | offset=148 | preceding_int=60 | byte_count=36 | preceding_hex=3c000000
+- Text | level1 path_id=6952 | Damage on bosses: 300% | offset=186 | preceding_int=168636019 | byte_count=22 | preceding_hex=732e0d0a
+- Text | level1 path_id=7010 | Arashi can use Dodge Roll to roll through | offset=148 | preceding_int=54 | byte_count=41 | preceding_hex=36000000
+- Text | level1 path_id=7014 | Arashi is now be able to dash through | offset=148 | preceding_int=67 | byte_count=37 | preceding_hex=43000000
+- Text | level1 path_id=7019 | Gains a temporarily barrier after using Disguise. | offset=148 | preceding_int=111 | byte_count=50 | preceding_hex=6f000000
+- Text | level1 path_id=7042 | Greatly increases push speed. | offset=148 | preceding_int=29 | byte_count=29 | preceding_hex=1d000000
+- Text | level1 path_id=7076 | Reduces Dash cooldown by 1 sec. | offset=148 | preceding_int=31 | byte_count=31 | preceding_hex=1f000000
+- Text | level1 path_id=7095 | - Disguise allows Arashi to transform into an object and become<color=#FFC01CFF> undetectable </color>by the enemy. While in Disguise, Arashi cannot jump, | offset=148 | preceding_int=272 | byte_count=154 | preceding_hex=10010000
+- Text | level1 path_id=7095 | - Disguise can also be used to dodge most enemy attacks and incoming projectiles.. | offset=335 | preceding_int=168439411 | byte_count=83 | preceding_hex=732e0a0a
+- Text | level1 path_id=7141 | going to start over from stage 1. Earned stars will be reset to zero. | offset=202 | preceding_int=169895282 | byte_count=69 | preceding_hex=7265200a
+- Text | level1 path_id=7141 | - Gold | offset=319 | preceding_int=171599726 | byte_count=6 | preceding_hex=6e673a0a
+- Text | level1 path_id=7141 | - Skill upgrades | offset=336 | preceding_int=174354031 | byte_count=16 | preceding_hex=6f6e640a
+- Text | level1 path_id=7141 | - Purchased items | offset=353 | preceding_int=175334756 | byte_count=17 | preceding_hex=6465730a
+- Text | level1 path_id=7144 | Reduces Disguise cooldown by 1 sec. | offset=148 | preceding_int=35 | byte_count=35 | preceding_hex=23000000
+- Text | level1 path_id=7151 | Passively boosts Arashi's essential survival skills. | offset=148 | preceding_int=54 | byte_count=52 | preceding_hex=36000000
+- Text | level1 path_id=7157 | Significantly increases movement speed | offset=148 | preceding_int=55 | byte_count=39 | preceding_hex=37000000
+- Text | level1 path_id=7157 | when disguised. | offset=188 | preceding_int=169895013 | byte_count=15 | preceding_hex=6564200a
+- Text | level1 path_id=7161 | AUGMENT: CRITICAL MASTERY | offset=148 | preceding_int=25 | byte_count=25 | preceding_hex=19000000
+- Text | level1 path_id=7201 | story mode. Each stage contains 3 stars. | offset=182 | preceding_int=175404399 | byte_count=40 | preceding_hex=6f75740a
+- Text | level1 path_id=7241 | UPGRADED | offset=148 | preceding_int=8 | byte_count=8 | preceding_hex=08000000
+- Text | level1 path_id=7270 | Increases barrier duration by 1 sec. | offset=148 | preceding_int=36 | byte_count=36 | preceding_hex=24000000
+- Text | level1 path_id=7303 | CRITICAL STRIKE | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=7312 | Shuriken has a chance | offset=148 | preceding_int=83 | byte_count=22 | preceding_hex=53000000
+- Text | level1 path_id=7312 | to become a sword | offset=171 | preceding_int=169895267 | byte_count=18 | preceding_hex=6365200a
+- Text | level1 path_id=7337 | GOLDEN SHURIKEN | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=7341 | - Use Dodge Roll/Air Dash to dodge most enemy attacks and incoming projectiles. | offset=148 | preceding_int=206 | byte_count=79 | preceding_hex=ce000000
+- Text | level1 path_id=7341 | - Enemies are<color=#FFC01CFF> confused </color>when rolled/dashed through. Most of them lose track of Arashi | offset=230 | preceding_int=168430894 | byte_count=109 | preceding_hex=2e0d0a0a
+- Text | level1 path_id=7355 | Increases critrate by 10% | offset=148 | preceding_int=25 | byte_count=25 | preceding_hex=19000000
+- Text | level1 path_id=7361 | Increases Disguise duration by 0.5 sec. | offset=148 | preceding_int=39 | byte_count=39 | preceding_hex=27000000
+- Text | level1 path_id=7382 | Increases Maximum life by 1 | offset=148 | preceding_int=27 | byte_count=27 | preceding_hex=1b000000
+- Text | level1 path_id=7403 | Reduces Dash cooldown by 1 sec. | offset=148 | preceding_int=31 | byte_count=31 | preceding_hex=1f000000
+- Text | level1 path_id=7405 | CRITICAL STRIKE | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level1 path_id=7407 | DISGUISE | offset=148 | preceding_int=8 | byte_count=8 | preceding_hex=08000000
+- Text | level1 path_id=7420 | Kills from dash have 100% chance to drop gold. | offset=148 | preceding_int=46 | byte_count=46 | preceding_hex=2e000000
+- Text | level1 path_id=7438 | Reduces Disguise cooldown by 1 sec. | offset=148 | preceding_int=35 | byte_count=35 | preceding_hex=23000000
+- Text | level1 path_id=7449 | UNLOCK | offset=148 | preceding_int=6 | byte_count=6 | preceding_hex=06000000
+- Text | level1 path_id=7464 | Increases barrier duration by 1 sec. | offset=148 | preceding_int=36 | byte_count=36 | preceding_hex=24000000
+- Text | level1 path_id=7471 | Reduces Disguise cooldown by 1 sec. | offset=148 | preceding_int=35 | byte_count=35 | preceding_hex=23000000
+- Text | level1 path_id=7490 | Reduces Dash cooldown by 1 sec. | offset=148 | preceding_int=31 | byte_count=31 | preceding_hex=1f000000
+- Text | level1 path_id=7518 | Reduces Dash cooldown by 1 sec. | offset=148 | preceding_int=31 | byte_count=31 | preceding_hex=1f000000
+- Text | level1 path_id=7528 | Arashi automatically opens his Bangasa while inside a gust and ascends. In order to descend, Arashi must close his Bangasa by using Disguise. | offset=148 | preceding_int=141 | byte_count=141 | preceding_hex=8d000000
+- Text | level5 path_id=3890 | It's time to upgrade your skills | offset=175 | preceding_int=169881203 | byte_count=33 | preceding_hex=732e200a
+- Text | level5 path_id=3955 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level5 path_id=4155 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level6 path_id=3899 | It's time to upgrade your skills | offset=175 | preceding_int=169881203 | byte_count=33 | preceding_hex=732e200a
+- Text | level6 path_id=3961 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level6 path_id=4160 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level7 path_id=4215 | It's time to upgrade your skills | offset=175 | preceding_int=169881203 | byte_count=33 | preceding_hex=732e200a
+- Text | level7 path_id=4275 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level7 path_id=4476 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level8 path_id=3358 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level8 path_id=3526 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level9 path_id=5620 | New Ability Acquired | offset=148 | preceding_int=20 | byte_count=20 | preceding_hex=14000000
+- Text | level9 path_id=5626 | Sword Strike (Melee) | offset=148 | preceding_int=20 | byte_count=20 | preceding_hex=14000000
+- Text | level9 path_id=5634 | Dodge Roll/Air Dash | offset=148 | preceding_int=19 | byte_count=19 | preceding_hex=13000000
+- Text | level9 path_id=5637 | throw shuriken (ranged) | offset=148 | preceding_int=23 | byte_count=23 | preceding_hex=17000000
+- Text | level9 path_id=5641 | Disguise | offset=148 | preceding_int=8 | byte_count=8 | preceding_hex=08000000
+- Text | level9 path_id=5657 | New Ability Acquired | offset=148 | preceding_int=20 | byte_count=20 | preceding_hex=14000000
+- Text | level9 path_id=5668 | DOUBLE JUMP | offset=148 | preceding_int=11 | byte_count=11 | preceding_hex=0b000000
+- Text | level9 path_id=5720 | New Ability Acquired | offset=148 | preceding_int=20 | byte_count=20 | preceding_hex=14000000
+- Text | level9 path_id=5728 | New Ability Acquired | offset=148 | preceding_int=20 | byte_count=20 | preceding_hex=14000000
+- Text | level9 path_id=5731 | New Ability Acquired | offset=148 | preceding_int=20 | byte_count=20 | preceding_hex=14000000
+- Text | level9 path_id=5745 | Shuriken automatically switches to sword when you are close to an enemy. | offset=148 | preceding_int=72 | byte_count=72 | preceding_hex=48000000
+- Text | level9 path_id=5756 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level9 path_id=5963 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level10 path_id=4868 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level10 path_id=5060 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level11 path_id=5634 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level11 path_id=5849 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level12 path_id=6198 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level12 path_id=6407 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level13 path_id=7095 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level13 path_id=7321 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level14 path_id=7480 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level14 path_id=7738 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level15 path_id=9097 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level15 path_id=9397 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level16 path_id=9747 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level16 path_id=10003 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level17 path_id=8893 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level17 path_id=9178 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level18 path_id=8799 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level18 path_id=9046 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level19 path_id=8920 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level19 path_id=9176 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level20 path_id=9343 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level20 path_id=9588 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level21 path_id=8424 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level21 path_id=8711 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level22 path_id=9409 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level22 path_id=9672 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level23 path_id=9945 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level23 path_id=10240 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level24 path_id=11052 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level24 path_id=11320 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level25 path_id=9883 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level25 path_id=10139 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level26 path_id=9577 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level26 path_id=9827 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level27 path_id=10462 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level27 path_id=10741 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level28 path_id=10421 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level28 path_id=10705 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level29 path_id=9435 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level29 path_id=9696 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level30 path_id=9968 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level30 path_id=10295 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level31 path_id=11209 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level31 path_id=11486 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level32 path_id=9877 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level32 path_id=10141 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level33 path_id=10199 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level33 path_id=10465 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level34 path_id=8978 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level34 path_id=9213 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level35 path_id=9007 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level35 path_id=9257 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | sharedassets36.assets path_id=86 | Health Info | offset=148 | preceding_int=11 | byte_count=11 | preceding_hex=0b000000
+- Text | level36 path_id=13423 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level36 path_id=13718 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level37 path_id=9665 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level37 path_id=9919 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level38 path_id=10323 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level38 path_id=10596 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level39 path_id=9448 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level39 path_id=9698 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level40 path_id=10848 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level40 path_id=11112 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level41 path_id=10632 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level41 path_id=10915 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level42 path_id=11550 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level42 path_id=11825 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level43 path_id=8545 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level43 path_id=8824 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level44 path_id=11350 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level44 path_id=11631 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level45 path_id=10726 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level45 path_id=11048 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level46 path_id=10092 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level46 path_id=10366 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level47 path_id=9686 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level47 path_id=9940 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level48 path_id=9888 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level48 path_id=10150 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level49 path_id=8433 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level49 path_id=8711 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level50 path_id=11681 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level50 path_id=11963 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level51 path_id=11310 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level51 path_id=11613 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level52 path_id=10940 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level52 path_id=11272 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level53 path_id=10011 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level53 path_id=10268 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level54 path_id=10436 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level54 path_id=10739 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level55 path_id=9931 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level55 path_id=10202 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level56 path_id=9480 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level56 path_id=9749 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level57 path_id=11582 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level57 path_id=11875 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level58 path_id=9834 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level58 path_id=10081 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level59 path_id=11163 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level59 path_id=11469 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level60 path_id=9022 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level60 path_id=9291 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level61 path_id=10343 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level61 path_id=10625 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level62 path_id=10534 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level62 path_id=10828 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level63 path_id=11360 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level63 path_id=11634 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level64 path_id=11189 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level64 path_id=11477 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level65 path_id=12146 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level65 path_id=12414 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level66 path_id=10486 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level66 path_id=10731 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level67 path_id=10035 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level67 path_id=10352 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level68 path_id=9882 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level68 path_id=10187 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level69 path_id=7646 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level69 path_id=7876 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level70 path_id=8420 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level70 path_id=8639 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level71 path_id=8447 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level71 path_id=8689 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level72 path_id=8118 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level72 path_id=8374 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level73 path_id=8924 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level73 path_id=9151 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level74 path_id=9152 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level74 path_id=9405 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level75 path_id=7316 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level75 path_id=7515 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level76 path_id=8714 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level76 path_id=9140 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level77 path_id=8309 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level77 path_id=8512 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level78 path_id=22273 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level78 path_id=22507 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level79 path_id=10329 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level79 path_id=10588 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level80 path_id=8615 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level80 path_id=8951 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level81 path_id=10459 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level81 path_id=10764 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level82 path_id=8981 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level82 path_id=9192 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level83 path_id=9561 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level83 path_id=9799 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level84 path_id=8747 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level84 path_id=8987 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level85 path_id=8151 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level85 path_id=8425 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level86 path_id=7042 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level86 path_id=7279 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level87 path_id=8104 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level87 path_id=8341 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+- Text | level88 path_id=9067 | not enough gold | offset=148 | preceding_int=15 | byte_count=15 | preceding_hex=0f000000
+- Text | level88 path_id=9308 | There is an artifact somewhere in this stage. | offset=148 | preceding_int=45 | byte_count=45 | preceding_hex=2d000000
+
+## Read issues
