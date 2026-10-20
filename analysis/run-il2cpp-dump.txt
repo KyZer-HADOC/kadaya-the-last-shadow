@@ -1,1 +1,1 @@
-Rerun IL2CPP dump with a focused gameplay class/method-offset summary. Keep binary and all scenes/maps/levels unchanged.
+Refresh the IL2CPP method map with complete gameplay component serialized field layouts, particularly NinjaMovementScript, to assess more existing abilities safely. No game code or maps/levels are modified.
