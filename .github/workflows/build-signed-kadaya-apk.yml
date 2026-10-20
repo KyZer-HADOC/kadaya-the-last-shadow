@@ -33,15 +33,15 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Set up Android build tools
-        uses: android-actions/setup-android@v3
-
       - name: Install zipalign and apksigner
         shell: bash
         run: |
           set -euo pipefail
-          yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "build-tools;35.0.0" >/dev/null
+          : "${ANDROID_HOME:?Android SDK is not available on this runner}"
+          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -maxdepth 3 -type f -name sdkmanager | sort -V | tail -n 1)"
+          test -x "$SDKMANAGER"
+          yes | "$SDKMANAGER" --licenses >/dev/null || true
+          "$SDKMANAGER" "build-tools;35.0.0" >/dev/null
           echo "$ANDROID_HOME/build-tools/35.0.0" >> "$GITHUB_PATH"
 
       - name: Download the validated visual patch from GitHub Actions
