@@ -1,0 +1,1 @@
+Trigger the read-only scan of dialogue, story and ability strings in the extracted runtime files.
