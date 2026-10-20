@@ -1,0 +1,181 @@
+name: Locate Kadaya gameplay objects in cloud
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful Unity recovery workflow run ID
+        required: true
+        default: "39362669794"
+        type: string
+  push:
+    paths:
+      - "analysis/run-gameplay-character-scan.txt"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download recovered Unity project in cloud
+        uses: actions/download-artifact@v4
+        with:
+          name: kadaya-recovered-unity-project
+          path: ${{ runner.temp }}/kadaya-recovered-project
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id || '39362669794' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Inspect character, sprite, animator and dialogue references
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter, defaultdict
+          import re
+
+          root = Path("${{ runner.temp }}/kadaya-recovered-project")
+          projects = [p.parent.parent for p in root.rglob("ProjectVersion.txt")
+                      if p.parent.name == "ProjectSettings" and (p.parent.parent / "Assets").is_dir()]
+          if not projects:
+              raise SystemExit("Recovered Unity project root not found.")
+          project = projects[0]
+          assets = project / "Assets"
+
+          guid_to_path = {}
+          for meta in assets.rglob("*.meta"):
+              try:
+                  txt = meta.read_text(errors="ignore")
+              except OSError:
+                  continue
+              m = re.search(r"(?m)^guid:\s*([0-9a-fA-F]{32})\s*$", txt)
+              if m:
+                  guid_to_path[m.group(1).lower()] = meta.with_suffix("")
+
+          scenes_dir = assets / "Scenes"
+          scene_names = {"first.unity", "select.unity", "b1.unity", "b2.unity", "b3.unity",
+                         "boss1.unity", "cottruyen.unity", "cottruyen2ending.unity"}
+          scenes = sorted([p for p in scenes_dir.glob("*.unity") if p.name.lower() in scene_names],
+                          key=lambda p: p.name.lower())
+          if not scenes:
+              scenes = sorted(assets.rglob("*.unity"), key=lambda p: p.name.lower())[:8]
+
+          def rel(p):
+              try: return p.relative_to(project).as_posix()
+              except ValueError: return p.as_posix()
+
+          def scan_scene(scene):
+              raw = scene.read_text(errors="ignore")
+              parts = re.split(r"(?m)^--- !u!(\d+) &(-?\d+)\s*$", raw)
+              records = {}
+              for i in range(1, len(parts), 3):
+                  if i + 2 < len(parts):
+                      records[parts[i+1]] = (parts[i], parts[i+2])
+              names, go_components, owner_by_component = {}, defaultdict(list), {}
+              for fid, (cid, body) in records.items():
+                  if cid == "1":
+                      nm = re.search(r"(?m)^  m_Name:\s*(.*)$", body)
+                      if nm: names[fid] = nm.group(1).strip().strip('"')
+                      for cm in re.finditer(r"(?m)^  - component:\s*\{fileID:\s*(-?\d+)", body):
+                          go_components[fid].append(cm.group(1))
+                  own = re.search(r"(?m)^  m_GameObject:\s*\{fileID:\s*(-?\d+)", body)
+                  if own: owner_by_component[fid] = own.group(1)
+              for go, comps in go_components.items():
+                  for comp in comps: owner_by_component.setdefault(comp, go)
+
+              key_re = re.compile(r"arashi|player|hero|character|ninja|boss|enemy|shadow|sword|weapon|skill|attack|story|dialog|text|chat|canvas|select|menu|map|level|ground|checkpoint|ability|animation|animator", re.I)
+              go_hits = [(name, fid, len(go_components.get(fid, []))) for fid, name in names.items() if key_re.search(name)]
+              scripts, sprites, animators, texts = Counter(), [], [], []
+              for fid, (cid, body) in records.items():
+                  owner = owner_by_component.get(fid, "")
+                  go_name = names.get(owner, "unmapped")
+                  sm = re.search(r"(?m)^  m_Script:\s*\{[^}]*guid:\s*([0-9a-fA-F]{32})", body)
+                  if sm:
+                      p = guid_to_path.get(sm.group(1).lower())
+                      if p: scripts[(go_name, rel(p))] += 1
+                  if cid == "212":
+                      sm = re.search(r"(?m)^  m_Sprite:\s*\{[^}]*guid:\s*([0-9a-fA-F]{32})", body)
+                      if sm:
+                          p = guid_to_path.get(sm.group(1).lower())
+                          sprites.append((go_name, rel(p) if p else "unresolved " + sm.group(1)))
+                  if cid == "95":
+                      for key in ("m_Controller", "m_Avatar"):
+                          am = re.search(r"(?m)^  " + key + r":\s*\{[^}]*guid:\s*([0-9a-fA-F]{32})", body)
+                          if am:
+                              p = guid_to_path.get(am.group(1).lower())
+                              animators.append((go_name, key, rel(p) if p else "unresolved " + am.group(1)))
+                  if key_re.search(go_name):
+                      for tm in re.finditer(r"(?m)^\s*(m_text|m_Text|text|m_Content):\s*(.*)$", body):
+                          val = tm.group(2).strip().strip('"')
+                          if val and len(val) < 300 and val not in {"0", "1"}:
+                              texts.append((go_name, tm.group(1), val))
+              return go_hits, scripts, sprites, animators, texts
+
+          lines = [
+              "# Kadaya gameplay object inspection",
+              "",
+              "Cloud-only inspection of the recovered Unity export. No scenes, maps or level layouts were changed.",
+              "",
+              "Unity version: " + ((project / "ProjectSettings/ProjectVersion.txt").read_text(errors="ignore").strip()
+                                  if (project / "ProjectSettings/ProjectVersion.txt").exists() else "unknown"),
+              "Asset GUIDs indexed: " + str(len(guid_to_path)),
+              "Scenes scanned: " + str(len(scenes)),
+          ]
+          for scene in scenes:
+              try:
+                  go_hits, scripts, sprites, animators, texts = scan_scene(scene)
+              except Exception as exc:
+                  lines += ["", "## " + rel(scene), "Scan error: " + repr(exc)]
+                  continue
+              lines += ["", "## Scene: " + rel(scene) + " (" + str(round(scene.stat().st_size/1048576, 2)) + " MiB)",
+                        "", "### Named GameObjects"]
+              lines += [f"{name} (fileID {fid}, components {n})" for name, fid, n in sorted(set(go_hits), key=lambda x: x[0].lower())[:180]] or ["No relevant names found."]
+              lines += ["", "### Scripts/components"]
+              lines += [f"{go} -> {p} ({n} references)" for (go, p), n in scripts.most_common(80)] or ["No custom script references resolved."]
+              lines += ["", "### Sprite assets"]
+              lines += [f"{go} -> {p}" for go, p in list(dict.fromkeys(sprites))[:160]] or ["No SpriteRenderer links resolved."]
+              lines += ["", "### Animator controllers and avatars"]
+              lines += [f"{go} / {key} -> {p}" for go, key, p in list(dict.fromkeys(animators))[:100]] or ["No animator links resolved."]
+              lines += ["", "### Serialized text candidates"]
+              lines += [f"{go} / {key} = {val}" for go, key, val in list(dict.fromkeys(texts))[:120]] or ["No serialized text found."]
+
+          possible = []
+          for ext in (".controller", ".anim", ".prefab", ".asset"):
+              possible.extend(p for p in assets.rglob("*" + ext)
+                               if re.search(r"arashi|player|character|hero|ninja|run|idle|attack|jump|skill|weapon|sprite", p.name, re.I))
+          lines += ["", "## Named animation files and prefabs"]
+          lines += [f"{rel(p)} ({p.stat().st_size} bytes)" for p in sorted(possible, key=lambda p: p.as_posix())[:300]] or ["No name matches."]
+          lines += [
+              "",
+              "## Technical note",
+              "This originated from an IL2CPP Android build. Recovered C# files may be script stubs with no original method bodies. This scan does not edit any game files. Preserve all existing scenes during the Kadaya conversion."
+          ]
+          out = Path("analysis/kadaya-gameplay-object-inspection.md")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          print(f"Report created: {out} ({out.stat().st_size:,} bytes)")
+          PY
+
+      - name: Commit small scan report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/kadaya-gameplay-object-inspection.md
+          if git diff --cached --quiet; then
+            echo "Report unchanged."
+          else
+            git commit -m "Add gameplay object and character inspection"
+            git push
+          fi
