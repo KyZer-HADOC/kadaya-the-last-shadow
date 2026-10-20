@@ -1,0 +1,501 @@
+# Kadaya base player visual reference scan
+
+Read-only scan of the recovered gameplay scene. It does not change scenes, maps, levels or runtime assets.
+
+- Scene: Assets/Scenes/b1.unity
+- Scene objects: 5980
+- Asset GUIDs indexed: 4762
+- Arashi/player-like GameObjects found: 5
+
+## Player root: NinjaPlayer (GameObject fileID 536, Transform 2358)
+
+### Hierarchy (first 400 descendants)
+- NinjaPlayer (fileID 536; classIDs 4,50,114,58,61,58)
+  - Center (fileID 1727; classIDs 4)
+  - WallCheckUp (fileID 710; classIDs 4)
+  - WallCheckDown (fileID 855; classIDs 4)
+  - WallCheckBottom (fileID 1199; classIDs 4)
+  - SitCheckPos (fileID 1610; classIDs 4)
+  - Bonus (fileID 545; classIDs 4,50,114,70)
+  - CamTarget (fileID 515; classIDs 4)
+  - HUDText (fileID 431; classIDs 4,114)
+    - CoinHUDText (fileID 550; classIDs 4)
+      - CoinHud (fileID 418; classIDs 4,95,114)
+        - Text (fileID 509; classIDs 4,23,102)
+      - CoinHud (1) (fileID 467; classIDs 4,114,95)
+        - Text (fileID 493; classIDs 4,23,102)
+      - CoinHud (2) (fileID 503; classIDs 4,114,95)
+        - Text (fileID 435; classIDs 4,23,102)
+      - CoinHud (3) (fileID 476; classIDs 4,114,95)
+        - Text (fileID 470; classIDs 4,23,102)
+      - CoinHud (4) (fileID 533; classIDs 4,114,95)
+        - Text (fileID 566; classIDs 4,23,102)
+  - Arashi (fileID 1885; classIDs 4)
+    - Arashi (fileID 1563; classIDs 4,95,114)
+      - control all (fileID 1869; classIDs 4)
+        - lower part control (fileID 1023; classIDs 4)
+          - duiphai (fileID 1845; classIDs 4)
+            - chanphai (fileID 1527; classIDs 4)
+              - banchanphai (fileID 932; classIDs 4)
+                - banchan_phai01 (fileID 853; classIDs 4)
+                  - banchan_phai01 (fileID 1803; classIDs 4,212)
+                  - banchan_phai02 (fileID 1138; classIDs 4,212)
+                  - banchanphai03 (fileID 1678; classIDs 4,212)
+              - chan_phai (fileID 1010; classIDs 4)
+                - chan_phai (fileID 743; classIDs 4,212)
+                - chan_phai02 (fileID 1697; classIDs 4,212)
+            - dui_phai (fileID 997; classIDs 4)
+              - dui_phai (fileID 1220; classIDs 4,212)
+              - dui_phai02 (fileID 1088; classIDs 4,212)
+          - duitrai (fileID 1881; classIDs 4)
+            - chantrai (fileID 1777; classIDs 4)
+              - banchantrai (fileID 941; classIDs 4)
+                - banchan_trai01 (fileID 1898; classIDs 4)
+                  - banchan_trai01 (fileID 1135; classIDs 4,212)
+                  - banchan_trai02 (fileID 1503; classIDs 4,212)
+                  - banchan_trai_skill01 (fileID 806; classIDs 4,212)
+              - chan_trai01 (fileID 820; classIDs 4)
+                - chan_trai01 (fileID 1142; classIDs 4,212)
+                - chan_trai02 (fileID 1888; classIDs 4,212)
+            - dui_trai (fileID 1558; classIDs 4)
+              - dui_trai (fileID 1011; classIDs 4,212)
+              - dui_trai02 (fileID 1908; classIDs 4,212)
+        - bodyduoi (fileID 1215; classIDs 4)
+          - bodytren (fileID 1587; classIDs 4)
+            - vaiphai (fileID 1880; classIDs 4)
+              - tayphai (fileID 1607; classIDs 4)
+                - bantayphai (fileID 1014; classIDs 4)
+                  - kiem (fileID 1164; classIDs 4)
+                    - kiem02 (fileID 1923; classIDs 4)
+                      - kiem_block (fileID 1757; classIDs 4,212)
+                      - kiem_block02 (fileID 1060; classIDs 4,212)
+                      - kiemchem (fileID 1040; classIDs 4,212)
+                      - kiemchem02 (fileID 1092; classIDs 4,212)
+                      - kiemchem03 (fileID 1909; classIDs 4,212)
+                      - kiemchem04 (fileID 1048; classIDs 4,212)
+                      - kiemchem05 (fileID 1884; classIDs 4,212)
+                      - kiemchem07 (fileID 1232; classIDs 4,212)
+                      - ong_tho (fileID 1604; classIDs 4,212)
+                      - thoitieu (fileID 1547; classIDs 4,212)
+                  - bantay_phai04 (fileID 1798; classIDs 4)
+                    - bantay_phai01 (fileID 1124; classIDs 4,212)
+                    - bantay_phai02 (fileID 1029; classIDs 4,212)
+                    - bantay_phai03 (fileID 946; classIDs 4,212)
+                    - bantay_phai04 (fileID 951; classIDs 4,212)
+                    - bantayphai05 (fileID 916; classIDs 4,212)
+                - tay_phai (fileID 1337; classIDs 4)
+                  - tay_phai (fileID 1882; classIDs 4,212)
+                  - tay_phai02 (fileID 1478; classIDs 4,212)
+              - vaiphai (fileID 1303; classIDs 4)
+                - vai_phai (fileID 808; classIDs 4,212)
+            - vaitrai (fileID 1820; classIDs 4)
+              - taytrai (fileID 1724; classIDs 4)
+                - bantaytrai (fileID 1772; classIDs 4)
+                  - bantay_trai01 (fileID 1529; classIDs 4)
+                    - Umbrela (fileID 1773; classIDs 4,95)
+                      - body (fileID 1471; classIDs 4)
+                        - tip (fileID 1203; classIDs 4)
+                        - o-01 (fileID 856; classIDs 4)
+                        - o-01 (fileID 1753; classIDs 4,212)
+                        - o-01b (fileID 1526; classIDs 4,212)
+                        - o-02 (fileID 774; classIDs 4,212)
+                        - o-02b (fileID 1646; classIDs 4,212)
+                        - o-03 (fileID 1691; classIDs 4,212)
+                        - o-04 (fileID 1049; classIDs 4,212)
+                        - o-05 (fileID 1254; classIDs 4,212)
+                        - body (fileID 1264; classIDs 4)
+                        - body (fileID 801; classIDs 4,212)
+                    - bantay_trai01 (fileID 1548; classIDs 4,212)
+                    - bantay_trai02 (fileID 1326; classIDs 4,212)
+                    - bantaytrai_03 (fileID 1013; classIDs 4,212)
+                - tay_trai (fileID 1102; classIDs 4)
+                  - tay_trai (fileID 907; classIDs 4,212)
+              - vai_trai (fileID 712; classIDs 4)
+                - vai_trai (fileID 1325; classIDs 4,212)
+                - vai_trai02 (fileID 904; classIDs 4,212)
+            - neck (fileID 1813; classIDs 4)
+              - head (fileID 1605; classIDs 4)
+                - MaskOfArashi (fileID 1185; classIDs 4)
+                - mu (fileID 1466; classIDs 4)
+                  - mu (fileID 776; classIDs 4)
+                    - non (fileID 1085; classIDs 4,212)
+                - head (fileID 1554; classIDs 4)
+                  - head (fileID 1679; classIDs 4,212)
+                  - head_02 (fileID 1741; classIDs 4,212)
+                  - mu (1) (fileID 1354; classIDs 4)
+                    - mu (fileID 1409; classIDs 4)
+                      - non (fileID 1748; classIDs 4,212)
+                  - mu (2) (fileID 1111; classIDs 4)
+                    - mu (fileID 1675; classIDs 4)
+                      - non (fileID 1749; classIDs 4,212)
+                  - mu (3) (fileID 1056; classIDs 4)
+                    - mu (fileID 867; classIDs 4)
+                      - non (fileID 726; classIDs 4,212)
+                - toc (fileID 1903; classIDs 4)
+                  - toc (fileID 1217; classIDs 4)
+                    - toc (fileID 1595; classIDs 4,212)
+              - neck (fileID 1865; classIDs 4)
+                - neck (fileID 925; classIDs 4,212)
+            - body_tren (fileID 1353; classIDs 4)
+              - body_tren (fileID 1904; classIDs 4,212)
+              - bodytren02 (fileID 1924; classIDs 4,212)
+              - bodytren03 (fileID 1871; classIDs 4,212)
+              - bodytren04 (fileID 953; classIDs 4,212)
+          - baokiem (fileID 1640; classIDs 4)
+            - chuoi kiem (fileID 952; classIDs 4)
+              - chuoikiem (fileID 1490; classIDs 4)
+                - chuoikiem (fileID 1786; classIDs 4,212)
+            - baokiem (fileID 930; classIDs 4)
+              - baokiem (fileID 1035; classIDs 4,212)
+          - body_duoi (fileID 1006; classIDs 4)
+            - body_duoi (fileID 1571; classIDs 4,212)
+          - kiem1 (fileID 1389; classIDs 4)
+            - kiem01 (fileID 1560; classIDs 4)
+              - kiem01 (fileID 1228; classIDs 4,212)
+      - effect (fileID 1811; classIDs 4)
+        - effect01 (fileID 784; classIDs 4)
+          - effect00 (fileID 1105; classIDs 4,212)
+          - effect01 (fileID 1552; classIDs 4,212)
+          - effect02 (fileID 1234; classIDs 4,212)
+          - effect03 (fileID 1800; classIDs 4,212)
+          - effect04 (fileID 1101; classIDs 4,212)
+          - effect_phi01 (fileID 1742; classIDs 4,212)
+          - effect_phi02 (fileID 1039; classIDs 4,212)
+      - DayXich (fileID 1360; classIDs 4,114)
+        - Soi DayXich (fileID 1415; classIDs 4,120,114)
+        - End (fileID 984; classIDs 4)
+          - Moc (fileID 728; classIDs 4,212)
+      - FiPos (fileID 499; classIDs 4,212)
+      - DashPos (fileID 507; classIDs 4)
+      - PushPos (fileID 479; classIDs 4)
+      - DashTrenPos (fileID 1335; classIDs 4)
+      - DashDuoiPos (fileID 1231; classIDs 4)
+      - MeleePos (fileID 433; classIDs 4)
+      - GroundCheck (fileID 731; classIDs 4)
+      - LonPos (fileID 1361; classIDs 4)
+      - DustTrail (1) (fileID 460; classIDs 4,198,199)
+      - TrailRenderer (fileID 481; classIDs 4)
+        - TrailRotator (fileID 558; classIDs 4,114)
+          - TrailRenderer (fileID 571; classIDs 4,96)
+          - TrailRenderer (fileID 473; classIDs 4,96)
+      - DustBoomDoubleJump (1) (fileID 482; classIDs 4,198,199)
+      - DustBoomFloor (1) (fileID 439; classIDs 4,198,199)
+      - TransFormer (fileID 453; classIDs 4,212)
+        - T0 bu (fileID 1681; classIDs 4,212)
+        - T0 (fileID 1872; classIDs 4,212)
+        - T1 (fileID 819; classIDs 4,212)
+        - T2 (fileID 1211; classIDs 4,212)
+        - T3 (fileID 1144; classIDs 4,212)
+        - T4 (fileID 1860; classIDs 4,212)
+        - T5 (fileID 1746; classIDs 4,212)
+        - T6 (fileID 1778; classIDs 4,212)
+        - T7 (fileID 1007; classIDs 4,212)
+        - T8 (fileID 1572; classIDs 4,212)
+        - T9 (fileID 1910; classIDs 4,212)
+        - T10 (fileID 1606; classIDs 4,212)
+        - T11 (fileID 1143; classIDs 4,212)
+      - DustBoomDeath (1) (fileID 438; classIDs 4,198,199)
+      - DustBoomWall (1) (fileID 420; classIDs 4,198,199)
+      - DashPosbackup (fileID 1826; classIDs 4)
+
+### Renderers, materials and textures
+- Text | MeshRenderer | materials: unresolved | textures/sprites: Assets/Font/constan.ttf
+- Text | MeshRenderer | materials: unresolved | textures/sprites: Assets/Font/constan.ttf
+- Text | MeshRenderer | materials: unresolved | textures/sprites: Assets/Font/constan.ttf
+- Text | MeshRenderer | materials: unresolved | textures/sprites: Assets/Font/constan.ttf
+- Text | MeshRenderer | materials: unresolved | textures/sprites: Assets/Font/constan.ttf
+- banchan_phai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_phai01_0.asset
+- banchan_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_phai02.asset
+- banchanphai03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchanphai03.asset
+- chan_phai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chan_phai.asset
+- chan_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chan_phai02.asset
+- dui_phai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/dui_phai.asset
+- dui_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/dui_phai02_1.asset
+- banchan_trai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_trai01_0.asset
+- banchan_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_trai02.asset
+- banchan_trai_skill01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_trai_skill01.asset
+- chan_trai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chan_trai01_1.asset
+- chan_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chan_trai02.asset
+- dui_trai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/dui_trai.asset
+- dui_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/dui_trai02_1.asset
+- kiem_block | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiem_block.asset
+- kiem_block02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiem_block02.asset
+- kiemchem | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem.asset
+- kiemchem02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem02.asset
+- kiemchem03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem03.asset
+- kiemchem04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem04.asset
+- kiemchem05 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem05.asset
+- kiemchem07 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem07.asset
+- ong_tho | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/ong_tho.asset
+- thoitieu | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/thoitieu.asset
+- bantay_phai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_phai01.asset
+- bantay_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_phai02.asset
+- bantay_phai03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_phai03.asset
+- bantay_phai04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_phai04.asset
+- bantayphai05 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantayphai05.asset
+- tay_phai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/tay_phai.asset
+- tay_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/tay_phai02.asset
+- vai_phai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/vai_phai.asset
+- o-01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/o-01.asset
+- o-01b | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/o-01b.asset
+- o-02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/o-02.asset
+- o-02b | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/o-02b.asset
+- o-03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/o-03.asset
+- o-04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/o-04.asset
+- o-05 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/test01_0.asset
+- body | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/body.asset
+- bantay_trai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_trai01.asset
+- bantay_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_trai02.asset
+- bantaytrai_03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantaytrai_03.asset
+- tay_trai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/tay_trai.asset
+- vai_trai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/vai_trai.asset
+- vai_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/vai_trai02.asset
+- non | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/non.asset
+- head | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/head.asset
+- head_02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/head_02.asset
+- non | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/non.asset
+- non | SpriteRenderer | materials: unresolved | textures/sprites: unresolved
+- non | SpriteRenderer | materials: unresolved | textures/sprites: unresolved
+- toc | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/toc.asset
+- neck | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/neck.asset
+- body_tren | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/body_tren.asset
+- bodytren02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bodytren02.asset
+- bodytren03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bodytren03.asset
+- bodytren04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bodytren04.asset
+- chuoikiem | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chuoikiem.asset
+- baokiem | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/baokiem.asset
+- body_duoi | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/body_duoi.asset
+- kiem01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiem01.asset
+- effect00 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect00.asset
+- effect01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect01.asset
+- effect02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect02.asset
+- effect03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect03.asset
+- effect04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect04.asset
+- effect_phi01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect_phi01.asset
+- effect_phi02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect_phi02.asset
+- Moc | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/moc2_0.asset
+- FiPos | SpriteRenderer | materials: unresolved | textures/sprites: unresolved
+- TransFormer | SpriteRenderer | materials: unresolved | textures/sprites: unresolved
+- T0 bu | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t0.asset
+- T0 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Resources/mask/T0.asset
+- T1 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t1.asset
+- T2 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t2.asset
+- T3 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t3.asset
+- T4 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t4.asset
+- T5 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t5.asset
+- T6 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t6.asset
+- T7 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t7.asset
+- T8 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t8.asset
+- T9 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t9.asset
+- T10 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t10.asset
+- T11 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/t11.asset
+
+## Player root: Arashi (GameObject fileID 1556, Transform 3370)
+
+### Hierarchy (first 400 descendants)
+- Arashi (fileID 1556; classIDs 4,95)
+  - control all (fileID 1440; classIDs 4)
+    - lower part control (fileID 1596; classIDs 4)
+      - duiphai (fileID 1486; classIDs 4)
+        - chanphai (fileID 1005; classIDs 4)
+          - banchanphai (fileID 1590; classIDs 4)
+            - banchan_phai01 (fileID 971; classIDs 4)
+              - banchan_phai01 (fileID 1186; classIDs 4,212)
+              - banchan_phai02 (fileID 1850; classIDs 4,212)
+              - banchanphai03 (fileID 1664; classIDs 4,212)
+          - chan_phai (fileID 1532; classIDs 4)
+            - chan_phai (fileID 1616; classIDs 4,212)
+            - chan_phai02 (fileID 1695; classIDs 4,212)
+        - dui_phai (fileID 1546; classIDs 4)
+          - dui_phai (fileID 1416; classIDs 4,212)
+          - dui_phai02 (fileID 1298; classIDs 4,212)
+      - duitrai (fileID 985; classIDs 4)
+        - chantrai (fileID 1200; classIDs 4)
+          - banchantrai (fileID 1253; classIDs 4)
+            - banchan_trai01 (fileID 1054; classIDs 4)
+              - banchan_trai01 (fileID 928; classIDs 4,212)
+              - banchan_trai02 (fileID 1110; classIDs 4,212)
+              - banchan_trai_skill01 (fileID 732; classIDs 4,212)
+          - chan_trai01 (fileID 1504; classIDs 4)
+            - chan_trai01 (fileID 1831; classIDs 4,212)
+            - chan_trai02 (fileID 884; classIDs 4,212)
+        - dui_trai (fileID 1411; classIDs 4)
+          - dui_trai (fileID 1864; classIDs 4,212)
+          - dui_trai02 (fileID 1754; classIDs 4,212)
+    - bodyduoi (fileID 1723; classIDs 4)
+      - bodytren (fileID 1425; classIDs 4)
+        - vaiphai (fileID 1919; classIDs 4)
+          - tayphai (fileID 1018; classIDs 4)
+            - bantayphai (fileID 1644; classIDs 4)
+              - kiem (fileID 1028; classIDs 4)
+                - kiem02 (fileID 1436; classIDs 4)
+                  - kiem_block (fileID 1651; classIDs 4,212)
+                  - kiem_block02 (fileID 1648; classIDs 4,212)
+                  - kiemchem (fileID 1726; classIDs 4,212)
+                  - kiemchem02 (fileID 1313; classIDs 4,212)
+                  - kiemchem03 (fileID 1694; classIDs 4,212)
+                  - kiemchem04 (fileID 1001; classIDs 4,212)
+                  - kiemchem05 (fileID 838; classIDs 4,212)
+                  - kiemchem07 (fileID 1791; classIDs 4,212)
+                  - ong_tho (fileID 1759; classIDs 4,212)
+                  - thoitieu (fileID 1300; classIDs 4,212)
+              - bantay_phai04 (fileID 787; classIDs 4)
+                - bantay_phai01 (fileID 1756; classIDs 4,212)
+                - bantay_phai02 (fileID 1902; classIDs 4,212)
+                - bantay_phai03 (fileID 1496; classIDs 4,212)
+                - bantay_phai04 (fileID 1000; classIDs 4,212)
+                - bantayphai05 (fileID 1106; classIDs 4,212)
+            - tay_phai (fileID 1198; classIDs 4)
+              - tay_phai (fileID 1862; classIDs 4,212)
+              - tay_phai02 (fileID 1173; classIDs 4,212)
+          - vaiphai (fileID 1463; classIDs 4)
+            - vai_phai (fileID 1077; classIDs 4,212)
+        - vaitrai (fileID 1456; classIDs 4)
+          - taytrai (fileID 1278; classIDs 4)
+            - bantaytrai (fileID 964; classIDs 4)
+              - bantay_trai01 (fileID 1719; classIDs 4)
+                - bantay_trai01 (fileID 764; classIDs 4,212)
+                - bantay_trai02 (fileID 1091; classIDs 4,212)
+                - bantaytrai_03 (fileID 1477; classIDs 4,212)
+            - tay_trai (fileID 1290; classIDs 4)
+              - tay_trai (fileID 1488; classIDs 4,212)
+          - vai_trai (fileID 1755; classIDs 4)
+            - vai_trai (fileID 854; classIDs 4,212)
+            - vai_trai02 (fileID 1672; classIDs 4,212)
+        - neck (fileID 1612; classIDs 4)
+          - head (fileID 788; classIDs 4)
+            - TheMask (fileID 1745; classIDs 4)
+            - mu (fileID 1836; classIDs 4)
+              - mu (fileID 1867; classIDs 4)
+                - non (fileID 868; classIDs 4,212)
+            - head (fileID 1414; classIDs 4)
+              - head (fileID 763; classIDs 4,212)
+              - head_02 (fileID 1771; classIDs 4,212)
+            - toc (fileID 1716; classIDs 4)
+              - toc (fileID 1747; classIDs 4)
+                - toc (fileID 1042; classIDs 4,212)
+          - neck (fileID 1543; classIDs 4)
+            - neck (fileID 1722; classIDs 4,212)
+        - body_tren (fileID 1601; classIDs 4)
+          - body_tren (fileID 1794; classIDs 4,212)
+          - bodytren02 (fileID 906; classIDs 4,212)
+          - bodytren03 (fileID 1492; classIDs 4,212)
+          - bodytren04 (fileID 1593; classIDs 4,212)
+          - Effect (fileID 1181; classIDs 4)
+            - MauXanh (fileID 1584; classIDs 4,198,199)
+              - SubEmitter (fileID 1520; classIDs 4,198,199)
+            - MauDo (fileID 799; classIDs 4,198,199)
+              - SubEmitter (fileID 1451; classIDs 4,198,199)
+            - SetGiat (1) (fileID 903; classIDs 4,198,199)
+            - Fire (fileID 1225; classIDs 4,198,199,114)
+              - MainFire01 (fileID 1775; classIDs 4,198,199)
+              - Fire01 (fileID 1801; classIDs 4,198,199)
+              - smoke (fileID 866; classIDs 4,198,199)
+            - KhoiBang (fileID 1184; classIDs 4,198,199)
+      - baokiem (fileID 1059; classIDs 4)
+        - chuoi kiem (fileID 1859; classIDs 4)
+          - chuoikiem (fileID 1776; classIDs 4)
+            - chuoikiem (fileID 1078; classIDs 4,212)
+        - baokiem (fileID 1936; classIDs 4)
+          - baokiem (fileID 1047; classIDs 4,212)
+      - kiem1 (fileID 988; classIDs 4)
+        - kiem01 (fileID 1334; classIDs 4)
+          - kiem01 (fileID 1568; classIDs 4,212)
+      - body_duoi (fileID 1823; classIDs 4)
+        - body_duoi (fileID 1663; classIDs 4,212)
+  - effect (fileID 773; classIDs 4)
+    - effect01 (fileID 1805; classIDs 4)
+      - effect00 (fileID 1450; classIDs 4,212)
+      - effect01 (fileID 798; classIDs 4,212)
+      - effect02 (fileID 751; classIDs 4,212)
+      - effect03 (fileID 1174; classIDs 4,212)
+      - effect04 (fileID 1574; classIDs 4,212)
+      - effect_phi01 (fileID 1304; classIDs 4,212)
+      - effect_phi02 (fileID 1485; classIDs 4,212)
+
+### Renderers, materials and textures
+- banchan_phai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_phai01_0.asset
+- banchan_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_phai02.asset
+- banchanphai03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchanphai03.asset
+- chan_phai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chan_phai.asset
+- chan_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chan_phai02.asset
+- dui_phai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/dui_phai.asset
+- dui_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/dui_phai02_1.asset
+- banchan_trai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_trai01_0.asset
+- banchan_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_trai02.asset
+- banchan_trai_skill01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/banchan_trai_skill01.asset
+- chan_trai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chan_trai01_1.asset
+- chan_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chan_trai02.asset
+- dui_trai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/dui_trai.asset
+- dui_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/dui_trai02_1.asset
+- kiem_block | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiem_block.asset
+- kiem_block02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiem_block02.asset
+- kiemchem | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem.asset
+- kiemchem02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem02.asset
+- kiemchem03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem03.asset
+- kiemchem04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem04.asset
+- kiemchem05 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem05.asset
+- kiemchem07 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiemchem07.asset
+- ong_tho | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/ong_tho.asset
+- thoitieu | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/thoitieu.asset
+- bantay_phai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_phai01.asset
+- bantay_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_phai02.asset
+- bantay_phai03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_phai03.asset
+- bantay_phai04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_phai04.asset
+- bantayphai05 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantayphai05.asset
+- tay_phai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/tay_phai.asset
+- tay_phai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/tay_phai02.asset
+- vai_phai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/vai_phai.asset
+- bantay_trai01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_trai01.asset
+- bantay_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantay_trai02.asset
+- bantaytrai_03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bantaytrai_03.asset
+- tay_trai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/tay_trai.asset
+- vai_trai | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/vai_trai.asset
+- vai_trai02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/vai_trai02.asset
+- non | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/non.asset
+- head | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/head.asset
+- head_02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/head_02.asset
+- toc | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/toc.asset
+- neck | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/neck.asset
+- body_tren | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/body_tren.asset
+- bodytren02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bodytren02.asset
+- bodytren03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bodytren03.asset
+- bodytren04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/bodytren04.asset
+- chuoikiem | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/chuoikiem.asset
+- baokiem | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/baokiem.asset
+- kiem01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/kiem01.asset
+- body_duoi | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/body_duoi.asset
+- effect00 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect00.asset
+- effect01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect01.asset
+- effect02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect02.asset
+- effect03 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect03.asset
+- effect04 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect04.asset
+- effect_phi01 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect_phi01.asset
+- effect_phi02 | SpriteRenderer | materials: unresolved | textures/sprites: Assets/Sprite/effect_phi02.asset
+
+## Player root: Arashi (GameObject fileID 1563, Transform 3598)
+
+### Hierarchy (first 400 descendants)
+
+### Renderers, materials and textures
+No renderer components found under this player root.
+
+## Player root: Arashi (GameObject fileID 1774, Transform 3650)
+
+### Hierarchy (first 400 descendants)
+- Arashi (fileID 1774; classIDs 4)
+
+### Renderers, materials and textures
+No renderer components found under this player root.
+
+## Player root: Arashi (GameObject fileID 1885, Transform 3685)
+
+### Hierarchy (first 400 descendants)
+
+### Renderers, materials and textures
+No renderer components found under this player root.
+
+## Scene-wide visual assets that may correspond to character models
+
+## Script-source limitation
+This is an IL2CPP-based Android game. AssetRipper-generated C# files do not include the original method bodies, so visual assets can be patched separately but gameplay changes require either source code or a verified binary/runtime patch.
