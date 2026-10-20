@@ -1,0 +1,1 @@
+Trigger a cloud-only scan of the current player, animator, sprite, and story component references. It must not modify scenes.
