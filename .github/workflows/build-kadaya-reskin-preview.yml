@@ -720,6 +720,47 @@ jobs:
           print(f"Validated {len(check)} modified Texture2D assets after reopening.")
           print(f"Validated serialized dialogue: {len(dialogue_changes)} objects changed; {len(reopened_texts)} readable TextMesh values reopened; {textmesh_read_errors} read errors.")
 
+          # Re-open and validate the modified UnityEngine.UI.Text fields from the saved bundle.
+          reopened_ui_texts = []
+          ui_reopen_errors = 0
+          for obj in env2.objects:
+              if getattr(obj.type, "name", "") != "MonoBehaviour":
+                  continue
+              try:
+                  header = obj.read(check_read=False)
+                  script_ref = getattr(header, "m_Script", None)
+                  if script_ref is None:
+                      continue
+                  script_info = script_ref.read()
+                  if str(getattr(script_info, "m_ClassName", "") or "") != "Text":
+                      continue
+                  raw = obj.get_raw_data()
+                  if len(raw) < 152:
+                      continue
+                  text_length = int.from_bytes(raw[144:148], "little", signed=False)
+                  if text_length < 1 or text_length > 4096 or 148 + text_length > len(raw):
+                      continue
+                  value = raw[148:148 + text_length].decode("utf-8")
+                  reopened_ui_texts.append(value)
+              except Exception:
+                  ui_reopen_errors += 1
+          expected_ui_fragments = [
+              "SHADOW LEAP",
+              "SHADOW VEIL",
+              "KADAYA'S SHADOW BLADE",
+              "SHADOW KUNAI",
+              "Shadow Dash",
+          ]
+          missing_ui = [
+              phrase for phrase in expected_ui_fragments
+              if not any(phrase.casefold() in value.casefold() for value in reopened_ui_texts)
+          ]
+          if len(ui_text_changes) < 10:
+              raise SystemExit(f"Expected multiple ability/menu label changes but found only {len(ui_text_changes)}.")
+          if missing_ui:
+              raise SystemExit("UI label patch failed after reopening: " + "; ".join(missing_ui))
+          print(f"Validated UI text changes: {len(ui_text_changes)} objects changed; {len(reopened_ui_texts)} UI Text values reopened; {ui_reopen_errors} read errors.")
+
           # Build density-correct Android launcher icons; no APK files are modified in this step.
           icon_records = []
           for path in sorted(Path("res").rglob("app_icon*.png")):
@@ -750,8 +791,10 @@ jobs:
               "textures_validated_after_reopen": check,
               "serialized_dialogue_objects_changed": len(dialogue_changes),
               "serialized_dialogue_unique_rewrites": json.loads((preview / "kadaya-story-dialogue-changes.json").read_text(encoding="utf-8"))["unique_dialogue_rewrites"],
+              "serialized_ui_text_objects_changed": len(ui_text_changes),
+              "serialized_ui_text_unique_rewrites": json.loads((preview / "kadaya-ui-label-changes.json").read_text(encoding="utf-8"))["unique_rewrites"],
               "icons": icon_records,
-              "note": "This is a data bundle + launcher icon patch, not yet a complete signed APK. Serialized story/tutorial text and selected artwork/UI atlases were changed; playable scene transforms, colliders, maps and level layouts were not edited."
+              "note": "This is a data bundle + launcher icon patch, not yet a complete signed APK. Existing ability/weapon labels, selected descriptions, story/tutorial text and artwork/UI atlases were rebranded; gameplay mechanics, transforms, colliders, maps and level layouts were not edited."
           }
           (output/"patch-report.json").write_text(json.dumps(report,indent=2),encoding="utf-8")
           (output/"README-PATCH.txt").write_text(
