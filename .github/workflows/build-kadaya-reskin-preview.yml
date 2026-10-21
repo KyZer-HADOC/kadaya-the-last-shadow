@@ -457,6 +457,11 @@ jobs:
                   is_startup_texture = any(token in key for token in startup_keywords)
                   if not known_target and not is_startup_texture:
                       continue
+                  # Unity's built-in tracking-loss splash is a tiny engine-owned icon,
+                  # not Kadaya's loading art. Rewriting it causes false validation failures.
+                  if key.startswith("unitysplash-"):
+                      print(f"Skipping Unity engine splash resource: {name}")
+                      continue
                   original = data.image
                   if original is None:
                       continue
