@@ -1,2 +1,5 @@
 Please execute the newest Kadaya reskin workflow: verified Shadow Dash +20% speed/+10% duration, verified existing Jump force +10%, current bilingual Krayoo/Raizen story dialogue/card, rebranded abilities UI, title and ash-black/crimson atlas. Preserve all maps/levels/transforms/colliders.
 Build trigger revision 2.
+
+
+Rebuild request 2026-10-21 revision 3: fully hide old ARASHI II title text, brand any named loading/splash/logo textures as Kadaya, use the uploaded analysis/kadaya-icon.png launcher icon, fix legacy-name regexes, put the revenge-for-Krayoo story into actual serialized dialogue, and keep every map/level layout untouched.
