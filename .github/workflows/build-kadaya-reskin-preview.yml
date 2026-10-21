@@ -179,6 +179,13 @@ jobs:
               draw.text((166, 263), "THE AGE OF", font=font_mid, fill=(216, 207, 204, 255), stroke_width=1, stroke_fill=(10,6,12,220))
               draw.text((158, 306), "SHADOWS", font=font_low, fill=(190, 31, 51, 255), stroke_width=2, stroke_fill=(12,5,10,235))
               draw.line((165, 397, 600, 397), fill=(222, 50, 65, 230), width=max(2, w//700))
+              try:
+                  tagline_font = ImageFont.truetype(small_path, max(12, int(w*0.008)))
+              except OSError:
+                  tagline_font = ImageFont.load_default()
+              draw.text((165, 407), "RAIZEN TOOK KRAYOO. THE HUNT BEGINS.",
+                        font=tagline_font, fill=(230, 213, 211, 255),
+                        stroke_width=1, stroke_fill=(4, 4, 10, 255))
               return img
 
           def add_kadaya_loading_brand(image):
@@ -967,10 +974,10 @@ jobs:
               except Exception:
                   textmesh_read_errors += 1
           expected_dialogue_fragments = [
-              "Stay sharp, Kadaya.",
+              "Find Krayoo, Kadaya.",
               "Raizen's first guard stands here",
               "KADAYA, MOVE!",
-              "Trust me. I'll help you find Raizen and bring Krayoo home.",
+              "Raizen took Krayoo to the Shadow Fortress.",
           ]
           missing_dialogue = [
               phrase for phrase in expected_dialogue_fragments
