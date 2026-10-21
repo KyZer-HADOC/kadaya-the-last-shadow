@@ -337,11 +337,11 @@ jobs:
           KADAYA | THE AGE OF SHADOWS — side-by-side visual/gameplay-parameter test build
 
           Package ID: com.kyzerhadoc.kadaya.test<RUN_ID>. The build gets a unique package ID each run so it can coexist with the original/friend's game and older Kadaya test builds. Check kadaya-build-report.json for the exact ID.
-          This signed build includes a reskinned character/weapon/effect atlas, Kadaya title and launcher icon, bilingual story-card artwork, updated in-game tutorial/story TextMesh strings, and rebranded ability/weapon UI labels.
+          This signed build includes a reskinned character/weapon/effect atlas, a clean Kadaya title with the old ARASHI lettering covered, discovered loading/splash/logo texture branding where present, the user's uploaded launcher icon, rewritten existing story/tutorial dialogue for Kadaya, Raizen and Krayoo, and rebranded ability/weapon UI labels.
           Existing movement was tuned in serialized player components: Dash speed +20%, Dash duration +10%, and Jump force +10%; all 84 player components were verified after the Unity bundle was reopened.
           Existing labels include Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, and Sword of Tatsuma to Kadaya's Shadow Blade. The labels still call the original abilities; genuinely new ability code is not added yet.
           Existing playable map/level scenes, transforms, colliders and level layouts were not edited.
-          This APK uses a temporary test signing key. The recovered project did not contain editable C# gameplay source; no new native ability methods were added, only existing Dash parameters were tuned.
+          This APK uses a temporary test signing key and a unique package ID per build so different test builds can coexist. The recovered project did not contain editable C# gameplay source; no new native ability methods were added, only existing Dash and Jump parameters were tuned.
           Do not redistribute this build unless you have permission to use and distribute all original game assets.
           EOF
           sha256sum kadaya-final-build/Kadaya-The-Age-of-Shadows.apk > kadaya-final-build/SHA256SUMS.txt
