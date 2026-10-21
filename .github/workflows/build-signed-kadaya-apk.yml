@@ -11,6 +11,7 @@ on:
   push:
     paths:
       - "analysis/run-kadaya-apk-build.txt"
+      - "analysis/kadaya-icon.png"
 
 permissions:
   actions: read
@@ -62,6 +63,12 @@ jobs:
             --output "$RUNNER_TEMP/apktool.jar"
           echo "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423  $RUNNER_TEMP/apktool.jar" | sha256sum --check
           java -jar "$RUNNER_TEMP/apktool.jar" --version
+
+      - name: Install Pillow for custom launcher icon resizing
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check --quiet --break-system-packages Pillow
 
       - name: Re-create the base APK ZIP from the extracted APK tree
         shell: bash
@@ -132,6 +139,7 @@ jobs:
           set -euo pipefail
           python3 - <<'PY'
           from pathlib import Path
+          from PIL import Image
           import shutil, xml.etree.ElementTree as ET, json, hashlib
 
           tmp = Path(__import__("os").environ["RUNNER_TEMP"])
@@ -170,6 +178,20 @@ jobs:
           print("Launcher icon targets: " + "; ".join(icon_log))
           if icon_count < 6:
               raise SystemExit(f"Only {icon_count} launcher-icon files were replaced; expected density variants.")
+
+          # If supplied, override the generated icon with the user's own PNG at analysis/kadaya-icon.png.
+          custom_icon = Path.cwd() / "analysis" / "kadaya-icon.png"
+          if custom_icon.is_file():
+              with Image.open(custom_icon) as image:
+                  icon_master = image.convert("RGBA")
+              targets = list((decoded / "res").rglob("app_icon*.png"))
+              if len(targets) < 6:
+                  raise SystemExit("Could not find all decoded launcher-icon density variants.")
+              for dest in targets:
+                  with Image.open(dest) as existing:
+                      size = existing.size
+                  icon_master.resize(size, Image.Resampling.LANCZOS).save(dest, format="PNG")
+              print(f"Applied custom launcher icon {custom_icon} to {len(targets)} PNG variants.")
 
           # Always create one canonical string and set the application label to reference it.
           values_dir = decoded / "res/values"
