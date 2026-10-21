@@ -443,7 +443,7 @@ jobs:
           wanted = required | optional
           found = {}
           edits = []
-          startup_keywords = ("loading", "splash", "startup", "boot", "intro", "logo")
+          startup_keywords = ("loading", "splash", "startup", "boot", "intro", "logo", "title")
           for obj in env.objects:
               if getattr(obj.type,"name","") != "Texture2D":
                   continue
@@ -453,15 +453,17 @@ jobs:
                   key = name.lower()
                   if key in found:
                       continue
-                  if key not in wanted and not any(token in key for token in startup_keywords):
+                  known_target = key in wanted
+                  is_startup_texture = any(token in key for token in startup_keywords)
+                  if not known_target and not is_startup_texture:
                       continue
-                  if key not in wanted:
-                      wanted.add(key)
-                      print(f"Detected additional startup/loading texture: {name}")
                   original = data.image
                   if original is None:
                       continue
                   original = original.convert("RGBA")
+                  if not known_target:
+                      wanted.add(key)
+                      print(f"Detected additional startup/loading/title texture: {name}")
                   found[key] = {"obj":obj,"data":data,"original":original.copy(),"file":getattr(obj.assets_file,"name","unknown")}
               except Exception:
                   continue
@@ -507,7 +509,7 @@ jobs:
               processor = processors.get(key)
               if processor is None:
                   processor = add_kadaya_loading_brand if any(
-                      token in key for token in ("loading", "splash", "startup", "boot", "intro", "logo")
+                      token in key for token in ("loading", "splash", "startup", "boot", "intro", "logo", "title")
                   ) else recolor_full_atlas
               new = processor(orig)
               if new.size != orig.size:
