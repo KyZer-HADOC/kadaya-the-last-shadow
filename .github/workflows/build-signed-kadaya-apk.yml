@@ -18,7 +18,7 @@ on:
 
 permissions:
   actions: read
-  contents: read
+  contents: write
 
 jobs:
   build-apk:
@@ -348,6 +348,7 @@ jobs:
           ls -lh kadaya-final-build/
 
       - name: Upload the signed Kadaya APK
+        id: upload-kadaya
         uses: actions/upload-artifact@v4
         with:
           name: kadaya-the-age-of-shadows-side-by-side-test-build
@@ -355,3 +356,27 @@ jobs:
           if-no-files-found: error
           retention-days: 3
           compression-level: 0
+
+      - name: Publish latest Kadaya build reference
+        shell: bash
+        env:
+          KADAYA_ARTIFACT_ID: ${{ steps.upload-kadaya.outputs.artifact-id }}
+        run: |
+          set -euo pipefail
+          mkdir -p analysis
+          {
+            echo "run_id=$GITHUB_RUN_ID"
+            echo "run_url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo "artifact_id=$KADAYA_ARTIFACT_ID"
+            echo "artifact_name=kadaya-the-age-of-shadows-side-by-side-test-build"
+            echo "apk_filename=Kadaya-The-Age-of-Shadows.apk"
+          } > analysis/latest-kadaya-build.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/latest-kadaya-build.txt
+          if git diff --cached --quiet; then
+            echo "Build reference did not change; nothing to commit."
+          else
+            git commit -m "Record latest Kadaya test build artifact"
+            git push
+          fi
