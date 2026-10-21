@@ -148,14 +148,17 @@ jobs:
           def add_kadaya_title(image):
               img = image.convert("RGBA").copy()
               w, h = img.size
-              # Soft panel fades into the existing dark sky and covers the old title lettering only.
-              mask = Image.new("L", (w, h), 0)
-              md = ImageDraw.Draw(mask)
-              md.rounded_rectangle((100, 50, min(790,w-20), min(470,h-20)), radius=42, fill=178)
-              mask = mask.filter(ImageFilter.GaussianBlur(38))
-              overlay = Image.new("RGBA", (w, h), (6, 5, 12, 0))
-              overlay.putalpha(mask)
-              img = Image.alpha_composite(img, overlay)
+              # Fully cover the original "ARASHI II" lettering; it must not ghost through the Kadaya logo.
+              panel = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+              panel_draw = ImageDraw.Draw(panel)
+              panel_box = (65, 48, min(770, w-22), min(465, h-20))
+              panel_draw.rounded_rectangle(
+                  panel_box, radius=42, fill=(4, 4, 10, 255),
+                  outline=(135, 13, 34, 255), width=max(3, w//500)
+              )
+              panel_draw.line((105, min(425, h-40), min(720, w-45), min(425, h-40)),
+                              fill=(125, 17, 38, 255), width=max(2, w//650))
+              img = Image.alpha_composite(img, panel)
               draw = ImageDraw.Draw(img)
               font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf"
               small_path = "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf"
@@ -176,6 +179,46 @@ jobs:
               draw.text((166, 263), "THE AGE OF", font=font_mid, fill=(216, 207, 204, 255), stroke_width=1, stroke_fill=(10,6,12,220))
               draw.text((158, 306), "SHADOWS", font=font_low, fill=(190, 31, 51, 255), stroke_width=2, stroke_fill=(12,5,10,235))
               draw.line((165, 397, 600, 397), fill=(222, 50, 65, 230), width=max(2, w//700))
+              return img
+
+          def add_kadaya_loading_brand(image):
+              """Overlay a clear Kadaya identity on an actual startup/loading/logo texture."""
+              img = recolor_full_atlas(image).convert("RGBA")
+              w, h = img.size
+              if min(w, h) < 160:
+                  return img
+              draw = ImageDraw.Draw(img)
+              left, right = int(w*0.08), int(w*0.92)
+              top, bottom = int(h*0.06), int(h*0.31)
+              draw.rounded_rectangle(
+                  (left, top, right, bottom), radius=max(12, min(w,h)//28),
+                  fill=(4, 3, 9, 248), outline=(155, 17, 39, 255),
+                  width=max(2, min(w,h)//260)
+              )
+              serif = "/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf"
+              sans = "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf"
+              try:
+                  title_font = ImageFont.truetype(serif, max(18, int(min(w,h)*0.085)))
+                  subtitle_font = ImageFont.truetype(sans, max(11, int(min(w,h)*0.032)))
+              except OSError:
+                  title_font = subtitle_font = ImageFont.load_default()
+              title = "KADAYA"
+              subtitle = "THE AGE OF SHADOWS"
+              title_box = draw.textbbox((0,0), title, font=title_font, stroke_width=1)
+              subtitle_box = draw.textbbox((0,0), subtitle, font=subtitle_font)
+              title_x = (w - (title_box[2]-title_box[0])) // 2
+              sub_x = (w - (subtitle_box[2]-subtitle_box[0])) // 2
+              title_y = top + int((bottom-top)*0.12)
+              draw.text((title_x+2, title_y+3), title, font=title_font,
+                        fill=(116, 8, 28, 255), stroke_width=2, stroke_fill=(4,3,9,255))
+              draw.text((title_x, title_y), title, font=title_font,
+                        fill=(242, 232, 225, 255), stroke_width=1, stroke_fill=(4,3,9,255))
+              line_y = top + int((bottom-top)*0.68)
+              draw.line((int(w*0.28), line_y, int(w*0.72), line_y),
+                        fill=(180, 22, 45, 255), width=max(2, min(w,h)//340))
+              draw.text((sub_x, line_y + max(4,min(w,h)//45)), subtitle,
+                        font=subtitle_font, fill=(224, 42, 60, 255),
+                        stroke_width=1, stroke_fill=(4,3,9,255))
               return img
 
           def recolor_full_atlas(image):
@@ -393,6 +436,7 @@ jobs:
           wanted = required | optional
           found = {}
           edits = []
+          startup_keywords = ("loading", "splash", "startup", "boot", "intro", "logo")
           for obj in env.objects:
               if getattr(obj.type,"name","") != "Texture2D":
                   continue
@@ -400,8 +444,13 @@ jobs:
                   data = obj.read()
                   name = str(getattr(data,"m_Name","") or "")
                   key = name.lower()
-                  if key not in wanted or key in found:
+                  if key in found:
                       continue
+                  if key not in wanted and not any(token in key for token in startup_keywords):
+                      continue
+                  if key not in wanted:
+                      wanted.add(key)
+                      print(f"Detected additional startup/loading texture: {name}")
                   original = data.image
                   if original is None:
                       continue
@@ -416,6 +465,7 @@ jobs:
               raise SystemExit("Missing required Texture2D objects in original bundle: " + ", ".join(missing_required))
           optional_found = sorted(optional & set(found))
           print("Optional UI/story/character atlases found: " + (", ".join(optional_found) or "none"))
+          print("Startup/loading/logo textures detected: " + (", ".join(sorted(k for k in found if any(t in k for t in startup_keywords))) or "none"))
 
           original_portrait = found["arashi main 03"]["original"].copy()
           icon_master = make_icon(original_portrait, 512)
@@ -429,8 +479,8 @@ jobs:
               "arashi main 03": reskin_character_art,
               "ui1": recolor_ui_blue_to_crimson,
               "play ui 01": recolor_ui_blue_to_crimson,
-              "story layout 01": add_story_memory,
-              "story layout 02": add_story_narrative,
+              "story layout 01": recolor_full_atlas,
+              "story layout 02": recolor_full_atlas,
               "main menu layout": recolor_full_atlas,
               "layout character 01": recolor_full_atlas,
               "shop layout": recolor_full_atlas,
@@ -447,7 +497,12 @@ jobs:
           original_hashes, modified_hashes = {}, {}
           for key, info in found.items():
               orig = info["original"]
-              new = processors[key](orig)
+              processor = processors.get(key)
+              if processor is None:
+                  processor = add_kadaya_loading_brand if any(
+                      token in key for token in ("loading", "splash", "startup", "boot", "intro", "logo")
+                  ) else recolor_full_atlas
+              new = processor(orig)
               if new.size != orig.size:
                   raise SystemExit(f"Texture size changed unexpectedly for {key}: {orig.size} -> {new.size}")
               data = info["data"]
@@ -512,24 +567,24 @@ jobs:
               changed = value
               # Keep existing behavior but present it with Kadaya's dark-fantasy naming.
               replacements = [
-                  (r"\\byour son\\b", "your friend Krayoo"),
-                  (r"\\barashi\\b", "Kadaya"),
-                  (r"\\bdosu\\b", "Raizen"),
-                  (r"\\byasha\\b", "the Crimson Archer"),
-                  (r"\\bkanashi\\b", "the Crimson Swordmaster"),
-                  (r"\\bkido\\b", "the Dread Knight"),
-                  (r"\\braven\\b", "the Wanderer"),
-                  (r"\\bdisguise\\b", "Shadow Veil"),
-                  (r"\\bshuriken\\b", "Shadow Kunai"),
-                  (r"\\bdodge roll\\b", "Shadow Roll"),
-                  (r"\\bdash\\b", "Shadow Dash"),
-                  (r"\\bsword\\b", "Shadow Blade"),
-                  (r"\\bartifacts\\b", "Shadow Relics"),
-                  (r"\\bartifact\\b", "Shadow Relic"),
+                  (r"\byour son\b", "your friend Krayoo"),
+                  (r"\barashi\b", "Kadaya"),
+                  (r"\bdosu\b", "Raizen"),
+                  (r"\byasha\b", "the Crimson Archer"),
+                  (r"\bkanashi\b", "the Crimson Swordmaster"),
+                  (r"\bkido\b", "the Dread Knight"),
+                  (r"\braven\b", "the Wanderer"),
+                  (r"\bdisguise\b", "Shadow Veil"),
+                  (r"\bshuriken\b", "Shadow Kunai"),
+                  (r"\bdodge roll\b", "Shadow Roll"),
+                  (r"\bdash\b", "Shadow Dash"),
+                  (r"\bsword\b", "Shadow Blade"),
+                  (r"\bartifacts\b", "Shadow Relics"),
+                  (r"\bartifact\b", "Shadow Relic"),
               ]
               for pattern, replacement_name in replacements:
                   changed = re.sub(pattern, lambda match, replacement_name=replacement_name: preserve_case(match, replacement_name), changed, flags=re.IGNORECASE)
-              changed = re.sub(r"(?i)\\bKadaya is now be able to Shadow Dash through\\b", "Kadaya can now Shadow Dash through", changed)
+              changed = re.sub(r"(?i)\bKadaya is now be able to Shadow Dash through\b", "Kadaya can now Shadow Dash through", changed)
               return changed
 
           ui_text_changes = []
@@ -605,7 +660,7 @@ jobs:
               return " ".join(str(value).split()).casefold()
 
           dialogue_map = {
-              "good luck, arashi.": "Stay sharp, Kadaya.",
+              "good luck, arashi.": "Find Krayoo, Kadaya. Make Raizen answer.",
               "here stands the first guardian, kanashi the sword master.": "Raizen's first guard stands here: the Crimson Swordmaster.",
               "dosu's tower is sealed by a magical bond between his guardians.": "Raizen's Shadow Fortress is sealed by a bond between its guardians.",
               "in order to gain access to it, you must defeat all the guardians.": "Defeat every guardian to reach Raizen's Shadow Fortress.",
@@ -614,17 +669,17 @@ jobs:
               "it would be a great disadvantage for you if you fight him from a distance.": "Raizen's archer is deadly at range. Close the gap before he strikes.",
               "your opponent this time is yasha the bow master.": "Your opponent is Raizen's Crimson Archer.",
               "he's extremely agile and always manages to escape his enemies.": "The archer is swift and deadly. Stay close and strike quickly.",
-              "you are just a pawn in this game arashi": "You are only a pawn in Raizen's game, Kadaya.",
-              "just a puppet, nothing more... hahahaha": "Krayoo is mine now. You will never find him... Hahahaha.",
+              "you are just a pawn in this game arashi": "You burned my home, Raizen. I will bring Krayoo back.",
+              "just a puppet, nothing more... hahahaha": "If you want your friend back... survive. Hahahaha.",
               "stay calm and don't let his combat pace affect you.": "Stay calm. Do not let Raizen's pace break your focus.",
               "this is the last guardian, kido the terror.": "This is Raizen's last guardian — the Dread Knight.",
               "defeat him and then you can break the seal of the portal that leads to dosu's tower.": "Defeat him to break the seal and open the path to Raizen's Shadow Fortress.",
-              "i was sent to rescue you. you can call me raven.": "I came to help you. Call me the Wanderer.",
-              "you must have hundred questions now. but our time is running out.": "I know you have questions, Kadaya, but our time is running out.",
-              "let's not waste any moment anymore. this artifact will restore your power.": "No time to waste. This Shadow Relic will restore your power.",
-              "you need to trust me. i am your last hope if you want to find dosu and your son.": "Trust me. I'll help you find Raizen and bring Krayoo home.",
+              "i was sent to rescue you. you can call me raven.": "Raizen took Krayoo. I'll guide you to the Shadow Fortress.",
+              "you must have hundred questions now. but our time is running out.": "Raizen is moving. We must reach Krayoo before dusk.",
+              "let's not waste any moment anymore. this artifact will restore your power.": "Take this Shadow Relic. You'll need every ounce of strength to reach Krayoo.",
+              "you need to trust me. i am your last hope if you want to find dosu and your son.": "Raizen took Krayoo to the Shadow Fortress. Follow me if you want him back.",
               "stay alive, arashi.": "Stay alive, Kadaya.",
-              "the cold will hurt you badly. try to find shelters like what we are staying in now.": "The Ash Storm will hurt you badly. Take shelter whenever you can.",
+              "the cold will hurt you badly. try to find shelters like what we are staying in now.": "The Ash Storm kills anyone caught outside. Find shelter, then follow Raizen's trail.",
               "the storm is raging outside.": "The Ash Storm is raging outside.",
               "it looks like dosu knows that you have been awaken.": "Raizen knows that you have awakened.",
           }
@@ -634,6 +689,7 @@ jobs:
               return replacement.upper() if original.isupper() else replacement
 
           generic_names = [
+              (r"\byour son\b", "your friend Krayoo"),
               (r"\barashi\b", "Kadaya"),
               (r"\bdosu\b", "Raizen"),
               (r"\byasha\b", "the Crimson Archer"),
