@@ -11,7 +11,10 @@ on:
   push:
     paths:
       - "analysis/run-kadaya-apk-build.txt"
-      - "analysis/kadaya-icon.png"
+  workflow_run:
+    workflows: ["Build Kadaya visual reskin patch in cloud"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   actions: read
@@ -19,6 +22,7 @@ permissions:
 
 jobs:
   build-apk:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 120
 
@@ -51,7 +55,7 @@ jobs:
           name: kadaya-reskin-visual-patch
           path: ${{ runner.temp }}/kadaya-visual-patch
           repository: ${{ github.repository }}
-          run-id: ${{ inputs.reskin_run_id || '39462740455' }}
+          run-id: ${{ github.event.workflow_run.id || inputs.reskin_run_id || '39462740455' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download and verify official Apktool 3.0.3
@@ -183,7 +187,10 @@ jobs:
           custom_icon = Path.cwd() / "analysis" / "kadaya-icon.png"
           if custom_icon.is_file():
               with Image.open(custom_icon) as image:
-                  icon_master = image.convert("RGBA")
+                  if getattr(image, "format", "") == "ICO":
+                      icon_master = image.ico.getimage(max(image.ico.sizes())).convert("RGBA")
+                  else:
+                      icon_master = image.convert("RGBA")
               targets = list((decoded / "res").rglob("app_icon*.png"))
               if len(targets) < 6:
                   raise SystemExit("Could not find all decoded launcher-icon density variants.")
@@ -217,7 +224,7 @@ jobs:
           root = tree.getroot()
           android_ns = "{http://schemas.android.com/apk/res/android}"
           old_package = root.get("package")
-          new_package = "com.kyzerhadoc.kadaya"
+          new_package = "com.kyzerhadoc.kadaya.test" + str(__import__("os").environ.get("GITHUB_RUN_ID", "1"))
           if not old_package:
               raise SystemExit("AndroidManifest.xml is missing its original package name.")
 
@@ -301,7 +308,7 @@ jobs:
           apksigner verify --verbose "$SIGNED"
           aapt dump badging "$SIGNED" > "$RUNNER_TEMP/kadaya-badging.txt"
           grep -E "^package:|^application-label:" "$RUNNER_TEMP/kadaya-badging.txt" | head -n 8
-          grep -q "^package: name='com.kyzerhadoc.kadaya'" "$RUNNER_TEMP/kadaya-badging.txt"
+          grep -q "^package: name='com.kyzerhadoc.kadaya.test" "$RUNNER_TEMP/kadaya-badging.txt"
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile
@@ -329,7 +336,7 @@ jobs:
           cat > kadaya-final-build/README.txt <<'EOF'
           KADAYA | THE AGE OF SHADOWS — side-by-side visual/gameplay-parameter test build
 
-          Package ID: com.kyzerhadoc.kadaya. This mod build is designed to install alongside the original app so the original game's installation and saved progress remain untouched.
+          Package ID: com.kyzerhadoc.kadaya.test<RUN_ID>. The build gets a unique package ID each run so it can coexist with the original/friend's game and older Kadaya test builds. Check kadaya-build-report.json for the exact ID.
           This signed build includes a reskinned character/weapon/effect atlas, Kadaya title and launcher icon, bilingual story-card artwork, updated in-game tutorial/story TextMesh strings, and rebranded ability/weapon UI labels.
           Existing movement was tuned in serialized player components: Dash speed +20%, Dash duration +10%, and Jump force +10%; all 84 player components were verified after the Unity bundle was reopened.
           Existing labels include Disguise to Shadow Veil, Dash to Shadow Dash, Shuriken to Shadow Kunai, and Sword of Tatsuma to Kadaya's Shadow Blade. The labels still call the original abilities; genuinely new ability code is not added yet.
