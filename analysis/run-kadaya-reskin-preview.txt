@@ -3,3 +3,6 @@ Build trigger revision 2.
 
 
 Rebuild request 2026-10-21 revision 3: fully hide old ARASHI II title text, brand any named loading/splash/logo textures as Kadaya, use the uploaded analysis/kadaya-icon.png launcher icon, fix legacy-name regexes, put the revenge-for-Krayoo story into actual serialized dialogue, and keep every map/level layout untouched.
+
+
+Rebuild request 2026-10-21 revision 4: run after the side-by-side package-ID and artifact-report workflow update. Use latest visual patch logic and the already uploaded custom icon; verify the startup branding and Krayoo revenge dialogue validations before packaging.
