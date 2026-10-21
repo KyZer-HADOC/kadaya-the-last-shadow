@@ -21,6 +21,33 @@ permissions:
   contents: write
 
 jobs:
+  record-failed-reskin-run:
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion != 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Record failed visual-patch run
+        shell: bash
+        env:
+          UPSTREAM_RUN_ID: ${{ github.event.workflow_run.id }}
+          UPSTREAM_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          UPSTREAM_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p analysis
+          {
+            echo "status=$UPSTREAM_CONCLUSION"
+            echo "run_id=$UPSTREAM_RUN_ID"
+            echo "head_sha=$UPSTREAM_SHA"
+            echo "run_url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$UPSTREAM_RUN_ID"
+          } > analysis/latest-reskin-run.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/latest-reskin-run.txt
+          git commit -m "Record failed Kadaya visual-patch run"
+          git push
+
   build-apk:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
@@ -380,3 +407,30 @@ jobs:
             git commit -m "Record latest Kadaya test build artifact"
             git push
           fi
+
+
+  record-failed-apk-build:
+    needs: build-apk
+    if: always() && github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && needs.build-apk.result == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Record failed APK build
+        shell: bash
+        env:
+          RESKIN_RUN_ID: ${{ github.event.workflow_run.id }}
+        run: |
+          set -euo pipefail
+          mkdir -p analysis
+          {
+            echo "status=apk-build-failed"
+            echo "reskin_run_id=$RESKIN_RUN_ID"
+            echo "run_id=$GITHUB_RUN_ID"
+            echo "run_url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          } > analysis/latest-kadaya-build.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/latest-kadaya-build.txt
+          git commit -m "Record failed Kadaya APK build"
+          git push
