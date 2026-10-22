@@ -658,7 +658,22 @@ jobs:
                       continue
 
                   new_bytes = new_text.encode("utf-8")
-                  new_raw = raw[:144] + len(new_bytes).to_bytes(4, "little") + new_bytes + raw[148 + old_len:]
+                  # Unity aligns serialized strings to a 4-byte boundary. Replace the entire
+                  # original string slot (length + UTF-8 data + padding), not only the visible
+                  # bytes; otherwise a different string length shifts every field after m_Text
+                  # and can crash the game when it transitions from story into the first scene.
+                  old_slot_end = 148 + ((old_len + 3) & ~3)
+                  if old_slot_end > len(raw):
+                      ui_text_skipped += 1
+                      continue
+                  new_padding = b"\\x00" * ((-len(new_bytes)) & 3)
+                  new_raw = (
+                      raw[:144]
+                      + len(new_bytes).to_bytes(4, "little")
+                      + new_bytes
+                      + new_padding
+                      + raw[old_slot_end:]
+                  )
                   obj.set_raw_data(new_raw)
                   ui_text_changes.append({
                       "file": getattr(getattr(obj, "assets_file", None), "name", "unknown"),
