@@ -1,5 +1,5 @@
-run_id=39583462060
-run_url=https://github.com/KyZer-HADOC/kadaya-the-last-shadow/actions/runs/39583462060
-artifact_id=12338956082
+run_id=39753492917
+run_url=https://github.com/KyZer-HADOC/kadaya-the-last-shadow/actions/runs/39753492917
+artifact_id=12414657922
 artifact_name=kadaya-the-age-of-shadows-side-by-side-test-build
 apk_filename=Kadaya-The-Age-of-Shadows.apk
