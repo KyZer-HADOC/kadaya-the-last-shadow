@@ -666,7 +666,7 @@ jobs:
                   if old_slot_end > len(raw):
                       ui_text_skipped += 1
                       continue
-                  new_padding = b"\\x00" * ((-len(new_bytes)) & 3)
+                  new_padding = b"\x00" * ((-len(new_bytes)) & 3)
                   new_raw = (
                       raw[:144]
                       + len(new_bytes).to_bytes(4, "little")
