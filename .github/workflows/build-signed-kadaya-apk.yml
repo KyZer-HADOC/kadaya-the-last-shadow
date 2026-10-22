@@ -271,6 +271,10 @@ jobs:
                   if value and value.startswith("."):
                       node.set(attr, old_package + value)
 
+              # Rename package-scoped authorities/permissions as well as the app ID.
+              # In particular, AndroidX may declare a custom permission with the original app ID;
+              # leaving it unchanged can make Package Installer reject side-by-side installs with
+              # INSTALL_FAILED_DUPLICATE_PERMISSION even when the application IDs are different.
               for attr in (
                   android_ns + "authorities",
                   android_ns + "permission",
@@ -281,6 +285,16 @@ jobs:
                   value = node.get(attr)
                   if value == old_package or (value and value.startswith(old_package + ".")):
                       node.set(attr, new_package + value[len(old_package):])
+
+              # Keep declarations and uses-permission references paired under the new package.
+              tag_name = str(node.tag).rsplit("}", 1)[-1]
+              if tag_name in {
+                  "permission", "uses-permission", "uses-permission-sdk-23",
+                  "permission-group", "permission-tree",
+              }:
+                  value = node.get(android_ns + "name")
+                  if value == old_package or (value and value.startswith(old_package + ".")):
+                      node.set(android_ns + "name", new_package + value[len(old_package):])
 
           root.set("package", new_package)
           app = root.find("application")
