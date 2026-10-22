@@ -14,3 +14,6 @@ Retry revision 6: include custom Kadaya title/logo; brand small splash textures 
 
 
 Install-fix rebuild revision 7: retain the already uploaded custom launcher icon and the corrected Kadaya/Raizen/Krayoo title, story and splash changes. Most importantly, rename custom Android permission declarations/uses-permission references from the original app ID to the unique per-build Kadaya test package so the mod can install alongside the friend's original game. Preserve the game's original maps and levels.
+
+
+Build request 2026-10-22 revision 8: fix UnityEngine.UI.Text serialization by preserving 4-byte string alignment and replacing the original string padding slot, to prevent crashes when the story transitions into gameplay. Keep custom icon, Kadaya/Raizen/Krayoo story, title and splash branding, permission-safe unique install ID, unchanged maps/levels. In the signed APK workflow, create a maximum-compression DEFLATE level-9 ZIP on GitHub's runner and upload the compressed package (not the raw APK folder).
