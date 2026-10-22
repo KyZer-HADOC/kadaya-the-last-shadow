@@ -11,3 +11,6 @@ Rebuild request 2026-10-21 revision 4: run after the side-by-side package-ID and
 Build attempt revision 5: corrected false validation failure by skipping the tiny UnitySplash-HolographicTrackingLoss engine resource. Continue to patch actual Stuff_splash textures and named title/loading/splash assets, custom uploaded launcher icon analysis/kadaya-icon.png, Krayoo revenge dialogue and UI name rewrite; preserve all maps and levels.
 
 Retry revision 6: include custom Kadaya title/logo; brand small splash textures instead of leaving 128px assets unchanged. Keep old maps and layouts untouched.
+
+
+Install-fix rebuild revision 7: retain the already uploaded custom launcher icon and the corrected Kadaya/Raizen/Krayoo title, story and splash changes. Most importantly, rename custom Android permission declarations/uses-permission references from the original app ID to the unique per-build Kadaya test package so the mod can install alongside the friend's original game. Preserve the game's original maps and levels.
