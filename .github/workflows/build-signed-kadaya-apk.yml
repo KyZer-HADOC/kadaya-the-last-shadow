@@ -1,371 +1,3 @@
-name: Build signed Kadaya Android test APK
-
-on:
-  workflow_dispatch:
-    inputs:
-      reskin_run_id:
-        description: "Successful visual reskin workflow run ID"
-        required: true
-        default: "39462740455"
-        type: string
-  push:
-    paths:
-      - "analysis/run-kadaya-apk-build.txt"
-  workflow_run:
-    workflows: ["Build Kadaya visual reskin patch in cloud"]
-    types: [completed]
-    branches: [main]
-
-permissions:
-  actions: read
-  contents: write
-
-jobs:
-  record-failed-reskin-run:
-    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion != 'success'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Record failed visual-patch run
-        shell: bash
-        env:
-          UPSTREAM_RUN_ID: ${{ github.event.workflow_run.id }}
-          UPSTREAM_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
-          UPSTREAM_SHA: ${{ github.event.workflow_run.head_sha }}
-        run: |
-          set -euo pipefail
-          mkdir -p analysis
-          {
-            echo "status=$UPSTREAM_CONCLUSION"
-            echo "run_id=$UPSTREAM_RUN_ID"
-            echo "head_sha=$UPSTREAM_SHA"
-            echo "run_url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$UPSTREAM_RUN_ID"
-          } > analysis/latest-reskin-run.txt
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add analysis/latest-reskin-run.txt
-          git commit -m "Record failed Kadaya visual-patch run"
-          git push
-
-  build-apk:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
-    timeout-minutes: 120
-
-    steps:
-      - name: Checkout extracted Android game files
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
-      - name: Set up Java for Apktool
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "17"
-
-      - name: Install zipalign and apksigner
-        shell: bash
-        run: |
-          set -euo pipefail
-          : "${ANDROID_HOME:?Android SDK is not available on this runner}"
-          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -maxdepth 3 -type f -name sdkmanager | sort -V | tail -n 1)"
-          test -x "$SDKMANAGER"
-          yes | "$SDKMANAGER" --licenses >/dev/null || true
-          "$SDKMANAGER" "build-tools;35.0.0" >/dev/null
-          echo "$ANDROID_HOME/build-tools/35.0.0" >> "$GITHUB_PATH"
-
-      - name: Download the validated visual patch from GitHub Actions
-        uses: actions/download-artifact@v4
-        with:
-          name: kadaya-reskin-visual-patch
-          path: ${{ runner.temp }}/kadaya-visual-patch
-          repository: ${{ github.repository }}
-          run-id: ${{ github.event.workflow_run.id || inputs.reskin_run_id || '39462740455' }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Download and verify official Apktool 3.0.3
-        shell: bash
-        run: |
-          set -euo pipefail
-          curl --fail --location --retry 3 --retry-delay 2 \
-            "https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_3.0.3.jar" \
-            --output "$RUNNER_TEMP/apktool.jar"
-          echo "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423  $RUNNER_TEMP/apktool.jar" | sha256sum --check
-          java -jar "$RUNNER_TEMP/apktool.jar" --version
-
-      - name: Install Pillow for custom launcher icon resizing
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 -m pip install --disable-pip-version-check --quiet --break-system-packages Pillow
-
-      - name: Re-create the base APK ZIP from the extracted APK tree
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          from pathlib import Path
-          from zipfile import ZipFile, ZIP_DEFLATED, ZIP_STORED
-          import os
-
-          repo = Path.cwd()
-          output = Path(os.environ["RUNNER_TEMP"]) / "kadaya-base.apk"
-          excluded_roots = {".git", ".github", "analysis", "gameplay"}
-          excluded_root_files = {".gitignore", ".gitattributes", "README.md", "LICENSE", "LICENSE.txt"}
-          # Keep APK binary payloads uncompressed; compress the small text/XML/proto payloads.
-          stored_exts = {
-              ".so", ".dex", ".arsc", ".unity3d", ".resource", ".ress", ".dat",
-              ".png", ".jpg", ".jpeg", ".webp", ".ogg", ".mp3", ".wav", ".mp4",
-              ".ttf", ".otf", ".bin", ".pak", ".obb", ".bundle"
-          }
-          file_count = 0
-          total_bytes = 0
-          with ZipFile(output, "w", allowZip64=True) as zf:
-              for p in sorted(repo.rglob("*")):
-                  if not p.is_file():
-                      continue
-                  rel = p.relative_to(repo)
-                  if rel.parts[0] in excluded_roots:
-                      continue
-                  if len(rel.parts) == 1 and rel.name in excluded_root_files:
-                      continue
-                  lower_parts = [s.lower() for s in rel.parts]
-                  # Remove obsolete APK signing blocks/files; the rebuilt APK will be re-signed.
-                  if lower_parts[0] == "meta-inf" and (
-                      p.suffix.lower() in {".rsa", ".sf", ".dsa", ".ec"} or p.name.lower() == "manifest.mf"
-                  ):
-                      continue
-                  method = ZIP_STORED if p.suffix.lower() in stored_exts or p.name in {
-                      "AndroidManifest.xml", "resources.arsc"
-                  } else ZIP_DEFLATED
-                  zf.write(p, rel.as_posix(), compress_type=method)
-                  file_count += 1
-                  total_bytes += p.stat().st_size
-          with ZipFile(output, "r") as zf:
-              bad = zf.testzip()
-              if bad:
-                  raise SystemExit(f"Base APK ZIP integrity check failed at {bad}")
-              names = set(zf.namelist())
-              for required in ("AndroidManifest.xml", "classes.dex", "assets/bin/Data/data.unity3d", "resources.arsc"):
-                  if required not in names:
-                      raise SystemExit(f"Required APK entry missing: {required}")
-          print(f"Created base APK archive from {file_count} files / {total_bytes:,} uncompressed bytes.")
-          print(f"Compressed base archive: {output.stat().st_size:,} bytes.")
-          PY
-
-      - name: Decode APK so we can safely update the app label and resources
-        shell: bash
-        run: |
-          set -euo pipefail
-          java -Xmx4g -jar "$RUNNER_TEMP/apktool.jar" d \
-            "$RUNNER_TEMP/kadaya-base.apk" \
-            --force --no-src \
-            --output "$RUNNER_TEMP/kadaya-decoded"
-
-      - name: Apply the visual patch, launcher icon and Kadaya app name
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          from pathlib import Path
-          from PIL import Image
-          import shutil, xml.etree.ElementTree as ET, json, hashlib
-
-          tmp = Path(__import__("os").environ["RUNNER_TEMP"])
-          decoded = tmp / "kadaya-decoded"
-          patch = tmp / "kadaya-visual-patch"
-          replacement_bundle = patch / "assets/bin/Data/data.unity3d"
-          if not replacement_bundle.is_file():
-              raise SystemExit("Validated patched data.unity3d missing from patch artifact.")
-
-          target_bundle = decoded / "assets/bin/Data/data.unity3d"
-          if not target_bundle.exists():
-              raise SystemExit("Decoded APK is missing assets/bin/Data/data.unity3d.")
-          shutil.copy2(replacement_bundle, target_bundle)
-
-          icon_count = 0
-          icon_log = []
-          for source in (patch / "icons").rglob("app_icon*.png"):
-              rel = source.relative_to(patch / "icons")
-              # Apktool normalizes legacy -v4 resource qualifiers (e.g. mipmap-hdpi-v4 -> mipmap-hdpi).
-              first = rel.parts[0]
-              if first.endswith("-v4"):
-                  rel = Path(first[:-3], *rel.parts[1:])
-              dest = decoded / "res" / rel
-              if not dest.parent.is_dir():
-                  # Fall back to the matching density directory if Apktool normalized qualifiers further.
-                  density = source.parent.name.replace("-v4", "")
-                  candidate = decoded / "res" / density / source.name
-                  if candidate.parent.is_dir():
-                      dest = candidate
-              if dest.parent.is_dir():
-                  shutil.copy2(source, dest)
-                  icon_count += 1
-                  icon_log.append(str(dest.relative_to(decoded)))
-              else:
-                  icon_log.append("NOT FOUND: " + str(rel))
-          print("Launcher icon targets: " + "; ".join(icon_log))
-          if icon_count < 6:
-              raise SystemExit(f"Only {icon_count} launcher-icon files were replaced; expected density variants.")
-
-          # If supplied, override the generated icon with the user's own PNG at analysis/kadaya-icon.png.
-          custom_icon = Path.cwd() / "analysis" / "kadaya-icon.png"
-          if custom_icon.is_file():
-              with Image.open(custom_icon) as image:
-                  if getattr(image, "format", "") == "ICO":
-                      icon_master = image.ico.getimage(max(image.ico.sizes())).convert("RGBA")
-                  else:
-                      icon_master = image.convert("RGBA")
-              targets = list((decoded / "res").rglob("app_icon*.png"))
-              if len(targets) < 6:
-                  raise SystemExit("Could not find all decoded launcher-icon density variants.")
-              for dest in targets:
-                  with Image.open(dest) as existing:
-                      size = existing.size
-                  icon_master.resize(size, Image.Resampling.LANCZOS).save(dest, format="PNG")
-              print(f"Applied custom launcher icon {custom_icon} to {len(targets)} PNG variants.")
-
-          # Always create one canonical string and set the application label to reference it.
-          values_dir = decoded / "res/values"
-          values_dir.mkdir(parents=True, exist_ok=True)
-          strings_file = values_dir / "strings.xml"
-          if strings_file.exists():
-              tree = ET.parse(strings_file)
-              resources = tree.getroot()
-          else:
-              resources = ET.Element("resources")
-              tree = ET.ElementTree(resources)
-
-          label_name = "kadaya_app_name"
-          entry = next((node for node in resources.findall("string") if node.get("name") == label_name), None)
-          if entry is None:
-              entry = ET.SubElement(resources, "string", {"name": label_name, "translatable": "false"})
-          entry.text = "Kadaya | The Age of Shadows"
-          ET.register_namespace("android", "http://schemas.android.com/apk/res/android")
-          tree.write(strings_file, encoding="utf-8", xml_declaration=True)
-
-          manifest_file = decoded / "AndroidManifest.xml"
-          tree = ET.parse(manifest_file)
-          root = tree.getroot()
-          android_ns = "{http://schemas.android.com/apk/res/android}"
-          old_package = root.get("package")
-          new_package = "com.kyzerhadoc.kadaya.test" + str(__import__("os").environ.get("GITHUB_RUN_ID", "1"))
-          if not old_package:
-              raise SystemExit("AndroidManifest.xml is missing its original package name.")
-
-          # Give Kadaya its own install identity so it can be installed alongside the original.
-          # Keep component class names pointing at existing DEX classes, but move package-scoped
-          # authorities/permissions/task affinities to the new application ID to avoid collisions.
-          for node in root.iter():
-              for attr in (
-                  android_ns + "name",
-                  android_ns + "targetActivity",
-                  android_ns + "parentActivityName",
-                  android_ns + "backupAgent",
-                  android_ns + "appComponentFactory",
-                  android_ns + "manageSpaceActivity",
-              ):
-                  value = node.get(attr)
-                  if value and value.startswith("."):
-                      node.set(attr, old_package + value)
-
-              # Rename package-scoped authorities/permissions as well as the app ID.
-              # In particular, AndroidX may declare a custom permission with the original app ID;
-              # leaving it unchanged can make Package Installer reject side-by-side installs with
-              # INSTALL_FAILED_DUPLICATE_PERMISSION even when the application IDs are different.
-              for attr in (
-                  android_ns + "authorities",
-                  android_ns + "permission",
-                  android_ns + "readPermission",
-                  android_ns + "writePermission",
-                  android_ns + "taskAffinity",
-              ):
-                  value = node.get(attr)
-                  if value == old_package or (value and value.startswith(old_package + ".")):
-                      node.set(attr, new_package + value[len(old_package):])
-
-              # Keep declarations and uses-permission references paired under the new package.
-              tag_name = str(node.tag).rsplit("}", 1)[-1]
-              if tag_name in {
-                  "permission", "uses-permission", "uses-permission-sdk-23",
-                  "permission-group", "permission-tree",
-              }:
-                  value = node.get(android_ns + "name")
-                  if value == old_package or (value and value.startswith(old_package + ".")):
-                      node.set(android_ns + "name", new_package + value[len(old_package):])
-
-          root.set("package", new_package)
-          app = root.find("application")
-          if app is None:
-              raise SystemExit("AndroidManifest.xml has no application element.")
-          app.set(android_ns + "label", "@string/kadaya_app_name")
-          tree.write(manifest_file, encoding="utf-8", xml_declaration=True)
-
-          report = json.loads((patch / "patch-report.json").read_text(encoding="utf-8"))
-          report["launcher_icons_replaced"] = icon_count
-          report["application_label"] = "Kadaya | The Age of Shadows"
-          report["application_id"] = "com.kyzerhadoc.kadaya"
-          report["patched_bundle_in_decoded_apk_bytes"] = target_bundle.stat().st_size
-          report["patched_bundle_sha256"] = hashlib.sha256(target_bundle.read_bytes()).hexdigest()
-          report["scenes_maps_and_levels_modified"] = False
-          (tmp / "kadaya-build-report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
-          print(f"Copied visual patch bundle: {target_bundle.stat().st_size:,} bytes.")
-          print(f"Updated {icon_count} launcher icon files.")
-          print("Application label set to Kadaya | The Age of Shadows.")
-          PY
-
-      - name: Build the unsigned APK with Apktool
-        shell: bash
-        run: |
-          set -euo pipefail
-          java -Xmx4g -jar "$RUNNER_TEMP/apktool.jar" b \
-            "$RUNNER_TEMP/kadaya-decoded" \
-            --force --no-crunch \
-            --output "$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-unsigned.apk"
-          test -s "$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-unsigned.apk"
-          ls -lh "$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-unsigned.apk"
-
-      - name: Align, sign and validate the APK
-        shell: bash
-        run: |
-          set -euo pipefail
-          UNSIGNED="$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-unsigned.apk"
-          ALIGNED="$RUNNER_TEMP/Kadaya-The-Age-of-Shadows-aligned.apk"
-          SIGNED="$RUNNER_TEMP/Kadaya-The-Age-of-Shadows.apk"
-          KEYSTORE="$RUNNER_TEMP/kadaya-test-signing.keystore"
-          PASS="$(python3 -c 'import secrets; print(secrets.token_urlsafe(24))')"
-
-          keytool -genkeypair -noprompt \
-            -keystore "$KEYSTORE" -storepass "$PASS" -keypass "$PASS" \
-            -alias kadaya-test -keyalg RSA -keysize 2048 -validity 10000 \
-            -dname "CN=Kadaya Test Build, OU=Kadaya, O=KyZer, L=Weeraketiya, ST=Southern, C=LK" >/dev/null
-
-          zipalign -P 16 -f 4 "$UNSIGNED" "$ALIGNED"
-          apksigner sign --ks "$KEYSTORE" --ks-key-alias kadaya-test \
-            --ks-pass "pass:$PASS" --key-pass "pass:$PASS" \
-            --out "$SIGNED" "$ALIGNED"
-          apksigner verify --verbose "$SIGNED"
-          aapt dump badging "$SIGNED" > "$RUNNER_TEMP/kadaya-badging.txt"
-          grep -E "^package:|^application-label:" "$RUNNER_TEMP/kadaya-badging.txt" | head -n 8
-          grep -q "^package: name='com.kyzerhadoc.kadaya.test" "$RUNNER_TEMP/kadaya-badging.txt"
-          python3 - <<'PY'
-          from pathlib import Path
-          from zipfile import ZipFile
-          import os
-          apk = Path(os.environ["RUNNER_TEMP"]) / "Kadaya-The-Age-of-Shadows.apk"
-          with ZipFile(apk) as z:
-              names = set(z.namelist())
-              assert "AndroidManifest.xml" in names
-              assert "assets/bin/Data/data.unity3d" in names
-              assert ("res/mipmap-xxxhdpi-v4/app_icon.png" in names or "res/mipmap-xxxhdpi/app_icon.png" in names)
-              assert "classes.dex" in names
-              bad = z.testzip()
-              if bad: raise SystemExit(f"Final APK ZIP integrity error at {bad}")
-          print(f"Final APK ready: {apk.stat().st_size:,} bytes.")
-          PY
-
       - name: Prepare compact download package and report
         shell: bash
         run: |
@@ -388,63 +20,57 @@ jobs:
           sha256sum kadaya-final-build/Kadaya-The-Age-of-Shadows.apk > kadaya-final-build/SHA256SUMS.txt
           ls -lh kadaya-final-build/
 
-      - name: Upload the signed Kadaya APK
-        id: upload-kadaya
+      - name: Create maximum-compression test ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          import hashlib
+
+          source = Path("kadaya-final-build")
+          output = Path("Kadaya-The-Age-of-Shadows-Test.zip")
+          files = sorted(p for p in source.iterdir() if p.is_file())
+          if not any(p.name == "Kadaya-The-Age-of-Shadows.apk" for p in files):
+              raise SystemExit("The signed APK is missing; refusing to make an incomplete ZIP.")
+
+          # Compress the full APK and reports at DEFLATE level 9 on GitHub's runner.
+          with ZipFile(output, "w", compression=ZIP_DEFLATED, compresslevel=9, allowZip64=True) as zf:
+              for p in files:
+                  zf.write(p, arcname=f"Kadaya-The-Age-of-Shadows/{p.name}",
+                           compress_type=ZIP_DEFLATED, compresslevel=9)
+
+          with ZipFile(output, "r") as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise SystemExit(f"Compressed ZIP integrity error at {bad}")
+              names = set(zf.namelist())
+              if "Kadaya-The-Age-of-Shadows/Kadaya-The-Age-of-Shadows.apk" not in names:
+                  raise SystemExit("Compressed ZIP does not contain the test APK.")
+          digest = hashlib.sha256(output.read_bytes()).hexdigest()
+          original_apk = source / "Kadaya-The-Age-of-Shadows.apk"
+          print(f"APK size: {original_apk.stat().st_size:,} bytes")
+          print(f"MAX-COMPRESSION ZIP size: {output.stat().st_size:,} bytes")
+          print(f"ZIP SHA-256: {digest}")
+          PY
+          ls -lh Kadaya-The-Age-of-Shadows-Test.zip
+          {
+            echo "### Kadaya maximum-compression package"
+            echo
+            echo "- ZIP: `Kadaya-The-Age-of-Shadows-Test.zip`"
+            echo "- Compression: ZIP/DEFLATE level 9"
+            echo "- The APK, build report, package info, README, and APK checksum are inside."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload maximum-compression Kadaya test ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: kadaya-the-age-of-shadows-side-by-side-test-build
-          path: kadaya-final-build/
+          name: kadaya-the-age-of-shadows-max-compressed-test-zip
+          path: Kadaya-The-Age-of-Shadows-Test.zip
           if-no-files-found: error
-          retention-days: 3
+          retention-days: 7
           compression-level: 0
 
-      - name: Publish latest Kadaya build reference
-        shell: bash
-        env:
-          KADAYA_ARTIFACT_ID: ${{ steps.upload-kadaya.outputs.artifact-id }}
-        run: |
-          set -euo pipefail
-          mkdir -p analysis
-          {
-            echo "run_id=$GITHUB_RUN_ID"
-            echo "run_url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-            echo "artifact_id=$KADAYA_ARTIFACT_ID"
-            echo "artifact_name=kadaya-the-age-of-shadows-side-by-side-test-build"
-            echo "apk_filename=Kadaya-The-Age-of-Shadows.apk"
-          } > analysis/latest-kadaya-build.txt
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add analysis/latest-kadaya-build.txt
-          if git diff --cached --quiet; then
-            echo "Build reference did not change; nothing to commit."
-          else
-            git commit -m "Record latest Kadaya test build artifact"
-            git push
-          fi
 
 
-  record-failed-apk-build:
-    needs: build-apk
-    if: always() && github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && needs.build-apk.result == 'failure'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Record failed APK build
-        shell: bash
-        env:
-          RESKIN_RUN_ID: ${{ github.event.workflow_run.id }}
-        run: |
-          set -euo pipefail
-          mkdir -p analysis
-          {
-            echo "status=apk-build-failed"
-            echo "reskin_run_id=$RESKIN_RUN_ID"
-            echo "run_id=$GITHUB_RUN_ID"
-            echo "run_url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-          } > analysis/latest-kadaya-build.txt
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add analysis/latest-kadaya-build.txt
-          git commit -m "Record failed Kadaya APK build"
-          git push
